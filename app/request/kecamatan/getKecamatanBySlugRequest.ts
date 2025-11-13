@@ -2,8 +2,6 @@ import { baseUrlClient } from "../../utils/config";
 
 export async function getKecamatanBySlug(slug: string) {
   try {
-    console.log(slug);
-
     const response = await fetch(`${baseUrlClient}/kecamatans/slug/${slug}`, {
       method: "GET",
     });

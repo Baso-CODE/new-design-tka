@@ -13,6 +13,7 @@ import "./globals.css";
 import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
 import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
+import FooterEduMatrix from "./components/footerEdumatrix";
 
 // Font Google
 const geistSans = Geist({
@@ -78,6 +79,7 @@ export default function RootLayout({
         <ResponsiveNav />
         {children}
         <BottomNavigationBarOSN navLinksData={navLinks} />
+        <FooterEduMatrix />
       </body>
     </html>
   );

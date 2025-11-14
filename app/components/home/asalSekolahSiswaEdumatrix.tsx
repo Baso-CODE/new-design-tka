@@ -16,7 +16,7 @@ const AsalSekolahSiswaEdumatrix = () => {
                   key={index}
                   className="flex items-center gap-2 whitespace-nowrap font-medium font-desc"
                 >
-                  <span className="w-1.5 h-1.5 bg-[#003b6d] rounded-full flex-shrink-0"></span>
+                  <span className="w-1.5 h-1.5 bg-[#003b6d] rounded-full shrink-0"></span>
                   {school}
                 </div>
               ))}

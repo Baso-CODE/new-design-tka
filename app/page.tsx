@@ -1,22 +1,28 @@
 import { Metadata } from "next";
+import Accordion from "./components/faq/Accordion";
+import GoldenTicketShowcase from "./components/goldenTicket";
+import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
+
 import Gallery from "./components/home/gallery";
 import Hero from "./components/home/hero";
 import JumlahSiswa from "./components/home/jumlahSiswa";
+import ListKota from "./components/home/lisKota";
 import ListSiswa from "./components/home/listSiswa";
 import MengapaHarusEdumatrix from "./components/home/mengapaHarusEdumatrix";
 import PaketBelajarOSN from "./components/home/paketBelajarOSN";
 import Pengajar from "./components/home/pengajar";
 import Pilihan from "./components/home/pilihan";
 import Program from "./components/home/programBelajar";
+import SekolahSiswa from "./components/home/sekolahSiswa";
+import SuccessStorySlider from "./components/home/successStorySlider";
 import TingkatPendidikan from "./components/home/tingkatPendidikan";
+import Promo from "./components/promo";
 import SliderDescktop from "./components/slider/sliderDescktop";
 import SliderMobile from "./components/slider/sliderMobile";
+import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
-import SuccessStorySlider from "./components/home/successStorySlider";
-import GoldenTicketShowcase from "./components/goldenTicket";
-import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
-import SekolahSiswa from "./components/home/sekolahSiswa";
-import ListKota from "./components/home/lisKota";
+import Contact from "./components/home/contact";
+import MediaMassa from "./components/mediaMassa/mediaMassa";
 const ogImage =
   "https://olimpiade.edumatrix-indonesia.com/images/images-cta.webp";
 const canonicalUrl = "https://olimpiade.edumatrix-indonesia.com/";
@@ -82,6 +88,11 @@ export default function Home() {
       <AsalSekolahSiswaEdumatrix />
       <SekolahSiswa />
       <ListKota />
+      <ImpactStatisticsOSN />
+      <Accordion />
+      <Promo />
+      <Contact />
+      <MediaMassa />
     </>
   );
 }

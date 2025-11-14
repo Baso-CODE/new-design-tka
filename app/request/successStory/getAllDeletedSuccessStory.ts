@@ -1,14 +1,19 @@
+import { SuccessStory } from "@/app/types/successStory.type";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getAllSuccesStorysIsDeleted() {
+export async function getAllSuccessStoriesIsDeleted(): Promise<SuccessStory[]> {
   try {
-    const successStorys = await fetch(
-      `${baseUrlClient}/successStory/isDeleted/all`
-    );
-    const result = await successStorys.json();
-    return result;
+    const res = await fetch(`${baseUrlClient}/successStory/isDeleted/all`, {
+      cache: "no-store",
+    });
+
+    if (!res.ok) throw new Error("Failed to fetch success stories");
+
+    const result = await res.json();
+
+    return Array.isArray(result.data) ? result.data : [];
   } catch (error) {
     console.error("Error fetching:", error);
-    throw error;
+    return [];
   }
 }

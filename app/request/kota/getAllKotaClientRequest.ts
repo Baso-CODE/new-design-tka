@@ -1,20 +1,22 @@
+import { Kota } from "@/app/types/kota.types";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getAllKotaClient() {
+export async function getAllKotaClient(): Promise<Kota[]> {
   try {
-    const response = await fetch(`${baseUrlClient}/kotas/all/client`, {
+    const res = await fetch(`${baseUrlClient}/kotas/all/client`, {
       method: "GET",
+      cache: "no-store", // SSR fresh data
     });
 
-    const result = await response.json();
+    const json = await res.json();
 
-    if (!response.ok) {
-      throw new Error(result.message || "Gagal get kota");
+    if (!res.ok) {
+      throw new Error(json.message || "Gagal memuat data kota");
     }
 
-    return result;
-  } catch (error) {
-    console.error("Error get kota:", error);
-    throw error;
+    return json.data;
+  } catch (err) {
+    console.error("Error get kota:", err);
+    return [];
   }
 }

@@ -1,20 +1,46 @@
+import { GetKotaBySlugResponse } from "@/app/types/kota.types";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getKotaBySlug(slug: string) {
+export async function getKotaBySlug(
+  slug?: string
+): Promise<GetKotaBySlugResponse> {
+  if (!slug) {
+    return {
+      status: 400,
+      data: { kota: null, kabupatens: [] },
+      message: "Missing slug",
+    };
+  }
+
   try {
-    const response = await fetch(`${baseUrlClient}/kotas/slug/${slug}`, {
-      method: "GET",
-    });
+    const res = await fetch(
+      `${baseUrlClient}/kotas/slug/${encodeURIComponent(slug)}`,
+      {
+        method: "GET",
+        cache: "no-store",
+      }
+    );
 
-    const result = await response.json();
+    const json = await res.json();
 
-    if (!response.ok) {
-      throw new Error(result.message || "Gagal menghapus kota");
-    }
-
-    return result;
-  } catch (error) {
-    console.error("Error deleting kota:", error);
-    throw error;
+    return {
+      status: res.status,
+      data: {
+        kota: json.data?.kota ?? json.data ?? null,
+        kabupatens:
+          json.data?.kabupatens ??
+          json.data?.kotakabupatens ??
+          json.data?.kabupatens ??
+          [],
+      },
+      message: json.message,
+    };
+  } catch (err) {
+    console.error("getKotaBySlug error:", err);
+    return {
+      status: 500,
+      data: { kota: null, kabupatens: [] },
+      message: "Network error",
+    };
   }
 }

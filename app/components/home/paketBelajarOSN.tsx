@@ -26,19 +26,13 @@ const PaketBelajarOSN = () => {
           {/* Box Paket (Grid untuk responsif) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
             {/* PAKET PRIORITY */}
-            <div
-              data-aos="fade-right"
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col"
-            >
-              <div
-                data-aos="fade-right"
-                className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6"
-              >
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col ">
+              <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
                   PAKET PRIORITY
                 </h2>
               </div>
-              <ul data-aos="fade-right" className="space-y-4 grow font-desc">
+              <ul className="space-y-4 grow font-desc">
                 {[
                   "Program pendampingan belajar 1 guru 1 Siswa",
                   "Jadwal belajar fleksibel",
@@ -62,11 +56,10 @@ const PaketBelajarOSN = () => {
               </ul>
               {/* Tombol Tanya Kelas untuk Paket Priority */}
               <a
-                data-aos="fade-right"
                 href={waLinkPriority}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300"
+                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 "
               >
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-start rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                   <div className="ml-3.5 flex items-center justify-center rotate-180">
@@ -94,19 +87,13 @@ const PaketBelajarOSN = () => {
             </div>
 
             {/* PAKET DELUXE */}
-            <div
-              data-aos="fade-left"
-              className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 flex flex-col"
-            >
-              <div
-                className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6"
-                data-aos="fade-left"
-              >
+            <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col">
+              <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
                   PAKET DELUXE
                 </h2>
               </div>
-              <ul className="space-y-4 grow" data-aos="fade-left">
+              <ul className="space-y-4 grow">
                 {[
                   "Program pendampingan belajar 1 guru 1 Siswa",
                   "Jadwal belajar fleksibel",
@@ -129,7 +116,6 @@ const PaketBelajarOSN = () => {
               </ul>
 
               <a
-                data-aos="fade-left"
                 href={waLinkDeluxe}
                 target="_blank"
                 rel="noopener noreferrer"

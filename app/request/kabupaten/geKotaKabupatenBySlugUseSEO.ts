@@ -1,6 +1,9 @@
+import { Kabupaten } from "@/app/types/kota.types";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getKabupatenKotaBySlugUseSEO(slug: string) {
+export async function getKabupatenKotaBySlugUseSEO(
+  slug: string
+): Promise<Kabupaten> {
   try {
     const response = await fetch(
       `${baseUrlClient}/kabupatens/seo/slug/${slug}`,

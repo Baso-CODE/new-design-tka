@@ -9,6 +9,7 @@ export async function getKabupatenKotaBySlugUseSEO(
       `${baseUrlClient}/kabupatens/seo/slug/${slug}`,
       {
         method: "GET",
+        cache: "no-store",
       }
     );
 

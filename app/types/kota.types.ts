@@ -1,8 +1,23 @@
-// app/types/kota.type.ts
+export interface Kecamatan {
+  id: number;
+  nama_kecamatan: string;
+  slug: string;
+  kota_kabupaten_id?: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface KecamatanResponse {
+  data: {
+    kecamatans?: Kecamatan[] | null;
+  };
+  message: string;
+}
 export interface Kabupaten {
   id: number;
   nama_kota_kabupaten: string;
   slug: string;
+  kecamatans: Kecamatan[];
   kota_id?: number;
   createdAt?: string;
   updatedAt?: string;

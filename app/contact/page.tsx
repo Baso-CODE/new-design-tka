@@ -1,5 +1,13 @@
+import AllContactCS from "./components/allContactCS";
+import HeroContactCS from "./components/heroContactCs";
+
 const ContactPage = () => {
-  return <div>ContactPage</div>;
+  return (
+    <>
+      <HeroContactCS />
+      <AllContactCS />
+    </>
+  );
 };
 
 export default ContactPage;

@@ -1,22 +1,24 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { getKabupatenBySlug } from "../request/kabupaten/getKabupatenBySlugRequest";
+import { getKecamatanBySlug } from "../request/kecamatan/getKecamatanBySlugRequest";
 
 interface Props {
-  kabupatenName: string;
+  kecamatanName: string;
+  kecamatanSlug: string;
   kabupatenSlug: string;
   kotaSlug: string;
 }
 
-export default async function ListKecamatan({
-  kabupatenName,
+export default async function ListKelurahan({
+  kecamatanName,
+  kecamatanSlug,
   kabupatenSlug,
   kotaSlug,
 }: Props) {
-  const kabupaten = await getKabupatenBySlug(kabupatenSlug);
+  const kabupaten = await getKecamatanBySlug(kecamatanSlug);
 
-  const kecamatans = kabupaten.kecamatans ?? [];
+  const kelurahans = kabupaten.kelurahans ?? [];
 
   return (
     <div className=" bg-[#04397D]  flex items-center justify-center ">
@@ -36,7 +38,7 @@ export default async function ListKecamatan({
         </div>
 
         <h2 className="text-white text-3xl font-bold my-6 text-center uppercase tracking-wide bg-linear-to-r from-blue-400 to-indigo-500 p-2 rounded-lg">
-          {kabupatenName}
+          {kecamatanName}
         </h2>
 
         <div className=" md:px-0 px-4 w-full">
@@ -46,16 +48,16 @@ export default async function ListKecamatan({
             </h3>
 
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
-              {kecamatans.map((kec) => (
-                <li key={kec.slug} className="w-full">
+              {kelurahans.map((kel) => (
+                <li key={kel.slug} className="w-full">
                   <Link
-                    href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kec.slug}`}
+                    href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kel.slug}`}
                     className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
                              rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                              font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
                              transition-all duration-300 ease-in-out"
                   >
-                    {kec.nama_kecamatan}
+                    {kel.nama_kelurahan}
                   </Link>
                 </li>
               ))}

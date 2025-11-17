@@ -246,9 +246,8 @@ export default async function KabupatenPage({
       <AsalSekolahSiswaEdumatrix />
       <SekolahSiswa />
 
-      {/* LIST KECAMATAN */}
-      {/* <KecamatanList kabupatenSlug={kabupatenSlug} /> */}
       <ListKecamatan
+        kotaSlug={kotaSlug}
         kabupatenName={kabupatenName}
         kabupatenSlug={kabupatenSlug}
       />

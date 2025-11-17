@@ -1,3 +1,18 @@
+export interface Kelurahan {
+  id: number;
+  nama_kelurahan: string;
+  slug: string;
+  kecamatan_id?: number;
+  createdAt?: string;
+  updatedAt?: string;
+}
+
+export interface KelurahanResponse {
+  data: {
+    kelurahans?: Kelurahan[] | null;
+  };
+  message: string;
+}
 export interface Kecamatan {
   id: number;
   nama_kecamatan: string;

@@ -1,5 +1,3 @@
-// app/components/FooterEduMatrix/FooterEduMatrix.tsx
-
 import Image from "next/image";
 import Link from "next/link";
 import { getAllIsDeletedContactCsFooter } from "../request/contacts/getAllIsDeletedContactCsFooter";

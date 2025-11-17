@@ -1,19 +1,19 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import {
-  Poppins,
-  Roboto,
-  Oswald,
-  Honk,
   Geist,
   Geist_Mono,
+  Honk,
+  Oswald,
+  Poppins,
+  Roboto,
 } from "next/font/google";
+import localFont from "next/font/local";
 
-import "./globals.css";
+import FooterEduMatrix from "./components/footerEdumatrix";
 import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
 import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
-import FooterEduMatrix from "./components/footerEdumatrix";
+import "./globals.css";
 
 // Font Google
 const geistSans = Geist({
@@ -60,6 +60,8 @@ const superPencil = localFont({
   variable: "--font-super-pencil",
   display: "swap",
 });
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: "Edumatrix Indonesia",

@@ -37,13 +37,13 @@ export async function generateMetadata({
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-  const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+  const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
   const kotaData = await getImageKotaBySlug(kotaSlug);
 
   const imageUrl = kotaData?.foto_kota
     ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
-    : "https://olimpiade.edumatrix-indonesia.com/images/images-cta.webp";
+    : "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const ogTitle = `📚 Les Privat Olimpiade ${formattedKotaName} • OSN IMO ISO Unggulan`;
   const ogDescription = `Kursus Les Privat Olimpiade ${formattedKotaName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
@@ -117,12 +117,12 @@ export default async function KotaPage(props: {
     .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
     .join(" ");
 
-  const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+  const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
 
   const imageUrl = kotaData?.foto_kota
     ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
-    : "https://olimpiade.edumatrix-indonesia.com/images/images-cta.webp";
+    : "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const jsonLd = {
     "@context": "https://schema.org",

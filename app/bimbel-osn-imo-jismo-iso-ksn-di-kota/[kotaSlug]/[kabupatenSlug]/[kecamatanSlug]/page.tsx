@@ -24,7 +24,7 @@ import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
-const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+const baseUrl = "https://bimbeledumatrix.com";
 
 export async function generateMetadata({
   params,
@@ -43,8 +43,7 @@ export async function generateMetadata({
 
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
-  const imageUrl =
-    "https://olimpiade.edumatrix-indonesia.com/images/images-cta.webp";
+  const imageUrl = "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const title = `📚 Les Privat Olimpiade ${kecamatanName} • OSN IMO ISO Unggulan`;
   const description = `Kursus Les Privat Olimpiade ${kecamatanName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;

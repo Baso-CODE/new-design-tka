@@ -66,6 +66,9 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Edumatrix Indonesia",
   description: "Pusat bimbingan belajar dan les privat berkualitas.",
+  verification: {
+    google: "Cv9Bh_f2VODnu2TvfhGjaLfiwcD2r3pX9HbdbUanEBo",
+  },
 };
 
 export default function RootLayout({

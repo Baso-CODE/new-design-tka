@@ -116,7 +116,7 @@ const YouTubeShortEmbed = () => {
                 </span>
               </a>
               {/* <a
-                href="https://olimpiade.edumatrix-indonesia.com/contact"
+                href="https://bimbeledumatrix.com/contact"
                 className="inline-flex items-center justify-center px-6 py-3 w-full md:w-[60%] lg:w-[70%] xl:w-[50%] border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1"
                 target="_blank" // Buka di tab baru
                 rel="noopener noreferrer">

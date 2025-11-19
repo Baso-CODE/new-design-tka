@@ -10,6 +10,9 @@ body {
   --font-title-blog: var(--font-poppins);
 }
 
+* {
+  overflow-x: hidden;
+}
 /* === Local Font === */
 @font-face {
   font-family: "Super Pencil";

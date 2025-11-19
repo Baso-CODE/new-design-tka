@@ -35,12 +35,11 @@ export async function generateMetadata({
   const kotaName = formatSlugToTitle(kotaSlug);
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
 
-  const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+  const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
 
   // Gunakan image default (React Vite juga pakai ini)
-  const imageUrl =
-    "https://olimpiade.edumatrix-indonesia.com/images/images-cta.webp";
+  const imageUrl = "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const title = `📚 Les Privat Olimpiade ${kabupatenName} • OSN IMO ISO Unggulan`;
   const description = `Kursus Les Privat Olimpiade ${kabupatenName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
@@ -117,7 +116,7 @@ export default async function KabupatenPage({
 
   const linkCta = contact?.link_cta || "/contact";
 
-  const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+  const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
 
   const jsonLd = {

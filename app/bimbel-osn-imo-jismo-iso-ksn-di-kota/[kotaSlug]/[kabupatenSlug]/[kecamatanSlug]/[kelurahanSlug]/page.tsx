@@ -23,7 +23,7 @@ import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
-const baseUrl = "https://olimpiade.edumatrix-indonesia.com";
+const baseUrl = "https://bimbeledumatrix.com";
 
 export async function generateMetadata({
   params,

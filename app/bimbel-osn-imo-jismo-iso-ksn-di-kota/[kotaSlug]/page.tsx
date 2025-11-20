@@ -116,7 +116,8 @@ export default async function KotaPage(props: {
 
   const linkCta = contact?.link_cta || "/contact";
 
-  const fallbackImage = "https://bimbeledumatrix.com/images/images-cta.webp";
+  const fallbackImage =
+    "https://bimbeledumatrix.com/images/image-preview-landing-page.webp";
 
   const imageUrl = kotaData?.foto_kota
     ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`

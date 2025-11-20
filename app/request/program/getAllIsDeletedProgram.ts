@@ -6,15 +6,23 @@ export async function getAllProgramBelajarIsDeleted(): Promise<{
 }> {
   try {
     const res = await fetch(`${baseUrlClient}/programBelajars/isDeleted/all`, {
-      cache: "no-store", // penting agar SSR fetch terbaru setiap kali request
+      cache: "no-store",
     });
 
-    if (!res.ok) throw new Error(`Fetch failed with status ${res.status}`);
+    // Jika gagal (HTTP error)
+    if (!res.ok) {
+      console.error(`Fetch failed with status ${res.status}`);
+      return { data: [] };
+    }
 
     const result = await res.json();
-    return result;
+
+    // Validasi agar aman
+    return {
+      data: Array.isArray(result.data) ? result.data : [],
+    };
   } catch (error) {
-    console.error("Error fetching:", error);
-    throw error;
+    console.error("Error fetching program belajar:", error);
+    return { data: [] }; // fallback aman
   }
 }

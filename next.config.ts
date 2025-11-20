@@ -5,6 +5,10 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: "https",
+        hostname: "bimbeledumatrix.com",
+      },
+      {
+        protocol: "https",
         hostname: "node-osn.edusmart-indonesia.com",
         port: "",
         pathname: "/**",

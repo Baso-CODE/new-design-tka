@@ -1,15 +1,26 @@
 import { baseUrlClient } from "@/app/utils/config";
 import { ContactCs } from "@/app/types/contact.type";
 
-export async function getAllContactCs(): Promise<{ data: ContactCs[] }> {
+export async function getAllContactCs(): Promise<ContactCs[] | null> {
   try {
     const response = await fetch(`${baseUrlClient}/contactcs/all/cs`, {
-      cache: "no-store", // full SSR
+      cache: "no-store",
     });
-    const result = await response.json();
-    return result; // { data: ContactCs[] }
-  } catch (error) {
-    console.error("Error fetching contact CS:", error);
-    throw error;
+
+    if (!response.ok) {
+      return null;
+    }
+
+    const json = await response.json();
+
+    if (!json?.data || !Array.isArray(json.data)) {
+      console.error("Invalid CS response structure:", json);
+      return null;
+    }
+
+    return json.data;
+  } catch (err) {
+    console.error("Error fetching contact CS:", err);
+    return null; // FALLBACK
   }
 }

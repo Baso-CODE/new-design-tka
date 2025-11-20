@@ -12,8 +12,6 @@ export async function getAllAsalSekolahSiswaIsDeleted(): Promise<
       }
     );
 
-    if (!res.ok) throw new Error("Failed to fetch data");
-
     const result = await res.json();
 
     return result.data;

@@ -5,18 +5,21 @@ export async function getAllKotaClient(): Promise<Kota[]> {
   try {
     const res = await fetch(`${baseUrlClient}/kotas/all/client`, {
       method: "GET",
-      cache: "no-store", // SSR fresh data
+      cache: "no-store",
     });
+
+    // Jika fetch gagal atau response bukan 2xx
+    if (!res.ok) {
+      console.error("Failed fetching kota:", await res.text());
+      return [];
+    }
 
     const json = await res.json();
 
-    if (!res.ok) {
-      throw new Error(json.message || "Gagal memuat data kota");
-    }
-
-    return json.data;
+    // Validasi output untuk keamanan
+    return Array.isArray(json.data) ? json.data : [];
   } catch (err) {
     console.error("Error get kota:", err);
-    return [];
+    return []; // fallback aman
   }
 }

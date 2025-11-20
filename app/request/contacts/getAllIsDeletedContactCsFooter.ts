@@ -1,3 +1,4 @@
+// request/getAllIsDeletedContactCsFooter.ts
 import { ContactCs } from "@/app/types/contact.type";
 import { baseUrlClient } from "@/app/utils/config";
 
@@ -7,10 +8,15 @@ export async function getAllIsDeletedContactCsFooter(): Promise<ContactCs[]> {
       cache: "no-store",
     });
 
+    if (!response.ok) {
+      console.error("HTTP error:", response.status);
+      return [];
+    }
+
     const result = await response.json();
-    return result.data ?? [];
+    return Array.isArray(result.data) ? result.data : [];
   } catch (error) {
     console.error("Error fetching footer contact CS:", error);
-    throw error;
+    return []; // Fallback aman
   }
 }

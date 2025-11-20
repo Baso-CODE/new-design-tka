@@ -102,15 +102,25 @@ export default async function KotaPage(props: {
 }) {
   const { kotaSlug } = await props.params;
 
-  const kotaData = await getImageKotaBySlug(kotaSlug);
-  let contact = null;
-  try {
-    contact = await getSingleContactCsIsDeleted();
-  } catch (err) {
-    console.error("Error fetch contact CTA:", err);
-  }
+  // Fetch 1 – aman
+  const kotaData = await getImageKotaBySlug(kotaSlug).catch((err) => {
+    console.error("Error fetch kota:", err);
+    return null; // fallback
+  });
+
+  // Fetch 2 – aman
+  const contact = await getSingleContactCsIsDeleted().catch((err) => {
+    console.error("Error fetch contact:", err);
+    return null;
+  });
 
   const linkCta = contact?.link_cta || "/contact";
+
+  const fallbackImage = "https://bimbeledumatrix.com/images/images-cta.webp";
+
+  const imageUrl = kotaData?.foto_kota
+    ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
+    : fallbackImage;
 
   const formattedKotaName = kotaSlug
     .split("-")
@@ -119,10 +129,6 @@ export default async function KotaPage(props: {
 
   const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
-
-  const imageUrl = kotaData?.foto_kota
-    ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
-    : "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const jsonLd = {
     "@context": "https://schema.org",

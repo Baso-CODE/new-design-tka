@@ -24,7 +24,7 @@ const TingkatPendidikan = () => {
 
   return (
     <section className="flex flex-col py-8 items-center xl:min-h-[125vh] bg-white container mx-auto">
-      <div className="max-w-[1240px] w-full px-2">
+      <div className=" w-full px-2 md:px-0">
         <div className="flex gap-6 mt-8 w-full flex-wrap xl:flex-nowrap justify-center">
           {/* === SD === */}
           <div

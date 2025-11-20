@@ -1,7 +1,8 @@
-import { FAQ, GetFAQResponse } from "@/app/types/faq.types";
+import { GetFAQResponse } from "@/app/types/faq.types";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getAllFAQIsDeleted(): Promise<FAQ[]> {
+// return tipe sebenarnya
+export async function getAllFAQIsDeleted(): Promise<GetFAQResponse> {
   try {
     const res = await fetch(`${baseUrlClient}/faqs/isDeleted/all`, {
       cache: "no-store",
@@ -10,9 +11,15 @@ export async function getAllFAQIsDeleted(): Promise<FAQ[]> {
     if (!res.ok) throw new Error("Failed fetching FAQ");
 
     const result: GetFAQResponse = await res.json();
-    return result.data;
+
+    return result;
   } catch (error) {
     console.error("Error fetching FAQs:", error);
-    return [];
+
+    // tetap return bentuk yang sesuai tipe
+    return {
+      data: [],
+      message: "Fallback data because of error",
+    };
   }
 }

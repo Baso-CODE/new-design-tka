@@ -4,7 +4,7 @@ const YouTubeShortEmbed = () => {
 
   return (
     <section className="relative py-16 bg-[#04397d] overflow-hidden min-h-screen">
-      <div className=" max-w-[1240px] mx-auto px-4 mb-32 ">
+      <div className=" max-w-[1240px] mx-auto px-4 md:px-0 mb-32 ">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative flex justify-center items-center mb-12 lg:mb-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">

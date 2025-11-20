@@ -4,7 +4,32 @@ import { getAllIsDeletedContactCsFooter } from "../request/contacts/getAllIsDele
 import { ContactCs } from "../types/contact.type";
 
 export default async function FooterEduMatrix() {
-  const contactData: ContactCs[] = await getAllIsDeletedContactCsFooter();
+  let contactData: ContactCs[] = [];
+
+  try {
+    contactData = await getAllIsDeletedContactCsFooter();
+  } catch (error) {
+    console.error("Footer CS fetch error:", error);
+  }
+
+  // Fallback jika gagal fetch atau data kosong
+  const finalContacts =
+    contactData.length > 0
+      ? contactData
+      : [
+          {
+            id: 0,
+            nama_cs: "Admin",
+            nomor_hp: "-",
+            link_cta: "#",
+            isDeleted: false,
+            weight: 0,
+            display_order: 0,
+            createdAt: "",
+            updatedAt: "",
+          },
+        ];
+
   const currentYear = new Date().getFullYear();
 
   return (
@@ -18,7 +43,7 @@ export default async function FooterEduMatrix() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {/* ===== COL 1 ===== */}
+          {/* COL 1 */}
           <div>
             <h3 className="text-lg font-bold font-title mb-2">Office:</h3>
 
@@ -32,7 +57,7 @@ export default async function FooterEduMatrix() {
             </h3>
 
             <ul className="mb-2">
-              {contactData.map((admin) => (
+              {finalContacts.map((admin) => (
                 <li key={admin.id} className="font-desc">
                   <Link
                     href={admin.link_cta ?? "#"}
@@ -47,15 +72,14 @@ export default async function FooterEduMatrix() {
             </ul>
           </div>
 
-          {/* ===== COL 2 ===== */}
+          {/* COL 2 */}
           <div className="flex flex-col text-start">
             <h3 className="text-lg font-title font-bold mb-2">About Us:</h3>
 
             <p className="font-desc">
               Edumatrix Indonesia hadir sebagai mitra terpercaya dalam
               meningkatkan potensi akademik siswa melalui bimbingan belajar dan
-              les privat berkualitas untuk berbagai jenjang pendidikan,
-              khususnya dalam bidang OSN.
+              les privat berkualitas untuk berbagai jenjang pendidikan.
             </p>
 
             <h3 className="text-lg font-bold font-title mb-0 mt-6">
@@ -68,18 +92,18 @@ export default async function FooterEduMatrix() {
             </ul>
           </div>
 
-          {/* ===== COL 3 ===== */}
+          {/* COL 3 */}
           <div className="flex flex-col items-center">
             <h3 className="text-lg font-title font-bold mb-4">Contact us:</h3>
 
             <Link
-              href={contactData[0]?.link_cta ?? "#"}
+              href={finalContacts[0]?.link_cta ?? "#"}
               target="_blank"
               rel="noopener noreferrer"
             >
               <Image
                 src="/images/images-cta.webp"
-                alt="Hubungi kami sekarang untuk layanan les privat berkualitas dari Edumatrix Indonesia."
+                alt="Hubungi kami sekarang."
                 width={600}
                 height={180}
                 className="w-full h-full rounded-lg cursor-pointer object-cover"
@@ -88,18 +112,13 @@ export default async function FooterEduMatrix() {
           </div>
         </div>
 
-        {/* === Footer Text === */}
+        {/* Footer Text */}
         <p className="mt-8 text-center text-xs font-title">
-          &copy; {currentYear} - Edumatrix - ONLINE & OFFLINE - Les Privat
-          Online Indonesia dan Les Privat Profesional Datang ke Rumah di
-          Jabodetabek
+          &copy; {currentYear} - Edumatrix - ONLINE & OFFLINE
         </p>
 
         <p className="text-center text-xs font-title">
-          Pusat Les Privat Nasional & Internasional Jabodetabek (Jakarta, Bogor,
-          Depok, Tangerang, Tangsel, Bekasi, Yogyakarta, Bandung, Makassar,
-          Surabaya, Semarang, Bali, Medan, Palembang, Lampung, Batam, Pekanbaru,
-          Pontianak, Serang, Cirebon, Malang, Manado, Balikpapan, Samarinda)
+          Pusat Les Privat Nasional & Internasional Jabodetabek
         </p>
       </div>
     </div>

@@ -12,7 +12,7 @@ export function AccordionFAQ({ title, content }: AccordionFAQProps) {
   const contentRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div className="border-b border-gray-300">
+    <div className="border-b border-gray-300 w-full">
       <button
         className="flex justify-between items-center w-full p-4 text-left focus:outline-none text-black"
         onClick={() => setIsOpen(!isOpen)}

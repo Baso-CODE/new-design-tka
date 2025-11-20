@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default async function AllContactCS() {
   // Fetch data di server
-  const { data: dataContact }: { data: ContactCs[] } = await getAllContactCs();
+  const dataContact: ContactCs[] = (await getAllContactCs()) ?? [];
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">

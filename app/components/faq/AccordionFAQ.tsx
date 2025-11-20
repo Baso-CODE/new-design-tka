@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 interface AccordionFAQProps {
   title: string;
@@ -9,7 +9,15 @@ interface AccordionFAQProps {
 
 export function AccordionFAQ({ title, content }: AccordionFAQProps) {
   const [isOpen, setIsOpen] = useState(false);
+  const [maxHeight, setMaxHeight] = useState("0px");
   const contentRef = useRef<HTMLDivElement>(null);
+
+  // Update maxHeight saat isOpen berubah
+  useEffect(() => {
+    if (contentRef.current) {
+      setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : "0px");
+    }
+  }, [isOpen]);
 
   return (
     <div className="border-b border-gray-300 w-full">
@@ -44,9 +52,7 @@ export function AccordionFAQ({ title, content }: AccordionFAQProps) {
       <div
         ref={contentRef}
         className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{
-          maxHeight: isOpen ? `${contentRef.current?.scrollHeight}px` : "0px",
-        }}
+        style={{ maxHeight }}
       >
         <div className="p-4 font-medium text-white bg-[#0f4787] font-desc rounded-b-lg">
           {content}

@@ -2,13 +2,9 @@ import { GetPromoResponse, Promo } from "@/app/types/promo.types";
 import { baseUrlClient } from "@/app/utils/config";
 
 export async function getAllPromoIsDeleted(): Promise<Promo[]> {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), 5000); // 5 detik timeout
-
   try {
     const res = await fetch(`${baseUrlClient}/promos/isDeleted/all`, {
       cache: "no-store",
-      signal: controller.signal,
     });
 
     if (!res.ok) throw new Error("Failed to fetch promo");
@@ -18,7 +14,5 @@ export async function getAllPromoIsDeleted(): Promise<Promo[]> {
   } catch (error) {
     console.error("Error fetching promo:", error);
     return [];
-  } finally {
-    clearTimeout(timeout);
   }
 }

@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { usePathname } from "next/navigation";
-import { navLinks } from "./NavLink"; // Pastikan ini file TS juga
+import { navLinks } from "./NavLink";
 
 const Nav = () => {
   const pathname = usePathname();

@@ -1,3 +1,4 @@
+import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import HeroKelurahan from "@/app/components/heroKelurahan";
@@ -137,15 +138,12 @@ export default async function KelurahanPage(props: {
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
   const kelurahanName = formatSlugToTitle(kelurahanSlug);
 
-  let contact = null;
-  try {
-    contact = await getSingleContactCsIsDeleted();
-  } catch (err) {
-    console.error("Error CTA:", err);
-  }
+  let data = null;
 
-  const linkCta = contact?.link_cta || "/contact";
+  data = await getSingleContactCsIsDeleted();
 
+  const contact = data || fallbackContact;
+  const link = contact.link_cta || "/contact";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`;
 
   // ========== JSON-LD =============
@@ -269,7 +267,7 @@ export default async function KelurahanPage(props: {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HeroKelurahan kelurahanName={kelurahanName} linkCta={linkCta} />
+      <HeroKelurahan kelurahanName={kelurahanName} linkCta={link} />
       <JumlahSiswa />
       <ListSiswa />
       <Program />

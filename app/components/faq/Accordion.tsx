@@ -36,15 +36,11 @@ const fallbackFaqs: FAQ[] = [
 export default async function Accordion() {
   let faqData: FAQ[] = [];
 
-  try {
-    const response: GetFAQResponse = await getAllFAQIsDeleted();
+  const response: GetFAQResponse = await getAllFAQIsDeleted();
 
-    // Validasi data untuk memastikan bentuknya benar
-    if (response && Array.isArray(response.data)) {
-      faqData = response.data.filter((item) => !item.isDeleted);
-    }
-  } catch (error) {
-    console.error("Gagal memuat data FAQ:", error);
+  // Validasi data untuk memastikan bentuknya benar
+  if (response && Array.isArray(response.data)) {
+    faqData = response.data.filter((item) => !item.isDeleted);
   }
 
   // Jika fetch gagal atau data kosong → fallback

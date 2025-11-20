@@ -5,7 +5,7 @@ export async function getImageKotaBySlug(slug: string): Promise<Kota | null> {
   try {
     const response = await fetch(`${baseUrlClient}/kotas/image/slug/${slug}`, {
       method: "GET",
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     const result = await response.json();

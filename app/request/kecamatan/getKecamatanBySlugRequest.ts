@@ -5,7 +5,7 @@ export async function getKecamatanBySlug(slug: string) {
   try {
     const response = await fetch(`${baseUrlClient}/kecamatans/slug/${slug}`, {
       method: "GET",
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!response.ok) {

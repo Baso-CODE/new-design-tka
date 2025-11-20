@@ -2,16 +2,16 @@ import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsD
 import { ContactCs } from "@/app/types/contact.type";
 import Image from "next/image";
 import Link from "next/link";
+import { fallbackContact } from "../data/contactCs.dummyData";
 
 export default async function Hero() {
   let data: ContactCs | null = null;
 
-  try {
-    data = await getSingleContactCsIsDeleted();
-  } catch (error) {
-    console.error("Error ambil contact:", error);
-  }
-  const link = data?.link_cta || "/contact";
+  data = await getSingleContactCsIsDeleted();
+
+  // Gunakan data asli kalau ada, kalau tidak pakai fallback
+  const contact = data || fallbackContact;
+  const link = contact.link_cta || "/contact";
 
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center">

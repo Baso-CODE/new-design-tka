@@ -5,13 +5,8 @@ import { Pengajar as PengajarType } from "@/app/types/pengajar.type";
 export default async function Pengajar() {
   let pengajarData: PengajarType[] = [];
 
-  try {
-    const result = await getAllPengajarIsDeleted();
-    pengajarData = Array.isArray(result.data) ? result.data : [];
-  } catch (error) {
-    console.error("Error saat memuat pengajar:", error);
-    // biarkan pengajarData tetap kosong
-  }
+  const result = await getAllPengajarIsDeleted();
+  pengajarData = Array.isArray(result.data) ? result.data : [];
 
   // Setelah try/catch selesai → aman return JSX
   if (pengajarData.length === 0) {

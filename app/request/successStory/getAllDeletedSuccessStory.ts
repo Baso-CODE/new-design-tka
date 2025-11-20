@@ -4,7 +4,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllSuccessStoriesIsDeleted(): Promise<SuccessStory[]> {
   try {
     const res = await fetch(`${baseUrlClient}/successStory/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!res.ok) throw new Error("Failed to fetch success stories");

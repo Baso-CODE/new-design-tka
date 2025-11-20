@@ -8,7 +8,7 @@ export async function getAllAsalSekolahSiswaIsDeleted(): Promise<
     const res = await fetch(
       `${baseUrlClient}/asalSekolahSiswas/isDeleted/all`,
       {
-        cache: "no-store",
+        cache: "force-cache",
       }
     );
 

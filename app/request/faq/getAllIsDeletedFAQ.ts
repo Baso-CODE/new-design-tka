@@ -4,7 +4,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllFAQIsDeleted(): Promise<GetFAQResponse> {
   try {
     const res = await fetch(`${baseUrlClient}/faqs/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!res.ok) {

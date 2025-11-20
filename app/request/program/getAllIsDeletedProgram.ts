@@ -6,7 +6,7 @@ export async function getAllProgramBelajarIsDeleted(): Promise<{
 }> {
   try {
     const res = await fetch(`${baseUrlClient}/programBelajars/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     // Jika gagal (HTTP error)

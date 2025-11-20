@@ -4,7 +4,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllPengajarIsDeleted(): Promise<ApiResponse> {
   try {
     const response = await fetch(`${baseUrlClient}/pengajars/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!response.ok) {

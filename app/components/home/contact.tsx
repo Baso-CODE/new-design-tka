@@ -1,10 +1,13 @@
 import { getAllContactCsIsDeleted } from "@/app/request/contacts/getAllIsDeletedContactCs";
 import Image from "next/image";
 import Link from "next/link";
+import { dummyContactCsData } from "../data/contactCs.dummyData";
 
 export default async function Contact() {
   const contactCsData = await getAllContactCsIsDeleted();
   const isEmpty = contactCsData.length === 0;
+
+  const contactsToShow = isEmpty ? dummyContactCsData : contactCsData;
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">
@@ -34,36 +37,19 @@ export default async function Contact() {
           </p>
 
           <div className="space-y-4 max-w-md mx-auto lg:mx-0">
-            {isEmpty ? (
-              // FALLBACK UI
-              <div className="text-center opacity-80 py-6">
-                <p className="font-desc font-bold mb-2">
-                  Kontak CS sementara tidak tersedia.
-                </p>
-                <Link
-                  href="https://wa.me/6281234567890"
-                  target="_blank"
-                  className="block bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center"
-                >
-                  Hubungi Admin Utama
-                </Link>
-              </div>
-            ) : (
-              // NORMAL DATA
-              contactCsData.map((contact) => (
-                <Link
-                  key={contact.id}
-                  href={contact.link_cta ?? "#"}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block"
-                >
-                  <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
-                    {contact.nomor_hp} ({contact.nama_cs})
-                  </div>
-                </Link>
-              ))
-            )}
+            {contactsToShow.map((contact) => (
+              <Link
+                key={contact.id}
+                href={contact.link_cta ?? "#"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
+                  {contact.nomor_hp} ({contact.nama_cs})
+                </div>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

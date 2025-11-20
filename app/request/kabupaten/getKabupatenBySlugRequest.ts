@@ -5,7 +5,7 @@ export async function getKabupatenBySlug(slug: string) {
   try {
     const response = await fetch(`${baseUrlClient}/kabupatens/slug/${slug}`, {
       method: "GET",
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!response.ok) {

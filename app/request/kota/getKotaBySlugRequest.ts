@@ -17,7 +17,7 @@ export async function getKotaBySlug(
       `${baseUrlClient}/kotas/slug/${encodeURIComponent(slug)}`,
       {
         method: "GET",
-        cache: "no-store",
+        cache: "force-cache",
       }
     );
 

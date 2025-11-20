@@ -4,7 +4,7 @@ import { ContactCs } from "@/app/types/contact.type";
 export async function getAllContactCs(): Promise<ContactCs[] | null> {
   try {
     const response = await fetch(`${baseUrlClient}/contactcs/all/cs`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!response.ok) {

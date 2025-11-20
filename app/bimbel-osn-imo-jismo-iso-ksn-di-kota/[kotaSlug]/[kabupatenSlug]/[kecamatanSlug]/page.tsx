@@ -1,3 +1,4 @@
+import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import HeroKecamatan from "@/app/components/heroKecamatan";
@@ -121,14 +122,12 @@ export default async function KecamatanPage(props: {
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
 
-  let contact = null;
-  try {
-    contact = await getSingleContactCsIsDeleted();
-  } catch (err) {
-    console.error("Error CTA:", err);
-  }
+  let data = null;
 
-  const linkCta = contact?.link_cta || "/contact";
+  data = await getSingleContactCsIsDeleted();
+
+  const contact = data || fallbackContact;
+  const link = contact.link_cta || "/contact";
 
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
@@ -249,7 +248,7 @@ export default async function KecamatanPage(props: {
         }}
       />
 
-      <HeroKecamatan kecamatanName={kecamatanName} linkCta={linkCta} />
+      <HeroKecamatan kecamatanName={kecamatanName} linkCta={link} />
       {/* === SECTION LIST === */}
       <JumlahSiswa />
       <ListSiswa />

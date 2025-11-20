@@ -5,7 +5,7 @@ export async function getSingleContactCsIsDeleted(): Promise<ContactCs | null> {
     const response = await fetch(
       "https://node-osn.edusmart-indonesia.com/api/contactcs/isDeleted/single",
       {
-        cache: "no-store",
+        cache: "force-cache",
       }
     );
 

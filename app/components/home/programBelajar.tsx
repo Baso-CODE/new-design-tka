@@ -59,12 +59,8 @@ const placeholderPrograms: ProgramBelajar[] = [
 export default async function Program() {
   let programData: ProgramBelajar[] = [];
 
-  try {
-    const programResult = await getAllProgramBelajarIsDeleted();
-    programData = programResult.data;
-  } catch (error) {
-    console.error("Error loading program data:", error);
-  }
+  const programResult = await getAllProgramBelajarIsDeleted();
+  programData = programResult.data;
 
   // Jika fetch gagal atau kosong → pakai placeholder
   const finalPrograms =

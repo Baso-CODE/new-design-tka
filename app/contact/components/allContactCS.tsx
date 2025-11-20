@@ -3,10 +3,13 @@ import Link from "next/link";
 import { ContactCs } from "@/app/types/contact.type";
 import { getAllContactCs } from "@/app/request/contacts/getAllContactCs";
 import Image from "next/image";
+import { dummyContactCsData } from "@/app/components/data/contactCs.dummyData";
 
 export default async function AllContactCS() {
   // Fetch data di server
   const dataContact: ContactCs[] = (await getAllContactCs()) ?? [];
+  const finalContacts =
+    dataContact.length > 0 ? dataContact : dummyContactCsData;
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">
@@ -34,7 +37,7 @@ export default async function AllContactCS() {
             Siswa atau konsultasikan kebutuhan Anda, segera hubungi:
           </p>
           <div className="flex flex-col gap-4 max-w-md mx-auto lg:mx-0">
-            {dataContact.map((contact) => (
+            {finalContacts.map((contact) => (
               <Link
                 key={contact.id}
                 href={contact.link_cta ?? "#"}

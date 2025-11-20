@@ -5,7 +5,7 @@ export async function getAllKotaClient(): Promise<Kota[]> {
   try {
     const res = await fetch(`${baseUrlClient}/kotas/all/client`, {
       method: "GET",
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     // Jika fetch gagal atau response bukan 2xx

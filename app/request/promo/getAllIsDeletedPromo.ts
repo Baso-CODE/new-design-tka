@@ -4,7 +4,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllPromoIsDeleted(): Promise<Promo[]> {
   try {
     const res = await fetch(`${baseUrlClient}/promos/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!res.ok) throw new Error("Failed to fetch promo");

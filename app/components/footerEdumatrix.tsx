@@ -2,33 +2,16 @@ import Image from "next/image";
 import Link from "next/link";
 import { getAllIsDeletedContactCsFooter } from "../request/contacts/getAllIsDeletedContactCsFooter";
 import { ContactCs } from "../types/contact.type";
+import { dummyContactCsData } from "./data/contactCs.dummyData";
 
 export default async function FooterEduMatrix() {
   let contactData: ContactCs[] = [];
 
-  try {
-    contactData = await getAllIsDeletedContactCsFooter();
-  } catch (error) {
-    console.error("Footer CS fetch error:", error);
-  }
+  contactData = await getAllIsDeletedContactCsFooter();
 
   // Fallback jika gagal fetch atau data kosong
   const finalContacts =
-    contactData.length > 0
-      ? contactData
-      : [
-          {
-            id: 0,
-            nama_cs: "Admin",
-            nomor_hp: "-",
-            link_cta: "#",
-            isDeleted: false,
-            weight: 0,
-            display_order: 0,
-            createdAt: "",
-            updatedAt: "",
-          },
-        ];
+    contactData.length > 0 ? contactData : dummyContactCsData;
 
   const currentYear = new Date().getFullYear();
 

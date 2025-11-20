@@ -1,3 +1,4 @@
+import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import HeroKabupaten from "@/app/components/heroKabupaten";
@@ -107,14 +108,11 @@ export default async function KabupatenPage({
   const kotaName = formatSlugToTitle(kotaSlug);
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
 
-  let contact = null;
-  try {
-    contact = await getSingleContactCsIsDeleted();
-  } catch (err) {
-    console.error("Error CTA:", err);
-  }
+  let data = null;
+  data = await getSingleContactCsIsDeleted();
 
-  const linkCta = contact?.link_cta || "/contact";
+  const contact = data || fallbackContact;
+  const link = contact.link_cta || "/contact";
 
   const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
@@ -221,7 +219,7 @@ export default async function KabupatenPage({
       />
 
       {/* === HERO === */}
-      <HeroKabupaten KabupatenName={kabupatenName} linkCta={linkCta} />
+      <HeroKabupaten KabupatenName={kabupatenName} linkCta={link} />
 
       {/* === SECTION LIST === */}
       <JumlahSiswa />

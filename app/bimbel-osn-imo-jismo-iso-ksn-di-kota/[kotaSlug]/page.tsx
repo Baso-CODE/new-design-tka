@@ -1,3 +1,4 @@
+import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import GoldenTicketShowcase from "@/app/components/goldenTicket";
@@ -103,18 +104,17 @@ export default async function KotaPage(props: {
   const { kotaSlug } = await props.params;
 
   // Fetch 1 – aman
-  const kotaData = await getImageKotaBySlug(kotaSlug).catch((err) => {
-    console.error("Error fetch kota:", err);
+  const kotaData = await getImageKotaBySlug(kotaSlug).catch(() => {
     return null; // fallback
   });
 
   // Fetch 2 – aman
-  const contact = await getSingleContactCsIsDeleted().catch((err) => {
-    console.error("Error fetch contact:", err);
+  const data = await getSingleContactCsIsDeleted().catch(() => {
     return null;
   });
 
-  const linkCta = contact?.link_cta || "/contact";
+  const contact = data || fallbackContact;
+  const link = contact.link_cta || "/contact";
 
   const fallbackImage =
     "https://bimbeledumatrix.com/images/image-preview-landing-page.webp";
@@ -225,7 +225,7 @@ export default async function KotaPage(props: {
       <>
         <HeroKota
           kotaName={formattedKotaName}
-          linkCta={linkCta}
+          linkCta={link}
           fotoKota={imageUrl}
         />
         <JumlahSiswa />

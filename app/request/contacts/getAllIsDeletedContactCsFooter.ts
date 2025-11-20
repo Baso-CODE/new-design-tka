@@ -5,7 +5,7 @@ import { baseUrlClient } from "@/app/utils/config";
 export async function getAllIsDeletedContactCsFooter(): Promise<ContactCs[]> {
   try {
     const response = await fetch(`${baseUrlClient}/contactcs/isDeleted/all`, {
-      cache: "no-store",
+      cache: "force-cache",
     });
 
     if (!response.ok) {

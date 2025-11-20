@@ -84,7 +84,7 @@ export default function RootLayout({
         <ResponsiveNav />
         {children}
         <BottomNavigationBarOSN navLinksData={navLinks} />
-        {/* <FooterEduMatrix /> */}
+        <FooterEduMatrix />
       </body>
     </html>
   );

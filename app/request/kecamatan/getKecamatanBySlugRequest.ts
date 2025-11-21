@@ -1,26 +1,34 @@
 import { KelurahanResponse } from "@/app/types/kota.types";
 import { baseUrlClient } from "../../utils/config";
+import { getKelurahanDummyByKecamatanSlug } from "@/app/lib/getDummyDataRequest/getKelurahanDummy.reques";
 
-export async function getKecamatanBySlug(slug: string) {
+export async function getKecamatanBySlug(
+  slug: string
+): Promise<KelurahanResponse["data"]> {
   try {
     const response = await fetch(`${baseUrlClient}/kecamatans/slug/${slug}`, {
       method: "GET",
       cache: "force-cache",
     });
 
+    // Jika gagal → fallback ke dummy
     if (!response.ok) {
-      console.error(
-        "Failed fetching kecamatan by slug:",
-        await response.text()
-      );
-      return []; // fallback aman
+      return {
+        kelurahans: getKelurahanDummyByKecamatanSlug(slug),
+      };
     }
 
     const result: KelurahanResponse = await response.json();
 
-    return Array.isArray(result.data) ? result.data : [];
+    return {
+      kelurahans: result.data?.kelurahans ?? [],
+    };
   } catch (error) {
     console.error("Error get kecamatans:", error);
-    return []; // fallback aman
+
+    // Jika network error → fallback dummy
+    return {
+      kelurahans: getKelurahanDummyByKecamatanSlug(slug),
+    };
   }
 }

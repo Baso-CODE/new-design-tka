@@ -5,7 +5,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 1,
     judul_fitur: "Program Terlengkap",
     tagline: "#Sipaling Lengkap",
-    foto_icon: "/IMG1723174218030.png",
+    foto_icon: "/images/program-belajar/program-osn-terlengkap.png",
     nama_admin: "Kak Sari",
     description:
       "Program Terlengkap dari Edumatrix adalah solusi unggul untuk kebutuhan bimbingan dan pendidikan Anda. Kami menawarkan berbagai program yang dirancang untuk memenuhi kebutuhan belajar yang paling komprehensif.",
@@ -17,7 +17,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 2,
     judul_fitur: "Pengajar Berkualitas",
     tagline: "#Kualitas yang bicara",
-    foto_icon: "/IMG1723175494629.png",
+    foto_icon: "/images/program-belajar/pengajar-osn-berkualitas.png",
 
     nama_admin: "Kak Iva",
     description:
@@ -30,7 +30,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 3,
     judul_fitur: "Smart Methode",
     tagline: "#Siapa yang pintar",
-    foto_icon: "/IMG1723175610394.png",
+    foto_icon: "/images/program-belajar/smart-methode-pengajaran-osn.png",
 
     nama_admin: "Kak Iva",
     description:
@@ -43,7 +43,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 4,
     judul_fitur: "Kurikulum Personal",
     tagline: "#Kualitas yang bicara",
-    foto_icon: "/IMG1723175648647.png",
+    foto_icon: "/images/program-belajar/kurikulum-personal-siswa-osn.png",
 
     nama_admin: "Kak Iva",
     description:
@@ -56,7 +56,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 5,
     judul_fitur: "Intensive Quiz",
     tagline: "#Hari ini ada apa aja yah?",
-    foto_icon: "/IMG1723175708515.png",
+    foto_icon: "/images/program-belajar/intensive-quiz-osn.png",
 
     nama_admin: "Kak Iva",
     description:
@@ -69,7 +69,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 6,
     judul_fitur: "Quality Control",
     tagline: "#Qontrol yang maju maju(alok sound)",
-    foto_icon: "/IMG1723175797513.png",
+    foto_icon: "/images/program-belajar/quality-control-bimbel-osn.png",
 
     nama_admin: "Kak Iva",
     description:

@@ -1,5 +1,4 @@
 import { getDataSuccessStoryDummy } from "@/app/lib/getDummyDataRequest/getSuccessStoryDummy.request";
-import { imageUrlClient } from "@/app/utils/imageUrlClient";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
@@ -32,7 +31,7 @@ export default async function SuccessStorySlider() {
             {successStories.map((story) => (
               <div key={story.id} className="inline-block mx-4">
                 <Image
-                  src={`${imageUrlClient}/succesStory-images/${story.image}`}
+                  src={`${story.image}`}
                   alt={story.participantName}
                   width={400}
                   height={600}

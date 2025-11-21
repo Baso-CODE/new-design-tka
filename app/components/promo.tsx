@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { getDataPromoDummy } from "../lib/getDummyDataRequest/getPromoDummy.request";
-import { imageUrlClient } from "../utils/imageUrlClient";
 
 export default async function Promo() {
   const promos = await getDataPromoDummy();
@@ -26,7 +25,7 @@ export default async function Promo() {
                 className="rounded-lg shadow-2xl overflow-hidden"
               >
                 <Image
-                  src={`${imageUrlClient}/promo-images/${item.image}`}
+                  src={`${item.image}`}
                   alt={item.title}
                   width={1031}
                   height={600}

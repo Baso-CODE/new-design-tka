@@ -1,21 +1,20 @@
 "use client";
 
 import Image from "next/image";
-import { Swiper, SwiperSlide } from "swiper/react";
 import {
   Autoplay,
+  EffectCoverflow,
   Navigation,
   Pagination,
-  EffectCoverflow,
 } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/effect-coverflow";
 
 import { Pengajar } from "@/app/types/pengajar.type";
-import { imageUrlClient } from "@/app/utils/imageUrlClient";
 
 export default function PengajarClient({
   pengajarData,
@@ -71,7 +70,7 @@ export default function PengajarClient({
                 <div className="relative mb-6">
                   <Image
                     loading="lazy"
-                    src={`${imageUrlClient}/pengajar-images/${teacher.foto_pengajar}`}
+                    src={`${teacher.foto_pengajar}`}
                     alt={teacher.nama_pengajar}
                     width={144}
                     height={144}

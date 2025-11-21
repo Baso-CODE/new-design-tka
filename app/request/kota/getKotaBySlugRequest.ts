@@ -1,3 +1,5 @@
+import { getKotaDummyBySlug } from "@/app/lib/getDummyDataRequest/getImageKotaDummy.data";
+import { getKabupatenDummyByKotaSlug } from "@/app/lib/getDummyDataRequest/getKabupatenDummy.request";
 import { GetKotaBySlugResponse } from "@/app/types/kota.types";
 import { baseUrlClient } from "@/app/utils/config";
 
@@ -23,24 +25,38 @@ export async function getKotaBySlug(
 
     const json = await res.json();
 
+    // Jika request berhasil → pakai data API
+    if (res.ok) {
+      return {
+        status: res.status,
+        data: {
+          kota: json.data?.kota ?? json.data ?? null,
+          kabupatens: json.data?.kabupatens ?? json.data?.kotakabupatens ?? [],
+        },
+        message: json.message,
+      };
+    }
+
+    // Jika gagal → fallback ke dummy
     return {
       status: res.status,
       data: {
-        kota: json.data?.kota ?? json.data ?? null,
-        kabupatens:
-          json.data?.kabupatens ??
-          json.data?.kotakabupatens ??
-          json.data?.kabupatens ??
-          [],
+        kota: getKotaDummyBySlug(slug),
+        kabupatens: getKabupatenDummyByKotaSlug(slug),
       },
-      message: json.message,
+      message: "Fallback to dummy data",
     };
   } catch (err) {
     console.error("getKotaBySlug error:", err);
+
+    // Fallback jika network error
     return {
       status: 500,
-      data: { kota: null, kabupatens: [] },
-      message: "Network error",
+      data: {
+        kota: getKotaDummyBySlug(slug),
+        kabupatens: getKabupatenDummyByKotaSlug(slug),
+      },
+      message: "Network error - fallback to dummy",
     };
   }
 }

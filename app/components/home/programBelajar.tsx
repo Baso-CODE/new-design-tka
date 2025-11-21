@@ -1,7 +1,4 @@
 import { getDataProgramDummy } from "@/app/lib/getDummyDataRequest/getProgramDummy.request";
-import { getAllProgramBelajarIsDeleted } from "@/app/request/program/getAllIsDeletedProgram";
-import { ProgramBelajar } from "@/app/types/programBelejar.type";
-import { imageUrlClient } from "@/app/utils/imageUrlClient";
 import Image from "next/image";
 import {
   AiOutlineBulb,
@@ -75,7 +72,7 @@ export default async function Program() {
                 <div className="flex justify-center">
                   <div className="flex flex-col md:flex-row gap-3">
                     <Image
-                      src={`${imageUrlClient}/programBelajar-images${item.foto_icon}`}
+                      src={`${item.foto_icon}`}
                       alt={item.judul_fitur}
                       className="w-28 h-28 shrink-0 self-center object-contain"
                       width={112}

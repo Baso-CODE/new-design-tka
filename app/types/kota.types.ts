@@ -32,7 +32,7 @@ export interface Kabupaten {
   id: number;
   nama_kota_kabupaten: string;
   slug: string;
-  kecamatans: Kecamatan[];
+  kecamatans?: Kecamatan[];
   kota_id?: number;
   createdAt?: string;
   updatedAt?: string;

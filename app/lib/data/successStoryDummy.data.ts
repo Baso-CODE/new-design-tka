@@ -7,7 +7,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Kompetisi Matematika, Inggris, Sains Tinkat Nasional",
     level: "SD",
     city: "Jember",
-    image: "/IMG1730257543080.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-philip-efendi-juara-2-penyisihan-KMSI-jember.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:05:43.000Z",
     updated_at: "2024-10-30T03:05:43.000Z",
@@ -18,7 +19,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "ESMO Jember",
     level: "SD",
     city: "Jember",
-    image: "/IMG1730257652135.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-philip-efendi-juara-3-penyisihan-ESMO-jember.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:07:32.000Z",
     updated_at: "2024-10-30T03:07:32.000Z",
@@ -29,7 +31,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN IPA SMP Tingkat Kabupaten",
     level: "SMP",
     city: "Semarang",
-    image: "/IMG1730257706501.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-fauzan-cellio-habibie-juara-3-OSN-IPA-SMA-tingkat-kabupaten.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:08:26.000Z",
     updated_at: "2024-10-30T03:08:26.000Z",
@@ -40,7 +43,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "KoSSMI IPA",
     level: "-",
     city: "-",
-    image: "/IMG1730257747902.png",
+    image:
+      "/images/success-story-siswa-osn/siswa-hanan-ahmad-wafir-lolos-medali-emas-KoSSMI-IPA.png",
     isDeleted: false,
     created_at: "2024-10-30T03:09:07.000Z",
     updated_at: "2024-10-30T03:09:07.000Z",
@@ -51,7 +55,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Tingkat Nasional SMP",
     level: "-",
     city: "-",
-    image: "/IMG1730257794731.jpeg",
+    image:
+      "/images/success-story-siswa-osn/nadal-rhamdahni-mario-medali-perunggu-OSN-tingkat-nasional-smp.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:09:54.000Z",
     updated_at: "2024-10-30T03:09:54.000Z",
@@ -62,7 +67,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Olimpiade Detik MSC UNEJ",
     level: "SD",
     city: "-",
-    image: "/IMG1730257834074.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-philip-efendi-10-besar-olimpiade-detik-MSC-UNEJ.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:10:34.000Z",
     updated_at: "2024-10-30T03:10:34.000Z",
@@ -73,7 +79,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Testimoni Belajar",
     level: "sd",
     city: "-",
-    image: "/IMG1730257862681.jpeg",
+    image:
+      "/images/success-story-siswa-osn/testimoni-siswa-belajar-osn-sd-tingkat-kabupaten-kota-bidang-matematika.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:11:02.000Z",
     updated_at: "2024-10-30T03:11:02.000Z",
@@ -84,7 +91,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Testimoni OSN SMA",
     level: "SMA",
     city: "-",
-    image: "/IMG1730257884558.jpeg",
+    image:
+      "/images/success-story-siswa-osn/testimoni-belajar-siswa-osn-sma-tingkat-kota-bidang-informatika.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:11:24.000Z",
     updated_at: "2024-10-30T03:11:24.000Z",
@@ -95,7 +103,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Kompetisi Sains Nalaria Realistik(KSNR)",
     level: "SD",
     city: "-",
-    image: "/IMG1730258142637.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-cleverly-basado-gultom-medali-emas-KSNR-tingkat-sd.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:15:42.000Z",
     updated_at: "2024-10-30T03:15:42.000Z",
@@ -106,7 +115,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "BESC UNAIR 2024",
     level: "SMP",
     city: "-",
-    image: "/IMG1730258186182.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-osn-arifatul-khafidzah-juara-1-BESC-UNAIR-jenjang-SMP.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:16:26.000Z",
     updated_at: "2024-10-30T03:16:26.000Z",
@@ -117,7 +127,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Olimpiade Matematika Tingkat Kota",
     level: "-",
     city: "Magelang",
-    image: "/IMG1730258230970.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-rafli-bintang-ramadhan-juara-3-OSN-matematika-tingkat-kota-magelang.jpeg",
     isDeleted: false,
     created_at: "2024-10-30T03:17:10.000Z",
     updated_at: "2024-10-30T03:17:10.000Z",
@@ -128,7 +139,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OMNI SAINS",
     level: "Matematika SD",
     city: "-",
-    image: "/IMG1751344182070.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-alifah-shabira-program-osi-grand-final-medali-perak.jpeg",
     isDeleted: false,
     created_at: "2025-07-01T04:29:42.000Z",
     updated_at: "2025-07-01T04:29:42.000Z",
@@ -139,7 +151,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "Olimpiade Fisika Tingkat Kabupaten",
     level: "OSN SMA",
     city: "-",
-    image: "/IMG1751344229211.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-osn-m-rugby-arfandy-juara-1-osn-sma.jpeg",
     isDeleted: false,
     created_at: "2025-07-01T04:30:29.000Z",
     updated_at: "2025-07-01T04:30:29.000Z",
@@ -150,7 +163,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika DKI Jakarta",
     level: "SD",
     city: "Jakarta",
-    image: "/IMG1752569796418.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-joe-tristan-osn-sd-osn-matematika-dki-jakarta-.jpeg",
     isDeleted: false,
     created_at: "2025-07-15T08:56:36.000Z",
     updated_at: "2025-07-15T08:56:36.000Z",
@@ -161,7 +175,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika Provinsi",
     level: "SMP",
     city: "Jawa Barat",
-    image: "/IMG1752569841876.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-savero-zafir-mirza-osn-smp-matematika-jawa-barat.jpeg",
     isDeleted: false,
     created_at: "2025-07-15T08:57:21.000Z",
     updated_at: "2025-07-15T08:57:21.000Z",
@@ -172,7 +187,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika Provinsi",
     level: "OSN SD",
     city: "Nusa Tenggara Barat",
-    image: "/IMG1752569877532.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-dzakiya-al-kamila-osn-sd-matematika-provinsi-nusa-tenggara-barat.jpeg",
     isDeleted: false,
     created_at: "2025-07-15T08:57:57.000Z",
     updated_at: "2025-07-15T08:57:57.000Z",
@@ -183,7 +199,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika DKI Jakarta",
     level: "SD",
     city: "DKI Jakarta",
-    image: "/IMG1752569908793.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-akhtar-toshiaki-takana-osn-sd-matematika-dki-jakarta.jpeg",
     isDeleted: false,
     created_at: "2025-07-15T08:58:28.000Z",
     updated_at: "2025-07-15T08:58:28.000Z",
@@ -194,7 +211,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN IPA Provinsi Jawa Tengah",
     level: "SMP",
     city: "-",
-    image: "/IMG1752569945937.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-fauzan-cellio-juara-1-osn-ipa-jawa-tengah-smp.jpeg",
     isDeleted: false,
     created_at: "2025-07-15T08:59:05.000Z",
     updated_at: "2025-07-15T08:59:05.000Z",
@@ -205,7 +223,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN SMA Matematika Provinsi",
     level: "SMA",
     city: "DI Yogyakarta",
-    image: "/IMG1752722110437.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-rifki-rusyaidi-osn-sma-matematika-provinsi-yogyakarta.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:15:10.000Z",
     updated_at: "2025-07-17T03:15:10.000Z",
@@ -216,7 +235,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika Provinsi",
     level: "SMA",
     city: "DI",
-    image: "/IMG1752722151236.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-hoshe-satria-yuda-osn-sma-matematika-provinsi-yogyakarta.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:15:51.000Z",
     updated_at: "2025-07-17T03:15:51.000Z",
@@ -227,7 +247,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN SMA Kota Tokyo",
     level: "SMA",
     city: "Jepang",
-    image: "/IMG1752722183856.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-hana-aisyah-rustam-osn-sma-kota-tokyo-jepang.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:16:23.000Z",
     updated_at: "2025-07-17T03:16:23.000Z",
@@ -238,7 +259,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Kimia Tingkat Kota",
     level: "SMA",
     city: "Kota Yogyakarta",
-    image: "/IMG1752722218488.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-elvina-shareen-budiyanto-osn-sma-kimia-tingkat-kota-yogyakarta.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:16:58.000Z",
     updated_at: "2025-07-17T03:16:58.000Z",
@@ -249,7 +271,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN SMA",
     level: "Provinsi",
     city: "Jawa Barat",
-    image: "/IMG1752722263528.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-fajar-adi-putra-muliadhi-osn-sma-fisika-tingkat-provinsi-jawa-barat.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:17:43.000Z",
     updated_at: "2025-07-17T03:17:43.000Z",
@@ -260,7 +283,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Astronomi Tingkat Provinsi",
     level: "Provinsi",
     city: "DKI Jakarta",
-    image: "/IMG1752722298532.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-m-hanief-ardhi-achir-osn-sma-astronomi-tingkast-provinsi-dki-jakarta.jpeg",
     isDeleted: false,
     created_at: "2025-07-17T03:18:18.000Z",
     updated_at: "2025-07-17T03:18:18.000Z",
@@ -271,7 +295,8 @@ export const successStoryDummy: SuccessStory[] = [
     eventName: "OSN Matematika Provinsi",
     level: "SMA",
     city: "Jawa Tengah",
-    image: "/IMG1753148235300.jpeg",
+    image:
+      "/images/success-story-siswa-osn/siswa-muflhia-syifa-osn-sma-matematika-provinsi-jawa-tengah.jpeg",
     isDeleted: false,
     created_at: "2025-07-22T01:37:15.000Z",
     updated_at: "2025-07-22T01:37:15.000Z",

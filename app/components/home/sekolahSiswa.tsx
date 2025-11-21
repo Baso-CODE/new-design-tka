@@ -1,10 +1,9 @@
-import { getAllAsalSekolahSiswaIsDeleted } from "@/app/request/asalSekolahSiswa/getAllIsDeletedAsalSekolahSiswa";
-import { imageUrlClient } from "@/app/utils/imageUrlClient";
+import { getDataAsalSekolahDummy } from "@/app/lib/getDummyDataRequest/getAsalSekolahSiswaDummy.request";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
 
 export default async function SekolahSiswa() {
-  const images = await getAllAsalSekolahSiswaIsDeleted();
+  const images = await getDataAsalSekolahDummy();
 
   return (
     <div className="bg-[#04397D] items-center flex justify-center relative">
@@ -19,7 +18,7 @@ export default async function SekolahSiswa() {
             {images.map((image) => (
               <Image
                 key={image.id}
-                src={`${imageUrlClient}/asalSekolahSiswa-images/${image.foto_sekolah}`}
+                src={`${image.foto_sekolah}`}
                 alt={image.nama_sekolah}
                 width={400}
                 height={600}

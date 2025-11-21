@@ -2,7 +2,9 @@ import { getKecamatanDummyByKabupatenSlug } from "@/app/lib/getDummyDataRequest/
 import { KecamatanResponse } from "@/app/types/kota.types";
 import { baseUrlClient } from "@/app/utils/config";
 
-export async function getKabupatenBySlug(slug: string) {
+export async function getKabupatenBySlug(
+  slug: string
+): Promise<KecamatanResponse["data"]> {
   try {
     const response = await fetch(`${baseUrlClient}/kabupatens/slug/${slug}`, {
       method: "GET",
@@ -11,8 +13,7 @@ export async function getKabupatenBySlug(slug: string) {
 
     if (!response.ok) {
       return {
-        message: "Fallback dummy data",
-        data: { kecamatans: getKecamatanDummyByKabupatenSlug(slug) },
+        kecamatans: getKecamatanDummyByKabupatenSlug(slug),
       };
     }
 
@@ -20,8 +21,7 @@ export async function getKabupatenBySlug(slug: string) {
     return result.data;
   } catch (error) {
     return {
-      message: "Network error - fallback dummy",
-      data: { kecamatans: getKecamatanDummyByKabupatenSlug(slug) },
+      kecamatans: getKecamatanDummyByKabupatenSlug(slug),
     };
   }
 }

@@ -18,6 +18,6 @@ export async function getSingleContactCsIsDeleted(): Promise<ContactCs | null> {
     return json.data as ContactCs;
   } catch (error) {
     console.error("Error fetching single contact:", error);
-    return null; // JANGLAN throw! wajib return aman
+    return null;
   }
 }

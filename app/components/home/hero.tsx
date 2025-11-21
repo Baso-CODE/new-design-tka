@@ -1,4 +1,4 @@
-import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
+import { getDataContactCsDummy } from "@/app/lib/getDummyDataRequest/getContactCsDummy.request";
 import { ContactCs } from "@/app/types/contact.type";
 import Image from "next/image";
 import Link from "next/link";
@@ -7,9 +7,8 @@ import { fallbackContact } from "../data/contactCs.dummyData";
 export default async function Hero() {
   let data: ContactCs | null = null;
 
-  data = await getSingleContactCsIsDeleted();
+  data = await getDataContactCsDummy();
 
-  // Gunakan data asli kalau ada, kalau tidak pakai fallback
   const contact = data || fallbackContact;
   const link = contact.link_cta || "/contact";
 

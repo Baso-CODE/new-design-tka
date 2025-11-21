@@ -1,51 +1,8 @@
-import { getAllFAQIsDeleted } from "@/app/request/faq/getAllIsDeletedFAQ";
+import { getDataFaqDummy } from "@/app/lib/getDummyDataRequest/getFaqDummy.request";
 import { AccordionFAQ } from "./AccordionFAQ";
-import { FAQ, GetFAQResponse } from "@/app/types/faq.types";
-
-// Fallback jika fetch error / data kosong
-const fallbackFaqs: FAQ[] = [
-  {
-    id: 1,
-    pertanyaan: "Apa itu program Edumatrix Indonesia?",
-    jawaban:
-      "Edumatrix Indonesia adalah layanan bimbingan belajar khusus OSN dan persiapan akademik lainnya.",
-    isDeleted: false,
-    createdAt: "",
-    updatedAt: "",
-  },
-  {
-    id: 2,
-    pertanyaan: "Apakah materi pembelajaran bisa diakses kapan saja?",
-    jawaban:
-      "Ya, siswa dapat mengakses materi kapan saja melalui platform yang telah disediakan.",
-    isDeleted: false,
-    createdAt: "",
-    updatedAt: "",
-  },
-  {
-    id: 3,
-    pertanyaan: "Bagaimana cara mendaftar program?",
-    jawaban:
-      "Pendaftaran dapat dilakukan melalui website resmi Edumatrix atau menghubungi admin.",
-    isDeleted: false,
-    createdAt: "",
-    updatedAt: "",
-  },
-];
 
 export default async function Accordion() {
-  let faqData: FAQ[] = [];
-
-  const response: GetFAQResponse = await getAllFAQIsDeleted();
-
-  // Validasi data untuk memastikan bentuknya benar
-  if (response && Array.isArray(response.data)) {
-    faqData = response.data.filter((item) => !item.isDeleted);
-  }
-
-  // Jika fetch gagal atau data kosong → fallback
-  const finalFaqs = faqData.length > 0 ? faqData : fallbackFaqs;
-
+  const dataFaq = await getDataFaqDummy();
   return (
     <>
       <div className="w-full bg-white px-2 pt-8">
@@ -56,7 +13,7 @@ export default async function Accordion() {
             </h2>
 
             <div className="bg-gray-50 rounded-lg shadow-lg w-full">
-              {finalFaqs.map((item) => (
+              {dataFaq.map((item) => (
                 <AccordionFAQ
                   key={item.id}
                   title={item.pertanyaan}
@@ -64,13 +21,6 @@ export default async function Accordion() {
                 />
               ))}
             </div>
-
-            {/* Optional: pesan bahwa fallback digunakan */}
-            {faqData.length === 0 && (
-              <p className="text-center text-gray-500 mt-4 text-sm">
-                Saat ini menampilkan FAQ standar karena data tidak dapat dimuat.
-              </p>
-            )}
           </div>
         </div>
       </div>

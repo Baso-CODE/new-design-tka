@@ -1,9 +1,9 @@
-import { getAllKotaClient } from "@/app/request/kota/getAllKotaClientRequest";
+import { getDataKotaDummy } from "@/app/lib/getDummyDataRequest/getKotaDummy.request";
 import Image from "next/image";
 import Link from "next/link";
 
 export default async function ListKota() {
-  const kotaList = await getAllKotaClient();
+  const kotaList = await getDataKotaDummy();
 
   return (
     <section className="bg-linear-to-br from-[#0a3977] to-[#104a8b] py-16 sm:py-20 lg:py-24">

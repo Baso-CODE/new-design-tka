@@ -1,9 +1,9 @@
 import Image from "next/image";
-import { getAllPromoIsDeleted } from "../request/promo/getAllIsDeletedPromo";
+import { getDataPromoDummy } from "../lib/getDummyDataRequest/getPromoDummy.request";
 import { imageUrlClient } from "../utils/imageUrlClient";
 
 export default async function Promo() {
-  const promos = await getAllPromoIsDeleted();
+  const promos = await getDataPromoDummy();
 
   const isEmpty = promos.length === 0;
 

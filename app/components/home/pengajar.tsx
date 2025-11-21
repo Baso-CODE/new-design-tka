@@ -1,11 +1,11 @@
-import { getAllPengajarIsDeleted } from "@/app/request/pengajar/getAllIsDeletedPengajar";
-import PengajarClient from "./pengajarClient";
+import { getPengajarDummy } from "@/app/lib/getDummyDataRequest/getPengajarDummy.request";
 import { Pengajar as PengajarType } from "@/app/types/pengajar.type";
+import PengajarClient from "./pengajarClient";
 
 export default async function Pengajar() {
   let pengajarData: PengajarType[] = [];
 
-  const result = await getAllPengajarIsDeleted();
+  const result = await getPengajarDummy();
   pengajarData = Array.isArray(result.data) ? result.data : [];
 
   // Setelah try/catch selesai → aman return JSX

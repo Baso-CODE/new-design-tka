@@ -1,3 +1,4 @@
+import { getDataProgramDummy } from "@/app/lib/getDummyDataRequest/getProgramDummy.request";
 import { getAllProgramBelajarIsDeleted } from "@/app/request/program/getAllIsDeletedProgram";
 import { ProgramBelajar } from "@/app/types/programBelejar.type";
 import { imageUrlClient } from "@/app/utils/imageUrlClient";
@@ -31,40 +32,17 @@ const animations = [
 
 const colors = ["bg-[#04397D]", "bg-orange-500"];
 
-// Fallback placeholder jika data gagal load
-const placeholderPrograms: ProgramBelajar[] = [
-  {
-    id: 1,
-    judul_fitur: "Program Belajar",
-    description:
-      "Informasi program belajar yang tersedia di Edumatrix Indonesia.",
-    foto_icon: "/placeholder-icon.png",
-  },
-  {
-    id: 2,
-    judul_fitur: "Materi Lengkap",
-    description:
-      "Akses materi lengkap sesuai kebutuhan siswa untuk persiapan OSN.",
-    foto_icon: "/placeholder-icon.png",
-  },
-  {
-    id: 3,
-    judul_fitur: "Pembimbing Berpengalaman",
-    description:
-      "Didampingi oleh mentor profesional dan berpengalaman dalam bidangnya.",
-    foto_icon: "/placeholder-icon.png",
-  },
-];
-
 export default async function Program() {
-  let programData: ProgramBelajar[] = [];
+  // let programData: ProgramBelajar[] = [];
 
-  const programResult = await getAllProgramBelajarIsDeleted();
-  programData = programResult.data;
+  // const programResult = await getAllProgramBelajarIsDeleted();
+  // programData = programResult.data;
 
-  // Jika fetch gagal atau kosong → pakai placeholder
-  const finalPrograms =
-    programData.length > 0 ? programData : placeholderPrograms;
+  // // Jika fetch gagal atau kosong → pakai placeholder
+  // const finalPrograms =
+  //   programData.length > 0 ? programData : placeholderPrograms;
+
+  const programData = await getDataProgramDummy();
 
   return (
     <section className="bg-white flex justify-center my-28 items-center">
@@ -77,7 +55,7 @@ export default async function Program() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-3">
-            {finalPrograms.map((item, index) => (
+            {programData.map((item, index) => (
               <div
                 key={item.id}
                 className={`${colors[index % 2]} rounded-3xl p-8 text-white`}
@@ -97,11 +75,7 @@ export default async function Program() {
                 <div className="flex justify-center">
                   <div className="flex flex-col md:flex-row gap-3">
                     <Image
-                      src={
-                        item.foto_icon.startsWith("/")
-                          ? item.foto_icon
-                          : `${imageUrlClient}/programBelajar-images${item.foto_icon}`
-                      }
+                      src={`${imageUrlClient}/programBelajar-images${item.foto_icon}`}
                       alt={item.judul_fitur}
                       className="w-28 h-28 shrink-0 self-center object-contain"
                       width={112}

@@ -1,10 +1,10 @@
+import { getDataSuccessStoryDummy } from "@/app/lib/getDummyDataRequest/getSuccessStoryDummy.request";
+import { imageUrlClient } from "@/app/utils/imageUrlClient";
 import Image from "next/image";
 import Marquee from "react-fast-marquee";
-import { getAllSuccessStoriesIsDeleted } from "@/app/request/successStory/getAllDeletedSuccessStory";
-import { imageUrlClient } from "@/app/utils/imageUrlClient";
 
 export default async function SuccessStorySlider() {
-  const successStories = await getAllSuccessStoriesIsDeleted();
+  const successStories = await getDataSuccessStoryDummy();
 
   if (successStories.length === 0) return null;
 

@@ -6,4 +6,6 @@ export interface SuccessStory {
   city: string;
   image: string | null;
   isDeleted: boolean;
+  created_at: string;
+  updated_at: string;
 }

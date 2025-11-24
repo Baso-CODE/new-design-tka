@@ -222,7 +222,7 @@ export default async function KotaPage(props: {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <>
+      <div className="overflow-hidden">
         <HeroKota
           kotaName={formattedKotaName}
           linkCta={link}
@@ -251,7 +251,7 @@ export default async function KotaPage(props: {
         <Promo />
         <Contact />
         <MediaMassa />
-      </>
+      </div>
     </>
   );
 }

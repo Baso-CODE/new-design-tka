@@ -68,7 +68,7 @@ export const metadata: Metadata = {
 };
 export default function Home() {
   return (
-    <>
+    <div className="overflow-hidden">
       <Hero />
       <JumlahSiswa />
       <ListSiswa />
@@ -92,6 +92,6 @@ export default function Home() {
       <Promo />
       <Contact />
       <MediaMassa />
-    </>
+    </div>
   );
 }

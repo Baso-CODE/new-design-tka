@@ -44,7 +44,7 @@ export default async function ListKelurahan({
         <div className=" md:px-0 px-4 w-full">
           <div className="p-4 w-full bg-[#25538b] bg-opacity-10 backdrop-blur-md rounded-2xl shadow-xl border border-white border-opacity-20">
             <h3 className="text-2xl sm:text-3xl font-bold text-white mb-6 text-center">
-              Pilih Kecamatan
+              Pilih Kelurahan
             </h3>
 
             <ul className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 lg:gap-5">
@@ -53,12 +53,30 @@ export default async function ListKelurahan({
                   <Link
                     href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kel.slug}`}
                     className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
+                      rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
+                      font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
+                      transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 
+                      focus:ring-white focus:ring-opacity-75"
+                  >
+                    <span className="relative inline-flex overflow-hidden">
+                      <div className="absolute origin-bottom transition duration-500 transform-[translateX(-150%)_skewX(33deg)] group-hover:transform-[translateX(0)_skewX(0deg)]">
+                        {kel.nama_kelurahan}
+                      </div>
+                      <div className="transition duration-500 transform-[translateX(0%)_skewX(0deg)] group-hover:transform-[translateX(150%)_skewX(33deg)]">
+                        {kel.nama_kelurahan}
+                      </div>
+                    </span>
+                  </Link>
+
+                  {/* <Link
+                    href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kel.slug}`}
+                    className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
                              rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                              font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
                              transition-all duration-300 ease-in-out"
                   >
                     {kel.nama_kelurahan}
-                  </Link>
+                  </Link> */}
                 </li>
               ))}
             </ul>

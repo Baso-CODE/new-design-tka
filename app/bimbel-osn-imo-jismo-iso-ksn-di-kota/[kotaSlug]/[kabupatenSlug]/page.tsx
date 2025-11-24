@@ -217,43 +217,44 @@ export default async function KabupatenPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <div className="overflow-hidden">
+        {/* === HERO === */}
+        <HeroKabupaten KabupatenName={kabupatenName} linkCta={link} />
 
-      {/* === HERO === */}
-      <HeroKabupaten KabupatenName={kabupatenName} linkCta={link} />
+        {/* === SECTION LIST === */}
+        <JumlahSiswa />
+        <ListSiswa />
+        <Program />
+        <Features />
+        <YouTubeShortEmbed />
+        <PaketBelajarOSN />
 
-      {/* === SECTION LIST === */}
-      <JumlahSiswa />
-      <ListSiswa />
-      <Program />
-      <Features />
-      <YouTubeShortEmbed />
-      <PaketBelajarOSN />
+        {/* SLIDERS */}
+        <SliderMobile />
+        <SliderDescktop />
 
-      {/* SLIDERS */}
-      <SliderMobile />
-      <SliderDescktop />
+        <TingkatPendidikan />
+        <Pilihan />
+        <MengapaHarusEdumatrix />
+        <Pengajar />
 
-      <TingkatPendidikan />
-      <Pilihan />
-      <MengapaHarusEdumatrix />
-      <Pengajar />
+        <Gallery />
+        <SuccessStorySlider />
+        <AsalSekolahSiswaEdumatrix />
+        <SekolahSiswa />
 
-      <Gallery />
-      <SuccessStorySlider />
-      <AsalSekolahSiswaEdumatrix />
-      <SekolahSiswa />
+        <ListKecamatan
+          kotaSlug={kotaSlug}
+          kabupatenName={kabupatenName}
+          kabupatenSlug={kabupatenSlug}
+        />
 
-      <ListKecamatan
-        kotaSlug={kotaSlug}
-        kabupatenName={kabupatenName}
-        kabupatenSlug={kabupatenSlug}
-      />
-
-      <ImpactStatisticsOSN />
-      <Accordion />
-      <Promo />
-      <Contact />
-      <MediaMassa />
+        <ImpactStatisticsOSN />
+        <Accordion />
+        <Promo />
+        <Contact />
+        <MediaMassa />
+      </div>
     </>
   );
 }

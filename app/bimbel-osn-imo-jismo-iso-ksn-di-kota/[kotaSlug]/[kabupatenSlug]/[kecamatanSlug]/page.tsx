@@ -247,41 +247,42 @@ export default async function KecamatanPage(props: {
           __html: JSON.stringify(jsonLd),
         }}
       />
+      <div className=" overflow-hidden">
+        <HeroKecamatan kecamatanName={kecamatanName} linkCta={link} />
+        {/* === SECTION LIST === */}
+        <JumlahSiswa />
+        <ListSiswa />
+        <Program />
+        <Features />
+        <YouTubeShortEmbed />
+        <PaketBelajarOSN />
 
-      <HeroKecamatan kecamatanName={kecamatanName} linkCta={link} />
-      {/* === SECTION LIST === */}
-      <JumlahSiswa />
-      <ListSiswa />
-      <Program />
-      <Features />
-      <YouTubeShortEmbed />
-      <PaketBelajarOSN />
+        {/* SLIDERS */}
+        <SliderMobile />
+        <SliderDescktop />
 
-      {/* SLIDERS */}
-      <SliderMobile />
-      <SliderDescktop />
+        <TingkatPendidikan />
+        <Pilihan />
+        <MengapaHarusEdumatrix />
+        <Pengajar />
 
-      <TingkatPendidikan />
-      <Pilihan />
-      <MengapaHarusEdumatrix />
-      <Pengajar />
+        <Gallery />
+        <SuccessStorySlider />
+        <AsalSekolahSiswaEdumatrix />
+        <SekolahSiswa />
+        <ListKelurahan
+          kecamatanName={kecamatanName}
+          kecamatanSlug={kecamatanSlug}
+          kabupatenSlug={kabupatenSlug}
+          kotaSlug={kotaSlug}
+        />
 
-      <Gallery />
-      <SuccessStorySlider />
-      <AsalSekolahSiswaEdumatrix />
-      <SekolahSiswa />
-      <ListKelurahan
-        kecamatanName={kecamatanName}
-        kecamatanSlug={kecamatanSlug}
-        kabupatenSlug={kabupatenSlug}
-        kotaSlug={kotaSlug}
-      />
-
-      <ImpactStatisticsOSN />
-      <Accordion />
-      <Promo />
-      <Contact />
-      <MediaMassa />
+        <ImpactStatisticsOSN />
+        <Accordion />
+        <Promo />
+        <Contact />
+        <MediaMassa />
+      </div>
     </>
   );
 }

@@ -267,33 +267,35 @@ export default async function KelurahanPage(props: {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <HeroKelurahan kelurahanName={kelurahanName} linkCta={link} />
-      <JumlahSiswa />
-      <ListSiswa />
-      <Program />
-      <Features />
-      <YouTubeShortEmbed />
-      <PaketBelajarOSN />
+      <div className=" overflow-hidden">
+        <HeroKelurahan kelurahanName={kelurahanName} linkCta={link} />
+        <JumlahSiswa />
+        <ListSiswa />
+        <Program />
+        <Features />
+        <YouTubeShortEmbed />
+        <PaketBelajarOSN />
 
-      {/* SLIDERS */}
-      <SliderMobile />
-      <SliderDescktop />
+        {/* SLIDERS */}
+        <SliderMobile />
+        <SliderDescktop />
 
-      <TingkatPendidikan />
-      <Pilihan />
-      <MengapaHarusEdumatrix />
-      <Pengajar />
+        <TingkatPendidikan />
+        <Pilihan />
+        <MengapaHarusEdumatrix />
+        <Pengajar />
 
-      <Gallery />
-      <SuccessStorySlider />
-      <AsalSekolahSiswaEdumatrix />
-      <SekolahSiswa />
+        <Gallery />
+        <SuccessStorySlider />
+        <AsalSekolahSiswaEdumatrix />
+        <SekolahSiswa />
 
-      <ImpactStatisticsOSN />
-      <Accordion />
-      <Promo />
-      <Contact />
-      <MediaMassa />
+        <ImpactStatisticsOSN />
+        <Accordion />
+        <Promo />
+        <Contact />
+        <MediaMassa />
+      </div>
     </>
   );
 }

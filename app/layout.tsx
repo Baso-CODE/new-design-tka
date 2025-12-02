@@ -14,6 +14,7 @@ import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
 import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
+import Script from "next/script";
 
 // Font Google
 const geistSans = Geist({
@@ -81,6 +82,19 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}
       >
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-70MQQHELFM"
+          strategy="afterInteractive"
+        />
+
+        <Script id="gtag-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-70MQQHELFM');
+          `}
+        </Script>
         <ResponsiveNav />
         {children}
         <BottomNavigationBarOSN navLinksData={navLinks} />

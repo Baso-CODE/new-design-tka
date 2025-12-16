@@ -68,7 +68,7 @@ export const dynamic = "force-dynamic";
 export const metadata: Metadata = {
   title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
   description:
-    "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
+    "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
   verification: {
     google: "Cv9Bh_f2VODnu2TvfhGjaLfiwcD2r3pX9HbdbUanEBo",
   },
@@ -76,14 +76,14 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://edukids.co.id",
+    url: "https://bimbeledumatrix.com",
     siteName: "Bimbel Alfa Privat",
     title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
     description:
-      "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
+      "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
     images: [
       {
-        url: "https://edukids.co.id/images/image-cta-footer.webp",
+        url: "https://bimbeledumatrix.com/images/images-cta.webp",
         width: 1200,
         height: 630,
         alt: "Les Privat Alfa Privat",
@@ -97,12 +97,12 @@ export const metadata: Metadata = {
     site: "@alfaprivat",
     title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
     description:
-      "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
-    images: ["https://edukids.co.id/images/image-cta-footer.webp"],
+      "Les Privat Olimpiade OSN untuk SD–SMA. Dibimbing guru berpengalaman & peraih prestasi nasional. Belajar terarah, progres terpantau. Konsultasi gratis sekarang.",
+    images: ["https://bimbeledumatrix.com/images/images-cta.webp"],
   },
 
   alternates: {
-    canonical: "https://edukids.co.id",
+    canonical: "https://bimbeledumatrix.com",
   },
 };
 

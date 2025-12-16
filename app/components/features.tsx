@@ -10,6 +10,7 @@ const Features = () => {
             src={"/images/pengalaman-belajar-premium.webp"}
             alt="Ilustrasi fitur bimbingan belajar premium, menawarkan kursus online dan offline dengan pendekatan pembelajaran interaktif dan dukungan pengajaran profesional."
             width="835"
+            loading="lazy"
             height="710"
           />
         </div>

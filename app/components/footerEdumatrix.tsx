@@ -9,7 +9,6 @@ export default async function FooterEduMatrix() {
 
   contactData = await getAllIsDeletedContactCsFooter();
 
-  // Fallback jika gagal fetch atau data kosong
   const finalContacts =
     contactData.length > 0 ? contactData : dummyContactCsData;
 
@@ -90,6 +89,7 @@ export default async function FooterEduMatrix() {
                 width={600}
                 height={180}
                 className="w-full h-full rounded-lg cursor-pointer object-cover"
+                loading="lazy"
               />
             </Link>
           </div>

@@ -101,6 +101,7 @@ export default function HeroKota({
               width={700}
               height={450}
               className="w-full h-auto rounded-md"
+              loading="lazy"
             />
           </div>
         </div>

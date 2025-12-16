@@ -15,6 +15,7 @@ import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
 import Script from "next/script";
+import FloatingCTA from "./components/floatingCTA";
 
 // Font Google
 const geistSans = Geist({
@@ -65,10 +66,43 @@ const superPencil = localFont({
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Edumatrix Indonesia",
-  description: "Pusat bimbingan belajar dan les privat berkualitas.",
+  title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+  description:
+    "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
   verification: {
     google: "Cv9Bh_f2VODnu2TvfhGjaLfiwcD2r3pX9HbdbUanEBo",
+  },
+
+  openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: "https://edukids.co.id",
+    siteName: "Bimbel Alfa Privat",
+    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+    description:
+      "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
+    images: [
+      {
+        url: "https://edukids.co.id/images/image-cta-footer.webp",
+        width: 1200,
+        height: 630,
+        alt: "Les Privat Alfa Privat",
+      },
+    ],
+  },
+
+  // TWITTER META
+  twitter: {
+    card: "summary_large_image",
+    site: "@alfaprivat",
+    title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
+    description:
+      "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...",
+    images: ["https://edukids.co.id/images/image-cta-footer.webp"],
+  },
+
+  alternates: {
+    canonical: "https://edukids.co.id",
   },
 };
 
@@ -97,6 +131,7 @@ export default function RootLayout({
         </Script>
         <ResponsiveNav />
         {children}
+        <FloatingCTA />
         <BottomNavigationBarOSN navLinksData={navLinks} />
         <FooterEduMatrix />
       </body>

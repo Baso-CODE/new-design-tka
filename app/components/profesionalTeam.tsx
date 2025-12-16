@@ -18,6 +18,7 @@ const ProfessionalTeam = async () => {
                 alt="Tim profesional di EDUMATRIX Indonesia yang terdiri dari mentor berpengalaman di bidangnya, siap mendukung perjalanan pendidikan dan kesuksesan setiap siswa dengan pendekatan terbaik."
                 className="w-full h-auto rounded-lg"
                 priority={false}
+                loading="lazy"
               />
             </div>
           </div>

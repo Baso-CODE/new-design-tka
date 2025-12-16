@@ -5,6 +5,7 @@ const detailContent = {
     <div className="flex flex-col items-center justify-center w-[328px] sm:w-[380px] top-[135px] h-[198px] bg-blue-900 rounded-[34px] p-4 my-4">
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/matematika.webp"
           alt="Matematika"
           className="w-10 h-10 mr-[45px]"
@@ -17,6 +18,7 @@ const detailContent = {
       </div>
       <div className="flex items-center">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/ipa.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -33,6 +35,7 @@ const detailContent = {
     <div className="flex flex-col items-center justify-center w-[328px] sm:w-[380px] top-[135px] h-[198px] bg-blue-900 rounded-[34px] p-4 my-4">
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/matematika.webp"
           alt="Matematika"
           className="w-10 h-10 mr-[45px]"
@@ -45,6 +48,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/ipa.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -57,6 +61,7 @@ const detailContent = {
       </div>
       <div className="flex items-center">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/ips.webp"
           alt="IPS"
           className="w-10 h-10 mr-[45px]"
@@ -73,6 +78,7 @@ const detailContent = {
     <div className="flex flex-col items-center justify-center w-[328px] sm:w-[380px] top-[135px] min-h-[198px] bg-blue-900 rounded-[34px] p-4 my-4">
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/matematika.webp"
           alt="Matematika"
           className="w-10 h-10 mr-[45px]"
@@ -85,6 +91,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/fisika.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -97,6 +104,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/kimia.webp"
           alt="IPS"
           className="w-10 h-10 mr-[45px]"
@@ -109,6 +117,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/biologi.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -121,6 +130,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/informatika.webp"
           alt="IPS"
           className="w-10 h-10 mr-[45px]"
@@ -133,6 +143,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/astronomi.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -145,6 +156,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/ekonomi.webp"
           alt="IPS"
           className="w-10 h-10 mr-[45px]"
@@ -157,6 +169,7 @@ const detailContent = {
       </div>
       <div className="flex items-center mb-4">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/kebumian.webp"
           alt="IPA"
           className="w-10 h-10 mr-[45px]"
@@ -169,6 +182,7 @@ const detailContent = {
       </div>
       <div className="flex items-center">
         <Image
+          loading="lazy"
           src="/images/tingkat-pendidikan/geografi.webp"
           alt="IPS"
           className="w-10 h-10 mr-[45px]"

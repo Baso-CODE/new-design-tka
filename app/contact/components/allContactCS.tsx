@@ -40,7 +40,7 @@ export default async function AllContactCS() {
             {finalContacts.map((contact) => (
               <Link
                 key={contact.id}
-                href={contact.link_cta ?? "#"}
+                href={contact.link_cta}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="block"

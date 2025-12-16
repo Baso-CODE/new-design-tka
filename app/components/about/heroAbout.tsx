@@ -47,6 +47,7 @@ const HeroAbout = () => {
               className="w-full h-full object-cover"
               width={1000}
               height={1000}
+              loading="lazy"
             />
             <div className="absolute -bottom-px left-0 right-0 h-[100px] bg-linear-to-t from-[#04397D] to-transparent"></div>
           </div>

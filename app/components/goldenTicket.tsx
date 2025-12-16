@@ -26,6 +26,7 @@ const GoldenTicketShowcase = () => {
               alt="Golden Ticket untuk Pemenang OSN"
               width={1000}
               height={1000}
+              loading="lazy"
               className="rounded-2xl shadow-2xl border-4 border-yellow-400 object-cover transition-transform duration-300 ease-in-out hover:scale-105"
             />
           </div>

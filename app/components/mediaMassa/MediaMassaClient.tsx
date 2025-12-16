@@ -31,6 +31,7 @@ export default function MediaMassaClient({ images }: Props) {
                 alt={img.alt}
                 width={140}
                 height={70}
+                loading="lazy"
                 className="h-[70px] w-auto rounded-md object-contain"
               />
             </div>
@@ -47,6 +48,7 @@ export default function MediaMassaClient({ images }: Props) {
                 src={img.src}
                 alt={img.alt}
                 width={140}
+                loading="lazy"
                 height={70}
                 className="h-[70px] w-auto rounded-md object-contain"
               />

@@ -91,6 +91,7 @@ export default function HeroKecamatan({
               src="/images/hero-image-kecamatan-page.webp"
               alt={`Les privat dan bimbingan belajar OSN terbaik di ${kecamatanName}. Edumatrix Indonesia membantu siswa SD, SMP, dan SMA meraih prestasi Olimpiade Sains Nasional (OSN) dengan pengajar profesional dan metode belajar interaktif di ${kecamatanName}.`}
               className="w-full h-full"
+              loading="lazy"
             />
           </div>
         </div>

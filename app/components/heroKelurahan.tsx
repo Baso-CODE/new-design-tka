@@ -90,6 +90,7 @@ export default function HeroKelurahan({
               className="w-full h-full"
               width={1000}
               height={1000}
+              loading="lazy"
             />
           </div>
         </div>

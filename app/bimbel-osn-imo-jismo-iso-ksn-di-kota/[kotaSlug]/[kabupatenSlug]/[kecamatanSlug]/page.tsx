@@ -194,7 +194,7 @@ export default async function KecamatanPage(props: {
         brand: {
           "@type": "Brand",
           name: "Edumatrix Indonesia",
-          logo: `${baseUrl}/images/logo.png`,
+          logo: `${baseUrl}/images/logo.webp`,
         },
         contactPoint: {
           "@type": "ContactPoint",

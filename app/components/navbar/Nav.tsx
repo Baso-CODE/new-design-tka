@@ -57,7 +57,7 @@ const Nav = () => {
           {/* === LOGO === */}
           <Link href="/">
             <Image
-              src="/images/logo.png"
+              src="/images/logo.webp"
               alt="Pusat bimbingan belajar dan les privat berkualitas dengan tutor terbaik untuk jenjang pendidikan TK hingga SMA"
               className="w-[107px] h-10"
               width={214}

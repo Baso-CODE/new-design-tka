@@ -15,6 +15,7 @@ export default async function Promo() {
               src="/images/follback-banner-promo.png"
               alt="Promo tidak tersedia"
               width={1031}
+              loading="lazy"
               height={600}
               className="w-auto max-w-full xl:max-w-[1031px] h-auto rounded-lg"
             />
@@ -30,6 +31,7 @@ export default async function Promo() {
                   width={1031}
                   height={600}
                   className="w-auto max-w-full xl:max-w-[1031px] h-auto rounded-lg"
+                  loading="lazy"
                 />
               </div>
             ))

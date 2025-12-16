@@ -5,7 +5,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 1,
     judul_fitur: "Program Terlengkap",
     tagline: "#Sipaling Lengkap",
-    foto_icon: "/images/program-belajar/program-osn-terlengkap.png",
+    foto_icon: "/images/program-belajar/program-osn-terlengkap.webp",
     nama_admin: "Kak Sari",
     description:
       "Program Terlengkap dari Edumatrix adalah solusi unggul untuk kebutuhan bimbingan dan pendidikan Anda. Kami menawarkan berbagai program yang dirancang untuk memenuhi kebutuhan belajar yang paling komprehensif.",
@@ -17,7 +17,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 2,
     judul_fitur: "Pengajar Berkualitas",
     tagline: "#Kualitas yang bicara",
-    foto_icon: "/images/program-belajar/pengajar-osn-berkualitas.png",
+    foto_icon: "/images/program-belajar/pengajar-osn-berkualitas.webp",
 
     nama_admin: "Kak Iva",
     description:
@@ -30,7 +30,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 3,
     judul_fitur: "Smart Methode",
     tagline: "#Siapa yang pintar",
-    foto_icon: "/images/program-belajar/smart-methode-pengajaran-osn.png",
+    foto_icon: "/images/program-belajar/smart-methode-pengajaran-osn.webp",
 
     nama_admin: "Kak Iva",
     description:
@@ -43,7 +43,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 4,
     judul_fitur: "Kurikulum Personal",
     tagline: "#Kualitas yang bicara",
-    foto_icon: "/images/program-belajar/kurikulum-personal-siswa-osn.png",
+    foto_icon: "/images/program-belajar/kurikulum-personal-siswa-osn.webp",
 
     nama_admin: "Kak Iva",
     description:
@@ -56,7 +56,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 5,
     judul_fitur: "Intensive Quiz",
     tagline: "#Hari ini ada apa aja yah?",
-    foto_icon: "/images/program-belajar/intensive-quiz-osn.png",
+    foto_icon: "/images/program-belajar/intensive-quiz-osn.webp",
 
     nama_admin: "Kak Iva",
     description:
@@ -69,7 +69,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     id: 6,
     judul_fitur: "Quality Control",
     tagline: "#Qontrol yang maju maju(alok sound)",
-    foto_icon: "/images/program-belajar/quality-control-bimbel-osn.png",
+    foto_icon: "/images/program-belajar/quality-control-bimbel-osn.webp",
 
     nama_admin: "Kak Iva",
     description:

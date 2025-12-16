@@ -38,6 +38,7 @@ const StatCardOSN = ({ stat }: StatCardProps) => {
         alt={stat.alt}
         width={150}
         height={150}
+        loading="lazy"
         className="w-36 h-auto mb-4 object-fill"
       />
 

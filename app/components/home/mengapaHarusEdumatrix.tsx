@@ -12,7 +12,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -26,7 +26,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -39,7 +39,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -52,7 +52,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -65,7 +65,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -78,7 +78,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -91,7 +91,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -104,7 +104,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -117,7 +117,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"
@@ -130,7 +130,7 @@ const MengapaHarusEdumatrix = () => {
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
-                src="/images/icon_ceklis-mengapa-harus-edumatrix.png"
+                src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
                 className="w-[23px] h-[23px] mr-2"
                 alt="Ceklis"
                 width="46"

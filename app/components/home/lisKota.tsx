@@ -26,6 +26,7 @@ export default async function ListKota() {
             height={1200}
             className="w-full h-auto object-cover"
             priority
+            loading="eager"
           />
         </div>
 

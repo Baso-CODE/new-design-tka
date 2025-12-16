@@ -177,7 +177,7 @@ export default async function KotaPage(props: {
         brand: {
           "@type": "Brand",
           name: "Edumatrix Indonesia",
-          logo: `${baseUrl}/images/logo.png`,
+          logo: `${baseUrl}/images/logo.webp`,
         },
         contactPoint: {
           "@type": "ContactPoint",

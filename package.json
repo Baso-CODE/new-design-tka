@@ -12,6 +12,7 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
+    "@next/third-parties": "^16.1.1",
     "@reduxjs/toolkit": "^2.10.1",
     "aos": "^2.3.4",
     "classnames": "^2.5.1",

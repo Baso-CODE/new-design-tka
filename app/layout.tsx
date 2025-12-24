@@ -9,13 +9,13 @@ import {
 } from "next/font/google";
 import localFont from "next/font/local";
 
+import { GoogleAnalytics } from "@next/third-parties/google";
+import FloatingCTA from "./components/floatingCTA";
 import FooterEduMatrix from "./components/footerEdumatrix";
 import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
 import { navLinks } from "./components/navbar/NavLink";
 import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
-import Script from "next/script";
-import FloatingCTA from "./components/floatingCTA";
 
 // Font Google
 const geistSans = Geist({
@@ -112,29 +112,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="id">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}
       >
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-70MQQHELFM"
-          strategy="afterInteractive"
-        />
-
-        <Script id="gtag-init" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-70MQQHELFM');
-          `}
-        </Script>
         <ResponsiveNav />
         {children}
         <FloatingCTA />
         <BottomNavigationBarOSN navLinksData={navLinks} />
         <FooterEduMatrix />
       </body>
+      <GoogleAnalytics gaId="G-70MQQHELFM" />
     </html>
   );
 }

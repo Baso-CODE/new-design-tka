@@ -22,7 +22,7 @@ export default async function ListKelurahan({
 
   return (
     <div className=" bg-[#04397D]  flex items-center justify-center ">
-      <div className="container mx-auto flex flex-col items-center max-w-[1240px] my-6">
+      <div className="container mx-auto flex flex-col items-center max-w-310 my-6">
         <div className=" relative flex justify-center">
           <Image
             width={1000}
@@ -56,8 +56,7 @@ export default async function ListKelurahan({
                       rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                       font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
                       transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 
-                      focus:ring-white focus:ring-opacity-75"
-                  >
+                      focus:ring-white focus:ring-opacity-75">
                     <span className="relative inline-flex overflow-hidden">
                       <div className="absolute origin-bottom transition duration-500 transform-[translateX(-150%)_skewX(33deg)] group-hover:transform-[translateX(0)_skewX(0deg)]">
                         {kel.nama_kelurahan}

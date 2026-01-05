@@ -1,6 +1,7 @@
 import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
+import GoldenTicketShowcase from "@/app/components/goldenTicket";
 import HeroKecamatan from "@/app/components/heroKecamatan";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
@@ -268,6 +269,7 @@ export default async function KecamatanPage(props: {
 
         <Gallery />
         <SuccessStorySlider />
+        <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
         <ListKelurahan

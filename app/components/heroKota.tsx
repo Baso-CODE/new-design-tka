@@ -15,22 +15,20 @@ export default function HeroKota({
 }: HeroKotaProps) {
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center">
-      <div className="py-16 px-2 mt-16 text-white max-w-[1240px] lg:h-[70vh] xl:h-screen">
+      <div className="py-16 px-2 mt-16 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh]">
         <div className="flex flex-col lg:flex-row gap-14">
           {/* ===== TEXT SECTION ===== */}
           <div className="lg:w-1/2">
             <h1
               className="text-[38px] uppercase font-bold leading-10 font-title mb-8"
-              data-aos="fade-down"
-            >
+              data-aos="fade-down">
               BIMBEL & LES PRIVAT OSN KSN IMO SD SMP SMA Di{" "}
               <span className="text-[#faae17]">{kotaName}</span> TERBAIK #1
             </h1>
 
             <p
-              className="mb-4 font-desc text-[1rem] leading-[19px] font-medium"
-              data-aos="fade-right"
-            >
+              className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium"
+              data-aos="fade-right">
               Edumatrix hadir di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}
@@ -58,13 +56,11 @@ export default function HeroKota({
               data-aos="fade-up"
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] 
                 h-14 items-center justify-center rounded-full bg-[#F68507] 
-                py-1 pl-6 pr-14 font-medium text-neutral-50"
-            >
+                py-1 pl-6 pr-14 font-medium text-neutral-50">
               <span className="z-10 pr-2">Daftar Sekarang</span>
               <div
                 className="absolute right-1 inline-flex h-12 w-12 items-center justify-end 
-                rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]"
-              >
+                rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                 <div className="mr-3.5 flex items-center justify-center">
                   <svg
                     width="15"
@@ -72,8 +68,7 @@ export default function HeroKota({
                     viewBox="0 0 15 15"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-5 w-5 text-neutral-50"
-                  >
+                    className="h-5 w-5 text-neutral-50">
                     <path
                       d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 
                       3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 
@@ -82,8 +77,7 @@ export default function HeroKota({
                       8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 
                       7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 
                       3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                      fill="currentColor"
-                    ></path>
+                      fill="currentColor"></path>
                   </svg>
                 </div>
               </div>
@@ -93,8 +87,7 @@ export default function HeroKota({
           {/* ===== IMAGE ===== */}
           <div
             className="lg:w-1/2 flex justify-center items-center"
-            data-aos="fade-left"
-          >
+            data-aos="fade-left">
             <Image
               src={fotoKota}
               alt={`Les privat OSN di ${kotaName}`}
@@ -112,8 +105,7 @@ export default function HeroKota({
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"
-            d="M0,192L48,202.7C96,213,192,235,288,224C384,213,480,171,576,176C672,181,768,235,864,229.3C960,224,1056,160,1152,138.7C1248,117,1344,139,1392,149.3L1440,160V320H0Z"
-          ></path>
+            d="M0,192L48,202.7C96,213,192,235,288,224C384,213,480,171,576,176C672,181,768,235,864,229.3C960,224,1056,160,1152,138.7C1248,117,1344,139,1392,149.3L1440,160V320H0Z"></path>
         </svg>
       </div>
     </section>

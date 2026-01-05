@@ -1,6 +1,7 @@
 import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
+import GoldenTicketShowcase from "@/app/components/goldenTicket";
 import HeroKelurahan from "@/app/components/heroKelurahan";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
@@ -36,12 +37,8 @@ export async function generateMetadata({
     kelurahanSlug: string;
   }>;
 }) {
-  const {
-    kotaSlug,
-    kabupatenSlug,
-    kecamatanSlug,
-    kelurahanSlug,
-  } = await params;
+  const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } =
+    await params;
 
   const kotaName = formatSlugToTitle(kotaSlug);
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
@@ -126,12 +123,8 @@ export default async function KelurahanPage(props: {
     kelurahanSlug: string;
   }>;
 }) {
-  const {
-    kotaSlug,
-    kabupatenSlug,
-    kecamatanSlug,
-    kelurahanSlug,
-  } = await props.params;
+  const { kotaSlug, kabupatenSlug, kecamatanSlug, kelurahanSlug } =
+    await props.params;
 
   const kotaName = formatSlugToTitle(kotaSlug);
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
@@ -287,6 +280,7 @@ export default async function KelurahanPage(props: {
 
         <Gallery />
         <SuccessStorySlider />
+        <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
 

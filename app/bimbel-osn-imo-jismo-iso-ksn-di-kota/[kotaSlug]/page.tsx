@@ -14,7 +14,6 @@ import Pengajar from "@/app/components/home/pengajar";
 import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
 import SekolahSiswa from "@/app/components/home/sekolahSiswa";
-import SuccessStorySlider from "@/app/components/home/successStorySlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
 import ListKabupaten from "@/app/components/lisKabupaten";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
@@ -206,8 +205,7 @@ export default async function KotaPage(props: {
             name: `Siapa pengajar OSN di ${formattedKotaName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text:
-                "Pengajar kami adalah peraih medali OSN dan alumni PTN terbaik.",
+              text: "Pengajar kami adalah peraih medali OSN dan alumni PTN terbaik.",
             },
           },
         ],
@@ -241,7 +239,6 @@ export default async function KotaPage(props: {
         <MengapaHarusEdumatrix />
         <Pengajar />
         <Gallery />
-        <SuccessStorySlider />
         <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />

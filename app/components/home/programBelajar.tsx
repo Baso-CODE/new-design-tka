@@ -43,7 +43,7 @@ export default async function Program() {
 
   return (
     <section className="bg-white flex justify-center my-28 items-center">
-      <div className="max-w-[1240px] px-2 md:px-0 w-full">
+      <div className="max-w-310 px-2 md:px-0 w-full">
         <div className="container mx-auto">
           <div className="flex justify-center items-center mb-16">
             <h2 className="text-[40px] font-bold font-title text-center text-blue-900">
@@ -56,8 +56,7 @@ export default async function Program() {
               <div
                 key={item.id}
                 className={`${colors[index % 2]} rounded-3xl p-8 text-white`}
-                data-aos={animations[index % animations.length]}
-              >
+                data-aos={animations[index % animations.length]}>
                 {/* Header Icon + Title */}
                 <div className="flex items-center mb-2">
                   <div className="bg-white p-1 rounded-full flex items-center justify-center">

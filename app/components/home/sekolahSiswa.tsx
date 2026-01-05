@@ -7,14 +7,13 @@ export default async function SekolahSiswa() {
 
   return (
     <div className="bg-[#04397D] items-center flex justify-center relative">
-      <div className="max-w-[1240px] px-2">
+      <div className="max-w-310 px-2">
         <div className="overflow-hidden whitespace-nowrap py-4">
           <Marquee
             direction="left"
             speed={85}
             gradient={false}
-            className="flex"
-          >
+            className="flex">
             {images.map((image) => (
               <Image
                 key={image.id}

@@ -1,6 +1,7 @@
 import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
+import GoldenTicketShowcase from "@/app/components/goldenTicket";
 import HeroKabupaten from "@/app/components/heroKabupaten";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
@@ -201,8 +202,7 @@ export default async function KabupatenPage({
             name: `Apakah ada guru OSN di ${kabupatenName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text:
-                "Ya, tutor adalah peraih medali OSN & pengajar berpengalaman.",
+              text: "Ya, tutor adalah peraih medali OSN & pengajar berpengalaman.",
             },
           },
         ],
@@ -240,6 +240,7 @@ export default async function KabupatenPage({
 
         <Gallery />
         <SuccessStorySlider />
+        <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
 

@@ -11,7 +11,7 @@ export default async function Contact() {
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">
-      <div className="flex flex-col lg:flex-row items-center justify-between max-w-[1240px] w-full p-4 my-10 lg:my-0">
+      <div className="flex flex-col lg:flex-row items-center justify-between max-w-310 w-full p-4 my-10 lg:my-0">
         {/* IMAGE */}
         <div className="lg:w-1/2 w-full mt-5 md:mt-0 flex justify-center relative order-first lg:order-0">
           <Image
@@ -44,8 +44,7 @@ export default async function Contact() {
                 href={contact.link_cta ?? "#"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
-              >
+                className="block">
                 <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
                   {contact.nomor_hp} ({contact.nama_cs})
                 </div>

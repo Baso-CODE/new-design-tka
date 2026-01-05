@@ -3,7 +3,7 @@ import Image from "next/image";
 const Gallery = () => {
   return (
     <div className="bg-white  h-full py-6 sm:py-8 lg:py-12">
-      <div className="mx-auto max-w-[1240px] px-2 ">
+      <div className="mx-auto max-w-310 px-2 ">
         <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
           <div className="flex items-center md:gap-6 lg:gap-14">
             <h2 className="text-3xl font-bold text-[#1e3a8a] font-title lg:text-4xl ">
@@ -23,8 +23,7 @@ const Gallery = () => {
           {/* Image 1 */}
           <a
             href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
-          >
+            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
             <Image
               src="/images/gallery-belajar/gallery-offline-1.webp"
               loading="lazy"
@@ -42,8 +41,7 @@ const Gallery = () => {
           {/* Image 2 */}
           <a
             href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
-          >
+            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
             <Image
               src="/images/gallery-belajar/gallery-offline-2.webp"
               loading="lazy"
@@ -61,8 +59,7 @@ const Gallery = () => {
           {/* Image 3 */}
           <a
             href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80"
-          >
+            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
             <Image
               src="/images/gallery-belajar/gallery-online-3.webp"
               loading="lazy"
@@ -80,8 +77,7 @@ const Gallery = () => {
           {/* Image 4 */}
           <a
             href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80"
-          >
+            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
             <Image
               src="/images/gallery-belajar/gallery-online-4.webp"
               loading="lazy"

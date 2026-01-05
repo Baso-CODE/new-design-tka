@@ -3,7 +3,7 @@ import Image from "next/image";
 const ProfessionalTeam = async () => {
   return (
     <section className="bg-white flex justify-center my-28 items-center">
-      <div className="max-w-[1240px] px-2">
+      <div className="max-w-310 px-2">
         <div className="container mx-auto">
           <div className="flex flex-col justify-center items-center mb-7">
             <h1 className="text-[32px] md:text-[48px] lg:text-[64px] font-bold font-title text-center text-[#133B79] max-w-full md:max-w-[469px] leading-tight">

@@ -1,8 +1,8 @@
 "use client";
 
-import { GetServerSideProps, NextPage } from "next";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { useRef, useState, useEffect } from "react";
+import { GetServerSideProps, NextPage } from "next";
+import { useEffect, useRef, useState } from "react";
 import WhatsAppButton from "./whatsAppButton";
 
 interface ExampleContentProps {
@@ -30,8 +30,7 @@ const HeroProgram: NextPage = () => {
         imgUrl="/images/carousel/program-osn.webp"
         imgUrlMobile="/images/carousel/program-osn-mobile2.webp"
         subheading="Bimbel OSN"
-        heading="Menangkan Olimpiade Sains Nasional Bersama Edumatrix."
-      >
+        heading="Menangkan Olimpiade Sains Nasional Bersama Edumatrix.">
         <ExampleContent
           title="Bersiap Menjadi Juara OSN"
           description1="Edumatrix Indonesia menyediakan program bimbingan belajar Olimpiade Sains Nasional (OSN) yang dirancang khusus untuk membantu siswa meraih prestasi di bidang sains. Dengan pengajar berpengalaman dan materi yang terstruktur, kami mempersiapkan siswa untuk kompetisi tingkat nasional."
@@ -45,8 +44,7 @@ const HeroProgram: NextPage = () => {
         imgUrl="/images/carousel/program-osn_1.webp"
         imgUrlMobile="/images/carousel/program-osn-mobile1.webp"
         subheading="Materi Tersusun"
-        heading="Kurikulum Berbasis Kompetensi."
-      >
+        heading="Kurikulum Berbasis Kompetensi.">
         {" "}
         <ExampleContent
           title="Materi Tepat Sasaran"
@@ -60,8 +58,7 @@ const HeroProgram: NextPage = () => {
         imgUrl="/images/carousel/program-osn_2.webp"
         imgUrlMobile="/images/carousel/program-osn-mobile.webp"
         subheading="Pengajar Berpengalaman"
-        heading="Belajar dari Ahlinya."
-      >
+        heading="Belajar dari Ahlinya.">
         <ExampleContent
           title="Bimbingan Langsung dari Pengajar Berprestasi"
           description1="Di Edumatrix, siswa dibimbing oleh para pengajar yang berpengalaman di bidang OSN. Kami memberikan bimbingan yang personal dan sesuai dengan kebutuhan setiap siswa, memastikan pemahaman yang mendalam pada setiap materi."
@@ -132,8 +129,7 @@ const StickyImage: React.FC<StickyImageProps> = ({ imgUrl, imgUrlMobile }) => {
         borderRadius,
       }}
       ref={targetRef}
-      className="sticky z-0 overflow-hidden"
-    >
+      className="sticky z-0 overflow-hidden">
       <motion.div
         className="absolute inset-0 bg-neutral-950/65"
         style={{ opacity, borderRadius }}
@@ -162,9 +158,8 @@ const OverlayCopy: React.FC<OverlayCopyProps> = ({ subheading, heading }) => {
     <motion.div
       style={{ y, opacity }}
       ref={targetRef}
-      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white"
-    >
-      <div className="max-w-[1240px] text-center">
+      className="absolute left-0 top-0 flex h-screen w-full flex-col items-center justify-center text-white">
+      <div className="max-w-310 text-center">
         <p className="mb-2 text-2xl md:mb-4 md:text-3xl font-title">
           {subheading}
         </p>

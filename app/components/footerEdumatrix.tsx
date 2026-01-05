@@ -16,7 +16,7 @@ export default async function FooterEduMatrix() {
 
   return (
     <div className="bg-[#002b63] pb-20 md:pb-0">
-      <div className="text-white md:p-10 p-4 max-w-[1240px] mx-auto">
+      <div className="text-white md:p-10 p-4 max-w-310 mx-auto">
         {/* Title */}
         <div className="flex justify-between items-center mb-8">
           <h2 className="sm:text-[36px] text-[30px] font-title font-bold">
@@ -45,8 +45,7 @@ export default async function FooterEduMatrix() {
                     href={admin.link_cta ?? "#"}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="no-underline font-medium"
-                  >
+                    className="no-underline font-medium">
                     <span>{admin.nama_cs}:</span> {admin.nomor_hp}
                   </Link>
                 </li>
@@ -81,8 +80,7 @@ export default async function FooterEduMatrix() {
             <Link
               href={finalContacts[0]?.link_cta ?? "#"}
               target="_blank"
-              rel="noopener noreferrer"
-            >
+              rel="noopener noreferrer">
               <Image
                 src="/images/images-cta.webp"
                 alt="Hubungi kami sekarang."

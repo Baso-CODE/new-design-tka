@@ -20,7 +20,7 @@ export default async function ListKecamatan({
 
   return (
     <div className=" bg-[#04397D]  flex items-center justify-center ">
-      <div className="container mx-auto flex flex-col items-center max-w-[1240px] my-6">
+      <div className="container mx-auto flex flex-col items-center max-w-310 my-6">
         <div className=" relative flex justify-center">
           <Image
             width={1000}
@@ -53,8 +53,7 @@ export default async function ListKecamatan({
                     className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
                              rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                              font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
-                             transition-all duration-300 ease-in-out"
-                  >
+                             transition-all duration-300 ease-in-out">
                     {kec.nama_kecamatan}
                   </Link>
                 </li>

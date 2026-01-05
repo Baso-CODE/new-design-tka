@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const JumlahSiswa = () => {
   const masterTeacherPercent: string[] = ["80%", "82%", "83%", "85%", "86%"];
@@ -28,14 +28,13 @@ const JumlahSiswa = () => {
 
   return (
     <section className="items-center justify-center flex">
-      <div className="max-w-[1240px]">
+      <div className="max-w-310">
         <div className="bg-white lg:h-[555px] h-auto w-full py-12 px-2 lg:px-2">
           <div className="flex flex-col lg:flex-row gap-[30px] -mt-10 relative">
             {/* Left Side - Image */}
             <div
               className="lg:w-1/2 flex justify-center items-center mt-[-50px] lg:mt-[-90px] relative"
-              data-aos="fade-up-right"
-            >
+              data-aos="fade-up-right">
               <Image
                 width={1000}
                 height={1000}
@@ -53,8 +52,7 @@ const JumlahSiswa = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="font-normal text-[50px] font-pencil"
-                  >
+                    className="font-normal text-[50px] font-pencil">
                     {siswaEdumatrix[currentIndex]}
                   </motion.p>
                   <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
@@ -71,8 +69,7 @@ const JumlahSiswa = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="font-normal text-[50px] font-pencil"
-                  >
+                    className="font-normal text-[50px] font-pencil">
                     {masterTeacherNumbers[currentIndex]}
                   </motion.p>
                   <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
@@ -89,8 +86,7 @@ const JumlahSiswa = () => {
                     initial={{ y: -50, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ duration: 0.5 }}
-                    className="font-normal text-[50px] font-pencil"
-                  >
+                    className="font-normal text-[50px] font-pencil">
                     {masterTeacherPercent[currentIndex]}
                   </motion.p>
                   <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
@@ -103,8 +99,7 @@ const JumlahSiswa = () => {
             {/* Right Side - Text */}
             <div
               className="lg:w-1/2 flex items-center justify-center"
-              data-aos="fade-down-left"
-            >
+              data-aos="fade-down-left">
               <div className="flex flex-col">
                 <h2 className="text-4xl font-bold mb-4 font-title text-[#133B79] leading-10">
                   Edumatrix Siap Membantumu Menjadi Sang Juara

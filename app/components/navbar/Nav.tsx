@@ -1,9 +1,9 @@
 "use client";
 
-import { useEffect, useState } from "react";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { navLinks } from "./NavLink";
 
 const Nav = () => {
@@ -50,9 +50,8 @@ const Nav = () => {
     <div
       className={`fixed top-4 z-10000 w-full transition-opacity duration-500 px-1 ${
         visible ? "opacity-100" : "opacity-0"
-      }`}
-    >
-      <div className={`rounded-full max-w-[1240px] mx-auto ${navBg}`}>
+      }`}>
+      <div className={`rounded-full max-w-310 mx-auto ${navBg}`}>
         <div className="flex justify-between items-center h-20 px-3 text-white">
           {/* === LOGO === */}
           <Link href="/">
@@ -80,8 +79,7 @@ const Nav = () => {
                       isActive
                         ? "text-[#FAAE17] font-bold"
                         : "hover:text-[#FAAE17]"
-                    }`}
-                  >
+                    }`}>
                     {link.label}
                   </p>
                 </Link>

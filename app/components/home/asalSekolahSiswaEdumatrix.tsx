@@ -3,7 +3,7 @@ import { schools } from "@/app/components/data/school";
 const AsalSekolahSiswaEdumatrix = () => {
   return (
     <section className="xl:min-h-screen lg:h-[60vh] bg-[#04397D] text-white flex flex-col items-center">
-      <div className="flex flex-col gap-8 max-w-[1240px] w-full px-2 rounded-lg">
+      <div className="flex flex-col gap-8 max-w-310 w-full px-2 rounded-lg">
         <div className="py-10">
           <h2 className="text-[28px] leading-[45px] sm:text-[35px] lg:text-[37px] text-[#FFFFFF] font-bold font-title text-center mb-10">
             Asal Sekolah Siswa Edumatrix
@@ -14,8 +14,7 @@ const AsalSekolahSiswaEdumatrix = () => {
               {schools.map((school, index) => (
                 <div
                   key={index}
-                  className="flex items-center gap-2 whitespace-nowrap font-medium font-desc"
-                >
+                  className="flex items-center gap-2 whitespace-nowrap font-medium font-desc">
                   <span className="w-1.5 h-1.5 bg-[#003b6d] rounded-full shrink-0"></span>
                   {school}
                 </div>

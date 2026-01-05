@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-import { ContactCs } from "@/app/types/contact.type";
-import { getAllContactCs } from "@/app/request/contacts/getAllContactCs";
-import Image from "next/image";
 import { dummyContactCsData } from "@/app/components/data/contactCs.dummyData";
+import { getAllContactCs } from "@/app/request/contacts/getAllContactCs";
+import { ContactCs } from "@/app/types/contact.type";
+import Image from "next/image";
 
 export default async function AllContactCS() {
   // Fetch data di server
@@ -13,7 +13,7 @@ export default async function AllContactCS() {
 
   return (
     <div className="flex justify-center bg-[#04397D] text-white">
-      <div className="flex flex-col lg:flex-row items-center justify-between max-w-[1240px] w-full p-4 my-10 lg:my-0">
+      <div className="flex flex-col lg:flex-row items-center justify-between max-w-310 w-full p-4 my-10 lg:my-0">
         {/* Image */}
         <div className="lg:w-1/2 w-full mt-5 flex justify-center -order-1 lg:order-0">
           <Image
@@ -43,8 +43,7 @@ export default async function AllContactCS() {
                 href={contact.link_cta}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block"
-              >
+                className="block">
                 <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[25px] text-[20px] px-4 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
                   {contact.nomor_hp} ({contact.nama_cs})
                 </div>

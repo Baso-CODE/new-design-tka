@@ -1,17 +1,16 @@
+import classNames from "classnames";
 import { cardsLearningMethod } from "../data/learningMethods";
 import { TiltCard } from "./tiltCard";
-import classNames from "classnames";
 
 const LearningMethod = async () => {
   return (
     <section className="bg-white flex justify-center mt-12 items-center">
-      <div className="max-w-[1240px] px-6">
+      <div className="max-w-310 px-6">
         <div className="w-full">
           <div className="text-center">
             <h1
               className="text-[32px] md:text-[48px] lg:text-[64px] font-bold mb-8 font-title text-[#133B79]"
-              data-aos="fade-down"
-            >
+              data-aos="fade-down">
               Learning Method
             </h1>
 

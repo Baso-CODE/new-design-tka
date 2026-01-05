@@ -3,7 +3,7 @@ import { FaBriefcase } from "react-icons/fa";
 
 const Features = () => {
   return (
-    <div className=" md:pt-[68px] md:pb-[68px] pt-7 pb-7 mx-auto px-2 max-w-[1240px] ">
+    <div className=" md:pt-[68px] md:pb-[68px] pt-7 pb-7 mx-auto px-2 max-w-310 ">
       <div className=" mt-8 grid grid-cols-1 xl:grid-cols-2 items-center gap-12 w-full mx-auto">
         <div data-aos="fade-right">
           <Image
@@ -29,8 +29,7 @@ const Features = () => {
           {/* main heading */}
           <h3
             className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-title mt-8 font-bold md:leading-8 lg:leading-12 xl:leading-12 text-[#00317e]"
-            data-aos="fade-left"
-          >
+            data-aos="fade-left">
             Belajar Jadi Lebih Mudah, Baik Online Maupun Tatap Muka
           </h3>
 

@@ -8,7 +8,7 @@ export default async function Promo() {
 
   return (
     <div className="bg-[#04397D] text-white flex flex-col items-center justify-center py-8">
-      <div className="flex flex-col gap-8 max-w-[1240px] w-full px-2 rounded-lg">
+      <div className="flex flex-col gap-8 max-w-310 w-full px-2 rounded-lg">
         <div className="flex flex-col lg:flex-row lg:flex-wrap gap-4 justify-center items-center">
           {isEmpty ? (
             <Image
@@ -23,8 +23,7 @@ export default async function Promo() {
             promos.map((item) => (
               <div
                 key={item.id}
-                className="rounded-lg shadow-2xl overflow-hidden"
-              >
+                className="rounded-lg shadow-2xl overflow-hidden">
                 <Image
                   src={`${item.image}`}
                   alt={item.title}

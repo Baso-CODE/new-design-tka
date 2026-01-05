@@ -7,7 +7,7 @@ export default async function ListKota() {
 
   return (
     <section className="bg-linear-to-br from-[#0a3977] to-[#104a8b] py-16 sm:py-20 lg:py-24">
-      <div className="container mx-auto items-center max-w-[1240px]">
+      <div className="container mx-auto items-center max-w-310">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-lg mb-4">
             Jangkauan Kami di Seluruh Indonesia
@@ -18,7 +18,7 @@ export default async function ListKota() {
           </p>
         </div>
 
-        <div className="relative w-full max-w-[1240px] mx-auto mb-16 overflow-hidden rounded-2xl">
+        <div className="relative w-full max-w-310 mx-auto mb-16 overflow-hidden rounded-2xl">
           <Image
             src="/images/nusantara-preview-kota-indonesia.webp"
             alt="Peta Jangkauan Edumatrix Indonesia"
@@ -50,8 +50,7 @@ export default async function ListKota() {
                       rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                       font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis
                       transition-all duration-300 ease-in-out focus:outline-none focus:ring-2 
-                      focus:ring-white focus:ring-opacity-75"
-                    >
+                      focus:ring-white focus:ring-opacity-75">
                       <span className="relative inline-flex overflow-hidden">
                         <div className="absolute origin-bottom transition duration-500 transform-[translateX(-150%)_skewX(33deg)] group-hover:transform-[translateX(0)_skewX(0deg)]">
                           {kota.nama_kota}

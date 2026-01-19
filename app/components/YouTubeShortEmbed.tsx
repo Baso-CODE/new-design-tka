@@ -44,8 +44,10 @@ const YouTubeShortEmbed = () => {
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
           <div className="relative flex justify-center items-center mb-12 lg:mb-0">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
-              <div className="bg-orange-200 rounded-lg w-72 h-[350px] sm:w-80 sm:h-[400px] lg:w-96 lg:h-[450px] transform -rotate-6 opacity-70"></div>
-              <div className="absolute bg-orange-300 rounded-lg w-72 h-[350px] sm:w-80 sm:h-[400px] lg:w-104 lg:h-[600px] transform rotate-3 opacity-60"></div>
+              <div className="bg-orange-200 rounded-lg w-72 h-87.5 sm:w-80 sm:h-100 lg:w-96 lg:h-112.5 transform -rotate-6 opacity-70"></div>
+              <div
+                className="absolute bg-orange-300 rounded-lg w-72 h-87.5 sm:w-80 sm:h-100 lg:w-104 
+ transform rotate-3 opacity-60"></div>
             </div>
 
             <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-sm rounded-lg overflow-hidden shadow-2xl z-10">
@@ -151,7 +153,7 @@ const YouTubeShortEmbed = () => {
         </div>
       </div>
 
-      <div className="absolute -bottom-px xl:bottom-[-50px] left-0 w-full">
+      <div className="absolute -bottom-px xl:-bottom-12.5 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#FFFFFF"

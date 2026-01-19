@@ -1,6 +1,9 @@
 @import "tailwindcss";
 @import "aos/dist/aos.css";
 
+@custom-variant dark (&:is(.dark *));
+
+@variant dark (&:where(.dark, .dark *));
 /* === Font Variable Mapping === */
 :root,
 body {
@@ -9,7 +12,6 @@ body {
   --font-pencil: var(--font-super-pencil);
   --font-title-blog: var(--font-poppins);
 }
-
 
 /* === Local Font === */
 @font-face {

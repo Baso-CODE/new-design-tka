@@ -114,8 +114,7 @@ export default function RootLayout({
   return (
     <html lang="id">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}
-      >
+        className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}>
         <ResponsiveNav />
         {children}
         <FloatingCTA />

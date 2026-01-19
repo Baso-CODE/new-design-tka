@@ -26,7 +26,7 @@ export default function HeroKabupaten({
             </h1>
 
             <p
-              className="mb-6 font-desc text-[1rem] leading-[19px] font-medium"
+              className="mb-6 font-desc text-[1rem] leading-4.75 font-medium"
               data-aos="fade-right">
               Edumatrix Indonesia adalah{" "}
               <strong>bimbel OSN (Olimpiade Sains Nasional)</strong> terbaik di{" "}

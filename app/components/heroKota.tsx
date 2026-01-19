@@ -101,7 +101,7 @@ export default function HeroKota({
       </div>
 
       {/* Wave */}
-      <div className="absolute -bottom-px xl:bottom-[-90px] left-0 w-full">
+      <div className="absolute -bottom-px xl:-bottom-22.5 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

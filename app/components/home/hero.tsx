@@ -14,7 +14,7 @@ export default async function Hero() {
 
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center">
-      <div className="py-24 px-4 lg:px-0 mt-10 text-white max-w-310 g:min-h-[70vh] xl:min-h-[74vh]">
+      <div className="py-24 px-4 lg:px-0 mt-10 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[74vh]">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2 ">
             <h1

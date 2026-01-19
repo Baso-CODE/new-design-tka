@@ -26,7 +26,7 @@ export default function HeroKecamatan({
             </h1>
 
             <p
-              className="mb-4 font-desc text-[1rem] leading-[19px] font-medium "
+              className="mb-4 font-desc text-[1rem] leading-4.75 font-medium "
               data-aos="fade-right">
               Edumatrix Indonesia merupakan{" "}
               <strong>bimbel OSN (Olimpiade Sains Nasional)</strong> dan{" "}
@@ -90,7 +90,7 @@ export default function HeroKecamatan({
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-px xl:bottom-[-90px]  left-0 w-full">
+      <div className="absolute -bottom-px xl:-bottom-22.5  left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

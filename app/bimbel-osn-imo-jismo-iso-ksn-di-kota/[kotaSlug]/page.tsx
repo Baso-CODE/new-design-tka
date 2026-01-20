@@ -21,6 +21,7 @@ import Promo from "@/app/components/promo";
 import SliderDescktop from "@/app/components/slider/sliderDescktop";
 import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
+import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
 import { getImageKotaBySlug } from "@/app/request/kota/getImageKotaBySlugRequest";
@@ -239,6 +240,7 @@ export default async function KotaPage(props: {
         <MengapaHarusEdumatrix />
         <Pengajar />
         <Gallery />
+        <TransformationOSN />
         <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />

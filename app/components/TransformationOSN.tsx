@@ -3,8 +3,8 @@ import Image from "next/image";
 
 export default function TransformationOSN() {
   return (
-    <section className="w-full py-16 md:py-24 px-[5%] md:px-[10%] bg-white dark:bg-slate-900 transition-colors duration-300 font-poppins">
-      <div className="mx-auto max-w-7xl">
+    <section className="w-full py-16 md:py-24  bg-white dark:bg-slate-900 transition-colors duration-300 font-poppins">
+      <div className="mx-auto max-w-310 px-2 md:px-4">
         {/* SECTION HEADER */}
         <div className="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
           <h2 className="text-2xl md:text-4xl font-extrabold text-[#03397d] dark:text-white mb-4 leading-tight font-title">

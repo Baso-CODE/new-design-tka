@@ -8,7 +8,7 @@ const PaketBelajarOSN = () => {
 
   return (
     <div>
-      <div className="flex container mx-auto items-center justify-center my-[5vh] py-[10vh]  lg:px-0">
+      <div className="flex container mx-auto items-center justify-center my-[5vh] py-[10vh]  px-2 lg:px-0">
         <div className=" w-full">
           {/* Judul utama */}
           <h2 className="text-center font-title text-3xl md:text-3xl lg:text-4xl font-bold text-[#133b79] mb-4">
@@ -46,8 +46,7 @@ const PaketBelajarOSN = () => {
                 ].map((item, i) => (
                   <li
                     className="flex items-start text-gray-700 text-base"
-                    key={i}
-                  >
+                    key={i}>
                     <FaCheck className="text-green-500 mr-3 mt-1 shrink-0" />{" "}
                     {/* Ikon check */}
                     {item}
@@ -59,8 +58,7 @@ const PaketBelajarOSN = () => {
                 href={waLinkPriority}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 "
-              >
+                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 ">
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-start rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                   <div className="ml-3.5 flex items-center justify-center rotate-180">
                     <svg
@@ -69,14 +67,12 @@ const PaketBelajarOSN = () => {
                       viewBox="0 0 15 15"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-neutral-50"
-                    >
+                      className="h-5 w-5 text-neutral-50">
                       <path
                         d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
                         fill="currentColor"
                         fillRule="evenodd"
-                        clipRule="evenodd"
-                      ></path>
+                        clipRule="evenodd"></path>
                     </svg>
                   </div>
                 </div>
@@ -107,8 +103,7 @@ const PaketBelajarOSN = () => {
                 ].map((item, i) => (
                   <li
                     className="flex items-start text-gray-700 text-base"
-                    key={i}
-                  >
+                    key={i}>
                     <FaCheck className="text-green-500 mr-3 mt-1 shrink-0" />{" "}
                     {item}
                   </li>
@@ -119,8 +114,7 @@ const PaketBelajarOSN = () => {
                 href={waLinkDeluxe}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300"
-              >
+                className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300">
                 <span className="z-10 pr-2">
                   <span className="mr-2">💬</span>Tanya Kelas
                 </span>
@@ -132,14 +126,12 @@ const PaketBelajarOSN = () => {
                       viewBox="0 0 15 15"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-neutral-50"
-                    >
+                      className="h-5 w-5 text-neutral-50">
                       <path
                         d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
                         fill="currentColor"
                         fillRule="evenodd"
-                        clipRule="evenodd"
-                      ></path>
+                        clipRule="evenodd"></path>
                     </svg>
                   </div>
                 </div>

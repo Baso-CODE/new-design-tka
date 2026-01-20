@@ -3,6 +3,7 @@ import Accordion from "./components/faq/Accordion";
 import GoldenTicketShowcase from "./components/goldenTicket";
 import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
 
+import Contact from "./components/home/contact";
 import Gallery from "./components/home/gallery";
 import Hero from "./components/home/hero";
 import JumlahSiswa from "./components/home/jumlahSiswa";
@@ -16,13 +17,13 @@ import Program from "./components/home/programBelajar";
 import SekolahSiswa from "./components/home/sekolahSiswa";
 import SuccessStorySlider from "./components/home/successStorySlider";
 import TingkatPendidikan from "./components/home/tingkatPendidikan";
+import MediaMassa from "./components/mediaMassa/mediaMassa";
 import Promo from "./components/promo";
 import SliderDescktop from "./components/slider/sliderDescktop";
 import SliderMobile from "./components/slider/sliderMobile";
 import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
+import TransformationOSN from "./components/TransformationOSN";
 import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
-import Contact from "./components/home/contact";
-import MediaMassa from "./components/mediaMassa/mediaMassa";
 const ogImage = "https://bimbeledumatrix.com/images/images-cta.webp";
 const canonicalUrl = "https://bimbeledumatrix.com/";
 const pageTitle = "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix";
@@ -83,6 +84,7 @@ export default function Home() {
       <Pengajar />
       <Gallery />
       <SuccessStorySlider />
+      <TransformationOSN />
       <GoldenTicketShowcase />
       <AsalSekolahSiswaEdumatrix />
       <SekolahSiswa />

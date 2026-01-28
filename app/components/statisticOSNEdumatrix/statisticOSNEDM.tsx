@@ -10,7 +10,7 @@ const osnStats: StatItem[] = [
   },
   {
     id: 2,
-    value: 5000,
+    value: 5200,
     unit: "Siswa Belajar",
     image: "/images/statistic/siswa-belajar.webp",
     alt: "Ikon Siswa Belajar",

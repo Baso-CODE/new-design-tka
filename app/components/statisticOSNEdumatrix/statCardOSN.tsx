@@ -24,15 +24,14 @@ const StatCardOSN = ({ stat }: StatCardProps) => {
     2000,
     0,
     false,
-    cardRef
+    cardRef,
   );
 
   return (
     <div
       ref={cardRef}
       className="bg-white rounded-xl shadow-lg p-6 flex flex-col items-center justify-center text-center 
-      transform transition-transform duration-300 hover:scale-105 hover:shadow-xl"
-    >
+      transform transition-transform duration-300 hover:scale-105 hover:shadow-xl">
       <Image
         src={stat.image}
         alt={stat.alt}
@@ -42,7 +41,9 @@ const StatCardOSN = ({ stat }: StatCardProps) => {
         className="w-36 h-auto mb-4 object-fill"
       />
 
-      <p className="text-5xl font-bold text-[#0f4787] mb-2">{animatedValue}</p>
+      <p className="text-5xl font-extrabold text-[#0f4787] mb-2">
+        {animatedValue}
+      </p>
 
       <p className="text-lg font-medium text-gray-600 font-title">
         {stat.unit}

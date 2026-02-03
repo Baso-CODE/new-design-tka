@@ -11,8 +11,7 @@ export default async function FloatingCTA() {
         fixed bottom-[3%] right-[3%] z-1000
         flex items-center gap-3
         md:bottom-[7%] md:right-[4%]
-      "
-    >
+      ">
       {/* CHAT BUBBLE LABEL */}
       <div
         className="
@@ -32,9 +31,8 @@ export default async function FloatingCTA() {
           before:border-[6px]
           before:border-transparent
           before:border-l-white
-        "
-      >
-        {"Chat With Us"}
+        ">
+        {"Klik untuk Konsultasi"}
       </div>
 
       {/* BUTTON */}
@@ -52,8 +50,7 @@ export default async function FloatingCTA() {
           shadow-xl
           hover:scale-110
           transition-all duration-300
-        "
-      >
+        ">
         {/* PULSE RING */}
         <span
           className="

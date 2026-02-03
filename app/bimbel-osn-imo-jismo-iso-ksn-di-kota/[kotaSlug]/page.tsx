@@ -23,6 +23,7 @@ import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
+import { getKotaDummyBySlug } from "@/app/lib/getDummyDataRequest/getImageKotaDummy.data";
 import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
 import { getImageKotaBySlug } from "@/app/request/kota/getImageKotaBySlugRequest";
 
@@ -40,10 +41,10 @@ export async function generateMetadata({
 
   const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
-  const kotaData = await getImageKotaBySlug(kotaSlug);
+  const kotaData = getKotaDummyBySlug(kotaSlug);
 
   const imageUrl = kotaData?.foto_kota
-    ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
+    ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
     : "https://bimbeledumatrix.com/images/images-cta.webp";
 
   const ogTitle = `📚 Les Privat Olimpiade ${formattedKotaName} • OSN IMO ISO Unggulan`;

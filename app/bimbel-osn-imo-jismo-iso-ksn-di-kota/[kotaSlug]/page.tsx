@@ -25,7 +25,7 @@ import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { getKotaDummyBySlug } from "@/app/lib/getDummyDataRequest/getImageKotaDummy.data";
 import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
-import { getImageKotaBySlug } from "@/app/request/kota/getImageKotaBySlugRequest";
+import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
 export async function generateMetadata({
   params,
@@ -34,10 +34,7 @@ export async function generateMetadata({
 }) {
   const { kotaSlug } = await params;
 
-  const formattedKotaName = kotaSlug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+  const formattedKotaName = formatSlugToTitle(kotaSlug);
 
   const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
@@ -105,9 +102,7 @@ export default async function KotaPage(props: {
   const { kotaSlug } = await props.params;
 
   // Fetch 1 – aman
-  const kotaData = await getImageKotaBySlug(kotaSlug).catch(() => {
-    return null; // fallback
-  });
+  const kotaData = getKotaDummyBySlug(kotaSlug);
 
   // Fetch 2 – aman
   const data = await getSingleContactCsIsDeleted().catch(() => {
@@ -117,17 +112,11 @@ export default async function KotaPage(props: {
   const contact = data || fallbackContact;
   const link = contact.link_cta || "/contact";
 
-  const fallbackImage =
-    "https://bimbeledumatrix.com/images/image-preview-landing-page.webp";
-
   const imageUrl = kotaData?.foto_kota
-    ? `https://node-osn.edusmart-indonesia.com/kota-images/${kotaData.foto_kota}`
-    : fallbackImage;
+    ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
+    : "https://bimbeledumatrix.com/images/images-cta.webp";
 
-  const formattedKotaName = kotaSlug
-    .split("-")
-    .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(" ");
+  const formattedKotaName = formatSlugToTitle(kotaSlug);
 
   const baseUrl = "https://bimbeledumatrix.com";
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;

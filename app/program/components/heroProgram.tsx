@@ -51,7 +51,7 @@ const HeroProgram: NextPage = () => {
           description1="Program Bimbel OSN kami dirancang sesuai dengan kurikulum kompetisi Olimpiade Sains Nasional, sehingga siswa mendapatkan materi yang sesuai dengan kebutuhan kompetisi."
           description2="Latihan soal dan simulasi OSN membuat siswa semakin percaya diri dan siap menghadapi tantangan di setiap tahap."
           buttonText="Konsultasi Sekarang"
-          buttonLink="https://api.whatsapp.com/send?phone=6282174144728&text=Halo%20Kak%20Iva%20https://osn.edumatrix-indonesia.com,%20Saya%20ingin%20tanya%20lebih%20lanjut%20tentang%20program%20Bimbel%20OSN."
+          buttonLink="https://api.whatsapp.com/send?phone=6282174144728&text=Halo%20Kak%20Iva%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20lebih%20lanjut%20tentang%20program%20Bimbel%20OSN."
         />{" "}
       </TextParallaxContent>
       <TextParallaxContent
@@ -64,7 +64,7 @@ const HeroProgram: NextPage = () => {
           description1="Di Edumatrix, siswa dibimbing oleh para pengajar yang berpengalaman di bidang OSN. Kami memberikan bimbingan yang personal dan sesuai dengan kebutuhan setiap siswa, memastikan pemahaman yang mendalam pada setiap materi."
           description2="Dengan pendekatan yang fokus dan sistematis, siswa kami siap untuk menjadi juara di Olimpiade Sains Nasional."
           buttonText="Tanyakan Program"
-          buttonLink="https://api.whatsapp.com/send?phone=6281215523902&text=Halo%20Kak%20Asyah%20https://osn.edumatrix-indonesia.com,%20Saya%20ingin%20tanya%20tentang%20pengajar%20dan%20metode%20belajar%20OSN%20di%20Edumatrix."
+          buttonLink="https://api.whatsapp.com/send?phone=6281215523902&text=Halo%20Kak%20Asyah%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20tentang%20pengajar%20dan%20metode%20belajar%20OSN%20di%20Edumatrix."
         />{" "}
       </TextParallaxContent>
     </div>

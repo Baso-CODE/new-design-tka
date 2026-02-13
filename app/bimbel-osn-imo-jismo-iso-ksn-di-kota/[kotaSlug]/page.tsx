@@ -44,23 +44,55 @@ export async function generateMetadata({
     ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
     : "https://bimbeledumatrix.com/images/images-cta.webp";
 
-  const ogTitle = `📚 Les Privat Olimpiade ${formattedKotaName} • OSN IMO ISO Unggulan`;
-  const ogDescription = `Kursus Les Privat Olimpiade ${formattedKotaName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
-
+  const ogTitle = `Les Privat Olimpiade ${formattedKotaName} SD SMP SMA • OSN KSN ISMO IMO JISMO Terbaik`;
+  const ogDescription = `Les Privat Olimpiade ${formattedKotaName} untuk SD, SMP & SMA semua bidang: Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi, Ekonomi. Persiapan OSN, KSN, ISMO, IMO, JISMO hingga tingkat Nasional & Internasional. Mentor Berpengalaman • Program Intensif • Laporan Perkembangan • Daftar Sekarang!`;
   return {
     metadataBase: new URL(baseUrl),
-
     title: ogTitle,
     description: ogDescription,
     keywords: [
-      `bimbel di ${formattedKotaName}`,
-      `les privat OSN ${formattedKotaName}`,
-      "osn",
-      "imo",
-      "iso",
-      "kompetisi sains",
-      "ksn",
-      "guru privat",
+      // Core Local Keyword
+      `les privat olimpiade ${formattedKotaName}`,
+      `bimbel olimpiade ${formattedKotaName}`,
+      `bimbel OSN ${formattedKotaName}`,
+      `les OSN ${formattedKotaName}`,
+      `bimbel KSN ${formattedKotaName}`,
+
+      // Program Olimpiade
+      "OSN SD",
+      "OSN SMP",
+      "OSN SMA",
+      "KSN SD",
+      "KSN SMP",
+      "KSN SMA",
+      "OSP",
+      "OSK",
+      "ISMO",
+      "IMO",
+      "JISMO",
+      "olimpiade sains nasional",
+      "kompetisi sains nasional",
+      "olimpiade matematika internasional",
+
+      // Jenjang Pendidikan
+      "les olimpiade SD",
+      "les olimpiade SMP",
+      "les olimpiade SMA",
+      "bimbel olimpiade SD SMP SMA",
+
+      // Mata Pelajaran Olimpiade
+      "olimpiade matematika",
+      "olimpiade IPA",
+      "olimpiade fisika",
+      "olimpiade kimia",
+      "olimpiade biologi",
+      "olimpiade informatika",
+      "olimpiade komputer",
+      "olimpiade astronomi",
+      "olimpiade geografi",
+      "olimpiade ekonomi",
+
+      // Brand
       "edumatrix indonesia",
     ],
     robots:
@@ -176,6 +208,29 @@ export default async function KotaPage(props: {
           areaServed: "ID",
           availableLanguage: ["Indonesian", "English"],
         },
+        keywords: `
+les privat olimpiade ${formattedKotaName},
+bimbel olimpiade ${formattedKotaName},
+les OSN ${formattedKotaName},
+bimbel KSN ${formattedKotaName},
+les ISMO ${formattedKotaName},
+les IMO ${formattedKotaName},
+bimbel JISMO ${formattedKotaName},
+les olimpiade SD ${formattedKotaName},
+les olimpiade SMP ${formattedKotaName},
+les olimpiade SMA ${formattedKotaName},
+olimpiade matematika ${formattedKotaName},
+olimpiade fisika ${formattedKotaName},
+olimpiade kimia ${formattedKotaName},
+olimpiade biologi ${formattedKotaName},
+olimpiade informatika ${formattedKotaName},
+OSN, KSN, OSP, OSK, ISMO, IMO, JISMO,
+olimpiade sains nasional,
+kompetisi sains nasional,
+bimbel olimpiade terbaik,
+guru privat olimpiade,
+edumatrix indonesia
+`,
       },
 
       {

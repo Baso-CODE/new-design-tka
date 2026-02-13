@@ -48,43 +48,74 @@ export async function generateMetadata({
 
   const imageUrl = "https://bimbeledumatrix.com/images/images-cta.webp";
 
-  const title = `📚 Les Privat Olimpiade ${kecamatanName} • OSN IMO ISO Unggulan`;
-  const description = `Kursus Les Privat Olimpiade ${kecamatanName} Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...`;
-
+  const title = `Bimbel & Les Olimpiade OSN ISMO IMO JISMO ${kecamatanName} SD SMP SMA`;
+  const description = `Bimbel Olimpiade ${kecamatanName} untuk OSN, KSN, OSP, OSK, ISMO, IMO, JISMO semua jenjang SD SMP SMA. Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi & Ekonomi. Program intensif dan privat terbaik.`;
   const keywords = [
-    `les privat ${kecamatanName}`,
-    `bimbel OSN ${kecamatanName}`,
-    `bimbel IMO ${kecamatanName}`,
-    `les privat ${kabupatenName}`,
+    // ===== HYPER LOCAL - KECAMATAN =====
+    `les privat olimpiade ${kecamatanName}`,
+    `bimbel olimpiade ${kecamatanName}`,
+    `les OSN ${kecamatanName}`,
+    `bimbel KSN ${kecamatanName}`,
+    `les IMO ${kecamatanName}`,
+    `bimbel ISMO ${kecamatanName}`,
+    `bimbel JISMO ${kecamatanName}`,
+
+    // Jenjang Kecamatan
+    `les olimpiade SD ${kecamatanName}`,
+    `les olimpiade SMP ${kecamatanName}`,
+    `les olimpiade SMA ${kecamatanName}`,
+
+    // Mapel Kecamatan
+    `olimpiade matematika ${kecamatanName}`,
+    `olimpiade fisika ${kecamatanName}`,
+    `olimpiade kimia ${kecamatanName}`,
+    `olimpiade biologi ${kecamatanName}`,
+    `olimpiade informatika ${kecamatanName}`,
+    `olimpiade astronomi ${kecamatanName}`,
+    `olimpiade geografi ${kecamatanName}`,
+    `olimpiade ekonomi ${kecamatanName}`,
+
+    // ===== KABUPATEN =====
+    `les privat olimpiade ${kabupatenName}`,
     `bimbel OSN ${kabupatenName}`,
-    `les privat ${kotaName}`,
+    `bimbel KSN ${kabupatenName}`,
+    `les olimpiade SD SMP SMA ${kabupatenName}`,
+
+    // ===== KOTA =====
+    `les privat olimpiade ${kotaName}`,
     `bimbel OSN ${kotaName}`,
-    kotaName,
-    kabupatenName,
-    kecamatanName,
-    "osn",
-    "imo",
-    "iso",
-    "ksn",
-    "les privat",
-    "guru privat",
+    `bimbel KSN ${kotaName}`,
+    `les olimpiade SD SMP SMA ${kotaName}`,
+
+    // ===== PROGRAM NASIONAL & INTERNASIONAL =====
+    "OSN SD SMP SMA",
+    "KSN SD SMP SMA",
+    "OSP",
+    "OSK",
+    "ISMO",
+    "IMO",
+    "JISMO",
+    "olimpiade sains nasional",
+    "kompetisi sains nasional",
+    "olimpiade matematika internasional",
+
+    // ===== GENERIC HIGH INTENT =====
+    "les privat olimpiade terbaik",
+    "bimbel olimpiade terpercaya",
+    "guru privat olimpiade",
     "edumatrix indonesia",
   ];
 
   return {
     metadataBase: new URL(baseUrl),
-
     title,
     description,
     keywords,
-
     alternates: {
       canonical: canonicalUrl,
     },
-
     robots:
       "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
-
     openGraph: {
       type: "article",
       locale: "id_ID",
@@ -203,7 +234,29 @@ export default async function KecamatanPage(props: {
           telephone: "+62-812-1552-3902",
           contactType: "Customer Service",
         },
-        keywords: `${kecamatanName}, olimpiade, bimbel, les privat`,
+        keywords: `
+les privat olimpiade ${kecamatanName},
+bimbel olimpiade ${kecamatanName},
+les OSN ${kecamatanName},
+bimbel KSN ${kecamatanName},
+les ISMO ${kecamatanName},
+les IMO ${kecamatanName},
+bimbel JISMO ${kecamatanName},
+les olimpiade SD ${kecamatanName},
+les olimpiade SMP ${kecamatanName},
+les olimpiade SMA ${kecamatanName},
+olimpiade matematika ${kecamatanName},
+olimpiade fisika ${kecamatanName},
+olimpiade kimia ${kecamatanName},
+olimpiade biologi ${kecamatanName},
+olimpiade informatika ${kecamatanName},
+OSN, KSN, OSP, OSK, ISMO, IMO, JISMO,
+olimpiade sains nasional,
+kompetisi sains nasional,
+bimbel olimpiade terbaik,
+guru privat olimpiade,
+edumatrix indonesia
+`,
       },
 
       {

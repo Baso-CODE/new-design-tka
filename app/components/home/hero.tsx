@@ -17,21 +17,16 @@ export default async function Hero() {
       <div className="py-24 px-4 lg:px-0 mt-10 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[74vh]">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2 ">
-            <h1
-              className="text-[40px] uppercase font-bold leading-10 font-title"
-              data-aos="fade-down">
+            <h1 className="text-[40px] uppercase font-bold leading-10 font-title">
               Butuh persiapan lebih
             </h1>
 
             <h2
-              data-aos="fade-down"
               aria-hidden="true"
               className="uppercase text-[40px] font-bold font-title text-[#faae17] mb-4">
               untuk OSN
             </h2>
-            <p
-              className=" mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold"
-              data-aos="fade-right">
+            <p className=" mb-8 font-desc text-[14px] md:text-[16px] leading-4.75 font-bold">
               Edumatrix Indonesia bangga mendukung generasi muda Indonesia dalam
               meraih prestasi di Olimpiade Sains Nasional. Program kami
               dirancang untuk mempersiapkan siswa dengan pengetahuan mendalam
@@ -47,7 +42,6 @@ export default async function Hero() {
 
             <Link
               href={link}
-              data-aos="fade-up"
               className="group relative inline-flex w-100% md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50">
               <span className="z-10 pr-2"> Daftar Sekarang</span>
               <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
@@ -70,15 +64,14 @@ export default async function Hero() {
             </Link>
           </div>
 
-          <div
-            className="lg:w-1/2 flex justify-center items-center"
-            data-aos="fade-left">
+          <div className="lg:w-1/2 flex justify-center items-center">
             <Image
               loading="eager"
               src="/images/image-preview-landing-page.webp"
               alt="OSN"
               width={1200}
               height={1200}
+              priority
               className="w-full h-full"
             />
           </div>

@@ -55,9 +55,9 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {siswaEdumatrix[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h2 className="-mt-37.5 font-bold text-[20px] font-desc">
                     Siswa Edumatrix
-                  </h3>
+                  </h2>
                 </div>
               </div>
 
@@ -72,9 +72,9 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherNumbers[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h2 className="-mt-37.5 font-bold text-[20px] font-desc">
                     Master Teacher
-                  </h3>
+                  </h2>
                 </div>
               </div>
 
@@ -89,9 +89,9 @@ const JumlahSiswa = () => {
                     className="font-normal text-[50px] font-pencil">
                     {masterTeacherPercent[currentIndex]}
                   </motion.p>
-                  <h3 className="mt-[-15px] font-bold text-[20px] font-desc">
+                  <h2 className="-mt-37.5 font-bold text-[20px] font-desc">
                     Presentase Kelulusan
-                  </h3>
+                  </h2>
                 </div>
               </div>
             </div>

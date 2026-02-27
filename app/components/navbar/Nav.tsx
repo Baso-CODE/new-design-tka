@@ -58,10 +58,12 @@ const Nav = () => {
             <Image
               src="/images/logo.webp"
               alt="Pusat bimbingan belajar dan les privat berkualitas dengan tutor terbaik untuk jenjang pendidikan TK hingga SMA"
-              className="w-[107px] h-10"
+              className="w-26.75 h-10"
               width={214}
               height={80}
               priority
+              loading="eager"
+              fetchPriority="high"
             />
           </Link>
 

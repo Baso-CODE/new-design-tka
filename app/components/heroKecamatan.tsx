@@ -17,17 +17,13 @@ export default function HeroKecamatan({
       <div className="py-24 px-2 mt-8 text-white max-w-310  lg:min-h-[70vh] xl:min-h-[73vh] ">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2">
-            <h1
-              className="text-[36px] uppercase font-bold leading-10 font-title mb-7"
-              data-aos="fade-down">
+            <h1 className="text-[36px] uppercase font-bold leading-10 font-title mb-7">
               BIMBEL & LES PRIVAT OSN KSN IMO SD SMP SMA Di{" "}
               <span className="text-[#faae17] ">{kecamatanName}</span> TERBAIK
               #1
             </h1>
 
-            <p
-              className="mb-4 font-desc text-[1rem] leading-4.75 font-medium "
-              data-aos="fade-right">
+            <p className="mb-4 font-desc text-[1rem] leading-4.75 font-medium ">
               Edumatrix Indonesia merupakan{" "}
               <strong>bimbel OSN (Olimpiade Sains Nasional)</strong> dan{" "}
               <strong>les privat KSN–IMO</strong> terpercaya di{" "}
@@ -53,10 +49,9 @@ export default function HeroKecamatan({
             </p>
 
             <Link
-              data-aos="fade-up"
               href={linkCta}
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50">
-              <span className="z-10 pr-2"> Daftar Sekarang</span>
+              <span className="z-10 pr-2 font-bold"> Daftar Sekarang</span>
               <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                 <div className="mr-3.5 flex items-center justify-center">
                   <svg
@@ -76,16 +71,16 @@ export default function HeroKecamatan({
               </div>
             </Link>
           </div>
-          <div
-            className="lg:w-1/2 flex justify-center items-center"
-            data-aos="fade-left">
+          <div className="lg:w-1/2 flex justify-center items-center">
             <Image
               width={1000}
               height={1000}
               src="/images/hero-image-kecamatan-page.webp"
               alt={`Les privat dan bimbingan belajar OSN terbaik di ${kecamatanName}. Edumatrix Indonesia membantu siswa SD, SMP, dan SMA meraih prestasi Olimpiade Sains Nasional (OSN) dengan pengajar profesional dan metode belajar interaktif di ${kecamatanName}.`}
               className="w-full h-full"
-              loading="lazy"
+              priority
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
         </div>

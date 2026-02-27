@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 interface HeroKotaProps {
   kotaName: string;
@@ -19,16 +20,12 @@ export default function HeroKota({
         <div className="flex flex-col lg:flex-row gap-14">
           {/* ===== TEXT SECTION ===== */}
           <div className="lg:w-1/2">
-            <h1
-              className="text-[38px] uppercase font-bold leading-10 font-title mb-8"
-              data-aos="fade-down">
+            <h1 className="text-[38px] uppercase font-bold leading-10 font-title mb-8">
               BIMBEL & LES PRIVAT OSN KSN IMO SD SMP SMA Di{" "}
               <span className="text-[#faae17]">{kotaName}</span> TERBAIK #1
             </h1>
 
-            <p
-              className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium"
-              data-aos="fade-right">
+            <p className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium">
               Edumatrix hadir di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}
@@ -51,13 +48,12 @@ export default function HeroKota({
             </p>
 
             {/* CTA */}
-            <a
+            <Link
               href={linkCta}
-              data-aos="fade-up"
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] 
                 h-14 items-center justify-center rounded-full bg-[#F68507] 
                 py-1 pl-6 pr-14 font-medium text-neutral-50">
-              <span className="z-10 pr-2">Daftar Sekarang</span>
+              <span className="z-10 pr-2 font-bold">Daftar Sekarang</span>
               <div
                 className="absolute right-1 inline-flex h-12 w-12 items-center justify-end 
                 rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
@@ -81,20 +77,20 @@ export default function HeroKota({
                   </svg>
                 </div>
               </div>
-            </a>
+            </Link>
           </div>
 
           {/* ===== IMAGE ===== */}
-          <div
-            className="lg:w-1/2 flex justify-center items-center"
-            data-aos="fade-left">
+          <div className="lg:w-1/2 flex justify-center items-center">
             <Image
               src={fotoKota}
               alt={`Les privat OSN di ${kotaName}`}
               width={700}
               height={450}
               className="w-full h-auto rounded-md"
-              loading="lazy"
+              priority
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
         </div>

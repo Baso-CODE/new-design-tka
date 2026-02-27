@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -13,6 +15,7 @@ interface CarouselItem {
 }
 
 const SliderMobile = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -57,28 +60,40 @@ const SliderMobile = () => {
   ];
 
   return (
-    <div className="w-full block md:hidden ">
+    <div className="w-full block md:hidden">
       <div className="max-w-310 px-2 mx-auto">
         <Carousel
           responsive={responsive}
           infinite
           autoPlay
           autoPlaySpeed={2600}
-          arrows
+          arrows={false}
           ssr
-          itemClass="w-full h-full">
-          {items.map((item, idx) => (
-            <a href={item.href} key={idx}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className="w-full h-full rounded-lg object-fill"
-                priority={idx === 0}
-              />
-            </a>
-          ))}
+          beforeChange={(nextSlide) => setActiveIndex(nextSlide)}>
+          {items.map((item, idx) => {
+            const isActive = idx === activeIndex;
+
+            return (
+              <Link
+                key={idx}
+                href={item.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                tabIndex={isActive ? 0 : -1}
+                aria-hidden={!isActive}
+                aria-label={`Konsultasi OSN via WhatsApp - Slide ${idx + 1}`}
+                className="block">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  className="w-full h-full rounded-lg object-fill"
+                  priority={idx === 0}
+                />
+              </Link>
+            );
+          })}
         </Carousel>
       </div>
     </div>

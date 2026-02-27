@@ -6,7 +6,8 @@ const YouTubeShortEmbed = () => {
     "Edumatrix Indonesia hadir dengan bimbingan les privat terbaik untuk Olimpiade Sains Nasional (OSN). Kami membimbing Anda dengan strategi jitu dan pengajar ahli untuk meraih medali emas impian Anda!";
   const videoUploadDate = "2025-07-23T08:00:00+07:00";
 
-  const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0`;
+  // const embedUrl = `https://www.youtube.com/embed/${videoId}?autoplay=0&controls=1&modestbranding=1&rel=0&showinfo=0`;
+  const embedUrl = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=0&controls=1&modestbranding=1&rel=0`;
   const watchUrl = `https://www.youtube.com/watch?v=${videoId}`;
   const thumbnailUrl = `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`;
 
@@ -56,11 +57,11 @@ const YouTubeShortEmbed = () => {
                   className="absolute top-0 left-0 w-full h-full"
                   src={embedUrl}
                   title={videoTitle}
-                  // Menambahkan atribut meta dasar pada iframe
-                  name={videoTitle}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen
-                  loading="lazy"></iframe>
+                  loading="lazy"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                />
               </div>
             </div>
           </div>

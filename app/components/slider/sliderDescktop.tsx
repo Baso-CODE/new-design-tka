@@ -1,6 +1,8 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
@@ -13,6 +15,8 @@ interface CarouselItem {
 }
 
 const SliderDescktop = () => {
+  const [activeIndex, setActiveIndex] = useState(0);
+
   const responsive = {
     superLargeDesktop: {
       breakpoint: { max: 4000, min: 1024 },
@@ -66,19 +70,29 @@ const SliderDescktop = () => {
           autoPlaySpeed={2600}
           arrows
           ssr
-          itemClass="w-full h-full">
-          {items.map((item, idx) => (
-            <a href={item.href} key={idx}>
-              <Image
-                src={item.src}
-                alt={item.alt}
-                width={item.width}
-                height={item.height}
-                className="w-full h-full object-contain rounded-lg"
-                priority={idx === 0}
-              />
-            </a>
-          ))}
+          beforeChange={(nextSlide) => setActiveIndex(nextSlide)}>
+          {items.map((item, idx) => {
+            const isActive = idx === activeIndex;
+
+            return (
+              <Link
+                href={item.href}
+                key={idx}
+                tabIndex={isActive ? 0 : -1}
+                aria-hidden={!isActive}
+                aria-label={`Konsultasi OSN via WhatsApp - Slide ${idx + 1}`}
+                className="block">
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  width={item.width}
+                  height={item.height}
+                  className="w-full h-full object-contain rounded-lg"
+                  priority={idx === 0}
+                />
+              </Link>
+            );
+          })}
         </Carousel>
       </div>
     </div>

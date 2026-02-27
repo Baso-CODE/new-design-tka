@@ -20,9 +20,9 @@ export default async function Contact() {
             width={776}
             height={1146}
             loading="lazy"
-            className="rounded-md xl:w-[388px] w-full max-w-sm h-auto object-cover"
+            className="rounded-md xl:w-97 w-full max-w-sm h-auto object-cover"
           />
-          <div className="absolute bottom-0 left-0 right-0 h-[100px] bg-linear-to-t from-[#04397D] to-transparent rounded-b-md" />
+          <div className="absolute bottom-0 left-0 right-0 h-25 bg-linear-to-t from-[#04397D] to-transparent rounded-b-md" />
         </div>
 
         {/* TEXT + CTA */}

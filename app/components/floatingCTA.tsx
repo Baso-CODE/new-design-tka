@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { getDataContactCsDummy } from "../lib/getDummyDataRequest/getContactCsDummy.request";
 
+export const dynamic = "force-dynamic";
 export default async function FloatingCTA() {
   const waLink = await getDataContactCsDummy();
 

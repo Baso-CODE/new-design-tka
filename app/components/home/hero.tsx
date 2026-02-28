@@ -68,7 +68,7 @@ export default async function Hero() {
             <Image
               loading="eager"
               src="/images/image-preview-landing-page.webp"
-              alt="OSN"
+              alt="Bimbingan belajar les privat untuk persiapan OSN dan peningkatan prestasi akademik siswa SD SMP SMA"
               width={1200}
               height={1200}
               priority

@@ -26,7 +26,6 @@ const PaketBelajarOSN = () => {
 
           {/* Box Paket (Grid untuk responsif) */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-            {/* PAKET PRIORITY */}
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col ">
               <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
@@ -54,7 +53,7 @@ const PaketBelajarOSN = () => {
                   </li>
                 ))}
               </ul>
-              {/* Tombol Tanya Kelas untuk Paket Priority */}
+
               <Link
                 href={waLinkPriority}
                 target="_blank"

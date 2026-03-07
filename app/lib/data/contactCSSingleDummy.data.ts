@@ -19,7 +19,7 @@ export const dummyContactCsData: ContactCs[] = [
     link_cta:
       "https://api.whatsapp.com/send?phone=6285815095359&text=Halo%20Kak%20Nevita,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Fhttps://bimbeledumatrix.com/%2F",
     isDeleted: false,
-    weight: 3,
+    weight: 1,
     display_order: 1,
   },
   {
@@ -29,8 +29,8 @@ export const dummyContactCsData: ContactCs[] = [
     link_cta:
       "https://api.whatsapp.com/send?phone=6285600422188&text=Halo%20Kak%20Dias,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Fhttps://bimbeledumatrix.com/%2F",
     isDeleted: false,
-    weight: 3,
-    display_order: 1,
+    weight: 1,
+    display_order: 2,
   },
   {
     id: 6,
@@ -40,6 +40,6 @@ export const dummyContactCsData: ContactCs[] = [
       "https://api.whatsapp.com/send?phone=6285712217876&text=Halo%20Kak%20Sari%2C%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
     isDeleted: false,
     weight: 1,
-    display_order: 6,
+    display_order: 3,
   },
 ];

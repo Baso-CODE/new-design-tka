@@ -1,11 +1,9 @@
-import { baseUrlClient } from "@/app/utils/config";
 import { ContactCs } from "@/app/types/contact.type";
+import { baseUrlClient } from "@/app/utils/config";
 
 export async function getAllContactCs(): Promise<ContactCs[] | null> {
   try {
-    const response = await fetch(`${baseUrlClient}/contactcs/all/cs`, {
-      cache: "force-cache",
-    });
+    const response = await fetch(`${baseUrlClient}/contactcs/all/cs`);
 
     if (!response.ok) {
       return null;

@@ -37,7 +37,7 @@ export default async function Contact() {
             kami:
           </p>
 
-          <div className="space-y-4 max-w-md mx-auto lg:mx-0">
+          <div className="space-y-4 max-w-lg mx-auto lg:mx-0">
             {contactsToShow.map((contact) => (
               <Link
                 key={contact.id}

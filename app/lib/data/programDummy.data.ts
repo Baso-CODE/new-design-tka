@@ -19,7 +19,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     tagline: "#Kualitas yang bicara",
     foto_icon: "/images/program-belajar/pengajar-osn-berkualitas.webp",
 
-    nama_admin: "Kak Iva",
+    nama_admin: "Kak Nevita",
     description:
       "Memastikan bahwa setiap siswa di Edumatrix diajar oleh tenaga pengajar yang berkompeten dan profesional. Kami hanya memilih pengajar terbaik yang memiliki pengalaman dan keahlian dalam bidang mereka masing-masing.",
     isDeleted: false,
@@ -32,7 +32,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     tagline: "#Siapa yang pintar",
     foto_icon: "/images/program-belajar/smart-methode-pengajaran-osn.webp",
 
-    nama_admin: "Kak Iva",
+    nama_admin: "Kak Nevita",
     description:
       "Metode ini menggabungkan teknologi pendidikan terkini dengan teknik pengajaran yang terbukti efektif untuk membantu siswa belajar dengan cara yang lebih adaptif dan responsif. Untuk memaksimalkan pemahaman dan retensi siswa",
     isDeleted: false,
@@ -45,7 +45,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     tagline: "#Kualitas yang bicara",
     foto_icon: "/images/program-belajar/kurikulum-personal-siswa-osn.webp",
 
-    nama_admin: "Kak Iva",
+    nama_admin: "Kak Nevita",
     description:
       "Kurikulum Personal di Edumatrix memungkinkan setiap siswa memiliki jalur pembelajaran yang disesuaikan dengan kebutuhan dan tujuan pribadi mereka. Kurikulum ini dirancang berdasarkan analisis mendalam terhadap kemampuan, minat, dan gaya belajar setiap siswa. ",
     isDeleted: false,
@@ -58,7 +58,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     tagline: "#Hari ini ada apa aja yah?",
     foto_icon: "/images/program-belajar/intensive-quiz-osn.webp",
 
-    nama_admin: "Kak Iva",
+    nama_admin: "Kak Nevita",
     description:
       "Intensive Quiz menyediakan serangkaian kuis intensif yang dirancang untuk menguji dan memperkuat pemahaman siswa terhadap materi yang telah dipelajari. Kuis ini tidak hanya mengukur seberapa baik siswa menguasai materi.",
     isDeleted: false,
@@ -71,7 +71,7 @@ export const programBelajarDummy: ProgramBelajar[] = [
     tagline: "#Qontrol yang maju maju(alok sound)",
     foto_icon: "/images/program-belajar/quality-control-bimbel-osn.webp",
 
-    nama_admin: "Kak Iva",
+    nama_admin: "Kak Nevita",
     description:
       "Quality Control adalah fitur penting di Edumatrix yang memastikan bahwa seluruh proses pembelajaran berjalan sesuai dengan standar kualitas yang tinggi. Melalui evaluasi rutin dan penilaian yang ketat, untuk selalu berada pada level terbaik.",
     isDeleted: false,

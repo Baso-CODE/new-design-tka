@@ -31,16 +31,16 @@ export const dummyContactCsData: ContactCs[] = [
     weight: 1,
     display_order: 1,
   },
-  {
-    id: 4,
-    nomor_hp: "0856-0042-2188",
-    nama_cs: "Dias",
-    link_cta:
-      "https://api.whatsapp.com/send?phone=6285600422188&text=Halo%20Kak%20Dias,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Fhttps://bimbeledumatrix.com/%2F",
-    isDeleted: false,
-    weight: 1,
-    display_order: 2,
-  },
+  // {
+  //   id: 4,
+  //   nomor_hp: "0856-0042-2188",
+  //   nama_cs: "Dias",
+  //   link_cta:
+  //     "https://api.whatsapp.com/send?phone=6285600422188&text=Halo%20Kak%20Dias,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Fhttps://bimbeledumatrix.com/%2F",
+  //   isDeleted: false,
+  //   weight: 1,
+  //   display_order: 2,
+  // },
   {
     id: 6,
     nomor_hp: "0857-1221-7876",
@@ -51,24 +51,15 @@ export const dummyContactCsData: ContactCs[] = [
     weight: 1,
     display_order: 3,
   },
-  {
-    id: 8,
-    nomor_hp: "0856-0042-2188",
-    nama_cs: "Kak Dias",
-    link_cta:
-      "https://api.whatsapp.com/send?phone=6285600422188&text=Halo%20Kak%20Dias%2C%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
-    isDeleted: false,
-    weight: 1,
-    display_order: 3,
-  },
-  {
-    id: 9,
-    nomor_hp: "0812-1636-5729",
-    nama_cs: "Kak Nia",
-    link_cta:
-      "https://api.whatsapp.com/send?phone=6281216365729&text=Halo%20Kak%20Nia%2C%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
-    isDeleted: false,
-    weight: 1,
-    display_order: 3,
-  },
+
+  // {
+  //   id: 9,
+  //   nomor_hp: "0812-1636-5729",
+  //   nama_cs: "Kak Nia",
+  //   link_cta:
+  //     "https://api.whatsapp.com/send?phone=6281216365729&text=Halo%20Kak%20Nia%2C%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix%20Indonesia.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket.%0A%0AInfo%20dari%3A%20https%3A%2F%2Folimpiade.edumatrix-indonesia.com%2F",
+  //   isDeleted: false,
+  //   weight: 1,
+  //   display_order: 3,
+  // },
 ];

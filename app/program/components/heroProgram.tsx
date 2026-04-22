@@ -36,7 +36,7 @@ const HeroProgram: NextPage = () => {
           description1="Edumatrix Indonesia menyediakan program bimbingan belajar Olimpiade Sains Nasional (OSN) yang dirancang khusus untuk membantu siswa meraih prestasi di bidang sains. Dengan pengajar berpengalaman dan materi yang terstruktur, kami mempersiapkan siswa untuk kompetisi tingkat nasional."
           description2="Dapatkan pelatihan intensif dan dukungan penuh dari kami agar siap bersaing dan menorehkan prestasi di OSN."
           buttonText="Daftar Sekarang"
-          buttonLink="https://api.whatsapp.com/send?phone=6285600422188&text=Halo%20Kak%20Dias%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20tentang%20program%20Bimbel%20OSN%20di%20Edumatrix."
+          buttonLink="https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20tentang%20program%20Bimbel%20OSN%20di%20Edumatrix."
         />
       </TextParallaxContent>
 

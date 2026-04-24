@@ -3,9 +3,9 @@ import { FaCheck } from "react-icons/fa";
 
 const PaketBelajarOSN = () => {
   const waLinkPriority =
-    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://bimbeledumatrix.com%20saya%20ingin%20Daftar%20Paket%20Priority%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
+    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://bimbeledumatrix.com%20saya%20ingin%20Daftar%20Paket%20ULTIMATE%20MASTERY%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
   const waLinkDeluxe =
-    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://bimbeledumatrix.com%20saya%20ingin%20Daftar%20Paket%20Deluxe%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
+    "https://api.whatsapp.com/send?phone=6285724543040&text=Halo%20Kak%20Putri%20https://bimbeledumatrix.com%20saya%20ingin%20Daftar%20Paket%20CHAMPION%20SERIES%20Bimbel%20OSN.%20Bagaimana%20penjelasan%20detail%20programnya%3F";
 
   return (
     <div>

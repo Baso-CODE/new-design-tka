@@ -29,7 +29,7 @@ const PaketBelajarOSN = () => {
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col ">
               <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-                  PAKET PRIORITY
+                  ULTIMATE MASTERY
                 </h2>
               </div>
               <ul className="space-y-4 grow font-desc">
@@ -83,11 +83,11 @@ const PaketBelajarOSN = () => {
               </Link>
             </div>
 
-            {/* PAKET DELUXE */}
+            {/* CHAMPION SERIES */}
             <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform  flex flex-col">
               <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
                 <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-                  PAKET DELUXE
+                  CHAMPION SERIES
                 </h2>
               </div>
               <ul className="space-y-4 grow">

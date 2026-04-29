@@ -73,30 +73,7 @@ export const successStoryDummy: SuccessStory[] = [
     created_at: "2024-10-30T03:10:34.000Z",
     updated_at: "2024-10-30T03:10:34.000Z",
   },
-  {
-    id: 29,
-    participantName: "-",
-    eventName: "Testimoni Belajar",
-    level: "sd",
-    city: "-",
-    image:
-      "/images/success-story-siswa-osn/testimoni-siswa-belajar-osn-sd-tingkat-kabupaten-kota-bidang-matematika.webp",
-    isDeleted: false,
-    created_at: "2024-10-30T03:11:02.000Z",
-    updated_at: "2024-10-30T03:11:02.000Z",
-  },
-  {
-    id: 30,
-    participantName: "-",
-    eventName: "Testimoni OSN SMA",
-    level: "SMA",
-    city: "-",
-    image:
-      "/images/success-story-siswa-osn/testimoni-belajar-siswa-osn-sma-tingkat-kota-bidang-informatika.webp",
-    isDeleted: false,
-    created_at: "2024-10-30T03:11:24.000Z",
-    updated_at: "2024-10-30T03:11:24.000Z",
-  },
+
   {
     id: 31,
     participantName: "Cleverly Basado Gultom ",
@@ -234,7 +211,7 @@ export const successStoryDummy: SuccessStory[] = [
     participantName: "Hoshe Satria Yuda",
     eventName: "OSN Matematika Provinsi",
     level: "SMA",
-    city: "DI",
+    city: "DI Yogyakarta",
     image:
       "/images/success-story-siswa-osn/siswa-hoshe-satria-yuda-osn-sma-matematika-provinsi-yogyakarta.webp",
     isDeleted: false,
@@ -297,6 +274,18 @@ export const successStoryDummy: SuccessStory[] = [
     city: "Jawa Tengah",
     image:
       "/images/success-story-siswa-osn/siswa-muflhia-syifa-osn-sma-matematika-provinsi-jawa-tengah.webp",
+    isDeleted: false,
+    created_at: "2025-07-22T01:37:15.000Z",
+    updated_at: "2025-07-22T01:37:15.000Z",
+  },
+  {
+    id: 48,
+    participantName: "Quellanubia Aleyda Leksono",
+    eventName: "Junior Science Olympiad Matematika (JSO)",
+    level: "SD",
+    city: "Yogyakarta",
+    image:
+      "/images/success-story-siswa-osn/siswa-osn-quellanubia-aleyda-leksono.webp",
     isDeleted: false,
     created_at: "2025-07-22T01:37:15.000Z",
     updated_at: "2025-07-22T01:37:15.000Z",

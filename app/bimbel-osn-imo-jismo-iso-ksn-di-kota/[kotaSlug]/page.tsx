@@ -14,6 +14,8 @@ import Pengajar from "@/app/components/home/pengajar";
 import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
 import SekolahSiswa from "@/app/components/home/sekolahSiswa";
+import SuccessStoryGrid from "@/app/components/home/successStoryNotSlider";
+import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
 import ListKabupaten from "@/app/components/lisKabupaten";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
@@ -285,6 +287,9 @@ edumatrix indonesia
         <MengapaHarusEdumatrix />
         <Pengajar />
         <Gallery />
+        {/* <SuccessStorySlider /> */}
+        <SuccessStoryGrid />
+        <TestimoniGrid />
         <TransformationOSN />
         <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />

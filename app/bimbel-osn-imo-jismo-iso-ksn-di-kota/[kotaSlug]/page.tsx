@@ -1,6 +1,7 @@
 import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
+import FomoTicker from "@/app/components/fomoTicker";
 import GoldenTicketShowcase from "@/app/components/goldenTicket";
 import HeroKota from "@/app/components/heroKota";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
@@ -148,7 +149,7 @@ export default async function KotaPage(props: {
 
   const imageUrl = kotaData?.foto_kota
     ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
-    : "https://bimbeledumatrix.com/images/images-cta.webp";
+    : "https://bimbeledumatrix.com/images/osn-thumbnail.webp";
 
   const formattedKotaName = formatSlugToTitle(kotaSlug);
 
@@ -300,6 +301,7 @@ edumatrix indonesia
         <Promo />
         <Contact />
         <MediaMassa />
+        <FomoTicker namaWilayah={formattedKotaName} />
       </div>
     </>
   );

@@ -1,6 +1,7 @@
 import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
+import FomoTicker from "@/app/components/fomoTicker";
 import GoldenTicketShowcase from "@/app/components/goldenTicket";
 import HeroKabupaten from "@/app/components/heroKabupaten";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
@@ -43,7 +44,7 @@ export async function generateMetadata({
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
 
   // Gunakan image default (React Vite juga pakai ini)
-  const imageUrl = "https://bimbeledumatrix.com/images/images-cta.webp";
+  const imageUrl = "https://bimbeledumatrix.com/images/osn-thumbnail.webp";
 
   const title = `Les Privat Olimpiade ${kabupatenName} SD SMP SMA • OSN KSN ISMO IMO JISMO`;
   const description = `Les Privat Olimpiade ${kabupatenName} untuk SD, SMP & SMA semua bidang: Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi, Ekonomi. Persiapan OSN, KSN, OSP, OSK, ISMO, IMO & JISMO. Mentor Berpengalaman & Program Intensif.`;
@@ -124,7 +125,7 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          width: 800,
+          width: 600,
           height: 600,
           alt: `Les privat Olimpiade ${kabupatenName}`,
         },
@@ -322,6 +323,7 @@ edumatrix indonesia
         <Promo />
         <Contact />
         <MediaMassa />
+        <FomoTicker namaWilayah={kabupatenName} />
       </div>
     </>
   );

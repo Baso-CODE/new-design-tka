@@ -1,30 +1,30 @@
 import { Metadata } from "next";
-import Accordion from "./components/faq/Accordion";
-import GoldenTicketShowcase from "./components/goldenTicket";
-import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
+import Accordion from "../components/faq/Accordion";
+import GoldenTicketShowcase from "../components/goldenTicket";
+import AsalSekolahSiswaEdumatrix from "../components/home/asalSekolahSiswaEdumatrix";
+import Contact from "../components/home/contact";
+import Gallery from "../components/home/gallery";
+import Hero from "../components/home/hero";
+import JumlahSiswa from "../components/home/jumlahSiswa";
+import ListKota from "../components/home/lisKota";
+import ListSiswa from "../components/home/listSiswa";
+import MengapaHarusEdumatrix from "../components/home/mengapaHarusEdumatrix";
+import PaketBelajarOSN from "../components/home/paketBelajarOSN";
+import Pengajar from "../components/home/pengajar";
+import Pilihan from "../components/home/pilihan";
+import Program from "../components/home/programBelajar";
+import SekolahSiswa from "../components/home/sekolahSiswa";
+import SuccessStoryGrid from "../components/home/successStoryNotSlider";
+import TestimoniGrid from "../components/home/testimoniNotSlider";
+import TingkatPendidikan from "../components/home/tingkatPendidikan";
+import MediaMassa from "../components/mediaMassa/mediaMassa";
+import Promo from "../components/promo";
+import SliderDescktop from "../components/slider/sliderDescktop";
+import SliderMobile from "../components/slider/sliderMobile";
+import ImpactStatisticsOSN from "../components/statisticOSNEdumatrix/statisticOSNEDM";
+import TransformationOSN from "../components/TransformationOSN";
+import YouTubeShortEmbed from "../components/YouTubeShortEmbed";
 
-import Contact from "./components/home/contact";
-import Gallery from "./components/home/gallery";
-import Hero from "./components/home/hero";
-import JumlahSiswa from "./components/home/jumlahSiswa";
-import ListKota from "./components/home/lisKota";
-import ListSiswa from "./components/home/listSiswa";
-import MengapaHarusEdumatrix from "./components/home/mengapaHarusEdumatrix";
-import PaketBelajarOSN from "./components/home/paketBelajarOSN";
-import Pengajar from "./components/home/pengajar";
-import Pilihan from "./components/home/pilihan";
-import Program from "./components/home/programBelajar";
-import SekolahSiswa from "./components/home/sekolahSiswa";
-import SuccessStoryGrid from "./components/home/successStoryNotSlider";
-import TestimoniGrid from "./components/home/testimoniNotSlider";
-import TingkatPendidikan from "./components/home/tingkatPendidikan";
-import MediaMassa from "./components/mediaMassa/mediaMassa";
-import Promo from "./components/promo";
-import SliderDescktop from "./components/slider/sliderDescktop";
-import SliderMobile from "./components/slider/sliderMobile";
-import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
-import TransformationOSN from "./components/TransformationOSN";
-import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
 const ogImage = "https://bimbeledumatrix.com/images/images-cta.webp";
 const canonicalUrl = "https://bimbeledumatrix.com/";
 const pageTitle = "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix";
@@ -85,7 +85,8 @@ export default function Home() {
       <Pengajar />
       <Gallery />
       <SuccessStoryGrid />
-      <TestimoniGrid /> <TransformationOSN />
+      <TestimoniGrid />
+      <TransformationOSN />
       <GoldenTicketShowcase />
       <AsalSekolahSiswaEdumatrix />
       <SekolahSiswa />

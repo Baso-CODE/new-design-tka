@@ -10,11 +10,6 @@ import {
 import localFont from "next/font/local";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
-import FloatingCTA from "./components/floatingCTA";
-import FooterEduMatrix from "./components/footerEdumatrix";
-import BottomNavigationBarOSN from "./components/navbar/BottomNavigationBarOSN";
-import { navLinks } from "./components/navbar/NavLink";
-import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
 
 // Font Google
@@ -115,11 +110,7 @@ export default function RootLayout({
     <html lang="id">
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}>
-        <ResponsiveNav />
-        <main>{children}</main>
-        <FloatingCTA />
-        <BottomNavigationBarOSN navLinksData={navLinks} />
-        <FooterEduMatrix />
+        {children}
       </body>
       <GoogleAnalytics gaId="G-70MQQHELFM" />
     </html>

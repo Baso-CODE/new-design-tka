@@ -1,8 +1,9 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { useCallback, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
+// 1. Tipe Data untuk Type Safety
 interface FomoTickerProps {
   namaWilayah: string;
 }
@@ -15,15 +16,14 @@ interface NotificationData {
 }
 
 export default function FomoTicker({ namaWilayah }: FomoTickerProps) {
-  const [isVisible, setIsVisible] = useState<boolean>(false);
-  // Diinisialisasi dengan null agar type-safe saat data belum digenerate
+  const [isVisible, setIsVisible] = useState(false);
   const [notification, setNotification] = useState<NotificationData | null>(
     null,
   );
-  const [isClosedByUser, setIsClosedByUser] = useState<boolean>(false);
+  const [isClosedByUser, setIsClosedByUser] = useState(false);
 
   // Data tiruan dinamis untuk efek FOMO
-  const generateRandomNotification = useCallback((): NotificationData => {
+  const generateRandomNotification = (): NotificationData => {
     const subjects = [
       "OSN Matematika",
       "OSN Fisika",
@@ -45,7 +45,7 @@ export default function FomoTicker({ namaWilayah }: FomoTickerProps) {
     const randomLevel = levels[Math.floor(Math.random() * levels.length)];
     const randomTime = times[Math.floor(Math.random() * times.length)];
 
-    const isRegistration = Math.random() > 0.3; // 70% munculin pendaftaran, 30% kuota
+    const isRegistration = Math.random() > 0.3;
 
     if (isRegistration) {
       return {
@@ -55,7 +55,7 @@ export default function FomoTicker({ namaWilayah }: FomoTickerProps) {
         time: randomTime,
       };
     } else {
-      const sisaKuota = Math.floor(Math.random() * 3) + 1; // Random 1 - 3
+      const sisaKuota = Math.floor(Math.random() * 3) + 1;
       return {
         type: "alert",
         title: "Peringatan Kuota ⚠️",
@@ -63,48 +63,62 @@ export default function FomoTicker({ namaWilayah }: FomoTickerProps) {
         time: "Saat ini",
       };
     }
-  }, [namaWilayah]);
+  };
+
+  // 2. Fungsi untuk Memutar Suara Notifikasi
+  const playNotificationSound = () => {
+    try {
+      // Simpan file audio pendek (mp3/wav) di dalam folder: public/sounds/notification.mp3
+      const audio = new Audio("/sounds/notification.mp3");
+      audio.volume = 0.4; // Atur volume (0.0 sampai 1.0) agar tidak terlalu mengagetkan user
+
+      audio.play().catch((error) => {
+        // Menangkap error jika Autoplay diblokir browser karena user belum berinteraksi
+        console.warn(
+          "Audio autoplay ditangguhkan oleh browser sampai user melakukan interaksi.",
+          error.message,
+        );
+      });
+    } catch (err) {
+      console.error("Gagal memuat sistem audio:", err);
+    }
+  };
 
   useEffect(() => {
     if (isClosedByUser) return;
 
-    let hideTimeoutId: number;
-
     const runTickerCycle = () => {
       setNotification(generateRandomNotification());
       setIsVisible(true);
+      playNotificationSound(); // 👈 Pemicu suara saat notifikasi muncul
 
       // Sembunyikan setelah 5 detik
-      hideTimeoutId = window.setTimeout(() => {
+      setTimeout(() => {
         setIsVisible(false);
       }, 5000);
     };
 
-    // Jalankan pertama kali setelah 3 detik halaman dimuat
-    const initialTimeout = window.setTimeout(runTickerCycle, 3000);
-
-    // Ulangi siklus setiap 15 detik
-    const interval = window.setInterval(runTickerCycle, 15000);
+    const initialTimeout = setTimeout(runTickerCycle, 3000);
+    const interval = setInterval(runTickerCycle, 15000);
 
     return () => {
-      window.clearTimeout(initialTimeout);
-      window.clearTimeout(hideTimeoutId);
-      window.clearInterval(interval);
+      clearTimeout(initialTimeout);
+      clearInterval(interval);
     };
-  }, [generateRandomNotification, isClosedByUser]);
+  }, [namaWilayah, isClosedByUser]);
 
-  if (isClosedByUser) return null;
+  if (isClosedByUser || !notification) return null;
 
   return (
-    <div className="fixed bottom-28 left-4 md:bottom-6 md:left-6 z-50 pointer-events-none">
+    <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 pointer-events-none">
       <AnimatePresence>
-        {isVisible && notification && (
+        {isVisible && (
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 20, scale: 0.9 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
-            className="pointer-events-auto w-80 md:w-80 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 relative overflow-hidden">
+            className="pointer-events-auto w-75 md:w-85 bg-white rounded-xl shadow-2xl border border-gray-100 p-4 relative overflow-hidden">
             {/* Garis indikator di pinggir kiri */}
             <div
               className={`absolute left-0 top-0 bottom-0 w-1 ${

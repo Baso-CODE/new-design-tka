@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function TestimoniGrid() {
   const [stories, setStories] = useState<SuccessStory[]>([]);
-  const [visibleCount, setVisibleCount] = useState(6);
+  const [visibleCount, setVisibleCount] = useState(9);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,7 +20,7 @@ export default function TestimoniGrid() {
   if (stories.length === 0) return null;
 
   const handleShowMore = () => {
-    setVisibleCount((prev) => prev + 6);
+    setVisibleCount((prev) => prev + 3);
   };
 
   return (
@@ -36,21 +36,14 @@ export default function TestimoniGrid() {
           berikutnya.
         </p>
 
-        {/* GRID */}
-        <div
-          className="
-          grid gap-4
-          grid-cols-2 
-          sm:grid-cols-3 
-          md:grid-cols-4 
-          lg:grid-cols-5
-        ">
+        {/* GRID 3 PER BARIS */}
+        <div className="grid gap-4 grid-cols-3">
           {stories.slice(0, visibleCount).map((story) => (
             <div key={story.id} className="w-full">
               <Image
                 src={story.image || "-"}
                 alt={story.participantName}
-                width={400}
+                width={600}
                 height={600}
                 className="rounded-md w-full h-full object-contain shadow-lg"
               />

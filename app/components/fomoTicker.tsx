@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 // 1. Tipe Data untuk Type Safety
 interface FomoTickerProps {
-  namaWilayah: string;
+  namaWilayah?: string;
 }
 
 interface NotificationData {
@@ -15,7 +15,9 @@ interface NotificationData {
   time: string;
 }
 
-export default function FomoTicker({ namaWilayah }: FomoTickerProps) {
+export default function FomoTicker({
+  namaWilayah = "sekitar Anda",
+}: FomoTickerProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [notification, setNotification] = useState<NotificationData | null>(
     null,

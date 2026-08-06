@@ -1,14 +1,8 @@
-import { getAllContactCsIsDeleted } from "@/app/request/contacts/getAllIsDeletedContactCs";
+import ContactCsDoubleList from "@/app/helper/contactCsDoubleList";
 import Image from "next/image";
-import Link from "next/link";
 import { dummyContactCsData } from "../data/contactCs.dummyData";
 
-export default async function Contact() {
-  const contactCsData = await getAllContactCsIsDeleted();
-  const isEmpty = contactCsData.length === 0;
-
-  const contactsToShow = isEmpty ? dummyContactCsData : contactCsData;
-
+export default function Contact() {
   return (
     <div className="flex justify-center bg-[#04397D] text-white">
       <div className="flex flex-col lg:flex-row items-center justify-between max-w-310 w-full p-4 my-10 lg:my-0">
@@ -37,20 +31,8 @@ export default async function Contact() {
             kami:
           </p>
 
-          <div className="space-y-4 max-w-lg mx-auto lg:mx-0">
-            {contactsToShow.map((contact) => (
-              <Link
-                key={contact.id}
-                href={contact.link_cta ?? "#"}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block">
-                <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[32px] text-[20px] px-2 rounded-md text-center hover:bg-orange-600 transition-colors duration-200">
-                  {contact.nomor_hp} ({contact.nama_cs})
-                </div>
-              </Link>
-            ))}
-          </div>
+          {/* Langsung gunakan dummy data sebagai props */}
+          <ContactCsDoubleList contacts={dummyContactCsData} />
         </div>
       </div>
     </div>

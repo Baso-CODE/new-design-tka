@@ -1,19 +1,48 @@
 "use client";
 
+import { useCsRotation } from "@/app/helper/useCsRotation";
+import { ContactCs } from "@/app/types/contact.type";
 import Image from "next/image";
 import Link from "next/link";
 
 interface HeroKotaProps {
   kotaName: string;
   fotoKota: string;
-  linkCta: string;
+  contacts: ContactCs[]; // Menerima data kontak
 }
 
 export default function HeroKota({
   kotaName,
   fotoKota,
-  linkCta,
+  contacts,
 }: HeroKotaProps) {
+  // Gunakan hook single rotation dengan storageKey unik untuk HeroKota
+  const { activeCs, rotateCs } = useCsRotation(
+    contacts,
+    "single",
+    "hero_kota_rotation",
+  );
+
+  if (!activeCs || activeCs.length === 0) return null;
+  const activeContact = activeCs[0];
+
+  // Buat link dinamis dengan nama CS yang aktif
+  const dynamicLink = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace(
+    "+",
+    "",
+  )}&text=${encodeURIComponent(
+    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com/, Saya ingin tanya program belajar OSN di ${kotaName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
+  )}`;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    rotateCs(); // Lakukan rotasi CS dan simpan ke localStorage
+
+    setTimeout(() => {
+      window.open(dynamicLink, "_blank", "noopener,noreferrer");
+    }, 50);
+  };
+
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center">
       <div className="py-16 px-2 mt-16 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh]">
@@ -25,7 +54,7 @@ export default function HeroKota({
               <span className="text-[#faae17]">{kotaName}</span> TERBAIK #1
             </h1>
 
-            <p className="mb-4 font-desc text-[1rem] lleading-4.75 font-medium">
+            <p className="mb-4 font-desc text-[1rem] leading-4.75 font-medium">
               Edumatrix hadir di{" "}
               <span className="text-[#faae17] font-extrabold uppercase">
                 {kotaName}
@@ -49,11 +78,17 @@ export default function HeroKota({
 
             {/* CTA */}
             <Link
-              href={linkCta}
+              href={dynamicLink}
+              onClick={handleClick}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Daftar Sekarang via WhatsApp dengan ${activeContact.nama_cs}`}
               className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] 
                 h-14 items-center justify-center rounded-full bg-[#F68507] 
-                py-1 pl-6 pr-14 font-medium text-neutral-50">
-              <span className="z-10 pr-2 font-bold">Daftar Sekarang</span>
+                py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer">
+              <span className="z-10 pr-2 font-bold">
+                Daftar Sekarang ({activeContact.nama_cs})
+              </span>
               <div
                 className="absolute right-1 inline-flex h-12 w-12 items-center justify-end 
                 rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">

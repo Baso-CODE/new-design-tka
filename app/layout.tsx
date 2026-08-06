@@ -58,8 +58,6 @@ const superPencil = localFont({
   display: "swap",
 });
 
-// export const dynamic = "force-dynamic";
-
 export const metadata: Metadata = {
   title: "Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix",
   description:
@@ -86,7 +84,6 @@ export const metadata: Metadata = {
     ],
   },
 
-  // TWITTER META
   twitter: {
     card: "summary_large_image",
     site: "@alfaprivat",
@@ -107,12 +104,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="id">
+    <html lang="id" suppressHydrationWarning>
       <body
+        suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} ${poppins.variable} ${roboto.variable} ${oswald.variable} ${honk.variable} ${superPencil.variable} antialiased`}>
         {children}
+        <GoogleAnalytics gaId="G-70MQQHELFM" />
       </body>
-      <GoogleAnalytics gaId="G-70MQQHELFM" />
     </html>
   );
 }

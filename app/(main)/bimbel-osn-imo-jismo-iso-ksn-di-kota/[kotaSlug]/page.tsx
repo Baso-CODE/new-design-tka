@@ -1,9 +1,9 @@
-import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
+import { dummyContactCsData } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import FomoTicker from "@/app/components/fomoTicker";
 import GoldenTicketShowcase from "@/app/components/goldenTicket";
-import HeroKabupaten from "@/app/components/heroKabupaten";
+import HeroKota from "@/app/components/heroKota";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
 import Gallery from "@/app/components/home/gallery";
@@ -18,7 +18,7 @@ import SekolahSiswa from "@/app/components/home/sekolahSiswa";
 import SuccessStoryGrid from "@/app/components/home/successStoryNotSlider";
 import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
-import ListKecamatan from "@/app/components/listKecamatan";
+import ListKabupaten from "@/app/components/lisKabupaten";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
 import Promo from "@/app/components/promo";
 import SliderDescktop from "@/app/components/slider/sliderDescktop";
@@ -26,75 +26,44 @@ import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
-
-import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
+import { getKotaDummyBySlug } from "@/app/lib/getDummyDataRequest/getImageKotaDummy.data";
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ kotaSlug: string; kabupatenSlug: string }>;
+  params: Promise<{ kotaSlug: string }>;
 }) {
-  const { kotaSlug, kabupatenSlug } = await params;
+  const { kotaSlug } = await params;
 
-  const kotaName = formatSlugToTitle(kotaSlug);
-  const kabupatenName = formatSlugToTitle(kabupatenSlug);
+  const formattedKotaName = formatSlugToTitle(kotaSlug);
 
   const baseUrl = "https://bimbeledumatrix.com";
-  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
+  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
+  const kotaData = getKotaDummyBySlug(kotaSlug);
 
-  // Gunakan image default (React Vite juga pakai ini)
-  const imageUrl = "https://bimbeledumatrix.com/images/osn-thumbnail.webp";
+  const imageUrl = kotaData?.foto_kota
+    ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
+    : "https://bimbeledumatrix.com/images/images-cta.webp";
 
-  const title = `Les Privat Olimpiade ${kabupatenName} SD SMP SMA • OSN KSN ISMO IMO JISMO`;
-  const description = `Les Privat Olimpiade ${kabupatenName} untuk SD, SMP & SMA semua bidang: Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi, Ekonomi. Persiapan OSN, KSN, OSP, OSK, ISMO, IMO & JISMO. Mentor Berpengalaman & Program Intensif.`;
+  const ogTitle = `Les Privat Olimpiade ${formattedKotaName} SD SMP SMA • OSN KSN ISMO IMO JISMO Terbaik`;
+  const ogDescription = `Les Privat Olimpiade ${formattedKotaName} untuk SD, SMP & SMA semua bidang: Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi, Ekonomi. Persiapan OSN, KSN, ISMO, IMO, JISMO hingga tingkat Nasional & Internasional. Mentor Berpengalaman • Program Intensif • Laporan Perkembangan • Daftar Sekarang!`;
   return {
     metadataBase: new URL(baseUrl),
-
-    title,
-    description,
+    title: ogTitle,
+    description: ogDescription,
     keywords: [
-      // Core Local Intent - Kota
-      `les privat olimpiade ${kotaName}`,
-      `bimbel olimpiade ${kotaName}`,
-      `bimbel OSN ${kotaName}`,
-      `les OSN ${kotaName}`,
-      `bimbel KSN ${kotaName}`,
-      `les IMO ${kotaName}`,
-      `bimbel ISMO ${kotaName}`,
-      `bimbel JISMO ${kotaName}`,
-
-      // Core Local Intent - Kabupaten
-      `les privat olimpiade ${kabupatenName}`,
-      `bimbel olimpiade ${kabupatenName}`,
-      `bimbel OSN ${kabupatenName}`,
-      `les OSN ${kabupatenName}`,
-      `bimbel KSN ${kabupatenName}`,
-      `les IMO ${kabupatenName}`,
-      `bimbel ISMO ${kabupatenName}`,
-      `bimbel JISMO ${kabupatenName}`,
-
-      // Jenjang Pendidikan
-      `les olimpiade SD ${kotaName}`,
-      `les olimpiade SMP ${kotaName}`,
-      `les olimpiade SMA ${kotaName}`,
-      `les olimpiade SD ${kabupatenName}`,
-      `les olimpiade SMP ${kabupatenName}`,
-      `les olimpiade SMA ${kabupatenName}`,
-
-      // Mata Pelajaran Olimpiade
-      `olimpiade matematika ${kotaName}`,
-      `olimpiade fisika ${kotaName}`,
-      `olimpiade kimia ${kotaName}`,
-      `olimpiade biologi ${kotaName}`,
-      `olimpiade informatika ${kotaName}`,
-      `olimpiade astronomi ${kotaName}`,
-      `olimpiade geografi ${kotaName}`,
-      `olimpiade ekonomi ${kotaName}`,
-
-      // Program Olimpiade Nasional & Internasional
-      "OSN SD SMP SMA",
-      "KSN SD SMP SMA",
+      `les privat olimpiade ${formattedKotaName}`,
+      `bimbel olimpiade ${formattedKotaName}`,
+      `bimbel OSN ${formattedKotaName}`,
+      `les OSN ${formattedKotaName}`,
+      `bimbel KSN ${formattedKotaName}`,
+      "OSN SD",
+      "OSN SMP",
+      "OSN SMA",
+      "KSN SD",
+      "KSN SMP",
+      "KSN SMA",
       "OSP",
       "OSK",
       "ISMO",
@@ -103,67 +72,74 @@ export async function generateMetadata({
       "olimpiade sains nasional",
       "kompetisi sains nasional",
       "olimpiade matematika internasional",
-
-      // Generic High Intent
-      "les privat olimpiade",
-      "bimbel olimpiade terbaik",
-      "guru privat olimpiade",
+      "les olimpiade SD",
+      "les olimpiade SMP",
+      "les olimpiade SMA",
+      "bimbel olimpiade SD SMP SMA",
+      "olimpiade matematika",
+      "olimpiade IPA",
+      "olimpiade fisika",
+      "olimpiade kimia",
+      "olimpiade biologi",
+      "olimpiade informatika",
+      "olimpiade komputer",
+      "olimpiade astronomi",
+      "olimpiade geografi",
+      "olimpiade ekonomi",
       "edumatrix indonesia",
     ],
     robots:
       "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 
-    alternates: { canonical: canonicalUrl },
+    alternates: {
+      canonical: canonicalUrl,
+    },
 
     openGraph: {
       type: "article",
       locale: "id_ID",
-      title,
-      description,
       url: canonicalUrl,
       siteName: "Edumatrix Indonesia",
+      title: ogTitle,
+      description: ogDescription,
       images: [
         {
           url: imageUrl,
-          width: 600,
+          width: 800,
           height: 600,
-          alt: `Les privat Olimpiade ${kabupatenName}`,
+          alt: `les privat olimpiade ${formattedKotaName}`,
         },
       ],
     },
 
     twitter: {
       card: "summary_large_image",
-      title,
-      description,
+      title: ogTitle,
+      description: ogDescription,
       images: [imageUrl],
     },
   };
 }
 
-export default async function KabupatenPage({
-  params,
-}: {
-  params: Promise<{ kotaSlug: string; kabupatenSlug: string }>;
+export default async function KotaPage(props: {
+  params: Promise<{ kotaSlug: string }>;
 }) {
-  const { kotaSlug, kabupatenSlug } = await params;
+  const { kotaSlug } = await props.params;
 
-  const kotaName = formatSlugToTitle(kotaSlug);
-  const kabupatenName = formatSlugToTitle(kabupatenSlug);
+  const kotaData = getKotaDummyBySlug(kotaSlug);
 
-  let data = null;
-  data = await getSingleContactCsIsDeleted();
+  const imageUrl = kotaData?.foto_kota
+    ? `https://bimbeledumatrix.com/${kotaData.foto_kota}`
+    : "https://bimbeledumatrix.com/images/osn-thumbnail.webp";
 
-  const contact = data || fallbackContact;
-  const link = contact.link_cta || "/contact";
+  const formattedKotaName = formatSlugToTitle(kotaSlug);
 
   const baseUrl = "https://bimbeledumatrix.com";
-  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`;
+  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
-      /* === Breadcrumb === */
       {
         "@type": "BreadcrumbList",
         "@id": `${canonicalUrl}#breadcrumb`,
@@ -171,7 +147,7 @@ export default async function KabupatenPage({
           {
             "@type": "ListItem",
             position: 1,
-            item: { "@id": baseUrl, name: "Home" },
+            item: { "@id": `${baseUrl}`, name: "Home" },
           },
           {
             "@type": "ListItem",
@@ -185,29 +161,20 @@ export default async function KabupatenPage({
             "@type": "ListItem",
             position: 3,
             item: {
-              "@id": `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`,
-              name: `Les Privat Olimpiade di ${kotaName}`,
-            },
-          },
-          {
-            "@type": "ListItem",
-            position: 4,
-            item: {
               "@id": canonicalUrl,
-              name: `Les Privat Olimpiade di ${kabupatenName}`,
+              name: `Les Privat Olimpiade di ${formattedKotaName}`,
             },
           },
         ],
       },
 
-      /* === ORGANIZATION === */
       {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
         name: "Edumatrix Indonesia",
+        description: `Edumatrix Indonesia adalah penyedia Les Privat Olimpiade terbaik di ${formattedKotaName}.`,
         url: baseUrl,
-        areaServed: kabupatenName,
-        description: `Edumatrix Indonesia adalah penyedia Les Privat Olimpiade terbaik di ${kabupatenName}.`,
+        areaServed: formattedKotaName,
         sameAs: [
           baseUrl,
           "https://www.instagram.com/edumatrix.indonesia/",
@@ -222,23 +189,25 @@ export default async function KabupatenPage({
           "@type": "ContactPoint",
           telephone: "+62-812-1552-3902",
           contactType: "Customer Service",
+          areaServed: "ID",
+          availableLanguage: ["Indonesian", "English"],
         },
         keywords: `
-les privat olimpiade ${kabupatenName},
-bimbel olimpiade ${kabupatenName},
-les OSN ${kabupatenName},
-bimbel KSN ${kabupatenName},
-les ISMO ${kabupatenName},
-les IMO ${kabupatenName},
-bimbel JISMO ${kabupatenName},
-les olimpiade SD ${kabupatenName},
-les olimpiade SMP ${kabupatenName},
-les olimpiade SMA ${kabupatenName},
-olimpiade matematika ${kabupatenName},
-olimpiade fisika ${kabupatenName},
-olimpiade kimia ${kabupatenName},
-olimpiade biologi ${kabupatenName},
-olimpiade informatika ${kabupatenName},
+les privat olimpiade ${formattedKotaName},
+bimbel olimpiade ${formattedKotaName},
+les OSN ${formattedKotaName},
+bimbel KSN ${formattedKotaName},
+les ISMO ${formattedKotaName},
+les IMO ${formattedKotaName},
+bimbel JISMO ${formattedKotaName},
+les olimpiade SD ${formattedKotaName},
+les olimpiade SMP ${formattedKotaName},
+les olimpiade SMA ${formattedKotaName},
+olimpiade matematika ${formattedKotaName},
+olimpiade fisika ${formattedKotaName},
+olimpiade kimia ${formattedKotaName},
+olimpiade biologi ${formattedKotaName},
+olimpiade informatika ${formattedKotaName},
 OSN, KSN, OSP, OSK, ISMO, IMO, JISMO,
 olimpiade sains nasional,
 kompetisi sains nasional,
@@ -248,26 +217,25 @@ edumatrix indonesia
 `,
       },
 
-      /* === WEBPAGE === */
       {
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `Les Privat Olimpiade ${kabupatenName}`,
-        description: `Les Privat & Bimbel Olimpiade terbaik di ${kabupatenName}.`,
+        name: `Les Privat Olimpiade di ${formattedKotaName}`,
+        inLanguage: "id-ID",
+        description: `Les Privat & Bimbel Olimpiade terbaik di ${formattedKotaName}.`,
       },
 
-      /* === FAQ === */
       {
         "@type": "FAQPage",
         "@id": `${canonicalUrl}#faq`,
         mainEntity: [
           {
             "@type": "Question",
-            name: `Apakah ada guru OSN di ${kabupatenName}?`,
+            name: `Siapa pengajar OSN di ${formattedKotaName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: "Ya, tutor adalah peraih medali OSN & pengajar berpengalaman.",
+              text: "Pengajar kami adalah peraih medali OSN dan alumni PTN terbaik.",
             },
           },
         ],
@@ -283,47 +251,37 @@ edumatrix indonesia
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="overflow-hidden">
-        {/* === HERO === */}
-        <HeroKabupaten KabupatenName={kabupatenName} linkCta={link} />
-
-        {/* === SECTION LIST === */}
+        <HeroKota
+          kotaName={formattedKotaName}
+          fotoKota={imageUrl}
+          contacts={dummyContactCsData}
+        />
         <JumlahSiswa />
         <ListSiswa />
         <Program />
         <Features />
         <YouTubeShortEmbed />
         <PaketBelajarOSN />
-
-        {/* SLIDERS */}
         <SliderMobile />
         <SliderDescktop />
-
         <TingkatPendidikan />
         <Pilihan />
         <MengapaHarusEdumatrix />
         <Pengajar />
-
         <Gallery />
-        {/* <SuccessStorySlider /> */}
         <SuccessStoryGrid />
         <TestimoniGrid />
         <TransformationOSN />
         <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
-
-        <ListKecamatan
-          kotaSlug={kotaSlug}
-          kabupatenName={kabupatenName}
-          kabupatenSlug={kabupatenSlug}
-        />
-
+        <ListKabupaten kotaName={formattedKotaName} kotaSlug={kotaSlug} />
         <ImpactStatisticsOSN />
         <Accordion />
         <Promo />
         <Contact />
         <MediaMassa />
-        <FomoTicker namaWilayah={kabupatenName} />
+        <FomoTicker namaWilayah={formattedKotaName} />
       </div>
     </>
   );

@@ -12,13 +12,13 @@
     "node": ">=20.9.0"
   },
   "dependencies": {
-    "@next/third-parties": "^16.1.1",
+    "@next/third-parties": "^16.3.0",
     "@reduxjs/toolkit": "^2.10.1",
     "aos": "^2.3.4",
     "classnames": "^2.5.1",
     "framer-motion": "^12.23.24",
     "lucide-react": "^0.553.0",
-    "next": "^16.0.7",
+    "next": "^16.3.0",
     "next-themes": "^0.4.6",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
@@ -40,7 +40,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^9",
-    "eslint-config-next": "^16.0.7",
+    "eslint-config-next": "^16.3.0",
     "tailwindcss": "^4",
     "typescript": "^5"
   }

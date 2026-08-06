@@ -1,21 +1,29 @@
 "use client";
 
+import { useCsRotation } from "@/app/helper/useCsRotation";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { dummyContactCsData } from "../data/contactCs.dummyData";
 
 interface CarouselItem {
   src: string;
   alt: string;
-  href: string;
   width: number;
   height: number;
 }
 
-const SliderDescktop = () => {
+export default function SliderDesktop() {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  // Pengambilan data langsung di dalam komponen menggunakan dummyContactCsData
+  const { activeCs, rotateCs } = useCsRotation(
+    dummyContactCsData,
+    "single",
+    "slider_rotation",
+  );
 
   const responsive = {
     superLargeDesktop: {
@@ -36,33 +44,46 @@ const SliderDescktop = () => {
     },
   };
 
+  if (!activeCs || activeCs.length === 0) return null;
+  const activeContact = activeCs[0];
+
+  const dynamicHref = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
+    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com, Saya ingin tanya program belajar OSN yang ada di Edumatrix. Apa saja jenis program belajar dan pilihan paket`,
+  )}`;
+
   const items: CarouselItem[] = [
     {
       src: "/images/carousel/carousel-OSN_WEB-descktop.webp",
       alt: "Bimbingan belajar OSN terbaik untuk membantu anak Anda meraih prestasi dalam Olimpiade Sains Nasional.",
-      href: "https://api.whatsapp.com/send?phone=6282174144728&text=Halo%20Kak%20Iva%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket",
       width: 4015,
       height: 2101,
     },
     {
       src: "/images/carousel/carousel-OSN_WEB2-descktop.webp",
       alt: "Persiapan Olimpiade Sains Nasional dengan tutor berpengalaman yang siap membantu anak Anda memahami materi OSN secara mendalam.",
-      href: "https://api.whatsapp.com/send?phone=6282174144728&text=Halo%20Kak%20Iva%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket",
       width: 4015,
       height: 2101,
     },
     {
       src: "/images/carousel/carousel-OSN_WEB3-descktop.webp",
       alt: "Program belajar intensif dan terstruktur untuk Olimpiade Sains Nasional, dirancang khusus untuk meningkatkan kemampuan akademis anak Anda.",
-      href: "https://api.whatsapp.com/send?phone=6282174144728&text=Halo%20Kak%20Iva%20https://bimbeledumatrix.com,%20Saya%20ingin%20tanya%20program%20belajar%20OSN%20yang%20ada%20di%20Edumatrix.%20Apa%20saja%20jenis%20program%20belajar%20dan%20pilihan%20paket",
       width: 4015,
       height: 2101,
     },
   ];
 
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    rotateCs();
+
+    setTimeout(() => {
+      window.open(dynamicHref, "_blank", "noopener,noreferrer");
+    }, 50);
+  };
+
   return (
     <div className="w-full md:block hidden">
-      <div className="max-w-310 px-2 mx-auto">
+      <div className="container mx-auto">
         <Carousel
           responsive={responsive}
           infinite
@@ -76,12 +97,13 @@ const SliderDescktop = () => {
 
             return (
               <Link
-                href={item.href}
+                href={dynamicHref}
                 key={idx}
                 tabIndex={isActive ? 0 : -1}
                 aria-hidden={!isActive}
-                aria-label={`Konsultasi OSN via WhatsApp - Slide ${idx + 1}`}
-                className="block">
+                aria-label={`Konsultasi OSN via WhatsApp dengan ${activeContact.nama_cs} - Slide ${idx + 1}`}
+                onClick={handleClick}
+                className="block cursor-pointer">
                 <Image
                   src={item.src}
                   alt={item.alt}
@@ -97,6 +119,4 @@ const SliderDescktop = () => {
       </div>
     </div>
   );
-};
-
-export default SliderDescktop;
+}

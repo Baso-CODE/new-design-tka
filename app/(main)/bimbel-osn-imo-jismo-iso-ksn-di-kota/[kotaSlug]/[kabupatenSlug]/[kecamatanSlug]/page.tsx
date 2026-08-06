@@ -1,4 +1,4 @@
-import { fallbackContact } from "@/app/components/data/contactCs.dummyData";
+import { dummyContactCsData } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
 import Features from "@/app/components/features";
 import FomoTicker from "@/app/components/fomoTicker";
@@ -26,7 +26,7 @@ import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
-import { getSingleContactCsIsDeleted } from "@/app/request/contacts/getSingleIsDeletedContactCs";
+
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
 const baseUrl = "https://bimbeledumatrix.com";
@@ -53,7 +53,6 @@ export async function generateMetadata({
   const title = `Bimbel & Les Olimpiade OSN ISMO IMO JISMO ${kecamatanName} SD SMP SMA`;
   const description = `Bimbel Olimpiade ${kecamatanName} untuk OSN, KSN, OSP, OSK, ISMO, IMO, JISMO semua jenjang SD SMP SMA. Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi & Ekonomi. Program intensif dan privat terbaik.`;
   const keywords = [
-    // ===== HYPER LOCAL - KECAMATAN =====
     `les privat olimpiade ${kecamatanName}`,
     `bimbel olimpiade ${kecamatanName}`,
     `les OSN ${kecamatanName}`,
@@ -61,13 +60,9 @@ export async function generateMetadata({
     `les IMO ${kecamatanName}`,
     `bimbel ISMO ${kecamatanName}`,
     `bimbel JISMO ${kecamatanName}`,
-
-    // Jenjang Kecamatan
     `les olimpiade SD ${kecamatanName}`,
     `les olimpiade SMP ${kecamatanName}`,
     `les olimpiade SMA ${kecamatanName}`,
-
-    // Mapel Kecamatan
     `olimpiade matematika ${kecamatanName}`,
     `olimpiade fisika ${kecamatanName}`,
     `olimpiade kimia ${kecamatanName}`,
@@ -76,20 +71,14 @@ export async function generateMetadata({
     `olimpiade astronomi ${kecamatanName}`,
     `olimpiade geografi ${kecamatanName}`,
     `olimpiade ekonomi ${kecamatanName}`,
-
-    // ===== KABUPATEN =====
     `les privat olimpiade ${kabupatenName}`,
     `bimbel OSN ${kabupatenName}`,
     `bimbel KSN ${kabupatenName}`,
     `les olimpiade SD SMP SMA ${kabupatenName}`,
-
-    // ===== KOTA =====
     `les privat olimpiade ${kotaName}`,
     `bimbel OSN ${kotaName}`,
     `bimbel KSN ${kotaName}`,
     `les olimpiade SD SMP SMA ${kotaName}`,
-
-    // ===== PROGRAM NASIONAL & INTERNASIONAL =====
     "OSN SD SMP SMA",
     "KSN SD SMP SMA",
     "OSP",
@@ -100,8 +89,6 @@ export async function generateMetadata({
     "olimpiade sains nasional",
     "kompetisi sains nasional",
     "olimpiade matematika internasional",
-
-    // ===== GENERIC HIGH INTENT =====
     "les privat olimpiade terbaik",
     "bimbel olimpiade terpercaya",
     "guru privat olimpiade",
@@ -157,16 +144,8 @@ export default async function KecamatanPage(props: {
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
 
-  let data = null;
-
-  data = await getSingleContactCsIsDeleted();
-
-  const contact = data || fallbackContact;
-  const link = contact.link_cta || "/contact";
-
   const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
-  // === JSON LD (Breadcrumb + Org + WebPage + FAQ) ===
   const jsonLd = {
     "@context": "https://schema.org",
     "@graph": [
@@ -304,9 +283,13 @@ edumatrix indonesia
           __html: JSON.stringify(jsonLd),
         }}
       />
-      <div className=" overflow-hidden">
-        <HeroKecamatan kecamatanName={kecamatanName} linkCta={link} />
-        {/* === SECTION LIST === */}
+      <div className="overflow-hidden">
+        {/* Kirim dummyContactCsData ke HeroKecamatan */}
+        <HeroKecamatan
+          kecamatanName={kecamatanName}
+          contacts={dummyContactCsData}
+        />
+
         <JumlahSiswa />
         <ListSiswa />
         <Program />
@@ -314,7 +297,6 @@ edumatrix indonesia
         <YouTubeShortEmbed />
         <PaketBelajarOSN />
 
-        {/* SLIDERS */}
         <SliderMobile />
         <SliderDescktop />
 
@@ -324,7 +306,6 @@ edumatrix indonesia
         <Pengajar />
 
         <Gallery />
-        {/* <SuccessStorySlider /> */}
         <SuccessStoryGrid />
         <TestimoniGrid />
         <TransformationOSN />

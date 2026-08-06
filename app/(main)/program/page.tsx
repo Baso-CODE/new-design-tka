@@ -1,7 +1,7 @@
-import Accordion from "../components/faq/Accordion";
-import Contact from "../components/home/contact";
-import MediaMassa from "../components/mediaMassa/mediaMassa";
-import Promo from "../components/promo";
+import Accordion from "@/app/components/faq/Accordion";
+import Contact from "@/app/components/home/contact";
+import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
+import Promo from "@/app/components/promo";
 import HeroProgram from "./components/heroProgram";
 
 const Program = () => {

@@ -1,26 +1,53 @@
 "use client";
 
+import { useCsRotation } from "@/app/helper/useCsRotation";
+import { ContactCs } from "@/app/types/contact.type";
 import Image from "next/image";
 import Link from "next/link";
 
 interface HeroKabupatenProps {
   KabupatenName: string;
-  linkCta: string;
+  contacts: ContactCs[]; // Menerima data kontak terpusat
 }
 
 export default function HeroKabupaten({
   KabupatenName,
-  linkCta,
+  contacts,
 }: HeroKabupatenProps) {
+  const { activeCs, rotateCs } = useCsRotation(
+    contacts,
+    "single",
+    "hero_kabupaten_rotation",
+  );
+
+  if (!activeCs || activeCs.length === 0) return null;
+  const activeContact = activeCs[0];
+
+  // Buat link dinamis dengan nama dan nomor CS yang aktif
+  const dynamicLink = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace(
+    "+",
+    "",
+  )}&text=${encodeURIComponent(
+    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com/, Saya ingin tanya program belajar OSN di ${KabupatenName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
+  )}`;
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    rotateCs(); // Lakukan rotasi CS dan simpan ke localStorage
+
+    setTimeout(() => {
+      window.open(dynamicLink, "_blank", "noopener,noreferrer");
+    }, 50);
+  };
+
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center">
-      <div className="py-24 px-2 mt-8 text-white max-w-310   lg:min-h-[70vh] xl:min-h-[73vh] ">
+      <div className="py-24 px-2 mt-8 text-white max-w-310 lg:min-h-[70vh] xl:min-h-[73vh]">
         <div className="flex flex-col lg:flex-row gap-14">
           <div className="lg:w-1/2">
             <h1 className="text-[36px] uppercase font-bold leading-10 font-title mb-7">
               BIMBEL & LES PRIVAT OSN KSN IMO SD SMP SMA Di{" "}
-              <span className="text-[#faae17] ">{KabupatenName}</span> TERBAIK
-              #1
+              <span className="text-[#faae17]">{KabupatenName}</span> TERBAIK #1
             </h1>
 
             <p className="mb-6 font-desc text-[1rem] leading-4.75 font-medium">
@@ -46,10 +73,18 @@ export default function HeroKabupaten({
               </strong>
               .
             </p>
+
+            {/* CTA dengan rotasi CS */}
             <Link
-              href={linkCta}
-              className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50">
-              <span className="z-10 pr-2 font-bold"> Daftar Sekarang</span>
+              href={dynamicLink}
+              onClick={handleClick}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Daftar Sekarang via WhatsApp dengan ${activeContact.nama_cs}`}
+              className="group relative inline-flex w-full md:w-[50%] lg:w-[40%] h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer">
+              <span className="z-10 pr-2 font-bold">
+                Daftar Sekarang ({activeContact.nama_cs})
+              </span>
               <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                 <div className="mr-3.5 flex items-center justify-center">
                   <svg
@@ -83,7 +118,7 @@ export default function HeroKabupaten({
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-px xl:-bottom-22.5  left-0 w-full">
+      <div className="absolute -bottom-px xl:-bottom-22.5 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

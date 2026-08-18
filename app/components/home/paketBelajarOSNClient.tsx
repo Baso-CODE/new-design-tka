@@ -2,6 +2,7 @@
 
 import { useCsRotation } from "@/app/helper/useCsRotation";
 import { ContactCs } from "@/app/types/contact.type";
+import Image from "next/image";
 import Link from "next/link";
 import { FaCheck } from "react-icons/fa";
 
@@ -21,11 +22,11 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
 
   // Buat link dinamis berdasarkan nama CS yang sedang aktif
   const waLinkPriority = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com saya ingin Daftar Paket ULTIMATE MASTERY Bimbel OSN. Bagaimana penjelasan detail programnya?`,
+    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com saya ingin Daftar Paket JUARA TKA. Bagaimana penjelasan detail programnya?`,
   )}`;
 
   const waLinkDeluxe = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com saya ingin Daftar Paket CHAMPION SERIES Bimbel OSN. Bagaimana penjelasan detail programnya?`,
+    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com saya ingin Daftar Paket MASTER TKA. Bagaimana penjelasan detail programnya?`,
   )}`;
 
   const handleClick = (
@@ -41,119 +42,143 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
-      {/* ULTIMATE MASTERY */}
-      <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform flex flex-col">
-        <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-            ULTIMATE MASTERY
-          </h2>
-        </div>
-        <ul className="space-y-4 grow font-desc">
-          {[
-            "Program pendampingan belajar 1 guru 1 Siswa",
-            "Jadwal belajar fleksibel",
-            "Durasi belajar 120 menit",
-            "Materi lengkap",
-            "Kecocokan belajar antara tutor & siswa",
-            "Progress report bulanan",
-            "Free assessment (Pre Test dan Post Test)",
-            "E-book soal & e-book pembahasan",
-            "Recording pembelajaran yang bisa diakses unlimited",
-          ].map((item, i) => (
-            <li className="flex items-start text-gray-700 text-base" key={i}>
-              <FaCheck className="text-green-500 mr-3 mt-1 shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <Link
-          href={waLinkPriority}
-          onClick={(e) => handleClick(e, waLinkPriority)}
-          target="_blank"
-          aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
-          rel="noopener noreferrer"
-          className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-14 pr-6 font-medium text-neutral-50 transition-all duration-300 cursor-pointer">
-          <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-start rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
-            <div className="ml-3.5 flex items-center justify-center rotate-180">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-white">
-                <path
-                  d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  clipRule="evenodd"></path>
-              </svg>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+      {/* KARTU 1: JUARA TKA (Menggunakan #04397D) */}
+      <div className="bg-[#04397D] rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between">
+        <div>
+          {/* Header Banner Image */}
+          <div className="relative w-full h-55 md:h-62.5 overflow-hidden bg-[#0d2247]">
+            <Image
+              src="/images/tka/94972367_10054705 2.png"
+              alt="Background Ornamen"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 flex items-end justify-between px-2 md:px-4">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/tka/paket-juara-tka.png"
+                  alt="Juara TKA"
+                  fill
+                  className="object-contain object-bottom"
+                  priority
+                />
+              </div>
             </div>
           </div>
-          <span className="z-10 font-bold uppercase">
-            <span className="mr-2">💬</span>Tanya Kelas ({activeContact.nama_cs}
-            )
-          </span>
-        </Link>
+
+          {/* Title Bar Benefit */}
+          <div className="bg-[#03295c] text-white py-3 text-center font-bold text-lg md:text-xl tracking-wide font-title">
+            Benefit
+          </div>
+
+          {/* List Benefits */}
+          <div className="p-6 md:p-8 font-desc">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+              {[
+                "Program Privat 1 on 1",
+                "Free Recording jika Online",
+                "Try Out",
+                "Jadwal Belajar Fleksibel",
+                "Durasi Belajar 90 menit",
+                "Bisa Request Tutor",
+                "Sistem Belajar Online/Offline",
+                "Progress Report Berkala",
+                "Free Pendaftaran",
+              ].map((item, i) => (
+                <div className="flex items-start text-white text-sm" key={i}>
+                  <div className="bg-[#22c55e] rounded p-0.5 text-white mr-2 mt-0.5 shrink-0">
+                    <FaCheck size={12} />
+                  </div>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Button */}
+        <div className="p-6 md:p-8 pt-0">
+          <Link
+            href={waLinkPriority}
+            onClick={(e) => handleClick(e, waLinkPriority)}
+            target="_blank"
+            aria-label="Konsultasi Sekarang melalui WhatsApp"
+            rel="noopener noreferrer"
+            className="w-full h-12 bg-white hover:bg-gray-100 text-[#04397D] font-extrabold rounded-full flex items-center justify-center transition-all duration-300 shadow-md uppercase tracking-wider text-sm">
+            Konsultasi Sekarang
+          </Link>
+        </div>
       </div>
 
-      {/* CHAMPION SERIES */}
-      <div className="bg-white rounded-xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 transform flex flex-col">
-        <div className="bg-[#00317e] text-white rounded-t-xl -mx-6 -mt-6 px-6 py-8 mb-6">
-          <h2 className="text-2xl md:text-3xl font-extrabold text-center leading-tight font-title">
-            CHAMPION SERIES
-          </h2>
-        </div>
-        <ul className="space-y-4 grow font-desc">
-          {[
-            "Program pendampingan belajar 1 guru 1 Siswa",
-            "Jadwal belajar fleksibel",
-            "Durasi belajar 90 menit",
-            "Materi lengkap",
-            "Kecocokan belajar antara tutor & siswa",
-            "Progress report bulanan",
-            "Free assessment (Pre Test dan Post Test)",
-            "E-book soal & e-book pembahasan",
-            "Recording pembelajaran yang bisa diakses unlimited",
-          ].map((item, i) => (
-            <li className="flex items-start text-gray-700 text-base" key={i}>
-              <FaCheck className="text-green-500 mr-3 mt-1 shrink-0" />
-              {item}
-            </li>
-          ))}
-        </ul>
-
-        <Link
-          href={waLinkDeluxe}
-          onClick={(e) => handleClick(e, waLinkDeluxe)}
-          target="_blank"
-          aria-label="Tanya kelas melalui WhatsApp (membuka di tab baru)"
-          rel="noopener noreferrer"
-          className="mt-2 group relative inline-flex h-14 items-center justify-center rounded-full bg-[#faae17] py-1 pl-6 pr-14 font-medium text-neutral-50 transition-all duration-300 cursor-pointer">
-          <span className="z-10 pr-2 font-bold uppercase">
-            <span className="mr-2">💬</span>Tanya Kelas ({activeContact.nama_cs}
-            )
-          </span>
-          <div className="absolute left-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
-            <div className="mr-3.5 flex items-center justify-center">
-              <svg
-                width="15"
-                height="15"
-                viewBox="0 0 15 15"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-                className="h-6 w-6 text-white">
-                <path
-                  d="M8.14645 3.14645C8.34171 2.95118 8.65829 2.95118 8.85355 3.14645L12.8536 7.14645C13.0488 7.34171 13.0488 7.65829 12.8536 7.85355L8.85355 11.8536C8.65829 12.0488 8.34171 12.0488 8.14645 11.8536C7.95118 11.6583 7.95118 11.3417 8.14645 11.1464L11.2929 8H2.5C2.22386 8 2 7.77614 2 7.5C2 7.22386 2.22386 7 2.5 7H11.2929L8.14645 3.85355C7.95118 3.65829 7.95118 3.34171 8.14645 3.14645Z"
-                  fill="currentColor"
-                  fillRule="evenodd"
-                  clipRule="evenodd"></path>
-              </svg>
+      {/* KARTU 2: MASTER TKA (Menggunakan Warna Orange) */}
+      <div className="bg-orange-500 rounded-3xl overflow-hidden shadow-2xl flex flex-col justify-between">
+        <div>
+          {/* Header Banner Image */}
+          <div className="relative w-full h-55 md:h-62.5 overflow-hidden bg-[#0d2247]">
+            <Image
+              src="/images/tka/94972367_10054705 2.png"
+              alt="Background Ornamen"
+              fill
+              className="object-cover object-center"
+              priority
+            />
+            <div className="absolute inset-0 flex items-end justify-between px-2 md:px-4">
+              <div className="relative w-full h-full">
+                <Image
+                  src="/images/tka/paket-master-tka.png"
+                  alt="Master TKA"
+                  fill
+                  className="object-contain object-bottom"
+                  priority
+                />
+              </div>
             </div>
           </div>
-        </Link>
+
+          {/* Title Bar Benefit */}
+          <div className="bg-orange-600 text-white py-3 text-center font-bold text-lg md:text-xl tracking-wide font-title">
+            Benefit
+          </div>
+
+          {/* List Benefits */}
+          <div className="p-6 md:p-8 font-desc">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-4">
+              {[
+                "Program Privat 1 on 1",
+                "Free Recording jika Online",
+                "Try Out",
+                "Jadwal Belajar Fleksibel",
+                "Durasi Belajar 120 menit",
+                "Bisa Request Tutor",
+                "Sistem Belajar Online/Offline",
+                "Progress Report Berkala",
+                "Free Pendaftaran",
+              ].map((item, i) => (
+                <div className="flex items-start text-white text-sm" key={i}>
+                  <div className="bg-[#22c55e] rounded p-0.5 text-white mr-2 mt-0.5 shrink-0">
+                    <FaCheck size={12} />
+                  </div>
+                  <span>{item}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Button */}
+        <div className="p-6 md:p-8 pt-0">
+          <Link
+            href={waLinkDeluxe}
+            onClick={(e) => handleClick(e, waLinkDeluxe)}
+            target="_blank"
+            aria-label="Konsultasi Sekarang melalui WhatsApp"
+            rel="noopener noreferrer"
+            className="w-full h-12 bg-white hover:bg-gray-100 text-orange-600 font-extrabold rounded-full flex items-center justify-center transition-all duration-300 shadow-md uppercase tracking-wider text-sm">
+            Konsultasi Sekarang
+          </Link>
+        </div>
       </div>
     </div>
   );

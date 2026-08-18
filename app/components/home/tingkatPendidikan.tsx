@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect } from "react";
 import AOS from "aos";
 import Image from "next/image";
+import { useEffect } from "react";
 import detailContent from "./detailContentPendidikan";
 
 const TingkatPendidikan = () => {
@@ -24,13 +24,12 @@ const TingkatPendidikan = () => {
 
   return (
     <section className="flex flex-col py-8 items-center xl:min-h-[125vh] bg-white container mx-auto">
-      <div className=" w-full px-2 md:px-0">
+      <div className="w-full px-2 md:px-0">
         <div className="flex gap-6 mt-8 w-full flex-wrap xl:flex-nowrap justify-center">
           {/* === SD === */}
           <div
             className="flex flex-col items-center flex-1"
-            data-aos="fade-right"
-          >
+            data-aos="fade-right">
             <Image
               loading="lazy"
               src="/images/tingkat-pendidikan/sd.webp"
@@ -43,8 +42,7 @@ const TingkatPendidikan = () => {
             <div
               className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
               data-aos="fade-up"
-              data-aos-delay="200"
-            >
+              data-aos-delay="200">
               {detailContent.SD}
             </div>
           </div>
@@ -63,32 +61,29 @@ const TingkatPendidikan = () => {
             <div
               className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
               data-aos="fade-up"
-              data-aos-delay="300"
-            >
+              data-aos-delay="300">
               {detailContent.SMP}
             </div>
           </div>
 
-          {/* === SMA === */}
+          {/* === SMA / SMK === */}
           <div
             className="flex flex-col items-center flex-1"
-            data-aos="fade-left"
-          >
+            data-aos="fade-left">
             <Image
               loading="lazy"
               src="/images/tingkat-pendidikan/sma.webp"
-              alt="SMA"
+              alt="SMA / SMK"
               className={getImageClass()}
               width={532}
               height={704}
             />
-            <button className={getButtonClass()}>SMA</button>
+            <button className={getButtonClass()}>SMA / SMK</button>
             <div
               className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
               data-aos="fade-up"
-              data-aos-delay="400"
-            >
-              {detailContent.SMA}
+              data-aos-delay="400">
+              {detailContent.SMASMK}
             </div>
           </div>
         </div>

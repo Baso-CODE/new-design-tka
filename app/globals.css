@@ -7,8 +7,8 @@
 /* === Font Variable Mapping === */
 :root,
 body {
-  --font-title: var(--font-oswald);
-  --font-desc: var(--font-roboto);
+  --font-title: var(--font-poppins);
+  --font-desc: var(--font-poppins);
   --font-pencil: var(--font-super-pencil);
   --font-title-blog: var(--font-poppins);
 }

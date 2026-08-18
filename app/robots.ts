@@ -8,6 +8,6 @@ export default function robots(): MetadataRoute.Robots {
         allow: "/",
       },
     ],
-    sitemap: "https://bimbeledumatrix.com/sitemap.xml",
+    sitemap: "https://les-tka.bimbeledumatrix.com/sitemap.xml",
   };
 }

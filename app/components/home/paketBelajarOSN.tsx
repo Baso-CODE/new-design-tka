@@ -1,21 +1,21 @@
 import { dummyContactCsData } from "../data/contactCs.dummyData";
 import PaketBelajarOSNClient from "./paketBelajarOSNClient";
 
-const PaketBelajarOSN = () => {
+const PaketBelajarTKA = () => {
   return (
     <div>
       <div className="flex container mx-auto items-center justify-center my-[5vh] py-[10vh] px-2 lg:px-0">
         <div className="w-full">
           {/* Judul utama */}
           <h2 className="text-center font-title text-3xl md:text-3xl lg:text-4xl font-bold text-[#133b79] mb-4">
-            Paket Bimbingan Hingga Jadi Juara
+            Paket Bimbingan TKA Terbaik
           </h2>
           {/* Deskripsi */}
           <div className="max-w-3xl mx-auto text-center mb-10">
-            <p className="text-base md:text-lg text-gray-600">
+            <p className="text-base md:text-base text-gray-600 font-desc">
               Pilih program terbaik sesuai kebutuhanmu. Mulai dari bimbingan
-              intensif hingga tryout rutin - semua dirancang untuk bantu kamu
-              Menjadi Juara OSN baik tingkat SD, SMP & SMA.
+              intensif hingga tryout rutin - semua dirancang untuk membantumu
+              menguasai materi TKA untuk tingkat SD, SMP, hingga SMA/SMK.
             </p>
           </div>
 
@@ -27,4 +27,4 @@ const PaketBelajarOSN = () => {
   );
 };
 
-export default PaketBelajarOSN;
+export default PaketBelajarTKA;

@@ -47,7 +47,7 @@ export default function SliderMobile() {
   const activeContact = activeCs[0];
 
   const dynamicHref = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com, Saya ingin tanya program belajar OSN yang ada di Edumatrix. Apa saja jenis program belajar dan pilihan paket`,
+    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com, Saya ingin tanya program belajar OSN yang ada di Edumatrix. Apa saja jenis program belajar dan pilihan paket`,
   )}`;
 
   const items: CarouselItem[] = [

@@ -49,7 +49,7 @@ export default async function ListKecamatan({
               {kecamatans.map((kec) => (
                 <li key={kec.slug} className="w-full">
                   <Link
-                    href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kec.slug}`}
+                    href={`/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kec.slug}`}
                     className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
                              rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                              font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis

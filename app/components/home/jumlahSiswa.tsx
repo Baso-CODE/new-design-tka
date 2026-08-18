@@ -32,7 +32,7 @@ const JumlahSiswa = () => {
         <div className="bg-white lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
           <div className="flex flex-col lg:flex-row gap-7.5 -mt-10 relative">
             {/* Left Side - Image */}
-            <div className="lg:w-1/2 flex justify-center items-center -mt-4 lg:-mt-22.5 relative">
+            <div className="lg:w-1/2 flex justify-center items-center -mt-4 lg:-mt-10 relative">
               <Image
                 width={1000}
                 height={1000}
@@ -41,7 +41,7 @@ const JumlahSiswa = () => {
                 loading="eager"
                 src="/images/presentase-siswa-master-teacher-edumatrix.webp"
                 alt="presentase siswa edumatrix"
-                className=" z-10"
+                className="z-10"
               />
 
               {/* TOP */}
@@ -99,22 +99,22 @@ const JumlahSiswa = () => {
             {/* Right Side - Text */}
             <div className="lg:w-1/2 flex items-center justify-center">
               <div className="flex flex-col">
-                <h2 className="text-4xl font-bold mb-4 font-title text-[#133B79] leading-10">
-                  Edumatrix Siap Membantumu Menjadi Sang Juara
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-title text-[#133B79] leading-10">
+                  Edumatrix Siap Membantumu Menguasai TKA & Meraih Hasil
+                  Maksimal
                 </h2>
                 <p className="mb-4 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
-                  Di Edumatrix Indonesia, kami berkomitmen untuk membantu kamu
-                  meraih puncak kesuksesan. Dengan program pelatihan yang
-                  dirancang khusus, kami menyediakan alat dan dukungan yang kamu
-                  butuhkan untuk menjadi juara di berbagai bidang.
+                  Di Edumatrix Indonesia, kami berkomitmen untuk membimbing kamu
+                  mempersiapkan Tes Kemampuan Akademik (TKA) dengan matang.
+                  Melalui program bimbingan yang terstruktur, kami menyediakan
+                  materi dan strategi belajar terbaik untuk menghadapi TKA di
+                  semua jenjang pendidikan.
                 </p>
                 <p className="mb-8 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
-                  Dari bimbingan intensif hingga strategi belajar yang efektif,
-                  setiap langkahmu bersama kami akan membawa kamu lebih dekat
-                  menuju kemenangan. Kami percaya pada potensi setiap individu
-                  dan bertekad untuk memfasilitasi perjalananmu menuju prestasi
-                  tertinggi. Bergabunglah dengan kami dan wujudkan impianmu
-                  menjadi sang juara dengan Edumatrix Indonesia!
+                  Dari latihan soal mendalam hingga evaluasi berkala bersama
+                  tutor profesional, setiap langkah belajar dirancang untuk
+                  memastikan kamu siap hadapi TKA dengan penuh percaya diri.
+                  Wujudkan impian akademikmu bersama Edumatrix Indonesia!
                 </p>
               </div>
             </div>

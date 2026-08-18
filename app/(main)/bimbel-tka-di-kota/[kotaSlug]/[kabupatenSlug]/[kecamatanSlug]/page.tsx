@@ -1,35 +1,28 @@
 import { dummyContactCsData } from "@/app/components/data/contactCs.dummyData";
 import Accordion from "@/app/components/faq/Accordion";
-import Features from "@/app/components/features";
 import FomoTicker from "@/app/components/fomoTicker";
-import GoldenTicketShowcase from "@/app/components/goldenTicket";
-import HeroKecamatan from "@/app/components/heroKecamatan";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
 import Gallery from "@/app/components/home/gallery";
+import HeroKotaTka from "@/app/components/home/heroKotaTKA";
 import JumlahSiswa from "@/app/components/home/jumlahSiswa";
-import ListSiswa from "@/app/components/home/listSiswa";
 import MengapaHarusEdumatrix from "@/app/components/home/mengapaHarusEdumatrix";
 import PaketBelajarOSN from "@/app/components/home/paketBelajarOSN";
 import Pengajar from "@/app/components/home/pengajar";
 import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
 import SekolahSiswa from "@/app/components/home/sekolahSiswa";
-import SuccessStoryGrid from "@/app/components/home/successStoryNotSlider";
-import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
+import TKAPreparation from "@/app/components/home/tkaPreparation";
 import ListKelurahan from "@/app/components/listKelurahan";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
 import Promo from "@/app/components/promo";
-import SliderDescktop from "@/app/components/slider/sliderDescktop";
-import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
-import TransformationOSN from "@/app/components/TransformationOSN";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
-const baseUrl = "https://bimbeledumatrix.com";
+const baseUrl = "https://les-tka.bimbeledumatrix.com";
 
 export async function generateMetadata({
   params,
@@ -46,52 +39,38 @@ export async function generateMetadata({
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
 
-  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
-  const imageUrl = "https://bimbeledumatrix.com/images/osn-thumbnail.webp";
+  const imageUrl =
+    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.png";
 
-  const title = `Bimbel & Les Olimpiade OSN ISMO IMO JISMO ${kecamatanName} SD SMP SMA`;
-  const description = `Bimbel Olimpiade ${kecamatanName} untuk OSN, KSN, OSP, OSK, ISMO, IMO, JISMO semua jenjang SD SMP SMA. Matematika, IPA, Fisika, Kimia, Biologi, Informatika, Astronomi, Geografi & Ekonomi. Program intensif dan privat terbaik.`;
+  const title = `Bimbel & Les Privat TKA di ${kecamatanName} SD SMP SMA Terbaik`;
+  const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kecamatanName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
   const keywords = [
-    `les privat olimpiade ${kecamatanName}`,
-    `bimbel olimpiade ${kecamatanName}`,
-    `les OSN ${kecamatanName}`,
-    `bimbel KSN ${kecamatanName}`,
-    `les IMO ${kecamatanName}`,
-    `bimbel ISMO ${kecamatanName}`,
-    `bimbel JISMO ${kecamatanName}`,
-    `les olimpiade SD ${kecamatanName}`,
-    `les olimpiade SMP ${kecamatanName}`,
-    `les olimpiade SMA ${kecamatanName}`,
-    `olimpiade matematika ${kecamatanName}`,
-    `olimpiade fisika ${kecamatanName}`,
-    `olimpiade kimia ${kecamatanName}`,
-    `olimpiade biologi ${kecamatanName}`,
-    `olimpiade informatika ${kecamatanName}`,
-    `olimpiade astronomi ${kecamatanName}`,
-    `olimpiade geografi ${kecamatanName}`,
-    `olimpiade ekonomi ${kecamatanName}`,
-    `les privat olimpiade ${kabupatenName}`,
-    `bimbel OSN ${kabupatenName}`,
-    `bimbel KSN ${kabupatenName}`,
-    `les olimpiade SD SMP SMA ${kabupatenName}`,
-    `les privat olimpiade ${kotaName}`,
-    `bimbel OSN ${kotaName}`,
-    `bimbel KSN ${kotaName}`,
-    `les olimpiade SD SMP SMA ${kotaName}`,
-    "OSN SD SMP SMA",
-    "KSN SD SMP SMA",
-    "OSP",
-    "OSK",
-    "ISMO",
-    "IMO",
-    "JISMO",
-    "olimpiade sains nasional",
-    "kompetisi sains nasional",
-    "olimpiade matematika internasional",
-    "les privat olimpiade terbaik",
-    "bimbel olimpiade terpercaya",
-    "guru privat olimpiade",
+    `les privat tka ${kecamatanName}`,
+    `bimbel tka ${kecamatanName}`,
+    `les tes kemampuan akademik ${kecamatanName}`,
+    `bimbel masuk sma unggulan ${kecamatanName}`,
+    `bimbel masuk smp unggulan ${kecamatanName}`,
+    `les tka SD ${kecamatanName}`,
+    `les tka SMP ${kecamatanName}`,
+    `les tka SMA ${kecamatanName}`,
+    `les privat tka ${kabupatenName}`,
+    `bimbel tka ${kabupatenName}`,
+    `les tka SD SMP SMA ${kabupatenName}`,
+    `les privat tka ${kotaName}`,
+    `bimbel tka ${kotaName}`,
+    `les tka SD SMP SMA ${kotaName}`,
+    "TKA SD",
+    "TKA SMP",
+    "TKA SMA",
+    "tes kemampuan akademik",
+    "les privat TKA SD",
+    "les privat TKA SMP",
+    "les privat TKA SMA",
+    "bimbel TKA SD SMP SMA",
+    "bimbel tka terbaik",
+    "guru privat tka",
     "edumatrix indonesia",
   ];
 
@@ -115,9 +94,9 @@ export async function generateMetadata({
       images: [
         {
           url: imageUrl,
-          width: 600,
+          width: 800,
           height: 600,
-          alt: `Les privat Olimpiade ${kecamatanName}`,
+          alt: `Les privat TKA di ${kecamatanName}`,
         },
       ],
     },
@@ -144,7 +123,7 @@ export default async function KecamatanPage(props: {
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
 
-  const canonicalUrl = `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -162,24 +141,24 @@ export default async function KecamatanPage(props: {
             "@type": "ListItem",
             position: 2,
             item: {
-              "@id": `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-terbaik`,
-              name: "Bimbel & Les Privat Olimpiade",
+              "@id": `${baseUrl}/bimbel-tka-terbaik`,
+              name: "Bimbel & Les Privat TKA",
             },
           },
           {
             "@type": "ListItem",
             position: 3,
             item: {
-              "@id": `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}`,
-              name: `Les Privat Olimpiade di ${kotaName}`,
+              "@id": `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`,
+              name: `Les Privat TKA di ${kotaName}`,
             },
           },
           {
             "@type": "ListItem",
             position: 4,
             item: {
-              "@id": `${baseUrl}/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kotaSlug}/${kabupatenSlug}`,
-              name: `Les Privat Olimpiade di ${kabupatenName}`,
+              "@id": `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}`,
+              name: `Les Privat TKA di ${kabupatenName}`,
             },
           },
           {
@@ -187,7 +166,7 @@ export default async function KecamatanPage(props: {
             position: 5,
             item: {
               "@id": canonicalUrl,
-              name: `Les Privat Olimpiade di ${kecamatanName}`,
+              name: `Les Privat TKA di ${kecamatanName}`,
             },
           },
         ],
@@ -197,7 +176,7 @@ export default async function KecamatanPage(props: {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
         name: "Edumatrix Indonesia",
-        description: `Edumatrix Indonesia adalah penyedia Les Privat Olimpiade terbaik di ${kecamatanName}.`,
+        description: `Edumatrix Indonesia adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kecamatanName}.`,
         url: baseUrl,
         areaServed: `${kecamatanName}, ${kabupatenName}`,
         sameAs: [
@@ -216,26 +195,16 @@ export default async function KecamatanPage(props: {
           contactType: "Customer Service",
         },
         keywords: `
-les privat olimpiade ${kecamatanName},
-bimbel olimpiade ${kecamatanName},
-les OSN ${kecamatanName},
-bimbel KSN ${kecamatanName},
-les ISMO ${kecamatanName},
-les IMO ${kecamatanName},
-bimbel JISMO ${kecamatanName},
-les olimpiade SD ${kecamatanName},
-les olimpiade SMP ${kecamatanName},
-les olimpiade SMA ${kecamatanName},
-olimpiade matematika ${kecamatanName},
-olimpiade fisika ${kecamatanName},
-olimpiade kimia ${kecamatanName},
-olimpiade biologi ${kecamatanName},
-olimpiade informatika ${kecamatanName},
-OSN, KSN, OSP, OSK, ISMO, IMO, JISMO,
-olimpiade sains nasional,
-kompetisi sains nasional,
-bimbel olimpiade terbaik,
-guru privat olimpiade,
+les privat tka ${kecamatanName},
+bimbel tka ${kecamatanName},
+les tka ${kecamatanName},
+les privat masuk sma unggulan ${kecamatanName},
+les tka sd ${kecamatanName},
+les tka smp ${kecamatanName},
+les tka sma ${kecamatanName},
+tes kemampuan akademik,
+bimbel tka terbaik,
+guru privat tka,
 edumatrix indonesia
 `,
       },
@@ -244,8 +213,8 @@ edumatrix indonesia
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `Les Privat Olimpiade ${kecamatanName}`,
-        description: `Les Privat & Bimbel Olimpiade terbaik di ${kecamatanName}.`,
+        name: `Les Privat TKA di ${kecamatanName}`,
+        description: `Les Privat & Bimbel TKA terbaik di ${kecamatanName} untuk menembus sekolah impian.`,
         inLanguage: "id-ID",
         isPartOf: { "@id": baseUrl },
       },
@@ -256,18 +225,18 @@ edumatrix indonesia
         mainEntity: [
           {
             "@type": "Question",
-            name: `Apakah Les Privat Olimpiade tersedia di seluruh wilayah ${kecamatanName}?`,
+            name: `Apakah Les Privat TKA tersedia di seluruh wilayah ${kecamatanName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `Ya, layanan tersedia untuk semua wilayah di ${kecamatanName}, baik les privat online maupun tatap muka.`,
+              text: `Ya, layanan bimbingan belajar TKA tersedia untuk seluruh wilayah di ${kecamatanName}, baik les privat online maupun tatap muka (offline).`,
             },
           },
           {
             "@type": "Question",
-            name: `Berapa biaya les privat Olimpiade di ${kecamatanName}?`,
+            name: `Berapa biaya les privat TKA di ${kecamatanName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `Biaya disesuaikan jenjang & paket belajar. Silakan hubungi CS.`,
+              text: `Biaya disesuaikan dengan jenjang pendidikan (SD/SMP/SMA) & paket belajar yang dipilih. Silakan hubungi CS kami untuk konsultasi.`,
             },
           },
         ],
@@ -284,21 +253,14 @@ edumatrix indonesia
         }}
       />
       <div className="overflow-hidden">
-        {/* Kirim dummyContactCsData ke HeroKecamatan */}
-        <HeroKecamatan
-          kecamatanName={kecamatanName}
-          contacts={dummyContactCsData}
-        />
+        {/* Menggunakan HeroKotaTka dan mem-passing kecamatanName sebagai kotaName */}
+        <HeroKotaTka kotaName={kecamatanName} contacts={dummyContactCsData} />
 
         <JumlahSiswa />
-        <ListSiswa />
+        <TKAPreparation />
         <Program />
-        <Features />
         <YouTubeShortEmbed />
         <PaketBelajarOSN />
-
-        <SliderMobile />
-        <SliderDescktop />
 
         <TingkatPendidikan />
         <Pilihan />
@@ -306,10 +268,6 @@ edumatrix indonesia
         <Pengajar />
 
         <Gallery />
-        <SuccessStoryGrid />
-        <TestimoniGrid />
-        <TransformationOSN />
-        <GoldenTicketShowcase />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
         <ListKelurahan

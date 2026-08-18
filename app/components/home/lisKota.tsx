@@ -9,11 +9,11 @@ export default async function ListKota() {
     <section className="bg-linear-to-br from-[#0a3977] to-[#104a8b] py-16 sm:py-20 lg:py-24">
       <div className="container mx-auto items-center max-w-310">
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white leading-tight drop-shadow-lg mb-4">
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight drop-shadow-lg mb-4">
             Jangkauan Kami di Seluruh Indonesia
           </h2>
-          <p className="text-lg sm:text-xl text-white opacity-90 max-w-3xl mx-auto">
-            Temukan bimbingan OSN terbaik di kota Anda. Kami hadir di berbagai
+          <p className="text-base sm:text-lg text-white opacity-90 max-w-3xl mx-auto">
+            Temukan bimbingan TKA terbaik di kota Anda. Kami hadir di berbagai
             kota besar untuk mendukung impian akademismu!
           </p>
         </div>
@@ -45,7 +45,7 @@ export default async function ListKota() {
                 {kotaList.map((kota) => (
                   <li key={kota.slug} className="w-full">
                     <Link
-                      href={`/bimbel-osn-imo-jismo-iso-ksn-di-kota/${kota.slug}`}
+                      href={`/bimbel-tka-di-kota/${kota.slug}`}
                       className="group relative inline-flex h-12 w-full items-center justify-center overflow-hidden 
                       rounded-lg border border-white border-opacity-20 bg-[#466e9f] bg-opacity-15 px-4 text-white text-xs
                       font-semibold shadow-md hover:shadow-lg transform hover:scale-[1.02] whitespace-nowrap text-ellipsis

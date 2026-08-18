@@ -1,96 +1,133 @@
 import Image from "next/image";
 
+// Structure Data Gambar (Bisa dengan mudah ditambah/diubah di sini)
+const galleryData = {
+  offline: [
+    {
+      id: 1,
+      src: "/images/gallery-belajar/gallery-offline-1.webp",
+      alt: "Bimbingan Offline TKA Edumatrix",
+      title: "Bimbingan Tatap Muka Eksklusif",
+    },
+    {
+      id: 2,
+      src: "/images/gallery-belajar/gallery-offline-2.webp",
+      alt: "Suasana Kelas Offline TKA",
+      title: "Diskusi & Pembahasan Soal TKA",
+    },
+    // Tambah foto offline baru di sini jika ada
+  ],
+  online: [
+    {
+      id: 3,
+      src: "/images/gallery-belajar/gallery-online-3.webp",
+      alt: "Bimbingan Interaktif Online TKA",
+      title: "Kelas Online Live Interaktif",
+    },
+    {
+      id: 4,
+      src: "/images/gallery-belajar/gallery-online-4.webp",
+      alt: "Sesi Belajar Online TKA Edumatrix",
+      title: "Pendampingan Private Online",
+    },
+    // Tambah foto online baru di sini jika ada
+  ],
+};
+
 const Gallery = () => {
   return (
-    <div className="bg-white  h-full py-6 sm:py-8 lg:py-12">
-      <div className="mx-auto max-w-310 px-2 ">
-        <div className="mb-4 flex items-center justify-between gap-8 sm:mb-8 md:mb-12">
-          <div className="flex items-center md:gap-6 lg:gap-14">
-            <h2 className="text-3xl font-bold text-[#1e3a8a] font-title lg:text-4xl ">
-              Gallery
-            </h2>
+    <div className="bg-slate-50 h-full py-12 sm:py-16 lg:py-20">
+      <div className="mx-auto max-w-310 px-4">
+        {/* Header Section */}
+        <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
+          <span className="text-[#133B79] bg-blue-100 px-4 py-1.5 rounded-full text-xs font-bold tracking-wider uppercase font-desc">
+            Dokumentasi Kegiatan
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-[#133B79] font-title mt-3 mb-4">
+            Galeri Belajar TKA Edumatrix
+          </h2>
+          <p className="text-gray-600 font-desc text-sm sm:text-base leading-relaxed">
+            Dokumentasi lengkap proses bimbingan belajar TKA (Tes Kemampuan
+            Akademik) secara Tatap Muka (Offline) maupun Online Interaktif.
+          </p>
+        </div>
 
-            <p className="hidden max-w-screen-sm text-gray-700 font-desc font-medium md:block">
-              Lihatlah bagaimana kami merangkul teknologi dan inovasi, Setiap
-              gambar mewakili aspek unik dari pengalaman pendidikan dan kegiatan
-              komunitas kami. Bagaimana kami membuat pembelajaran interaktif dan
-              menyenangkan!
-            </p>
+        {/* SECTION 1: BAGIAN ATAS - OFFLINE */}
+        <div className="mb-14">
+          <div className="flex items-center gap-3 mb-6 border-b border-gray-200 pb-3">
+            <div className="w-3 h-8 bg-[#133B79] rounded-full"></div>
+            <h3 className="text-2xl font-bold text-[#133B79] font-title">
+              Kelas Offline (Tatap Muka)
+            </h3>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {galleryData.offline.map((item) => (
+              <div
+                key={item.id}
+                className="group relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                {/* Container Gambar (object-contain agar gambar utuh/tidak terpotong) */}
+                <div className="relative w-full h-65 sm:h-80 bg-gray-900 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.src}
+                    loading="lazy"
+                    width={1000}
+                    height={1000}
+                    alt={item.alt}
+                    className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                {/* Title Card */}
+                <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between">
+                  <span className="font-title font-semibold text-gray-800 text-base sm:text-lg">
+                    {item.title}
+                  </span>
+                  <span className="bg-blue-50 text-[#133B79] text-xs px-3 py-1 rounded-full font-medium">
+                    Offline
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
 
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3 md:gap-6 xl:gap-8">
-          {/* Image 1 */}
-          <a
-            href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-            <Image
-              src="/images/gallery-belajar/gallery-offline-1.webp"
-              loading="lazy"
-              width={1000}
-              height={1000}
-              alt="Photo by Minh Pham"
-              className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-              Offline
-            </span>
-          </a>
+        {/* SECTION 2: BAGIAN BAWAH - ONLINE */}
+        <div>
+          <div className="flex items-center gap-3 mb-6 border-b border-gray-200 pb-3">
+            <div className="w-3 h-8 bg-orange-500 rounded-full"></div>
+            <h3 className="text-2xl font-bold text-[#133B79] font-title">
+              Kelas Online (Interaktif)
+            </h3>
+          </div>
 
-          {/* Image 2 */}
-          <a
-            href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-            <Image
-              src="/images/gallery-belajar/gallery-offline-2.webp"
-              loading="lazy"
-              width={1000}
-              height={1000}
-              alt="Photo by Magicle"
-              className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-              Offline
-            </span>
-          </a>
-
-          {/* Image 3 */}
-          <a
-            href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:col-span-2 md:h-80">
-            <Image
-              src="/images/gallery-belajar/gallery-online-3.webp"
-              loading="lazy"
-              width={1000}
-              height={1000}
-              alt="Photo by Martin Sanchez"
-              className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-              Online
-            </span>
-          </a>
-
-          {/* Image 4 */}
-          <a
-            href="#"
-            className="group relative flex h-48 items-end overflow-hidden rounded-lg bg-gray-100 shadow-lg md:h-80">
-            <Image
-              src="/images/gallery-belajar/gallery-online-4.webp"
-              loading="lazy"
-              width={1000}
-              height={1000}
-              alt="Photo by Lorenzo Herrera"
-              className="absolute inset-0 h-full w-full object-cover object-center transition duration-200 group-hover:scale-110"
-            />
-            <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-gray-800 via-transparent to-transparent opacity-50"></div>
-            <span className="relative ml-4 mb-3 inline-block text-sm text-white md:ml-5 md:text-lg">
-              Online
-            </span>
-          </a>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {galleryData.online.map((item) => (
+              <div
+                key={item.id}
+                className="group relative rounded-2xl overflow-hidden bg-white shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100 flex flex-col">
+                {/* Container Gambar (object-contain agar gambar utuh/tidak terpotong) */}
+                <div className="relative w-full h-65 sm:h-80 bg-gray-900 flex items-center justify-center overflow-hidden">
+                  <Image
+                    src={item.src}
+                    loading="lazy"
+                    width={1000}
+                    height={1000}
+                    alt={item.alt}
+                    className="w-full h-full object-contain transition duration-500 group-hover:scale-105"
+                  />
+                </div>
+                {/* Title Card */}
+                <div className="p-4 bg-white border-t border-gray-100 flex items-center justify-between">
+                  <span className="font-title font-semibold text-gray-800 text-base sm:text-lg">
+                    {item.title}
+                  </span>
+                  <span className="bg-sky-50 text-orange-600 text-xs px-3 py-1 rounded-full font-medium">
+                    Online
+                  </span>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>

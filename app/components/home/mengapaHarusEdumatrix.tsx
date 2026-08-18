@@ -2,23 +2,23 @@ import Image from "next/image";
 
 const MengapaHarusEdumatrix = () => {
   return (
-    <div className="relative bg-[#04397D] flex items-center justify-center   ">
-      <div className="  text-white p-2 max-w-310 lg:min-h-[65vh] my-[50px]  min-h-[80vh] container mx-auto ">
-        <div className=" my-5 lg:my-0  lg:w-[939px] lg:h-[794px]">
-          <h2 className="lg:text-[40px] text-[28px] sm:text-[32px] md:text-[35px]   font-title font-bold md:mb-6 mb-4 lg:leading-[60px]">
-            Mengapa Harus Edumatrix?
+    <div className="relative bg-[#04397D] flex items-center justify-center">
+      <div className="text-white p-2 max-w-310 lg:min-h-[65vh] my-[80px] min-h-[100vh] container mx-auto">
+        <div className="my-5 lg:my-0 lg:w-[939px] lg:h-[794px]">
+          <h2 className="lg:text-[35px] text-[22px] sm:text-[26px] md:text-[30px] font-title font-bold md:mb-6 mb-4 lg:leading-[60px]">
+            Mengapa Harus Edumatrix untuk Persiapan TKA?
           </h2>
           <ul className="list-none pl-8">
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-semibold font-desc md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-4">
+              <span className="font-semibold font-desc md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-4">
                 Pengajar dari UI, UGM, ITB, IPB, STAN, STIS, UNJ, SSE, UIN dan
                 PT Terbaik lainnya
               </span>
@@ -27,25 +27,26 @@ const MengapaHarusEdumatrix = () => {
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
                 Tutor adalah pengajar dengan IP tinggi dan berpengalaman
+                menguasai materi TKA
               </span>
             </li>
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
                 Tutor Matrix bisa menjadi Positive Role Model bagi siswa
               </span>
             </li>
@@ -53,51 +54,53 @@ const MengapaHarusEdumatrix = () => {
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
-                Presensi Edumatrix untuk monitoring perkembangan prestasi siswa
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+                Presensi Edumatrix untuk monitoring perkembangan pemahaman TKA
+                siswa
               </span>
             </li>
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
-                Kurikulum Personal, sesuai dengan kebutuhan siswa
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+                Kurikulum Personal, disesuaikan dengan kebutuhan materi TKA
+                siswa
               </span>
             </li>
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
-                Evaluasi Progress Belajar secara Berkala
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+                Evaluasi Progress Belajar dan Try Out TKA secara Berkala
               </span>
             </li>
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
                 Kemudahan dalam pembayaran (via transfer)
               </span>
             </li>
@@ -105,12 +108,12 @@ const MengapaHarusEdumatrix = () => {
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
                 CS dan Tim Support yang responsif dan solutif
               </span>
             </li>
@@ -118,25 +121,26 @@ const MengapaHarusEdumatrix = () => {
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
-                Matrix beriorientasi pada Pelayanan Terbaik
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+                Matrix berorientasi pada Pelayanan Terbaik untuk hasil TKA
+                maksimal
               </span>
             </li>
             <li className="mb-1 flex items-center">
               <Image
                 loading="lazy"
                 src="/images/icon_ceklis-mengapa-harus-edumatrix.webp"
-                className="w-[23px] h-[23px] mr-2"
+                className="w-[23px] h-[23px] mr-2 shrink-0"
                 alt="Ceklis"
-                width="46"
-                height="46"
+                width={46}
+                height={46}
               />
-              <span className=" font-desc font-semibold md:text-[20px] text-[15px] opacity-80 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
+              <span className="font-desc font-semibold md:text-[16px] text-base opacity-90 hover:opacity-100 md:leading-[50px] leading-6 sm:leading-7">
                 GRATIS Biaya Pendaftaran + Ada PROMO setiap hari
               </span>
             </li>

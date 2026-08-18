@@ -31,7 +31,7 @@ export default function HeroKota({
     "+",
     "",
   )}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://bimbeledumatrix.com/, Saya ingin tanya program belajar OSN di ${kotaName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
+    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com/, Saya ingin tanya program belajar OSN di ${kotaName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
   )}`;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

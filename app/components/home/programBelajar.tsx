@@ -42,7 +42,7 @@ export default async function Program() {
   const programData = await getDataProgramDummy();
 
   return (
-    <section className="bg-white flex justify-center my-28 items-center">
+    <section className="bg-white flex justify-center my-28 items-center font-title">
       <div className="max-w-310 px-2 md:px-0 w-full">
         <div className="container mx-auto">
           <div className="flex justify-center items-center mb-16">
@@ -62,7 +62,7 @@ export default async function Program() {
                   <div className="bg-white p-1 rounded-full flex items-center justify-center">
                     {icons[index % icons.length]}
                   </div>
-                  <h3 className="ml-2 font-medium md:text-lg text-2xl font-title">
+                  <h3 className="ml-2 font-bold md:text-lg text-2xl font-title">
                     {item.judul_fitur}
                   </h3>
                 </div>

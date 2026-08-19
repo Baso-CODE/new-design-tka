@@ -20,13 +20,14 @@ import Promo from "../components/promo";
 import ImpactStatisticsOSN from "../components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "../components/YouTubeShortEmbed";
 
-const ogImage = "https://les-tka.bimbeledumatrix.com/images/images-cta.webp";
+const ogImage = "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
 const canonicalUrl = "https://les-tka.bimbeledumatrix.com/";
-const pageTitle = "📚 Les Privat Olimpiade • OSN IMO ISO Unggulan | Edumatrix";
+const pageTitle =
+  "📚 Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia";
 const pageDescription =
-  "Kursus Les Privat Olimpiade Terbaik ✔️ Dibimbing GURU BERPENGALAMAN ✔️ Peraih Lisensi OSN ✔️ Garansi REPORT CARD ✍️ Daftar? Segera kunjungi situs kami...";
+  "Kursus Les Privat TKA Terbaik ✅ Dibimbing GURU BERPENGALAMAN ✅ Persiapan TKA SD, SMP & SMA ✅ Laporan Progres Belajar ✍️ Daftar? Segera kunjungi situs kami...";
 const pageKeywords =
-  "bimbel OSN, les privat OSN, Olimpiade Sains Nasional, IMO, JISMO, KSN, bimbingan belajar OSN SD, OSN SMP, OSN SMA, persiapan olimpiade, guru olimpiade, materi olimpiade, Edumatrix Indonesia";
+  "bimbel TKA, les privat TKA, Tes Kemampuan Akademik, bimbingan belajar TKA SD, TKA SMP, TKA SMA, persiapan TKA, masuk sekolah unggulan, guru privat TKA, materi TKA, Edumatrix Indonesia";
 
 export const metadata: Metadata = {
   title: pageTitle,
@@ -63,6 +64,7 @@ export const metadata: Metadata = {
     images: [ogImage],
   },
 };
+
 export default function Home() {
   return (
     <div className="overflow-hidden">

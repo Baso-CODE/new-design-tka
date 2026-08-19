@@ -3,7 +3,7 @@ import { FaBriefcase } from "react-icons/fa";
 
 const Features = () => {
   return (
-    <div className=" md:pt-[68px] md:pb-[68px] pt-7 pb-7 mx-auto px-2 max-w-310 ">
+    <div className=" md:pt-17 md:pb-17 pt-7 pb-7 mx-auto px-2 max-w-310 ">
       <div className=" mt-8 grid grid-cols-1 xl:grid-cols-2 items-center gap-12 w-full mx-auto">
         <div data-aos="fade-right">
           <Image
@@ -39,12 +39,15 @@ const Features = () => {
             </h2>
             <p className="text-sm md:text-base text-[#374151]  mt-2 font-desc">
               Di Edumatrix Indonesia, kami tahu setiap orang punya cara belajar
-              yang berbeda. Karena itu, kami menghadirkan kelas online dan
-              offline dengan pendekatan yang fleksibel, interaktif, dan bisa
-              disesuaikan dengan kebutuhan kamu. Mau belajar lewat sesi langsung
-              bareng pengajar atau akses materi kapan aja lewat platform digital
-              — semuanya bisa. Tujuannya satu: biar kamu bisa belajar lebih
-              cepat, paham lebih dalam, dan hasilnya benar-benar terasa.
+              yang berbeda. Karena itu, kami menghadirkan pilihan belajar yang
+              fleksibel.{" "}
+              <strong>
+                Program bimbingan Online kami mencakup seluruh wilayah
+                Indonesia, sementara untuk kelas Offline (Tatap Muka) saat ini
+                tersedia khusus di wilayah Jogja dan Jabodetabek.
+              </strong>{" "}
+              Kamu bebas memilih metode belajar yang paling nyaman untuk
+              mempercepat pemahaman materi dengan hasil yang maksimal.
             </p>
           </div>
 
@@ -57,8 +60,9 @@ const Features = () => {
               banyak siswa mencapai prestasi akademik terbaik. Mereka bukan cuma
               mengajar, tapi juga jadi mentor yang ngerti ritme belajar kamu.
               Dengan dukungan penuh dan bimbingan yang sabar, kami pastikan kamu
-              bisa menguasai materi pelajaran dengan percaya diri— baik untuk
-              ujian sekolah, OSN, atau seleksi masuk universitas impianmu.
+              bisa menguasai materi pelajaran dengan percaya diri — baik untuk
+              ujian sekolah, persiapan Tes Kemampuan Akademik (TKA), maupun
+              seleksi masuk sekolah unggulan impianmu.
             </p>
           </div>
         </div>

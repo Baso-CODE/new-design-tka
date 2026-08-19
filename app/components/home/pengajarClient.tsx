@@ -23,15 +23,15 @@ export default function PengajarClient({
 }) {
   if (pengajarData.length === 0) {
     return (
-      <div className="flex justify-center bg-gray-50 py-10">
+      <div className="flex justify-center bg-[#ffffff] py-10">
         <p className="text-gray-500">Tampilan komponen mengalami gangguan.</p>
       </div>
     );
   }
 
   return (
-    <div className="flex justify-center bg-gray-50 py-10 sm:py-16">
-      <div className="max-w-[1440px] w-full px-4 sm:px-6 lg:px-8">
+    <div className="flex justify-center bg-[#ffffff] py-10 sm:py-16">
+      <div className="max-w-360 w-full px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-[#133B79] text-2xl font-extrabold font-title lg:text-4xl mb-12">
           Our Professional Master Teacher
         </h2>
@@ -65,7 +65,7 @@ export default function PengajarClient({
           className="mySwiper pb-16">
           {pengajarData.map((teacher) => (
             <SwiperSlide key={teacher.id}>
-              <div className="relative overflow-hidden group bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 cursor-pointer h-full p-6 flex flex-col items-center">
+              <div className="relative overflow-hidden group bg-gray-50 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out transform hover:-translate-y-2 cursor-pointer h-full p-6 flex flex-col items-center">
                 <div className="relative mb-6">
                   <Image
                     loading="lazy"

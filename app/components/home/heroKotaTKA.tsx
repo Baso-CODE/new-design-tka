@@ -37,10 +37,10 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
   };
 
   return (
-    <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden pt-28 md:pt-36 pb-20 md:pb-32">
+    <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden pt-28 md:pt-36">
       <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen">
         <Image
-          src="/images/tka/bg-overlay.png"
+          src="/images/tka/bg-overlay.webp"
           alt="Latar belakang gedung"
           fill
           className="object-cover object-center"
@@ -49,8 +49,10 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
       </div>
 
       <div className="relative z-10 px-4 lg:px-8 text-white w-full max-w-350 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-10 lg:gap-8">
-          <div className="lg:w-[50%] flex flex-col justify-center gap-6 pl-0 lg:pl-10 pb-8 lg:pb-0">
+        {/* Menggunakan lg:items-stretch agar kolom kiri & kanan memiliki tinggi yang sama maksimalnya */}
+        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-8 lg:gap-4">
+          {/* Bagian Kiri: Typografi & CTA */}
+          <div className="lg:w-[45%] flex flex-col justify-center gap-6 pl-0 lg:pl-10 pb-8 lg:pb-0">
             <h1 className="text-[28px] md:text-[32px] lg:text-[38px] font-bold leading-snug font-title uppercase">
               BIMBEL & LES PRIVAT TKA SD SMP SMA DI{" "}
               <br className="hidden lg:block" />
@@ -78,7 +80,7 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
                 aria-label={`Daftar Sekarang via WhatsApp dengan ${activeContact.nama_cs}`}
                 className="group relative inline-flex w-full md:w-fit h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
                 <span className="z-10 pr-2 font-bold whitespace-nowrap">
-                  Daftar Sekarang ({activeContact.nama_cs})
+                  Daftar Sekarang
                 </span>
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">
                   <div className="mr-3.5 flex items-center justify-center">
@@ -99,14 +101,15 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
             </div>
           </div>
 
-          <div className="lg:w-[50%] flex justify-center lg:justify-end items-center w-full relative z-10">
-            <div className="relative w-full aspect-video md:aspect-4/3 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
+          {/* Bagian Kanan: Gambar Karakter/Siswa didorong mentok ke bawah (items-end) */}
+          <div className="lg:w-[55%] flex justify-center lg:justify-end items-end w-full">
+            <div className="relative w-full aspect-4/3 lg:aspect-5/4">
               <Image
                 loading="eager"
-                src="/images/tka/hero-tka.png"
+                src="/images/tka/hero-tka.webp"
                 alt={`Bimbingan Belajar TKA di ${kotaName}`}
                 fill
-                className="object-cover transition-transform duration-700 hover:scale-105"
+                className="object-cover lg:object-contain object-bottom lg:object-bottom-right"
                 priority
                 fetchPriority="high"
               />
@@ -114,17 +117,6 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
           </div>
         </div>
       </div>
-
-      {/* <div className="absolute -bottom-px xl:-bottom-1 left-0 w-full z-20">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1440 320"
-          className="w-full h-auto">
-          <path
-            fill="#ffffff"
-            d="M0,192L48,202.7C96,213,192,235,288,224C384,213,480,171,576,176C672,181,768,235,864,229.3C960,224,1056,160,1152,138.7C1248,117,1344,139,1392,149.3L1440,160V320H0Z"></path>
-        </svg>
-      </div> */}
     </section>
   );
 }

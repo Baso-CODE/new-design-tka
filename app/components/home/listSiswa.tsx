@@ -8,7 +8,7 @@ const ListSiswa = () => {
           width={1000}
           height={1000}
           src="/images/daftar-siswa-edumatrix-osn-2024-2025.webp"
-          alt="Daftar Siswa Edumatrix OSN 2024-2025"
+          alt="Daftar Siswa Edumatrix Program Juara TKA 2024-2025"
           className="rounded-xl w-full h-auto"
           loading="lazy"
         />

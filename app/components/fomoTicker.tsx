@@ -27,12 +27,13 @@ export default function FomoTicker({
   // Data tiruan dinamis untuk efek FOMO
   const generateRandomNotification = (): NotificationData => {
     const subjects = [
-      "OSN Matematika",
-      "OSN Fisika",
-      "OSN Biologi",
-      "OSN Kimia",
-      "Olimpiade IPA",
-      "JISMO",
+      "Persiapan TKA",
+      "TKA Matematika",
+      "TKA Sains",
+      "TKA IPS",
+      "TKA Saintek",
+      "TKA Soshum",
+      "Bimbel TKA Intensif",
     ];
     const levels = ["SD", "SMP", "SMA"];
     const times = [
@@ -112,7 +113,7 @@ export default function FomoTicker({
   if (isClosedByUser || !notification) return null;
 
   return (
-    <div className="fixed bottom-4 left-4 md:bottom-6 md:left-6 z-50 pointer-events-none">
+    <div className="fixed bottom-[10%] left-4 md:bottom-6 md:left-6 z-50 pointer-events-none">
       <AnimatePresence>
         {isVisible && (
           <motion.div

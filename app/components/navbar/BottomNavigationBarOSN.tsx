@@ -1,9 +1,9 @@
 "use client";
 
-import { BookOpen, Feather, Home, Info, Mail, LucideIcon } from "lucide-react";
+import { Home, Info, LucideIcon, Mail } from "lucide-react";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 // Tipe untuk link navigasi
 interface NavLink {
@@ -19,9 +19,13 @@ interface BottomNavItem {
   icon: LucideIcon;
 }
 
-// Fungsi pembuat item nav lengkap dengan ikon
+// Fungsi pembuat item nav lengkap dengan ikon, memfilter 'Blog' dan 'Our Program'
 const getBottomNavItems = (navLinks: NavLink[]): BottomNavItem[] => {
-  return navLinks.map((link) => {
+  const filteredLinks = navLinks.filter(
+    (link) => link.label !== "Blog" && link.label !== "Our Program",
+  );
+
+  return filteredLinks.map((link) => {
     let iconComponent: LucideIcon = Home;
 
     switch (link.label) {
@@ -31,14 +35,8 @@ const getBottomNavItems = (navLinks: NavLink[]): BottomNavItem[] => {
       case "About Us":
         iconComponent = Info;
         break;
-      case "Our Program":
-        iconComponent = BookOpen;
-        break;
       case "Contact Us":
         iconComponent = Mail;
-        break;
-      case "Blog":
-        iconComponent = Feather;
         break;
       default:
         iconComponent = Home;
@@ -53,13 +51,13 @@ const getBottomNavItems = (navLinks: NavLink[]): BottomNavItem[] => {
 };
 
 // Props utama komponen
-interface BottomNavigationBarOSNProps {
+interface BottomNavigationBarTKAProps {
   navLinksData: NavLink[];
 }
 
-export default function BottomNavigationBarOSN({
+export default function BottomNavigationBarTKA({
   navLinksData,
-}: BottomNavigationBarOSNProps) {
+}: BottomNavigationBarTKAProps) {
   const pathname = usePathname();
   const [activeLink, setActiveLink] = useState<string>(pathname);
 
@@ -86,8 +84,7 @@ export default function BottomNavigationBarOSN({
             <Link
               key={item.name}
               href={item.link}
-              className={`flex flex-col items-center justify-center p-2 rounded-lg grow transition-all duration-200 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#0b4d94] ${activeClasses} ${hoverClasses}`}
-            >
+              className={`flex flex-col items-center justify-center p-2 rounded-lg grow transition-all duration-200 whitespace-nowrap focus:outline-none focus:ring-2 focus:ring-[#0b4d94] ${activeClasses} ${hoverClasses}`}>
               <item.icon className="w-6 h-6 mb-1" />
               <span className="text-xs font-medium">{item.name}</span>
             </Link>

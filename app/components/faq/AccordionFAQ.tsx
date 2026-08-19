@@ -1,18 +1,23 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 
 interface AccordionFAQProps {
   title: string;
   content: string;
+  defaultOpen?: boolean;
 }
 
-export function AccordionFAQ({ title, content }: AccordionFAQProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export function AccordionFAQ({
+  title,
+  content,
+  defaultOpen = false,
+}: AccordionFAQProps) {
+  const [isOpen, setIsOpen] = useState(defaultOpen);
   const [maxHeight, setMaxHeight] = useState("0px");
   const contentRef = useRef<HTMLDivElement>(null);
 
-  // Update maxHeight saat isOpen berubah
+  // Update maxHeight saat isOpen berubah atau saat komponen pertama kali dipasang
   useEffect(() => {
     if (contentRef.current) {
       setMaxHeight(isOpen ? `${contentRef.current.scrollHeight}px` : "0px");
@@ -23,22 +28,19 @@ export function AccordionFAQ({ title, content }: AccordionFAQProps) {
     <div className="border-b border-gray-300 w-full">
       <button
         className="flex justify-between items-center w-full p-4 text-left focus:outline-none text-black"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        <span className="text-lg font-medium text-gray-900 font-title">
+        onClick={() => setIsOpen(!isOpen)}>
+        <span className="text-base md:text-lg font-medium text-gray-900 font-title">
           {title}
         </span>
         <span
           className={`ml-2 transform transition-transform duration-500 ${
             isOpen ? "rotate-90" : "rotate-0"
-          }`}
-        >
+          }`}>
           <svg
             className="w-5 h-5 text-gray-800"
             fill="none"
             stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+            viewBox="0 0 24 24">
             <path
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -52,8 +54,7 @@ export function AccordionFAQ({ title, content }: AccordionFAQProps) {
       <div
         ref={contentRef}
         className="overflow-hidden transition-all duration-300 ease-in-out"
-        style={{ maxHeight }}
-      >
+        style={{ maxHeight }}>
         <div className="p-4 font-medium text-white bg-[#0f4787] font-desc rounded-b-lg">
           {content}
         </div>

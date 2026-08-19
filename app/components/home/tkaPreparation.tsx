@@ -69,7 +69,7 @@ export default function TKAPreparation() {
             {/* Gambar Orang: Di mobile berada di bawah teks (relative/h-64), di desktop absolute */}
             <div className="relative md:absolute bottom-0 w-full md:w-[50%] h-64 md:h-[120%] z-0 order-2 md:order-1">
               <Image
-                src="/images/tka/tka-preparation.png"
+                src="/images/tka/tka-preparation.webp"
                 alt="Persiapan Siswa TKA"
                 fill
                 className="object-contain object-bottom"

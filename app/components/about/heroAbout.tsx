@@ -5,7 +5,7 @@ const HeroAbout = () => {
     <section className="relative bg-[#04397D] flex items-center justify-center">
       <div className="py-24 px-2 mt-16 text-white max-w-310 min-h-screen  lg:min-h-[60vh]">
         <div className="flex flex-col lg:flex-row gap-0">
-          <div className="lg:w-[35%] mt-[50px] flex flex-col justify-center">
+          <div className="lg:w-[35%] mt-12.5 flex flex-col justify-center">
             <h1
               className="text-[64px] font-bold leading-10 font-title mb-6 text-[#faae17]"
               data-aos="fade-down">
@@ -13,7 +13,7 @@ const HeroAbout = () => {
             </h1>
 
             <p
-              className="mb-2 font-desc text-[16px] leading-5 font-bold opacity-90"
+              className="mb-2 font-desc text-[16px] leading-5 font-medium opacity-90"
               data-aos="fade-right">
               EDUMATRIX Indonesia adalah lembaga bimbingan belajar untuk
               Persiapan Masuk Kedokteran, PTN, dan Kedinasan. Kami menawarkan
@@ -22,7 +22,7 @@ const HeroAbout = () => {
             </p>
             <br />
             <p
-              className="mb-8 font-desc text-[16px] leading-5 font-bold opacity-90"
+              className="mb-8 font-desc text-[16px] leading-5 font-medium opacity-90"
               data-aos="fade-up">
               Program ini menjadi solusi terbaik untuk siswa agar sukses masuk
               UI, ITB, UGM, IPB, Unpad, dan Perguruan Tinggi Negeri Favorit

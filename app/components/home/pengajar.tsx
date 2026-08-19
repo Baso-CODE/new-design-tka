@@ -11,7 +11,7 @@ export default async function Pengajar() {
   // Setelah try/catch selesai → aman return JSX
   if (pengajarData.length === 0) {
     return (
-      <div className="flex justify-center bg-gray-50 py-10">
+      <div className="flex justify-center bg-[#ffffff] py-10">
         <p className="text-gray-500">Tampilan komponen mengalami gangguan.</p>
       </div>
     );

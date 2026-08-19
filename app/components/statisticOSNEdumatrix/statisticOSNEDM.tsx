@@ -33,7 +33,7 @@ const osnStats: StatItem[] = [
 
 const ImpactStatisticsOSN = () => {
   return (
-    <section className="py-16 bg-gray-50 min-h-[60vh] flex items-center">
+    <section className="py-16 bg-[#ffffff] min-h-[60vh] flex items-center">
       <div className="max-w-310 mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {osnStats.map((stat) => (

@@ -36,7 +36,7 @@ export async function generateMetadata({
   const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}`;
 
   const imageUrl =
-    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.png";
+    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
 
   const title = `Bimbel & Les Privat TKA di ${kabupatenName} SD SMP SMA Terbaik`;
   const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kabupatenName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;

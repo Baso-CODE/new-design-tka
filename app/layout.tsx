@@ -8,7 +8,7 @@ import "./globals.css";
 const poppins = Poppins({
   variable: "--font-poppins",
   subsets: ["latin"],
-  weight: ["400", "600", "700"],
+  weight: ["400", "600", "700", "800"],
   display: "swap",
 });
 
@@ -18,6 +18,7 @@ const superPencil = localFont({
   variable: "--font-super-pencil",
   display: "swap",
 });
+
 export const metadata: Metadata = {
   title: "Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia",
   description:
@@ -32,7 +33,7 @@ export const metadata: Metadata = {
       "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
     images: [
       {
-        url: "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.png",
+        url: "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp",
         width: 1200,
         height: 630,
         alt: "Les Privat TKA Edumatrix Indonesia",
@@ -45,7 +46,7 @@ export const metadata: Metadata = {
     title: "Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia",
     description:
       "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
-    images: ["https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.png"],
+    images: ["https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp"],
   },
 
   alternates: {
@@ -62,7 +63,7 @@ export default function RootLayout({
     <html lang="id" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className={`${poppins.variable} font-sans antialiased`}>
+        className={`${poppins.variable} ${superPencil.variable} font-sans antialiased`}>
         {children}
         <GoogleAnalytics gaId="G-W6LLEWHJHV" />
       </body>

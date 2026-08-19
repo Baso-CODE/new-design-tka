@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const YouTubeShortEmbed = () => {
   // ID Video dari URL: https://youtube.com/shorts/Nv6gd0yQ3_s
   const videoId = "Nv6gd0yQ3_s";
@@ -39,9 +41,9 @@ const YouTubeShortEmbed = () => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <div className="max-w-310 mx-auto px-4 md:px-0 mb-32">
+      <div className="max-w-310 mx-auto px-4 md:px-0 mb-36">
         <div className="lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
-          <div className="relative flex justify-center items-center mb-12 lg:mb-0">
+          <div className="relative flex justify-center items-center mb-12 lg:mb-5">
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex justify-center items-center">
               <div className="bg-orange-200 rounded-lg w-72 h-87.5 sm:w-80 sm:h-100 lg:w-96 lg:h-112.5 transform -rotate-6 opacity-70"></div>
               <div className="absolute bg-orange-300 rounded-lg w-72 h-87.5 sm:w-80 sm:h-100 lg:w-104 transform rotate-3 opacity-60"></div>
@@ -93,22 +95,19 @@ const YouTubeShortEmbed = () => {
                 <span>Bimbingan Ahli Edumatrix</span>
               </div>
             </div>
-
             <div className="mt-8">
-              <a
+              <Link
                 href="/contact"
-                className="relative inline-flex items-center justify-start px-6 py-3 w-full md:w-[60%] lg:w-[70%] xl:w-[50%] overflow-hidden font-medium transition-all bg-blue-600 rounded-xl group">
-                <span className="relative w-full text-left text-white transition-colors duration-200 ease-in-out group-hover:text-white">
-                  Konsultasi TKA Sekarang{" "}
-                  <span className="ml-2 text-xl">&rarr;</span>
-                </span>
-              </a>
+                className="inline-flex items-center justify-between px-5 py-3 w-full md:w-[60%] lg:w-[70%] xl:w-[60%] font-bold text-white uppercase text-base sm:text-lg rounded-[10px] border-2 border-[#fafafa] bg-orange-500 shadow-[3px_3px_#fafafa] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-none cursor-pointer">
+                <span>Konsultasi TKA Sekarang</span>
+                <span className="text-xl ml-2 text-center">&rarr;</span>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="absolute -bottom-px xl:-bottom-12.5 left-0 w-full">
+      <div className="absolute -bottom-px xl:-bottom-2.5 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#FFFFFF"

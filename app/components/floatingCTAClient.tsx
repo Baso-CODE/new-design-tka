@@ -37,7 +37,7 @@ export default function FloatingCTAClient({ contacts }: Props) {
   return (
     <div
       className="
-        fixed bottom-[3%] right-[3%] z-1000
+        fixed bottom-[10%] right-[3%] z-1000
         flex items-center gap-3
         md:bottom-[7%] md:right-[4%]
       ">

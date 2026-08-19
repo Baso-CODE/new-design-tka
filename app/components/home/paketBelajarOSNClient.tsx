@@ -49,7 +49,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
           {/* Header Banner Image */}
           <div className="relative w-full h-55 md:h-62.5 overflow-hidden bg-[#0d2247]">
             <Image
-              src="/images/tka/94972367_10054705 2.png"
+              src="/images/tka/bg-paket-belajar.webp"
               alt="Background Ornamen"
               fill
               className="object-cover object-center"
@@ -58,7 +58,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
             <div className="absolute inset-0 flex items-end justify-between px-2 md:px-4">
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/tka/paket-juara-tka.png"
+                  src="/images/tka/paket-juara-tka.webp"
                   alt="Juara TKA"
                   fill
                   className="object-contain object-bottom"
@@ -118,7 +118,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
           {/* Header Banner Image */}
           <div className="relative w-full h-55 md:h-62.5 overflow-hidden bg-[#0d2247]">
             <Image
-              src="/images/tka/94972367_10054705 2.png"
+              src="/images/tka/bg-paket-belajar.webp"
               alt="Background Ornamen"
               fill
               className="object-cover object-center"
@@ -127,7 +127,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
             <div className="absolute inset-0 flex items-end justify-between px-2 md:px-4">
               <div className="relative w-full h-full">
                 <Image
-                  src="/images/tka/paket-master-tka.png"
+                  src="/images/tka/paket-master-tka.webp"
                   alt="Master TKA"
                   fill
                   className="object-contain object-bottom"

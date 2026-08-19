@@ -34,7 +34,7 @@ export default async function ListKabupaten({ kotaName, kotaSlug }: Props) {
             className="w-full h-full mb-8 rounded-md"
           />
 
-          <button className="absolute w-[363px] h-[65px] bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
+          <button className="absolute w-90.75 h-16.25 bg-[#133B79] font-title bottom-1 text-white font-bold py-2 px-4 shadow-2xl flex items-center justify-center text-[1.4rem] md:text-[2rem] rounded-xl">
             Lihat Lebih Lanjut
           </button>
         </div>
@@ -65,7 +65,7 @@ export default async function ListKabupaten({ kotaName, kotaSlug }: Props) {
                       <span className="relative inline-flex overflow-hidden">
                         <span
                           className="absolute origin-bottom transition duration-500 
-                                          -translate-x-[150%] group-hover:translate-x-0 group-hover:skew-x-0 skew-x-33">
+                                          translate-x-[-150%] group-hover:translate-x-0 group-hover:skew-x-0 skew-x-33">
                           {kabupaten.nama_kota_kabupaten}
                         </span>
 

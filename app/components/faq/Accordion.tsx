@@ -13,11 +13,12 @@ export default async function Accordion() {
             </h2>
 
             <div className="bg-gray-50 rounded-lg shadow-lg w-full">
-              {dataFaq.map((item) => (
+              {dataFaq.map((item, index) => (
                 <AccordionFAQ
                   key={item.id}
                   title={item.pertanyaan}
                   content={item.jawaban}
+                  defaultOpen={index === 0}
                 />
               ))}
             </div>

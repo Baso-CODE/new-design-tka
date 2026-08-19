@@ -8,7 +8,7 @@ export default function Hero() {
       {/* Layer Background (Gedung Sketch) */}
       <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen">
         <Image
-          src="/images/tka/bg-overlay.png"
+          src="/images/tka/bg-overlay.webp"
           alt="Latar belakang gedung"
           fill
           className="object-cover object-center"
@@ -50,7 +50,7 @@ export default function Hero() {
             <div className="relative w-full aspect-4/3 lg:aspect-5/4">
               <Image
                 loading="eager"
-                src="/images/tka/hero-tka.png"
+                src="/images/tka/hero-tka.webp"
                 alt="Siswa berprestasi bimbingan belajar TKA Edumatrix"
                 fill
                 className="object-cover lg:object-contain object-bottom lg:object-bottom-right"

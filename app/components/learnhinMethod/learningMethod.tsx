@@ -5,17 +5,17 @@ import { TiltCard } from "./tiltCard";
 const LearningMethod = async () => {
   return (
     <section className="bg-white flex justify-center mt-12 items-center">
-      <div className="max-w-310 px-6">
+      <div className="max-w-310 px-2">
         <div className="w-full">
           <div className="text-center">
             <h1
-              className="text-[32px] md:text-[48px] lg:text-[64px] font-bold mb-8 font-title text-[#133B79]"
+              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 font-title text-[#133B79]"
               data-aos="fade-down">
               Learning Method
             </h1>
 
             <div className="flex justify-center" data-aos="fade-up">
-              <p className="text-lg font-bold text-[#131a7999] mb-8 mx-auto max-w-3xl text-center">
+              <p className="text-sm md:text-base font-bold text-gray-800 mb-8 mx-auto max-w-3xl text-center">
                 Metode Belajar yang digunakan yaitu personal one on one (1 siswa
                 1 mentor) dan juga tersedia Small Class. Program belajar
                 didesain secara sistematis, terstruktur, terukur dan teruji.

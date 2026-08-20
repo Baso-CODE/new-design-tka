@@ -26,7 +26,7 @@ export default function HeroKota({
   const activeContact = activeCs[0];
 
   const baseUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com/";
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
 
   // Buat link dinamis dengan nama CS yang aktif dan base URL dari env
   const dynamicLink = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace(

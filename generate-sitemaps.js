@@ -46,14 +46,29 @@ const PROVINCE_TO_CAPITAL = {
   96: "sorong",
 };
 
-async function fetchJSON(url) {
-  try {
-    const res = await fetch(url);
-    const json = await res.json();
-    return json.data || [];
-  } catch {
-    return [];
+// Fungsi helper untuk jeda waktu (delay) dalam milidetik
+const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+
+// Fungsi fetch dengan mekanisme Retry (mencoba ulang jika gagal)
+async function fetchJSON(url, retries = 3, delay = 1000) {
+  for (let i = 0; i < retries; i++) {
+    try {
+      const res = await fetch(url);
+      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+      const json = await res.json();
+      return json.data || [];
+    } catch (error) {
+      if (i === retries - 1) {
+        console.warn(
+          `Gagal memuat URL setelah ${retries} kali percobaan: ${url}`,
+        );
+        return [];
+      }
+      // Tunggu lebih lama sebelum mencoba ulang
+      await sleep(delay * (i + 1));
+    }
   }
+  return [];
 }
 
 function toSlug(name) {
@@ -72,12 +87,14 @@ function xmlUrl(loc, priority) {
   </url>\n`;
 }
 
-async function batchFetch(items, fn, batchSize = 5) {
+// Batch fetch dengan batasan lebih aman (misal: 3 request bersamaan) dan jeda
+async function batchFetch(items, fn, batchSize = 3) {
   const results = [];
   for (let i = 0; i < items.length; i += batchSize) {
     const batch = items.slice(i, i + batchSize);
     const batchResults = await Promise.all(batch.map(fn));
     results.push(...batchResults);
+    await sleep(200); // Jeda kecil antar batch
   }
   return results;
 }
@@ -95,7 +112,7 @@ async function generate() {
     const code = prov.code.slice(0, 2);
     const kotaSlug = PROVINCE_TO_CAPITAL[code] ?? "makassar";
 
-    console.log(`Memproses Provinsi: ${prov.name} (File: ${kotaSlug}.xml)`);
+    console.log(`\nMemproses Provinsi: ${prov.name} (File: ${kotaSlug}.xml)`);
     let urls = "";
 
     // Level 1: kotaSlug
@@ -105,6 +122,7 @@ async function generate() {
     const regencies = await fetchJSON(
       `${WILAYAH_BASE}/regencies/${prov.code}.json`,
     );
+
     for (const kab of regencies) {
       const kabupatenSlug = toSlug(kab.name);
       urls += xmlUrl(
@@ -117,20 +135,19 @@ async function generate() {
     const districtData = await batchFetch(
       regencies,
       async (kab) => {
-        const kabupatenSlug = toSlug(kab.name);
         const districts = await fetchJSON(
           `${WILAYAH_BASE}/districts/${kab.code}.json`,
         );
-        return { kabupatenSlug, districts };
+        return { districts };
       },
-      5,
+      3, // Dikecilkan menjadi 3 agar stabil
     );
 
-    for (const { kabupatenSlug, districts } of districtData) {
+    for (const { districts } of districtData) {
       for (const kec of districts) {
         const kecamatanSlug = toSlug(kec.name);
         urls += xmlUrl(
-          `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}`,
+          `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kecamatanSlug}`,
           "0.7",
         );
       }
@@ -138,20 +155,19 @@ async function generate() {
       const villageData = await batchFetch(
         districts,
         async (kec) => {
-          const kecamatanSlug = toSlug(kec.name);
           const villages = await fetchJSON(
             `${WILAYAH_BASE}/villages/${kec.code}.json`,
           );
-          return { kecamatanSlug, villages };
+          return { villages };
         },
-        5,
+        3,
       );
 
-      for (const { kecamatanSlug, villages } of villageData) {
+      for (const { villages } of villageData) {
         for (const village of villages) {
           const kelurahanSlug = toSlug(village.name);
           urls += xmlUrl(
-            `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}`,
+            `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kelurahanSlug}`,
             "0.6",
           );
         }
@@ -162,12 +178,18 @@ async function generate() {
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${urls}</urlset>`;
 
-    // Menggunakan kotaSlug sebagai nama file (contoh: banda-aceh.xml, makassar.xml)
     fs.writeFileSync(path.join(outputDir, `${kotaSlug}.xml`), xml);
-    console.log(`> Berhasil membuat public/sitemap/${kotaSlug}.xml`);
+    console.log(
+      `> Selesai & Berhasil menyimpan public/sitemap/${kotaSlug}.xml`,
+    );
+
+    // Berikan jeda 1 detik antar provinsi agar server API wilayah.id tidak memblokir/timeout
+    await sleep(1000);
   }
 
-  console.log("Semua sitemap berhasil di-generate ke folder public/sitemap/!");
+  console.log(
+    "\nSemua sitemap berhasil di-generate dengan lengkap ke folder public/sitemap/!",
+  );
 }
 
 generate();

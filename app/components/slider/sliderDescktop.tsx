@@ -47,8 +47,11 @@ export default function SliderDesktop() {
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+
   const dynamicHref = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com, Saya ingin tanya program belajar OSN yang ada di Edumatrix. Apa saja jenis program belajar dan pilihan paket`,
+    `Halo ${activeContact.nama_cs} ${baseUrl}, Saya ingin tanya program belajar OSN yang ada di Edumatrix. Apa saja jenis program belajar dan pilihan paket`,
   )}`;
 
   const items: CarouselItem[] = [
@@ -71,7 +74,6 @@ export default function SliderDesktop() {
       height: 2101,
     },
   ];
-
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     rotateCs();

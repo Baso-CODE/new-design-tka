@@ -20,11 +20,14 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+
   const dynamicLink = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace(
     "+",
     "",
   )}&text=${encodeURIComponent(
-    `Halo Kak ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com/, Saya ingin tanya program bimbingan belajar TKA (Tes Kemampuan Akademik) di ${kotaName}. Apa saja pilihan paket dan fasilitasnya?`,
+    `Halo Kak ${activeContact.nama_cs} ${baseUrl}/, Saya ingin tanya program bimbingan belajar TKA (Tes Kemampuan Akademik) di ${kotaName}. Apa saja pilihan paket dan fasilitasnya?`,
   )}`;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -35,7 +38,6 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
       window.open(dynamicLink, "_blank", "noopener,noreferrer");
     }, 50);
   };
-
   return (
     <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden pt-28 md:pt-36">
       <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen">

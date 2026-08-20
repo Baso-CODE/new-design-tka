@@ -7,7 +7,7 @@ import Link from "next/link";
 
 interface HeroKabupatenProps {
   KabupatenName: string;
-  contacts: ContactCs[]; // Menerima data kontak terpusat
+  contacts: ContactCs[];
 }
 
 export default function HeroKabupaten({
@@ -23,12 +23,15 @@ export default function HeroKabupaten({
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
-  // Buat link dinamis dengan nama dan nomor CS yang aktif
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+
+  // Buat link dinamis dengan nama dan nomor CS yang aktif serta base URL dari env
   const dynamicLink = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace(
     "+",
     "",
   )}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com/, Saya ingin tanya program belajar OSN di ${KabupatenName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
+    `Halo ${activeContact.nama_cs} ${baseUrl}/, Saya ingin tanya program belajar OSN di ${KabupatenName} yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
   )}`;
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {

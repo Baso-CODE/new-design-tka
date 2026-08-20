@@ -19,8 +19,9 @@ import Promo from "@/app/components/promo";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
-
-const baseUrl = "https://les-tka.bimbeledumatrix.com";
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
 export async function generateMetadata({
   params,
@@ -42,8 +43,7 @@ export async function generateMetadata({
 
   const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/${kelurahanSlug}/`;
 
-  const imageUrl =
-    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
+  const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
   const title = `Bimbel & Les Privat TKA di ${kelurahanName} SD SMP SMA Terbaik`;
   const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kelurahanName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
@@ -97,7 +97,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonicalUrl,
-      siteName: "Edumatrix Indonesia",
+      siteName: siteName,
       images: [
         {
           url: imageUrl,
@@ -194,8 +194,8 @@ export default async function KelurahanPage(props: {
       {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
-        name: "Edumatrix Indonesia",
-        description: `Edumatrix Indonesia adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kelurahanName}, ${kecamatanName}.`,
+        name: siteName,
+        description: `${siteName} adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kelurahanName}, ${kecamatanName}.`,
         url: baseUrl,
         areaServed: `${kelurahanName}, ${kecamatanName}`,
         sameAs: [
@@ -205,7 +205,7 @@ export default async function KelurahanPage(props: {
         ],
         brand: {
           "@type": "Brand",
-          name: "Edumatrix Indonesia",
+          name: siteName,
           logo: `${baseUrl}/images/logo.webp`,
         },
         contactPoint: {

@@ -20,16 +20,19 @@ import Promo from "../components/promo";
 import ImpactStatisticsOSN from "../components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "../components/YouTubeShortEmbed";
 
-const ogImage = "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
-const canonicalUrl = "https://les-tka.bimbeledumatrix.com/";
-const pageTitle =
-  "📚 Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia";
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
+
+const ogImage = `${baseUrl}/images/tka/hero-tka.webp`;
+const canonicalUrl = `${baseUrl}/`;
+const pageTitle = `📚 Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`;
 const pageDescription =
-  "Kursus Les Privat TKA Terbaik ✅ Dibimbing GURU BERPENGALAMAN ✅ Persiapan TKA SD, SMP & SMA ✅ Laporan Progres Belajar ✍️ Daftar? Segera kunjungi situs kami...";
-const pageKeywords =
-  "bimbel TKA, les privat TKA, Tes Kemampuan Akademik, bimbingan belajar TKA SD, TKA SMP, TKA SMA, persiapan TKA, masuk sekolah unggulan, guru privat TKA, materi TKA, Edumatrix Indonesia";
+  "Kursus Les Privat TKA Terbaik, Dibimbing GURU BERPENGALAMAN, Persiapan TKA SD, SMP & SMA, Laporan Progres Belajar ✍️ Daftar? Segera kunjungi situs kami...";
+const pageKeywords = `bimbel TKA, les privat TKA, Tes Kemampuan Akademik, bimbingan belajar TKA SD, TKA SMP, TKA SMA, persiapan TKA, masuk sekolah unggulan, guru privat TKA, materi TKA, ${siteName}`;
 
 export const metadata: Metadata = {
+  metadataBase: new URL(baseUrl),
   title: pageTitle,
 
   description: pageDescription,
@@ -44,7 +47,7 @@ export const metadata: Metadata = {
     title: pageTitle,
     description: pageDescription,
     url: canonicalUrl,
-    siteName: pageTitle,
+    siteName: siteName,
     images: [
       {
         url: ogImage,

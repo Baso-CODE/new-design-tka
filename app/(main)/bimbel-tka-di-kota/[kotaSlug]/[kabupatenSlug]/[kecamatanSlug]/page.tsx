@@ -22,8 +22,6 @@ import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
-const baseUrl = "https://les-tka.bimbeledumatrix.com";
-
 export async function generateMetadata({
   params,
 }: {
@@ -39,10 +37,12 @@ export async function generateMetadata({
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
 
-  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
-  const imageUrl =
-    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
+  const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
   const title = `Bimbel & Les Privat TKA di ${kecamatanName} SD SMP SMA Terbaik`;
   const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kecamatanName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
@@ -90,7 +90,7 @@ export async function generateMetadata({
       title,
       description,
       url: canonicalUrl,
-      siteName: "Edumatrix Indonesia",
+      siteName: siteName,
       images: [
         {
           url: imageUrl,
@@ -109,7 +109,6 @@ export async function generateMetadata({
     },
   };
 }
-
 export default async function KecamatanPage(props: {
   params: Promise<{
     kotaSlug: string;
@@ -122,6 +121,10 @@ export default async function KecamatanPage(props: {
   const kotaName = formatSlugToTitle(kotaSlug);
   const kabupatenName = formatSlugToTitle(kabupatenSlug);
   const kecamatanName = formatSlugToTitle(kecamatanSlug);
+
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
   const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
 
@@ -175,8 +178,8 @@ export default async function KecamatanPage(props: {
       {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
-        name: "Edumatrix Indonesia",
-        description: `Edumatrix Indonesia adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kecamatanName}.`,
+        name: siteName,
+        description: `${siteName} adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kecamatanName}.`,
         url: baseUrl,
         areaServed: `${kecamatanName}, ${kabupatenName}`,
         sameAs: [
@@ -186,7 +189,7 @@ export default async function KecamatanPage(props: {
         ],
         brand: {
           "@type": "Brand",
-          name: "Edumatrix Indonesia",
+          name: siteName,
           logo: `${baseUrl}/images/logo.webp`,
         },
         contactPoint: {

@@ -20,13 +20,16 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
-  // Buat link dinamis berdasarkan nama CS yang sedang aktif
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+
+  // Buat link dinamis berdasarkan nama CS yang sedang aktif dan base URL dari env
   const waLinkPriority = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com saya ingin Daftar Paket JUARA TKA. Bagaimana penjelasan detail programnya?`,
+    `Halo ${activeContact.nama_cs} ${baseUrl} saya ingin Daftar Paket JUARA TKA. Bagaimana penjelasan detail programnya?`,
   )}`;
 
   const waLinkDeluxe = `https://api.whatsapp.com/send?phone=${activeContact.nomor_hp.replace("+", "")}&text=${encodeURIComponent(
-    `Halo ${activeContact.nama_cs} https://les-tka.bimbeledumatrix.com saya ingin Daftar Paket MASTER TKA. Bagaimana penjelasan detail programnya?`,
+    `Halo ${activeContact.nama_cs} ${baseUrl} saya ingin Daftar Paket MASTER TKA. Bagaimana penjelasan detail programnya?`,
   )}`;
 
   const handleClick = (
@@ -40,7 +43,6 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
       window.open(link, "_blank", "noopener,noreferrer");
     }, 50);
   };
-
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 items-stretch">
       {/* KARTU 1: JUARA TKA (Menggunakan #04397D) */}

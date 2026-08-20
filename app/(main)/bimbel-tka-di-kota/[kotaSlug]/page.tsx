@@ -30,11 +30,13 @@ export async function generateMetadata({
 
   const formattedKotaName = formatSlugToTitle(kotaSlug);
 
-  const baseUrl = "https://les-tka.bimbeledumatrix.com";
-  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`;
+  // Menggunakan Environment Variable untuk base URL
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
-  const imageUrl =
-    "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp";
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`;
+  const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
   const ogTitle = `Bimbel & Les Privat TKA di ${formattedKotaName} SD SMP SMA Terbaik`;
   const ogDescription = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${formattedKotaName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman • Program Eksklusif • Laporan Perkembangan • Daftar Sekarang!`;
@@ -78,7 +80,7 @@ export async function generateMetadata({
       type: "article",
       locale: "id_ID",
       url: canonicalUrl,
-      siteName: "Edumatrix Indonesia",
+      siteName: siteName,
       title: ogTitle,
       description: ogDescription,
       images: [
@@ -107,7 +109,11 @@ export default async function KotaPage(props: {
 
   const formattedKotaName = formatSlugToTitle(kotaSlug);
 
-  const baseUrl = "https://les-tka.bimbeledumatrix.com";
+  // Menggunakan Environment Variable untuk base URL di komponen halaman
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
+
   const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`;
 
   const jsonLd = {
@@ -144,8 +150,8 @@ export default async function KotaPage(props: {
       {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
-        name: "Edumatrix Indonesia",
-        description: `Edumatrix Indonesia adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${formattedKotaName}.`,
+        name: siteName,
+        description: `${siteName} adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${formattedKotaName}.`,
         url: baseUrl,
         areaServed: formattedKotaName,
         sameAs: [
@@ -155,7 +161,7 @@ export default async function KotaPage(props: {
         ],
         brand: {
           "@type": "Brand",
-          name: "Edumatrix Indonesia",
+          name: siteName,
           logo: `${baseUrl}/images/logo.webp`,
         },
         contactPoint: {

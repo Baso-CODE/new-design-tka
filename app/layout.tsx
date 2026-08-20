@@ -19,38 +19,43 @@ const superPencil = localFont({
   display: "swap",
 });
 
+const baseUrl =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com/";
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
+
 export const metadata: Metadata = {
-  title: "Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia",
+  metadataBase: new URL(baseUrl),
+  title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
   description:
     "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
   openGraph: {
     type: "website",
     locale: "id_ID",
-    url: "https://les-tka.bimbeledumatrix.com",
-    siteName: "Edumatrix Indonesia",
-    title: "Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia",
+    url: baseUrl,
+    siteName: siteName,
+    title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
     description:
       "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
     images: [
       {
-        url: "https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp",
+        url: `${baseUrl}/images/tka/hero-tka.webp`,
         width: 1200,
         height: 630,
-        alt: "Les Privat TKA Edumatrix Indonesia",
+        alt: `Les Privat TKA ${siteName}`,
       },
     ],
   },
 
   twitter: {
     card: "summary_large_image",
-    title: "Bimbel & Les Privat TKA SD SMP SMA Terbaik | Edumatrix Indonesia",
+    title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
     description:
       "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
-    images: ["https://les-tka.bimbeledumatrix.com/images/tka/hero-tka.webp"],
+    images: [`${baseUrl}/images/tka/hero-tka.webp`],
   },
 
   alternates: {
-    canonical: "https://les-tka.bimbeledumatrix.com",
+    canonical: baseUrl,
   },
 };
 

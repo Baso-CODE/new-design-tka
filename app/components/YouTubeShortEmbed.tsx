@@ -3,6 +3,11 @@
 import Link from "next/link";
 
 const YouTubeShortEmbed = () => {
+  // Mengambil konfigurasi dari env
+  const baseUrl =
+    process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
+
   // ID Video dari URL: https://youtube.com/shorts/Nv6gd0yQ3_s
   const videoId = "Nv6gd0yQ3_s";
   const videoTitle = "Apa itu TKA, Wajib kah? | Edumatrix Indonesia";
@@ -26,14 +31,13 @@ const YouTubeShortEmbed = () => {
     contentUrl: watchUrl,
     publisher: {
       "@type": "Organization",
-      name: "Edumatrix Indonesia",
+      name: siteName,
       logo: {
         "@type": "ImageObject",
-        url: "https://les-tka.bimbeledumatrix.com/images/logo.webp",
+        url: `${baseUrl}/images/logo.webp`,
       },
     },
   };
-
   return (
     <section className="relative py-16 bg-[#04397d] overflow-hidden min-h-screen">
       <script

@@ -28,6 +28,9 @@ export const metadata: Metadata = {
   title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
   description:
     "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
+  verification: {
+    google: "-qNN7ezuQ_P3U58abDzZCeBdTV5HFVoGKQAJkdAgq9A",
+  },
   openGraph: {
     type: "website",
     locale: "id_ID",
@@ -70,7 +73,7 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${poppins.variable} ${superPencil.variable} font-sans antialiased`}>
         {children}
-        <GoogleAnalytics gaId="G-W6LLEWHJHV" />
+        <GoogleAnalytics gaId="G-CBBM7ZS7D7" />
       </body>
     </html>
   );

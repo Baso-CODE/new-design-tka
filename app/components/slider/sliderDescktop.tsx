@@ -2,10 +2,14 @@
 
 import { useCsRotation } from "@/app/helper/useCsRotation";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { Autoplay, Navigation } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import CSS Swiper dan modul navigasinya
+import "swiper/css";
+import "swiper/css/navigation";
+
 import { dummyContactCsData } from "../data/contactCs.dummyData";
 
 interface CarouselItem {
@@ -25,25 +29,6 @@ export default function SliderDesktop() {
     "slider_rotation",
   );
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1024 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 768, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
@@ -56,24 +41,25 @@ export default function SliderDesktop() {
 
   const items: CarouselItem[] = [
     {
-      src: "/images/carousel/carousel-OSN_WEB-descktop.webp",
+      src: "/images/slider/descktop-1.webp",
       alt: "Bimbingan belajar OSN terbaik untuk membantu anak Anda meraih prestasi dalam Olimpiade Sains Nasional.",
       width: 4015,
       height: 2101,
     },
     {
-      src: "/images/carousel/carousel-OSN_WEB2-descktop.webp",
+      src: "/images/slider/descktop-2.webp",
       alt: "Persiapan Olimpiade Sains Nasional dengan tutor berpengalaman yang siap membantu anak Anda memahami materi OSN secara mendalam.",
       width: 4015,
       height: 2101,
     },
     {
-      src: "/images/carousel/carousel-OSN_WEB3-descktop.webp",
+      src: "/images/slider/descktop-3.webp",
       alt: "Program belajar intensif dan terstruktur untuk Olimpiade Sains Nasional, dirancang khusus untuk meningkatkan kemampuan akademis anak Anda.",
       width: 4015,
       height: 2101,
     },
   ];
+
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     rotateCs();
@@ -86,38 +72,42 @@ export default function SliderDesktop() {
   return (
     <div className="w-full md:block hidden">
       <div className="container mx-auto">
-        <Carousel
-          responsive={responsive}
-          infinite
-          autoPlay
-          autoPlaySpeed={2600}
-          arrows
-          ssr
-          beforeChange={(nextSlide) => setActiveIndex(nextSlide)}>
+        <Swiper
+          modules={[Autoplay, Navigation]}
+          spaceBetween={10}
+          slidesPerView={1}
+          loop={true}
+          navigation={true}
+          autoplay={{
+            delay: 2600,
+            disableOnInteraction: false,
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}>
           {items.map((item, idx) => {
             const isActive = idx === activeIndex;
 
             return (
-              <Link
-                href={dynamicHref}
-                key={idx}
-                tabIndex={isActive ? 0 : -1}
-                aria-hidden={!isActive}
-                aria-label={`Konsultasi OSN via WhatsApp dengan ${activeContact.nama_cs} - Slide ${idx + 1}`}
-                onClick={handleClick}
-                className="block cursor-pointer">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  className="w-full h-full object-contain rounded-lg"
-                  priority={idx === 0}
-                />
-              </Link>
+              <SwiperSlide key={idx}>
+                <a
+                  href={dynamicHref}
+                  tabIndex={isActive ? 0 : -1}
+                  aria-hidden={!isActive}
+                  aria-label={`Konsultasi OSN via WhatsApp dengan ${activeContact.nama_cs} - Slide ${idx + 1}`}
+                  onClick={handleClick}
+                  className="block cursor-pointer">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    className="w-full h-full object-contain rounded-lg"
+                    priority={idx === 0}
+                  />
+                </a>
+              </SwiperSlide>
             );
           })}
-        </Carousel>
+        </Swiper>
       </div>
     </div>
   );

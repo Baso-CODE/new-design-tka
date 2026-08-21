@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
-import Script from "next/script";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.css";
@@ -73,18 +72,6 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${superPencil.variable} font-sans antialiased`}>
-        {/* Script ConsentManager */}
-        <Script
-          id="consentmanager"
-          type="text/javascript"
-          data-cmp-ab="1"
-          src="https://cdn.consentmanager.net/delivery/autoblocking/5e009cec42726.js"
-          data-cmp-host="b.delivery.consentmanager.net"
-          data-cmp-cdn="cdn.consentmanager.net"
-          data-cmp-codesrc="16"
-          strategy="beforeInteractive"
-        />
-
         {children}
         <GoogleAnalytics gaId="G-CBBM7ZS7D7" />
       </body>

@@ -2,10 +2,13 @@
 
 import { useCsRotation } from "@/app/helper/useCsRotation";
 import Image from "next/image";
-import Link from "next/link";
 import { useState } from "react";
-import Carousel from "react-multi-carousel";
-import "react-multi-carousel/lib/styles.css";
+import { Autoplay } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import CSS Swiper
+import "swiper/css";
+
 import { dummyContactCsData } from "../data/contactCs.dummyData";
 
 interface CarouselItem {
@@ -24,25 +27,6 @@ export default function SliderMobile() {
     "slider_mobile_rotation",
   );
 
-  const responsive = {
-    superLargeDesktop: {
-      breakpoint: { max: 4000, min: 1024 },
-      items: 1,
-    },
-    desktop: {
-      breakpoint: { max: 1024, min: 768 },
-      items: 1,
-    },
-    tablet: {
-      breakpoint: { max: 768, min: 464 },
-      items: 1,
-    },
-    mobile: {
-      breakpoint: { max: 464, min: 0 },
-      items: 1,
-    },
-  };
-
   if (!activeCs || activeCs.length === 0) return null;
   const activeContact = activeCs[0];
 
@@ -55,19 +39,19 @@ export default function SliderMobile() {
 
   const items: CarouselItem[] = [
     {
-      src: "/images/carousel/carousel-OSN_MOB.webp",
+      src: "/images/slider/mobile-1.webp",
       alt: "Bimbingan belajar OSN terbaik untuk membantu anak Anda meraih prestasi dalam Olimpiade Sains Nasional.",
       width: 4015,
       height: 2101,
     },
     {
-      src: "/images/carousel/carousel-OSN_MOB2.webp",
+      src: "/images/slider/mobile-2.webp",
       alt: "Persiapan Olimpiade Sains Nasional dengan tutor berpengalaman yang siap membantu anak Anda memahami materi OSN secara mendalam.",
       width: 4015,
       height: 2101,
     },
     {
-      src: "/images/carousel/carousel-OSN_MOB3.webp",
+      src: "/images/slider/mobile-3.webp",
       alt: "Program belajar intensif dan terstruktur untuk Olimpiade Sains Nasional, dirancang khusus untuk meningkatkan kemampuan akademis anak Anda.",
       width: 4015,
       height: 2101,
@@ -86,40 +70,43 @@ export default function SliderMobile() {
   return (
     <div className="w-full block md:hidden">
       <div className="max-w-310 px-2 mx-auto">
-        <Carousel
-          responsive={responsive}
-          infinite
-          autoPlay
-          autoPlaySpeed={2600}
-          arrows={false}
-          ssr
-          beforeChange={(nextSlide) => setActiveIndex(nextSlide)}>
+        <Swiper
+          modules={[Autoplay]}
+          spaceBetween={10}
+          slidesPerView={1}
+          loop={true}
+          autoplay={{
+            delay: 2600,
+            disableOnInteraction: false,
+          }}
+          onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}>
           {items.map((item, idx) => {
             const isActive = idx === activeIndex;
 
             return (
-              <Link
-                key={idx}
-                href={dynamicHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                tabIndex={isActive ? 0 : -1}
-                aria-hidden={!isActive}
-                aria-label={`Konsultasi OSN via WhatsApp dengan ${activeContact.nama_cs} - Slide ${idx + 1}`}
-                onClick={handleClick}
-                className="block cursor-pointer">
-                <Image
-                  src={item.src}
-                  alt={item.alt}
-                  width={item.width}
-                  height={item.height}
-                  className="w-full h-full rounded-lg object-fill"
-                  priority={idx === 0}
-                />
-              </Link>
+              <SwiperSlide key={idx}>
+                <a
+                  href={dynamicHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  tabIndex={isActive ? 0 : -1}
+                  aria-hidden={!isActive}
+                  aria-label={`Konsultasi OSN via WhatsApp dengan ${activeContact.nama_cs} - Slide ${idx + 1}`}
+                  onClick={handleClick}
+                  className="block cursor-pointer">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    width={item.width}
+                    height={item.height}
+                    className="w-full h-full rounded-lg object-fill"
+                    priority={idx === 0}
+                  />
+                </a>
+              </SwiperSlide>
             );
           })}
-        </Carousel>
+        </Swiper>
       </div>
     </div>
   );

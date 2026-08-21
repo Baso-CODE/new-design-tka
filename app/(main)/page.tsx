@@ -17,6 +17,8 @@ import TingkatPendidikan from "../components/home/tingkatPendidikan";
 import TKAPreparation from "../components/home/tkaPreparation";
 import MediaMassa from "../components/mediaMassa/mediaMassa";
 import Promo from "../components/promo";
+import SliderDesktop from "../components/slider/sliderDescktop";
+import SliderMobile from "../components/slider/sliderMobile";
 import ImpactStatisticsOSN from "../components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "../components/YouTubeShortEmbed";
 
@@ -77,8 +79,8 @@ export default function Home() {
       <Program />
       <YouTubeShortEmbed />
       <PaketBelajarOSN />
-      {/* <SliderMobile />
-      <SliderDescktop /> */}
+      <SliderMobile />
+      <SliderDesktop />
       <TingkatPendidikan />
       <Pilihan />
       <MengapaHarusEdumatrix />

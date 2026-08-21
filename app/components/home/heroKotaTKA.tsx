@@ -51,7 +51,6 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
       </div>
 
       <div className="relative z-10 px-4 lg:px-8 text-white w-full max-w-350 mx-auto">
-        {/* Menggunakan lg:items-stretch agar kolom kiri & kanan memiliki tinggi yang sama maksimalnya */}
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-8 lg:gap-4">
           {/* Bagian Kiri: Typografi & CTA */}
           <div className="lg:w-[45%] flex flex-col justify-center gap-6 pl-0 lg:pl-10 pb-8 lg:pb-0">
@@ -60,6 +59,18 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
               <br className="hidden lg:block" />
               <span className="text-[#faae17]">{kotaName}</span> TERBAIK #1
             </h1>
+
+            {/* Badge ketersediaan layanan */}
+            <div className="flex flex-wrap items-center gap-2 -mt-2">
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-white">
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+                🌐 Online — Seluruh Indonesia
+              </span>
+              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#faae17]/15 border border-[#faae17]/30 px-3 py-1.5 text-xs font-semibold text-[#faae17]">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#faae17] shrink-0" />
+                📍 Offline — Jabodetabek & Yogyakarta
+              </span>
+            </div>
 
             <p className="font-desc text-[15px] md:text-[16px] leading-relaxed font-medium text-gray-100">
               Edumatrix hadir di{" "}

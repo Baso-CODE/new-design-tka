@@ -6,7 +6,7 @@ export default async function SekolahSiswa() {
   const images = await getDataAsalSekolahDummy();
 
   return (
-    <div className="bg-[#04397D] items-center flex justify-center relative">
+    <div className="bg-linear-to-r from-[#04397d] to-[#023ea9] items-center flex justify-center relative">
       <div className="max-w-310 px-2">
         <div className="overflow-hidden whitespace-nowrap py-4">
           <Marquee
@@ -21,7 +21,7 @@ export default async function SekolahSiswa() {
                 alt={image.nama_sekolah}
                 width={400}
                 height={600}
-                className="inline-block mx-1 rounded-md"
+                className="inline-block mx-1 rounded-md h-auto w-64"
               />
             ))}
           </Marquee>

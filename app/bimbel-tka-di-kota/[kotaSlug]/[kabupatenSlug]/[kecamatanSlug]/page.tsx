@@ -7,16 +7,19 @@ import Gallery from "@/app/components/home/gallery";
 import HeroKotaTka from "@/app/components/home/heroKotaTKA";
 import JumlahSiswa from "@/app/components/home/jumlahSiswa";
 import MengapaHarusEdumatrix from "@/app/components/home/mengapaHarusEdumatrix";
-import PaketBelajarOSN from "@/app/components/home/paketBelajarOSN";
+import PaketBelajarTKA from "@/app/components/home/paketBelajarOSN";
 import Pengajar from "@/app/components/home/pengajar";
 import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
 import SekolahSiswa from "@/app/components/home/sekolahSiswa";
+import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
 import TKAPreparation from "@/app/components/home/tkaPreparation";
 import ListKelurahan from "@/app/components/listKelurahan";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
 import Promo from "@/app/components/promo";
+import SliderDesktop from "@/app/components/slider/sliderDescktop";
+import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 
@@ -263,14 +266,16 @@ edumatrix indonesia
         <TKAPreparation />
         <Program />
         <YouTubeShortEmbed />
-        <PaketBelajarOSN />
-
+        <PaketBelajarTKA />
+        <SliderMobile />
+        <SliderDesktop />
         <TingkatPendidikan />
         <Pilihan />
         <MengapaHarusEdumatrix />
         <Pengajar />
 
         <Gallery />
+        <TestimoniGrid />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
         <ListKelurahan

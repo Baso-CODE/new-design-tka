@@ -26,11 +26,11 @@ export default function TestimoniGrid() {
   return (
     <section className="py-8 sm:py-12 bg-linear-to-r from-[#04397d] to-[#023ea9]">
       <div className="mx-auto max-w-310 px-2 ">
-        <h2 className="text-3xl sm:text-4xl font-title font-extrabold text-white text-center mb-4 sm:mb-6">
+        <h2 className="text-2xl md:text-4xl font-title font-extrabold text-white text-center mb-4 sm:mb-6">
           Bukti Nyata, Bukan Sekadar Janji
         </h2>
 
-        <p className="text-lg font-desc sm:text-xl text-white text-center mb-8 sm:mb-12 max-w-3xl mx-auto opacity-90">
+        <p className="text-sm font-desc sm:text-lg text-white text-center mb-8 sm:mb-12 max-w-3xl mx-auto opacity-90">
           Alumni kami telah berhasil menembus berbagai kompetisi bergengsi.
           Sekarang giliran kamu untuk menjadi bagian dari kisah sukses
           berikutnya.

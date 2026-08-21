@@ -99,18 +99,18 @@ const JumlahSiswa = () => {
             {/* Right Side - Text */}
             <div className="lg:w-1/2 flex items-center justify-center">
               <div className="flex flex-col">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-title text-[#133B79] leading-normal md:leading-10">
+                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-title text-[#133B79] leading-7 md:leading-10">
                   Edumatrix Siap Membantumu Menguasai TKA & Meraih Hasil
                   Maksimal
                 </h2>
-                <p className="mb-4 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
+                <p className="mb-4 text-[#374151] font-desc text-[14px] md:text-[16px] leading-5 font-medium opacity-90">
                   Di Edumatrix Indonesia, kami berkomitmen untuk membimbing kamu
                   mempersiapkan Tes Kemampuan Akademik (TKA) dengan matang.
                   Melalui program bimbingan yang terstruktur, kami menyediakan
                   materi dan strategi belajar terbaik untuk menghadapi TKA di
                   semua jenjang pendidikan.
                 </p>
-                <p className="mb-8 text-[#374151] font-desc text-[15px] md:text-[16px] leading-5 font-medium opacity-90">
+                <p className="mb-8 text-[#374151] font-desc text-[14px] md:text-[16px] leading-5 font-medium opacity-90">
                   Dari latihan soal mendalam hingga evaluasi berkala bersama
                   tutor profesional, setiap langkah belajar dirancang untuk
                   memastikan kamu siap hadapi TKA dengan penuh percaya diri.

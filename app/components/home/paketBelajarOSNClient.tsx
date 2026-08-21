@@ -54,6 +54,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
               src="/images/tka/bg-paket-belajar.webp"
               alt="Background Ornamen"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center"
               priority
             />
@@ -63,6 +64,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
                   src="/images/tka/paket-juara-tka.webp"
                   alt="Juara TKA"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-bottom"
                   priority
                 />
@@ -123,6 +125,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
               src="/images/tka/bg-paket-belajar.webp"
               alt="Background Ornamen"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover object-center"
               priority
             />
@@ -132,6 +135,7 @@ export default function PaketBelajarOSNClient({ contacts }: Props) {
                   src="/images/tka/paket-master-tka.webp"
                   alt="Master TKA"
                   fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-contain object-bottom"
                   priority
                 />

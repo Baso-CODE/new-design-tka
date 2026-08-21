@@ -6,7 +6,7 @@ export default async function ListKota() {
   const kotaList = await getDataKotaDummy();
 
   return (
-    <section className="bg-linear-to-br from-[#0a3977] to-[#104a8b] py-16 sm:py-20 lg:py-24 font-title">
+    <section className="bg-linear-to-r from-[#04397d] to-[#023ea9] py-16 sm:py-20 lg:py-24 font-title">
       <div className="container mx-auto items-center max-w-310 px-2">
         <div className="text-center mb-12">
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-white leading-tight drop-shadow-lg mb-4">

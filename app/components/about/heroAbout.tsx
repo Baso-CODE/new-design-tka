@@ -40,16 +40,16 @@ const HeroAbout = () => {
             <Image
               src="/images/hero-aboutus.webp"
               alt="Lembaga bimbingan belajar unggulan untuk persiapan masuk PTN, Kedokteran, dan Kedinasan dengan pendekatan terbaik"
-              className="w-full h-full object-cover"
+              className="w-full h-auto object-cover"
               width={1000}
               height={1000}
               loading="lazy"
             />
-            <div className="absolute -bottom-px left-0 right-0 h-[100px] bg-linear-to-t from-[#04397D] to-transparent"></div>
+            <div className="absolute -bottom-px left-0 right-0 h-25 bg-linear-to-t from-[#04397D] to-transparent"></div>
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-px xl:bottom-[-30px] left-0 w-full">
+      <div className="absolute -bottom-px xl:bottom-7.5 left-0 w-full">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

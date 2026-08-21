@@ -72,6 +72,7 @@ export default function TKAPreparation() {
                 src="/images/tka/tka-preparation.webp"
                 alt="Persiapan Siswa TKA"
                 fill
+                sizes="(max-width: 768px) 100vw, 25vw"
                 className="object-contain object-bottom"
                 priority
               />

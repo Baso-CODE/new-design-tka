@@ -3,6 +3,11 @@ import { Poppins } from "next/font/google";
 import localFont from "next/font/local";
 
 import { GoogleAnalytics } from "@next/third-parties/google";
+import FloatingCTA from "./components/floatingCTA";
+import FooterEduMatrix from "./components/footerEdumatrix";
+import BottomNavigationBarTKA from "./components/navbar/BottomNavigationBarOSN";
+import { navLinks } from "./components/navbar/NavLink";
+import ResponsiveNav from "./components/navbar/ResponsiveNav";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -72,7 +77,11 @@ export default function RootLayout({
       <body
         suppressHydrationWarning
         className={`${poppins.variable} ${superPencil.variable} font-sans antialiased`}>
-        {children}
+        <ResponsiveNav />
+        <main>{children}</main>
+        <FloatingCTA />
+        <BottomNavigationBarTKA navLinksData={navLinks} />
+        <FooterEduMatrix />
         <GoogleAnalytics gaId="G-CBBM7ZS7D7" />
       </body>
     </html>

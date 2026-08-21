@@ -1,26 +1,27 @@
 import { Metadata } from "next";
-import Accordion from "../components/faq/Accordion";
-import FomoTicker from "../components/fomoTicker";
-import AsalSekolahSiswaEdumatrix from "../components/home/asalSekolahSiswaEdumatrix";
-import Contact from "../components/home/contact";
-import Gallery from "../components/home/gallery";
-import Hero from "../components/home/hero";
-import JumlahSiswa from "../components/home/jumlahSiswa";
-import ListKota from "../components/home/lisKota";
-import MengapaHarusEdumatrix from "../components/home/mengapaHarusEdumatrix";
-import PaketBelajarOSN from "../components/home/paketBelajarOSN";
-import Pengajar from "../components/home/pengajar";
-import Pilihan from "../components/home/pilihan";
-import Program from "../components/home/programBelajar";
-import SekolahSiswa from "../components/home/sekolahSiswa";
-import TingkatPendidikan from "../components/home/tingkatPendidikan";
-import TKAPreparation from "../components/home/tkaPreparation";
-import MediaMassa from "../components/mediaMassa/mediaMassa";
-import Promo from "../components/promo";
-import SliderDesktop from "../components/slider/sliderDescktop";
-import SliderMobile from "../components/slider/sliderMobile";
-import ImpactStatisticsOSN from "../components/statisticOSNEdumatrix/statisticOSNEDM";
-import YouTubeShortEmbed from "../components/YouTubeShortEmbed";
+import Accordion from "./components/faq/Accordion";
+import FomoTicker from "./components/fomoTicker";
+import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
+import Contact from "./components/home/contact";
+import Gallery from "./components/home/gallery";
+import Hero from "./components/home/hero";
+import JumlahSiswa from "./components/home/jumlahSiswa";
+import ListKota from "./components/home/lisKota";
+import MengapaHarusEdumatrix from "./components/home/mengapaHarusEdumatrix";
+import PaketBelajarTKA from "./components/home/paketBelajarOSN";
+import Pengajar from "./components/home/pengajar";
+import Pilihan from "./components/home/pilihan";
+import Program from "./components/home/programBelajar";
+import SekolahSiswa from "./components/home/sekolahSiswa";
+import TestimoniGrid from "./components/home/testimoniNotSlider";
+import TingkatPendidikan from "./components/home/tingkatPendidikan";
+import TKAPreparation from "./components/home/tkaPreparation";
+import MediaMassa from "./components/mediaMassa/mediaMassa";
+import Promo from "./components/promo";
+import SliderDesktop from "./components/slider/sliderDescktop";
+import SliderMobile from "./components/slider/sliderMobile";
+import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
+import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
@@ -78,7 +79,7 @@ export default function Home() {
       <TKAPreparation />
       <Program />
       <YouTubeShortEmbed />
-      <PaketBelajarOSN />
+      <PaketBelajarTKA />
       <SliderMobile />
       <SliderDesktop />
       <TingkatPendidikan />
@@ -86,6 +87,7 @@ export default function Home() {
       <MengapaHarusEdumatrix />
       <Pengajar />
       <Gallery />
+      <TestimoniGrid />
       <AsalSekolahSiswaEdumatrix />
       <SekolahSiswa />
       <ListKota />

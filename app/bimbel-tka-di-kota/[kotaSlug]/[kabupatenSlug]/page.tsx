@@ -7,16 +7,19 @@ import Gallery from "@/app/components/home/gallery";
 import HeroKotaTka from "@/app/components/home/heroKotaTKA";
 import JumlahSiswa from "@/app/components/home/jumlahSiswa";
 import MengapaHarusEdumatrix from "@/app/components/home/mengapaHarusEdumatrix";
-import PaketBelajarOSN from "@/app/components/home/paketBelajarOSN";
+import PaketBelajarTKA from "@/app/components/home/paketBelajarOSN";
 import Pengajar from "@/app/components/home/pengajar";
 import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
 import SekolahSiswa from "@/app/components/home/sekolahSiswa";
+import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
 import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
 import TKAPreparation from "@/app/components/home/tkaPreparation";
-import ListKabupaten from "@/app/components/lisKabupaten";
+import ListKecamatan from "@/app/components/listKecamatan";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
 import Promo from "@/app/components/promo";
+import SliderDesktop from "@/app/components/slider/sliderDescktop";
+import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
 import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
@@ -24,36 +27,41 @@ import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 export async function generateMetadata({
   params,
 }: {
-  params: Promise<{ kotaSlug: string }>;
+  params: Promise<{ kotaSlug: string; kabupatenSlug: string }>;
 }) {
-  const { kotaSlug } = await params;
+  const { kotaSlug, kabupatenSlug } = await params;
 
-  const formattedKotaName = formatSlugToTitle(kotaSlug);
+  const kotaName = formatSlugToTitle(kotaSlug);
+  const kabupatenName = formatSlugToTitle(kabupatenSlug);
 
   // Menggunakan Environment Variable untuk base URL
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
-  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`;
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}`;
+
+  // Pastikan imageUrl menggunakan baseUrl agar selalu konsisten dengan domain
   const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
-  const ogTitle = `Bimbel & Les Privat TKA di ${formattedKotaName} SD SMP SMA Terbaik`;
-  const ogDescription = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${formattedKotaName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman • Program Eksklusif • Laporan Perkembangan • Daftar Sekarang!`;
+  const title = `Bimbel & Les Privat TKA di ${kabupatenName} SD SMP SMA Terbaik`;
+  const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kabupatenName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
 
   return {
     metadataBase: new URL(baseUrl),
-    title: ogTitle,
-    description: ogDescription,
+    title,
+    description,
     keywords: [
-      `les privat tka ${formattedKotaName}`,
-      `bimbel tka ${formattedKotaName}`,
-      `les tes kemampuan akademik ${formattedKotaName}`,
-      `bimbel masuk sma unggulan ${formattedKotaName}`,
-      `bimbel masuk smp unggulan ${formattedKotaName}`,
-      `les tka SD ${formattedKotaName}`,
-      `les tka SMP ${formattedKotaName}`,
-      `les tka SMA ${formattedKotaName}`,
+      `les privat tka ${kotaName}`,
+      `bimbel tka ${kotaName}`,
+      `les privat tka ${kabupatenName}`,
+      `bimbel tka ${kabupatenName}`,
+      `les tes kemampuan akademik ${kabupatenName}`,
+      `bimbel masuk sma unggulan ${kabupatenName}`,
+      `bimbel masuk smp unggulan ${kabupatenName}`,
+      `les tka SD ${kabupatenName}`,
+      `les tka SMP ${kabupatenName}`,
+      `les tka SMA ${kabupatenName}`,
       "TKA SD",
       "TKA SMP",
       "TKA SMA",
@@ -62,9 +70,6 @@ export async function generateMetadata({
       "les privat TKA SMP",
       "les privat TKA SMA",
       "bimbel TKA SD SMP SMA",
-      "les tka SD",
-      "les tka SMP",
-      "les tka SMA",
       "bimbel tka terbaik",
       "guru privat tka",
       "edumatrix indonesia",
@@ -72,49 +77,50 @@ export async function generateMetadata({
     robots:
       "follow, index, max-snippet:-1, max-video-preview:-1, max-image-preview:large",
 
-    alternates: {
-      canonical: canonicalUrl,
-    },
+    alternates: { canonical: canonicalUrl },
 
     openGraph: {
       type: "article",
       locale: "id_ID",
+      title,
+      description,
       url: canonicalUrl,
       siteName: siteName,
-      title: ogTitle,
-      description: ogDescription,
       images: [
         {
           url: imageUrl,
           width: 800,
           height: 600,
-          alt: `les privat tka ${formattedKotaName}`,
+          alt: `Les privat TKA di ${kabupatenName}`,
         },
       ],
     },
 
     twitter: {
       card: "summary_large_image",
-      title: ogTitle,
-      description: ogDescription,
+      title,
+      description,
       images: [imageUrl],
     },
   };
 }
 
-export default async function KotaPage(props: {
-  params: Promise<{ kotaSlug: string }>;
+export default async function KabupatenPage({
+  params,
+}: {
+  params: Promise<{ kotaSlug: string; kabupatenSlug: string }>;
 }) {
-  const { kotaSlug } = await props.params;
+  const { kotaSlug, kabupatenSlug } = await params;
 
-  const formattedKotaName = formatSlugToTitle(kotaSlug);
+  const kotaName = formatSlugToTitle(kotaSlug);
+  const kabupatenName = formatSlugToTitle(kabupatenSlug);
 
-  // Menggunakan Environment Variable untuk base URL di komponen halaman
+  // Menggunakan Environment Variable untuk base URL
   const baseUrl =
     process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
   const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
-  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`;
+  const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}`;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -126,7 +132,7 @@ export default async function KotaPage(props: {
           {
             "@type": "ListItem",
             position: 1,
-            item: { "@id": `${baseUrl}`, name: "Home" },
+            item: { "@id": baseUrl, name: "Home" },
           },
           {
             "@type": "ListItem",
@@ -140,8 +146,16 @@ export default async function KotaPage(props: {
             "@type": "ListItem",
             position: 3,
             item: {
+              "@id": `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}`,
+              name: `Les Privat TKA di ${kotaName}`,
+            },
+          },
+          {
+            "@type": "ListItem",
+            position: 4,
+            item: {
               "@id": canonicalUrl,
-              name: `Les Privat TKA di ${formattedKotaName}`,
+              name: `Les Privat TKA di ${kabupatenName}`,
             },
           },
         ],
@@ -151,9 +165,9 @@ export default async function KotaPage(props: {
         "@type": "EducationalOrganization",
         "@id": `${canonicalUrl}#organization`,
         name: siteName,
-        description: `${siteName} adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${formattedKotaName}.`,
         url: baseUrl,
-        areaServed: formattedKotaName,
+        areaServed: kabupatenName,
+        description: `${siteName} adalah penyedia Les Privat TKA (Tes Kemampuan Akademik) terbaik di ${kabupatenName}.`,
         sameAs: [
           baseUrl,
           "https://www.instagram.com/edumatrix.indonesia/",
@@ -168,17 +182,15 @@ export default async function KotaPage(props: {
           "@type": "ContactPoint",
           telephone: "+62-812-1552-3902",
           contactType: "Customer Service",
-          areaServed: "ID",
-          availableLanguage: ["Indonesian", "English"],
         },
         keywords: `
-les privat tka ${formattedKotaName},
-bimbel tka ${formattedKotaName},
-les tka ${formattedKotaName},
-les privat masuk sma unggulan ${formattedKotaName},
-les tka sd ${formattedKotaName},
-les tka smp ${formattedKotaName},
-les tka sma ${formattedKotaName},
+les privat tka ${kabupatenName},
+bimbel tka ${kabupatenName},
+les tka ${kabupatenName},
+les privat masuk sma unggulan ${kabupatenName},
+les tka sd ${kabupatenName},
+les tka smp ${kabupatenName},
+les tka sma ${kabupatenName},
 tes kemampuan akademik,
 bimbel tka terbaik,
 guru privat tka,
@@ -190,9 +202,8 @@ edumatrix indonesia
         "@type": "WebPage",
         "@id": `${canonicalUrl}#webpage`,
         url: canonicalUrl,
-        name: `Les Privat TKA di ${formattedKotaName}`,
-        inLanguage: "id-ID",
-        description: `Les Privat & Bimbel TKA terbaik di ${formattedKotaName} untuk menembus sekolah impian.`,
+        name: `Les Privat TKA di ${kabupatenName}`,
+        description: `Les Privat & Bimbel TKA terbaik di ${kabupatenName} untuk menembus sekolah impian.`,
       },
 
       {
@@ -201,18 +212,10 @@ edumatrix indonesia
         mainEntity: [
           {
             "@type": "Question",
-            name: `Apakah Les Privat TKA tersedia di seluruh wilayah ${formattedKotaName}?`,
+            name: `Apakah ada pengajar TKA di Edumatrix ${kabupatenName}?`,
             acceptedAnswer: {
               "@type": "Answer",
-              text: `Ya, layanan bimbingan belajar TKA tersedia untuk seluruh wilayah di ${formattedKotaName}, baik les privat online maupun tatap muka (offline).`,
-            },
-          },
-          {
-            "@type": "Question",
-            name: `Berapa biaya les privat TKA di ${formattedKotaName}?`,
-            acceptedAnswer: {
-              "@type": "Answer",
-              text: `Biaya disesuaikan dengan jenjang pendidikan (SD/SMP/SMA) & paket belajar yang dipilih. Silakan hubungi CS kami untuk konsultasi.`,
+              text: "Ya, pengajar kami adalah guru dan dosen profesional yang terbiasa membimbing siswa menembus tes sekolah unggulan.",
             },
           },
         ],
@@ -228,29 +231,38 @@ edumatrix indonesia
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <div className="overflow-hidden">
-        <HeroKotaTka
-          kotaName={formattedKotaName}
-          contacts={dummyContactCsData}
-        />
+        {/* Menggunakan HeroKotaTka tanpa prop fotoKota */}
+        <HeroKotaTka kotaName={kabupatenName} contacts={dummyContactCsData} />
+
         <JumlahSiswa />
         <TKAPreparation />
         <Program />
         <YouTubeShortEmbed />
-        <PaketBelajarOSN />
+        <PaketBelajarTKA />
+        <SliderMobile />
+        <SliderDesktop />
         <TingkatPendidikan />
         <Pilihan />
         <MengapaHarusEdumatrix />
         <Pengajar />
+
         <Gallery />
+        <TestimoniGrid />
         <AsalSekolahSiswaEdumatrix />
         <SekolahSiswa />
-        <ListKabupaten kotaName={formattedKotaName} kotaSlug={kotaSlug} />
+
+        <ListKecamatan
+          kotaSlug={kotaSlug}
+          kabupatenName={kabupatenName}
+          kabupatenSlug={kabupatenSlug}
+        />
+
         <ImpactStatisticsOSN />
         <Accordion />
         <Promo />
         <Contact />
         <MediaMassa />
-        <FomoTicker namaWilayah={formattedKotaName} />
+        <FomoTicker namaWilayah={kabupatenName} />
       </div>
     </>
   );

@@ -11,16 +11,15 @@ export default function Hero() {
           src="/images/tka/bg-overlay.webp"
           alt="Latar belakang gedung"
           fill
+          sizes="100vw"
           className="object-cover object-center"
           priority
         />
       </div>
 
       <div className="relative z-10 px-4 lg:px-8 text-white w-full max-w-350 mx-auto">
-        {/* PERUBAHAN 1: Gunakan lg:items-stretch agar kolom kiri & kanan memiliki tinggi yang sama maksimalnya */}
         <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-8 lg:gap-4">
           {/* Bagian Kiri: Typografi & CTA */}
-          {/* PERUBAHAN 2: Tambahkan justify-center agar teks tetap di tengah vertikal, dan pb-8 untuk jarak di versi mobile */}
           <div className="lg:w-[45%] flex flex-col justify-center gap-6 pl-0 lg:pl-10 pb-8 lg:pb-0">
             <h1 className="text-[28px] md:text-[26px] lg:text-[32px] font-bold leading-snug font-title">
               Lebih Siap Jadi Juara Tes <br className="hidden md:block" />
@@ -45,7 +44,6 @@ export default function Hero() {
           </div>
 
           {/* Bagian Kanan: Gambar Karakter/Siswa */}
-          {/* PERUBAHAN 3: Ubah items-center menjadi items-end agar kontainer gambar didorong mentok ke bawah */}
           <div className="lg:w-[55%] flex justify-center lg:justify-end items-end w-full">
             <div className="relative w-full aspect-4/3 lg:aspect-5/4">
               <Image
@@ -53,6 +51,7 @@ export default function Hero() {
                 src="/images/tka/hero-tka.webp"
                 alt="Siswa berprestasi bimbingan belajar TKA Edumatrix"
                 fill
+                sizes="(max-width: 1024px) 100vw, 55vw"
                 className="object-cover lg:object-contain object-bottom lg:object-bottom-right"
                 priority
                 fetchPriority="high"

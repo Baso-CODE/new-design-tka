@@ -42,7 +42,7 @@ export default async function Program() {
   const programData = await getDataProgramDummy();
 
   return (
-    <section className="bg-white flex justify-center my-28 items-center font-title">
+    <section className="bg-[#f8faff] flex justify-center py-28 items-center font-title">
       <div className="max-w-310 px-2 md:px-0 w-full">
         <div className="container mx-auto">
           <div className="flex justify-center items-center mb-16">

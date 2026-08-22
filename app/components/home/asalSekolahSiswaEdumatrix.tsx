@@ -23,9 +23,9 @@ const AsalSekolahSiswaEdumatrix = () => {
       <div className="relative z-10 mx-auto max-w-310">
         {/* Header */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white leading-tight">
+          <h2 className="text-3xl md:text-4xl  font-bold text-white leading-tight">
             Asal Sekolah Siswa{" "}
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-500">
+            <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-orange-500">
               Edumatrix
             </span>
           </h2>

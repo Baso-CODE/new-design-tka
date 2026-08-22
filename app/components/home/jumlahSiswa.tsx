@@ -27,9 +27,9 @@ const JumlahSiswa = () => {
   }, [currentIndex, siswaEdumatrix.length]);
 
   return (
-    <section className="items-center justify-center flex">
+    <section className="items-center justify-center flex bg-[#f8faff]">
       <div className="max-w-310">
-        <div className="bg-white lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
+        <div className=" lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
           <div className="flex flex-col lg:flex-row md:gap-7.5 -mt-10 relative">
             {/* Left Side - Image */}
             <div className="lg:w-1/2 flex justify-center items-center -mt-4 lg:-mt-10 relative">

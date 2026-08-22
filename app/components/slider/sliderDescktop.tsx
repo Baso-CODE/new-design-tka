@@ -70,7 +70,7 @@ export default function SliderDesktop() {
   };
 
   return (
-    <div className="w-full md:block hidden">
+    <div className="w-full md:block hidden bg-[#f8faff]">
       <div className="container mx-auto">
         <Swiper
           modules={[Autoplay, Navigation]}

@@ -23,14 +23,14 @@ export default function PengajarClient({
 }) {
   if (pengajarData.length === 0) {
     return (
-      <div className="flex justify-center bg-[#ffffff] py-10">
+      <div className="flex justify-center bg-[#f8faff] py-10">
         <p className="text-gray-500">Tampilan komponen mengalami gangguan.</p>
       </div>
     );
   }
 
   return (
-    <div className="flex justify-center bg-[#ffffff] py-10 sm:py-16">
+    <div className="flex justify-center bg-[#f8faff] py-10 sm:py-16">
       <div className="max-w-360 w-full px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-[#133B79] text-2xl font-extrabold font-title lg:text-4xl mb-12">
           Our Professional Master Teacher

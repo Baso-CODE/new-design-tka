@@ -68,7 +68,7 @@ export default function SliderMobile() {
   };
 
   return (
-    <div className="w-full block md:hidden">
+    <div className="w-full block md:hidden bg-[#f8faff]">
       <div className="max-w-310 px-2 mx-auto">
         <Swiper
           modules={[Autoplay]}

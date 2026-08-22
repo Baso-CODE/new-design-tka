@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Pilihan = () => {
   return (
-    <div className="flex justify-center">
+    <div className="flex justify-center bg-[#f8faff]">
       <section className="relative mt-20 lg:mt-0">
         {/* Background Image Container */}
         <div className="relative w-full h-full">

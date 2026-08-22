@@ -23,67 +23,71 @@ const TingkatPendidikan = () => {
   };
 
   return (
-    <section className="flex flex-col py-8 items-center xl:min-h-[125vh] bg-white container mx-auto">
-      <div className="w-full px-2 md:px-0">
-        <div className="flex gap-6 mt-8 w-full flex-wrap xl:flex-nowrap justify-center">
-          {/* === SD === */}
-          <div
-            className="flex flex-col items-center flex-1"
-            data-aos="fade-right">
-            <Image
-              loading="lazy"
-              src="/images/tingkat-pendidikan/sd.webp"
-              alt="SD"
-              className={getImageClass()}
-              width={497}
-              height={704}
-            />
-            <button className={getButtonClass()}>SD</button>
+    <section className="flex flex-col xl:min-h-[125vh] bg-[#f8faff]">
+      <div className="  container mx-auto py-8 items-center ">
+        <div className="w-full px-2 md:px-0">
+          <div className="flex gap-6 mt-8 w-full flex-wrap xl:flex-nowrap justify-center">
+            {/* === SD === */}
             <div
-              className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
-              data-aos="fade-up"
-              data-aos-delay="200">
-              {detailContent.SD}
+              className="flex flex-col items-center flex-1"
+              data-aos="fade-right">
+              <Image
+                loading="lazy"
+                src="/images/tingkat-pendidikan/sd.webp"
+                alt="SD"
+                className={getImageClass()}
+                width={497}
+                height={704}
+              />
+              <button className={getButtonClass()}>SD</button>
+              <div
+                className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
+                data-aos="fade-up"
+                data-aos-delay="200">
+                {detailContent.SD}
+              </div>
             </div>
-          </div>
 
-          {/* === SMP === */}
-          <div className="flex flex-col items-center flex-1" data-aos="fade-up">
-            <Image
-              loading="lazy"
-              src="/images/tingkat-pendidikan/smp.webp"
-              alt="SMP"
-              className={getImageClass()}
-              width={380}
-              height={704}
-            />
-            <button className={getButtonClass()}>SMP</button>
+            {/* === SMP === */}
             <div
-              className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
-              data-aos="fade-up"
-              data-aos-delay="300">
-              {detailContent.SMP}
+              className="flex flex-col items-center flex-1"
+              data-aos="fade-up">
+              <Image
+                loading="lazy"
+                src="/images/tingkat-pendidikan/smp.webp"
+                alt="SMP"
+                className={getImageClass()}
+                width={380}
+                height={704}
+              />
+              <button className={getButtonClass()}>SMP</button>
+              <div
+                className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
+                data-aos="fade-up"
+                data-aos-delay="300">
+                {detailContent.SMP}
+              </div>
             </div>
-          </div>
 
-          {/* === SMA / SMK === */}
-          <div
-            className="flex flex-col items-center flex-1"
-            data-aos="fade-left">
-            <Image
-              loading="lazy"
-              src="/images/tingkat-pendidikan/sma.webp"
-              alt="SMA / SMK"
-              className={getImageClass()}
-              width={532}
-              height={704}
-            />
-            <button className={getButtonClass()}>SMA / SMK</button>
+            {/* === SMA / SMK === */}
             <div
-              className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
-              data-aos="fade-up"
-              data-aos-delay="400">
-              {detailContent.SMASMK}
+              className="flex flex-col items-center flex-1"
+              data-aos="fade-left">
+              <Image
+                loading="lazy"
+                src="/images/tingkat-pendidikan/sma.webp"
+                alt="SMA / SMK"
+                className={getImageClass()}
+                width={532}
+                height={704}
+              />
+              <button className={getButtonClass()}>SMA / SMK</button>
+              <div
+                className="mt-4 opacity-0 transition-opacity duration-500 delay-200"
+                data-aos="fade-up"
+                data-aos-delay="400">
+                {detailContent.SMASMK}
+              </div>
             </div>
           </div>
         </div>

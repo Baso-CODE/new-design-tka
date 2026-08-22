@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import { cardsLearningMethod } from "../data/learningMethods";
 import { TiltCard } from "./tiltCard";
 
@@ -8,9 +7,7 @@ const LearningMethod = async () => {
       <div className="max-w-310 px-2">
         <div className="w-full">
           <div className="text-center">
-            <h1
-              className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 font-title text-[#133B79]"
-              data-aos="fade-down">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 font-title text-[#133B79]">
               Learning Method
             </h1>
 
@@ -29,15 +26,8 @@ const LearningMethod = async () => {
             {/* GRID */}
             <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6 mt-10">
               {cardsLearningMethod.map((card, index) => {
-                const animation = classNames({
-                  "fade-right": index < 2,
-                  "fade-left": index >= 2,
-                });
-
-                const delay = index === 0 || index === 3 ? 700 : 0;
-
                 return (
-                  <div key={index} data-aos={animation} data-aos-delay={delay}>
+                  <div key={index}>
                     <TiltCard
                       img={card.img}
                       title={card.title}

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function TestimoniGrid() {
   const [stories, setStories] = useState<SuccessStory[]>([]);
-  const [visibleCount, setVisibleCount] = useState(4); // Default tampil 4 atau 6 item
+  const [visibleCount, setVisibleCount] = useState(6);
 
   useEffect(() => {
     async function fetchData() {
@@ -20,18 +20,19 @@ export default function TestimoniGrid() {
   if (stories.length === 0) return null;
 
   const handleShowMore = () => {
-    setVisibleCount((prev) => prev + 4);
+    setVisibleCount((prev) => prev + 6);
   };
 
   return (
     <section
       className="py-12 sm:py-16 px-4"
       style={{
-        background: "linear-gradient(to bottom, #0572ce 0%, #033b94 100%)",
+        // Dimulai dengan warna yang persis sama dengan bagian akhir section SuccessStory (#033790)
+        background: "linear-gradient(to bottom, #033790 0%, #0571cd 100%)",
       }}>
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-5xl">
         {/* Judul Utama */}
-        <h2 className="text-3xl sm:text-4xl font-title font-extrabold text-white text-center mb-3 sm:mb-4">
+        <h2 className="text-2xl sm:text-3xl font-title font-extrabold text-white text-center mb-3 sm:mb-4">
           Testimoni <span className="text-[#fac61f]">Orang Tua Murid</span>
         </h2>
 
@@ -42,12 +43,12 @@ export default function TestimoniGrid() {
           pendidikan anaknya kepada Edumatrix Indonesia.
         </p>
 
-        {/* GRID (2 Kolom) */}
-        <div className="grid gap-4 sm:gap-8 grid-cols-2 max-w-3xl mx-auto">
+        {/* GRID (2 Kolom di Mobile, 3 Kolom di Desktop) */}
+        <div className="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-3 max-w-5xl mx-auto">
           {stories.slice(0, visibleCount).map((story) => (
             <div
               key={story.id}
-              className="w-full bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-4 shadow-xl overflow-hidden flex items-center justify-center aspect-[3/4]">
+              className="w-full bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-4 shadow-xl overflow-hidden flex items-center justify-center aspect-3/4">
               <Image
                 src={story.image || "-"}
                 alt={story.participantName}
@@ -64,7 +65,7 @@ export default function TestimoniGrid() {
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
-              className="px-6 py-3 bg-[#fac61f] text-[#033b94] font-bold font-title rounded-xl shadow-md hover:bg-yellow-400 transition">
+              className="px-6 py-3 bg-[#fac61f] text-[#033790] font-bold font-title rounded-xl shadow-md hover:bg-yellow-400 transition">
               Tampilkan Lebih Banyak
             </button>
           </div>

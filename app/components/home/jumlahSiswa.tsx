@@ -27,7 +27,7 @@ export default function JumlahSiswa() {
             </div>
 
             {/* Garis Pemisah 1 */}
-            <div className="h-10 sm:h-14 md:h-16 w-[2px] md:w-[3px] bg-white rounded-full shrink-0" />
+            <div className="h-10 sm:h-14 md:h-16 w-0.5 md:w-0.75 bg-white rounded-full shrink-0" />
 
             {/* Item 2: Provinsi */}
             <div className="flex-1 flex flex-col items-center px-1">
@@ -40,7 +40,7 @@ export default function JumlahSiswa() {
             </div>
 
             {/* Garis Pemisah 2 */}
-            <div className="h-10 sm:h-14 md:h-16 w-[2px] md:w-[3px] bg-white rounded-full shrink-0" />
+            <div className="h-10 sm:h-14 md:h-16 w-0.5 md:w-0.75 bg-white rounded-full shrink-0" />
 
             {/* Item 3: Tingkat Kepuasan */}
             <div className="flex-1 flex flex-col items-center px-1">

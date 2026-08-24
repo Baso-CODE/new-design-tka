@@ -65,7 +65,8 @@ export default async function ListKabupaten({ kotaName, kotaSlug }: Props) {
             </div>
 
             {/* Grid Tombol Kapsul (3 Kolom seperti style ListKota) */}
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 w-full md:mb-12">
+            <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 w-full md:mb-12">
+              {" "}
               {kabupatens.map((kabupaten) => (
                 <li key={kabupaten.slug || kabupaten.id} className="w-full">
                   <Link

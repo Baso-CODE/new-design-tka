@@ -4,24 +4,22 @@ import FomoTicker from "@/app/components/fomoTicker";
 import AsalSekolahSiswaEdumatrix from "@/app/components/home/asalSekolahSiswaEdumatrix";
 import Contact from "@/app/components/home/contact";
 import Gallery from "@/app/components/home/gallery";
+import GoldenTicketSection from "@/app/components/home/goldenTicket";
 import HeroKotaTka from "@/app/components/home/heroKotaTKA";
 import JumlahSiswa from "@/app/components/home/jumlahSiswa";
 import MengapaHarusEdumatrix from "@/app/components/home/mengapaHarusEdumatrix";
 import PaketBelajarTKA from "@/app/components/home/paketBelajarOSN";
 import Pengajar from "@/app/components/home/pengajar";
-import Pilihan from "@/app/components/home/pilihan";
 import Program from "@/app/components/home/programBelajar";
-import SekolahSiswa from "@/app/components/home/sekolahSiswa";
+import SuccessStoryGrid from "@/app/components/home/successStoryGrid";
 import TestimoniGrid from "@/app/components/home/testimoniNotSlider";
-import TingkatPendidikan from "@/app/components/home/tingkatPendidikan";
 import TKAPreparation from "@/app/components/home/tkaPreparation";
 import ListKelurahan from "@/app/components/listKelurahan";
 import MediaMassa from "@/app/components/mediaMassa/mediaMassa";
-import Promo from "@/app/components/promo";
+import PilihanMetode from "@/app/components/pilihanMetode";
 import SliderDesktop from "@/app/components/slider/sliderDescktop";
 import SliderMobile from "@/app/components/slider/sliderMobile";
 import ImpactStatisticsOSN from "@/app/components/statisticOSNEdumatrix/statisticOSNEDM";
-import YouTubeShortEmbed from "@/app/components/YouTubeShortEmbed";
 
 import { formatSlugToTitle } from "@/app/utils/formatSlugName";
 
@@ -263,21 +261,22 @@ edumatrix indonesia
         <HeroKotaTka kotaName={kecamatanName} contacts={dummyContactCsData} />
 
         <JumlahSiswa />
-        <TKAPreparation />
         <Program />
-        <YouTubeShortEmbed />
+        <TKAPreparation />
         <PaketBelajarTKA />
         <SliderMobile />
         <SliderDesktop />
-        <TingkatPendidikan />
-        <Pilihan />
+        {/* <YouTubeShortEmbed /> */}
+        {/* 
+      <TingkatPendidikan /> */}
+        <PilihanMetode />
         <MengapaHarusEdumatrix />
         <Pengajar />
-
         <Gallery />
+        <SuccessStoryGrid />
         <TestimoniGrid />
+        <GoldenTicketSection />
         <AsalSekolahSiswaEdumatrix />
-        <SekolahSiswa />
         <ListKelurahan
           kecamatanName={kecamatanName}
           kecamatanSlug={kecamatanSlug}
@@ -287,7 +286,7 @@ edumatrix indonesia
 
         <ImpactStatisticsOSN />
         <Accordion />
-        <Promo />
+        {/* <Promo /> */}
         <Contact />
         <MediaMassa />
         <FomoTicker namaWilayah={kecamatanName} />

@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 
 export default function SuccessStoryGrid() {
   const [stories, setStories] = useState<SuccessStory[]>([]);
-  const [visibleCount, setVisibleCount] = useState(4); // Default tampil 4 item (2x2) sesuai referensi
+  const [visibleCount, setVisibleCount] = useState(4);
 
   useEffect(() => {
     async function fetchData() {
@@ -27,9 +27,9 @@ export default function SuccessStoryGrid() {
     <section
       className="py-12 sm:py-16 px-4"
       style={{
-        background: "linear-gradient(to bottom, #033b94 0%, #0572ce 100%)",
+        background: "linear-gradient(to bottom, #0571cd 0%, #033790 100%)",
       }}>
-      <div className="mx-auto max-w-4xl">
+      <div className="mx-auto max-w-6xl">
         {/* Judul Utama */}
         <h2 className="text-2xl sm:text-3xl font-title font-extrabold text-white text-center mb-3 sm:mb-4">
           Kisah Sukses <span className="text-[#fac61f]">Alumni Kami</span>
@@ -42,12 +42,12 @@ export default function SuccessStoryGrid() {
           berikutnya!
         </p>
 
-        {/* GRID (2 Kolom dari Mobile hingga Desktop) */}
-        <div className="grid gap-4 sm:gap-8 grid-cols-2 max-w-3xl mx-auto">
+        {/* GRID (2 Kolom di Mobile, 4 Kolom di Desktop) */}
+        <div className="grid gap-4 sm:gap-6 grid-cols-2 md:grid-cols-4 max-w-6xl mx-auto">
           {stories.slice(0, visibleCount).map((story) => (
             <div
               key={story.id}
-              className="w-full bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-4 shadow-xl overflow-hidden flex items-center justify-center aspect-3/4">
+              className="w-full bg-white rounded-2xl sm:rounded-3xl p-2 sm:p-3 shadow-xl overflow-hidden flex items-center justify-center aspect-3/4">
               <Image
                 src={story.image || "-"}
                 alt={story.participantName}
@@ -64,7 +64,7 @@ export default function SuccessStoryGrid() {
           <div className="text-center mt-10">
             <button
               onClick={handleShowMore}
-              className="px-6 py-3 bg-[#fac61f] text-[#033b94] font-bold font-title rounded-xl shadow-md hover:bg-yellow-400 transition">
+              className="px-6 py-3 bg-[#fac61f] text-[#033790] font-bold font-title rounded-xl shadow-md hover:bg-yellow-400 transition">
               Tampilkan Lebih Banyak
             </button>
           </div>

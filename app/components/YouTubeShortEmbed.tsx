@@ -102,7 +102,7 @@ const YouTubeShortEmbed = () => {
             <div className="mt-8">
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-between px-5 py-3 w-full md:w-[60%] lg:w-[70%] xl:w-[60%] font-bold text-white uppercase text-base sm:text-lg rounded-[10px] border-2 border-[#fafafa] bg-orange-500 shadow-[3px_3px_#fafafa] active:shadow-none active:translate-x-[3px] active:translate-y-[3px] transition-none cursor-pointer">
+                className="inline-flex items-center justify-between px-5 py-3 w-full md:w-[60%] lg:w-[70%] xl:w-[60%] font-bold text-white uppercase text-base sm:text-lg rounded-[10px] border-2 border-[#fafafa] bg-orange-500 shadow-[3px_3px_#fafafa] active:shadow-none active:translate-x-0.75 active:translate-y-0.75 transition-none cursor-pointer">
                 <span>Konsultasi TKA Sekarang</span>
                 <span className="text-xl ml-2 text-center">&rarr;</span>
               </Link>

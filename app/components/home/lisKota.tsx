@@ -9,8 +9,8 @@ export default async function ListKota() {
     <section
       className="relative pb-24 pt-16 sm:py-20 lg:py-24 font-title overflow-hidden"
       style={{
-        // Warna awal gradient disesuaikan persis dengan titik akhir section atas (#033790) agar tidak patah
-        background: "linear-gradient(to bottom, #033790 0%, #056cc7 100%)",
+        // Disamakan persis agar menyatu mulus dengan warna dasar komponen Asal Sekolah di atasnya (#033790)
+        background: "linear-gradient(to bottom, #033790 0%, #0571cd 100%)",
       }}>
       <div className="container mx-auto items-center max-w-310 px-4 relative z-10">
         <div className="text-center mb-12">
@@ -48,7 +48,7 @@ export default async function ListKota() {
             </div>
 
             {/* Grid 3 Kolom Tombol Kapsul */}
-            <ul className="grid grid-cols-3 gap-3 sm:gap-4 w-full md:mb-12">
+            <ul className="grid grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 w-full md:mb-12">
               {kotaList.map((kota) => (
                 <li key={kota.slug} className="w-full">
                   <Link
@@ -67,9 +67,9 @@ export default async function ListKota() {
       </div>
 
       {/* Gelombang / Wave di Bagian Bawah */}
-      <div className="absolute bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
+      <div className="absolute -mb-px bottom-0 left-0 right-0 w-full overflow-hidden leading-none pointer-events-none">
         <svg
-          className="relative block w-full h-20 sm:h-32 lg:h-48"
+          className="relative block w-full h-24 sm:h-32 lg:h-48"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 1200 120"
           preserveAspectRatio="none">

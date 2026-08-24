@@ -33,25 +33,20 @@ const badgeColors = [
   "bg-[#A855F7]", // Ungu
 ];
 
-// const animations = [
-//   "fade-down-right",
-//   "fade-down",
-//   "fade-down-left",
-//   "fade-up-right",
-//   "fade-up",
-//   "fade-up-left",
-// ];
-
 export default async function Program() {
   const programData = await getDataProgramDummy();
 
   return (
-    <section className="bg-[#04397D] flex justify-center py-10 md:py-20 items-center font-title">
+    <section
+      className="flex justify-center py-10 md:py-20 items-center font-title"
+      style={{
+        background: "linear-gradient(to bottom, #0571cd 0%, #033790 100%)",
+      }}>
       <div className="max-w-7xl px-4 md:px-8 w-full">
         <div className="container mx-auto">
           {/* Judul Section */}
           <div className="flex justify-center items-center mb-6">
-            <h2 className="text-[32px] md:text-[42px] font-bold font-title text-center text-white">
+            <h2 className="text-2xl md:text-3xl font-bold font-title text-center text-white">
               Fitur Program
             </h2>
           </div>

@@ -91,8 +91,8 @@ export default function HeroKotaTka({ kotaName, contacts }: HeroKotaProps) {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label={`Daftar Sekarang via WhatsApp dengan ${activeContact.nama_cs}`}
-                className="group relative inline-flex w-full md:w-fit h-14 items-center justify-center rounded-full bg-[#F68507] py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
-                <span className="z-10 pr-2 font-bold whitespace-nowrap">
+                className="group relative inline-flex w-full md:w-fit h-14 items-center justify-center rounded-full bg-[#ffc107] py-1 pl-6 pr-14 font-medium text-neutral-50 cursor-pointer shadow-lg hover:shadow-xl transition-all duration-300">
+                <span className="z-10 pr-2 font-bold whitespace-nowrap text-[#04397D] hover:text-white">
                   Daftar Sekarang
                 </span>
                 <div className="absolute right-1 inline-flex h-12 w-12 items-center justify-end rounded-full bg-[#04397d] transition-[width] group-hover:w-[calc(100%-8px)]">

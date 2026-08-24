@@ -6,13 +6,13 @@ export default async function Accordion() {
 
   return (
     <>
-      <div className="w-full bg-[#f8faff] px-4 py-20">
+      <div className="w-full bg-[#ffffff] px-4 py-20">
         <div className="max-w-7xl mx-auto">
           {/* Two-column layout */}
           <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
             {/* Left: Sticky heading panel (Centered) */}
             <div className="w-full lg:w-[38%] lg:sticky lg:top-24 flex flex-col gap-6 text-center items-center justify-center">
-              <h2 className="text-3xl md:text-4xl lg:text-[2.6rem] font-bold font-title text-[#033790] leading-tight text-center">
+              <h2 className="text-2xl md:text-3xl lg:text-[2.6rem] font-bold font-title text-[#033790] leading-tight text-center">
                 Frequently Ask Question
               </h2>
             </div>
@@ -35,7 +35,7 @@ export default async function Accordion() {
 
       {/* Wave divider (Updated curve) */}
       {/* Wave divider (Deeper curve & sharper peaks) */}
-      <div className="-mb-px bg-[#f8faff] overflow-hidden leading-none">
+      <div className="-mb-px bg-[#ffffff] overflow-hidden leading-none">
         <svg
           className="relative block w-full "
           xmlns="http://www.w3.org/2000/svg"

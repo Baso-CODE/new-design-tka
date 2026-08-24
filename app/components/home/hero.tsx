@@ -4,7 +4,7 @@ import HeroCTAClient from "./heroCTAClient";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#04397D] flex flex-col items-center justify-start overflow-hidden pt-28 pb-16 md:py-32">
+    <section className="relative bg-[#04397D] flex flex-col items-center justify-start overflow-hidden pt-8 pb-16 md:py-32">
       {/* Layer Background (Gedung Sketch / Overlay) */}
       <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none">
         <Image

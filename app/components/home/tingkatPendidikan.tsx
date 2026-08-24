@@ -23,7 +23,7 @@ const TingkatPendidikan = () => {
   };
 
   return (
-    <section className="flex flex-col xl:min-h-[125vh] bg-[#f8faff]">
+    <section className="flex flex-col xl:min-h-[125vh] bg-[#ffffff]">
       <div className="  container mx-auto py-8 items-center ">
         <div className="w-full px-2 md:px-0">
           <div className="flex gap-6 mt-8 w-full flex-wrap xl:flex-nowrap justify-center">

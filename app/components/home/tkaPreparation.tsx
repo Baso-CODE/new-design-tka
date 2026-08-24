@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function TKAPreparation() {
   return (
-    <section className="w-full bg-[#f8faff]">
+    <section className="w-full bg-[#ffffff]">
       <div className="max-w-350 mx-auto p-4 py-10 font-title">
         <div className="flex flex-col gap-6">
           {/* === SECTION ATAS: Alasan TKA Penting === */}

@@ -3,7 +3,7 @@ import PaketBelajarOSNClient from "./paketBelajarOSNClient";
 
 const PaketBelajarTKA = () => {
   return (
-    <div className="bg-[#f8faff]">
+    <div className="bg-[#FFFFFF]">
       <div className="flex container mx-auto items-center justify-center py-[5vh] px-2 lg:px-0 font-title">
         <div className="w-full">
           {/* Judul utama */}

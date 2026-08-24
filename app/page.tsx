@@ -4,24 +4,22 @@ import FomoTicker from "./components/fomoTicker";
 import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
 import Contact from "./components/home/contact";
 import Gallery from "./components/home/gallery";
+import GoldenTicketSection from "./components/home/goldenTicket";
 import Hero from "./components/home/hero";
 import JumlahSiswa from "./components/home/jumlahSiswa";
 import ListKota from "./components/home/lisKota";
 import MengapaHarusEdumatrix from "./components/home/mengapaHarusEdumatrix";
 import PaketBelajarTKA from "./components/home/paketBelajarOSN";
 import Pengajar from "./components/home/pengajar";
-import Pilihan from "./components/home/pilihan";
 import Program from "./components/home/programBelajar";
-import SekolahSiswa from "./components/home/sekolahSiswa";
+import SuccessStoryGrid from "./components/home/successStoryGrid";
 import TestimoniGrid from "./components/home/testimoniNotSlider";
-import TingkatPendidikan from "./components/home/tingkatPendidikan";
 import TKAPreparation from "./components/home/tkaPreparation";
 import MediaMassa from "./components/mediaMassa/mediaMassa";
-import Promo from "./components/promo";
+import PilihanMetode from "./components/pilihanMetode";
 import SliderDesktop from "./components/slider/sliderDescktop";
 import SliderMobile from "./components/slider/sliderMobile";
 import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
-import YouTubeShortEmbed from "./components/YouTubeShortEmbed";
 
 const baseUrl =
   process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
@@ -76,24 +74,28 @@ export default function Home() {
     <div className="overflow-hidden">
       <Hero />
       <JumlahSiswa />
-      <TKAPreparation />
       <Program />
-      <YouTubeShortEmbed />
+      <TKAPreparation />
       <PaketBelajarTKA />
       <SliderMobile />
       <SliderDesktop />
-      <TingkatPendidikan />
-      <Pilihan />
+      {/* <YouTubeShortEmbed /> */}
+      {/* 
+      <TingkatPendidikan /> */}
+      <PilihanMetode />
       <MengapaHarusEdumatrix />
       <Pengajar />
       <Gallery />
+      <SuccessStoryGrid />
       <TestimoniGrid />
+      <GoldenTicketSection />
       <AsalSekolahSiswaEdumatrix />
-      <SekolahSiswa />
       <ListKota />
+      {/* <SekolahSiswa /> */}
+
       <ImpactStatisticsOSN />
       <Accordion />
-      <Promo />
+      {/* <Promo /> */}
       <Contact />
       <MediaMassa />
       <FomoTicker />

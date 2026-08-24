@@ -5,7 +5,7 @@ export default function FooterEduMatrix() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <div className="bg-[#002b63] pb-20 md:pb-0">
+    <div className="bg-linear-to-b from-[#0572ce] to-[#033790] pb-20 md:pb-0">
       <div className="text-white md:p-10 p-4 max-w-310 mx-auto">
         {/* Title */}
         <div className="flex justify-between items-center mb-8">

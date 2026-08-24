@@ -48,7 +48,7 @@ const Nav = () => {
 
   return (
     <div
-      className={`fixed top-4 z-10000 w-full transition-opacity duration-500 px-1 ${
+      className={`fixed hidden lg:block top-4 z-[10000] w-full transition-opacity duration-500 px-1 ${
         visible ? "opacity-100" : "opacity-0"
       }`}>
       <div className={`rounded-full max-w-310 mx-auto ${navBg}`}>

@@ -1,201 +1,148 @@
-"use client";
-
 import Image from "next/image";
-import { useState } from "react";
 
-const galleryData = {
-  offline: [
-    {
-      id: 1,
-      src: "/images/gallery-belajar/gallery-offline-1.webp",
-      alt: "Bimbingan Offline TKA Edumatrix",
-      title: "Bimbingan Tatap Muka Eksklusif",
-    },
-    {
-      id: 2,
-      src: "/images/gallery-belajar/gallery-offline-2.webp",
-      alt: "Suasana Kelas Offline TKA",
-      title: "Diskusi & Pembahasan Soal TKA",
-    },
-    {
-      id: 3,
-      src: "/images/gallery-belajar/gallery-offline-3.webp",
-      alt: "Suasana Kelas Offline TKA",
-      title: "Sesi Latihan Intensif",
-    },
-    {
-      id: 4,
-      src: "/images/gallery-belajar/gallery-offline-4.webp",
-      alt: "Suasana Kelas Offline TKA",
-      title: "Evaluasi & Koreksi Bersama",
-    },
-  ],
-  online: [
-    {
-      id: 5,
-      src: "/images/gallery-belajar/gallery-online-1.webp",
-      alt: "Bimbingan Interaktif Online TKA",
-      title: "Kelas Online Live Interaktif",
-    },
-    {
-      id: 6,
-      src: "/images/gallery-belajar/gallery-online-2.webp",
-      alt: "Sesi Belajar Online TKA Edumatrix",
-      title: "Pendampingan Private Online",
-    },
-    {
-      id: 7,
-      src: "/images/gallery-belajar/gallery-online-3.webp",
-      alt: "Sesi Belajar Online TKA Edumatrix",
-      title: "Sesi Tanya Jawab Live",
-    },
-  ],
-};
-
-type Tab = "offline" | "online";
-
-const tabs: {
-  key: Tab;
-  label: string;
-  icon: string;
-  color: string;
-  accent: string;
-}[] = [
+// Gabungan data foto offline & online dengan status tipenya masing-feira
+const allGalleryItems = [
   {
-    key: "offline",
-    label: "Kelas Offline",
-    icon: "🏫",
-    color: "text-[#04397d]",
-    accent: "bg-[#04397d]",
+    id: 1,
+    src: "/images/gallery-belajar/gallery-offline-1.webp",
+    alt: "Bimbingan Offline TKA Edumatrix",
+    title: "Bimbingan Tatap Muka Eksklusif",
+    type: "offline" as const,
   },
   {
-    key: "online",
-    label: "Kelas Online",
-    icon: "💻",
-    color: "text-orange-600",
-    accent: "bg-orange-500",
+    id: 2,
+    src: "/images/gallery-belajar/gallery-offline-2.webp",
+    alt: "Suasana Kelas Offline TKA",
+    title: "Diskusi & Pembahasan Soal TKA",
+    type: "offline" as const,
+  },
+  {
+    id: 3,
+    src: "/images/gallery-belajar/gallery-online-1.webp",
+    alt: "Bimbingan Interaktif Online TKA",
+    title: "Kelas Online Live Interaktif",
+    type: "online" as const,
+  },
+  {
+    id: 4,
+    src: "/images/gallery-belajar/gallery-offline-3.webp",
+    alt: "Suasana Kelas Offline TKA",
+    title: "Sesi Latihan Intensif",
+    type: "offline" as const,
+  },
+  {
+    id: 5,
+    src: "/images/gallery-belajar/gallery-online-2.webp",
+    alt: "Sesi Belajar Online TKA Edumatrix",
+    title: "Pendampingan Private Online",
+    type: "online" as const,
   },
 ];
 
 const Gallery = () => {
-  const [activeTab, setActiveTab] = useState<Tab>("offline");
-  const items = galleryData[activeTab];
-  const isOffline = activeTab === "offline";
-
   return (
     <section className="bg-[#f8faff] py-16 sm:py-20 lg:py-24 px-4">
       <div className="mx-auto max-w-6xl">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-3xl md:text-4xl font-extrabold text-[#1a2744] font-title leading-tight mb-4">
-            Galeri Belajar{" "}
-            <span className="relative inline-block">
-              <span className="relative z-10 text-[#04397d]">
-                TKA Edumatrix
-              </span>
-            </span>
+            Gallery
           </h2>
-          <p className="text-slate-500 font-desc text-sm sm:text-base leading-relaxed">
-            Dokumentasi proses bimbingan TKA secara tatap muka maupun online
-            interaktif — suasana belajar yang aktif dan menyenangkan.
+          <p className="text-slate-600 font-desc text-sm sm:text-base leading-relaxed">
+            Lihatlah bagaimana kami merangkul teknologi dan inovasi, Setiap
+            gambar mewakili aspek unik dari pengalaman pendidikan dan kegiatan
+            komunitas kami. Bagaimana kami membuat pembelajaran interaktif dan
+            menyenangkan!
           </p>
         </div>
 
-        {/* Tab switcher */}
-        <div className="flex justify-center mb-10">
-          <div className="relative flex items-center gap-1 bg-white border border-gray-200 rounded-2xl p-1.5 shadow-sm">
-            {tabs.map((tab) => (
-              <button
-                key={tab.key}
-                onClick={() => setActiveTab(tab.key)}
-                className={`
-                  relative z-10 flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-semibold font-title
-                  transition-all duration-300 whitespace-nowrap
-                  ${
-                    activeTab === tab.key
-                      ? `${tab.accent} text-white shadow-md`
-                      : "text-slate-500 hover:text-slate-800 hover:bg-gray-50"
-                  }
-                `}>
-                <span>{tab.icon}</span>
-                {tab.label}
-                {activeTab === tab.key && (
-                  <span className="ml-1 bg-white/20 text-white text-[10px] font-bold rounded-full px-2 py-0.5">
-                    {items.length}
+        {/* Custom Grid Layout Sesuai Gambar Referensi */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          {/* Item 1: Lebar Penuh (Span 3 kolom di md) */}
+          {allGalleryItems[0] && (
+            <div className="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-md hover:shadow-xl transition-all duration-300 md:col-span-3 h-64 sm:h-80 lg:h-96">
+              <Image
+                src={allGalleryItems[0].src}
+                loading="lazy"
+                fill
+                alt={allGalleryItems[0].alt}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+              <div className="absolute top-4 right-4">
+                <span
+                  className={`text-[10px] font-bold rounded-xl px-3 py-1.5 backdrop-blur-md border text-white ${allGalleryItems[0].type === "offline" ? "bg-[#04397d]/80 border-[#04397d]" : "bg-orange-500/80 border-orange-400"}`}>
+                  {allGalleryItems[0].type === "offline" ? "Offline" : "Online"}
+                </span>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-white font-semibold font-title text-base sm:text-lg drop-shadow">
+                  {allGalleryItems[0].title}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Item 2: Kotak Besar di Kiri Bawah (Span 2 kolom di md) */}
+          {allGalleryItems[1] && (
+            <div className="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-md hover:shadow-xl transition-all duration-300 md:col-span-2 h-72 sm:h-96">
+              <Image
+                src={allGalleryItems[1].src}
+                loading="lazy"
+                fill
+                alt={allGalleryItems[1].alt}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+              <div className="absolute top-4 right-4">
+                <span
+                  className={`text-[10px] font-bold rounded-xl px-3 py-1.5 backdrop-blur-md border text-white ${allGalleryItems[1].type === "offline" ? "bg-[#04397d]/80 border-[#04397d]" : "bg-orange-500/80 border-orange-400"}`}>
+                  {allGalleryItems[1].type === "offline" ? "Offline" : "Online"}
+                </span>
+              </div>
+
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-white font-semibold font-title text-base sm:text-lg drop-shadow">
+                  {allGalleryItems[1].title}
+                </p>
+              </div>
+            </div>
+          )}
+
+          {/* Kolom Kanan Bawah: 3 item tersusun vertikal dalam 1 kolom */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 gap-4 md:col-span-1">
+            {allGalleryItems.slice(2, 5).map((item) => (
+              <div
+                key={item.id}
+                className="group relative overflow-hidden rounded-2xl bg-gray-900 shadow-md hover:shadow-xl transition-all duration-300 h-44 sm:h-48">
+                <Image
+                  src={item.src}
+                  loading="lazy"
+                  fill
+                  alt={item.alt}
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+                <div className="absolute top-3 right-3">
+                  <span
+                    className={`text-[9px] font-bold rounded-lg px-2.5 py-1 backdrop-blur-md border text-white ${item.type === "offline" ? "bg-[#04397d]/80 border-[#04397d]" : "bg-orange-500/80 border-orange-400"}`}>
+                    {item.type === "offline" ? "Offline" : "Online"}
                   </span>
-                )}
-              </button>
+                </div>
+
+                <div className="absolute bottom-0 left-0 right-0 p-3">
+                  <p className="text-white font-semibold font-title text-xs sm:text-sm drop-shadow">
+                    {item.title}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
-
-        {/* Gallery Grid — asymmetric: first item spans full width on md, rest in 2-col */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {items.map((item, index) => {
-            const isFeature = index === 0;
-            return (
-              <div
-                key={item.id}
-                className={`
-                  group relative overflow-hidden rounded-2xl bg-gray-900 shadow-md
-                  hover:shadow-xl hover:-translate-y-1 transition-all duration-300
-                  ${isFeature ? "md:col-span-2" : ""}
-                `}>
-                {/* Image */}
-                <div
-                  className={`relative w-full overflow-hidden ${isFeature ? "h-72 sm:h-96" : "h-60 sm:h-72"}`}>
-                  <Image
-                    src={item.src}
-                    loading="lazy"
-                    fill
-                    alt={item.alt}
-                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  {/* Gradient overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
-                </div>
-
-                {/* Caption overlaid on image bottom */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 flex items-end justify-between">
-                  <div>
-                    {isFeature && (
-                      <span
-                        className={`
-                        inline-block mb-2 text-[10px] font-bold tracking-widest uppercase rounded-full px-3 py-1
-                        ${isOffline ? "bg-[#04397d] text-white" : "bg-orange-500 text-white"}
-                      `}>
-                        {isOffline ? "🏫 Offline" : "💻 Online"} · Unggulan
-                      </span>
-                    )}
-                    <p className="text-white font-semibold font-title text-sm sm:text-base drop-shadow">
-                      {item.title}
-                    </p>
-                  </div>
-
-                  {/* Mode badge */}
-                  <span
-                    className={`
-                    shrink-0 text-[10px] font-bold rounded-xl px-3 py-1.5 backdrop-blur-sm border
-                    ${
-                      isOffline
-                        ? "bg-[#04397d]/70 border-[#04397d]/50 text-white"
-                        : "bg-orange-500/70 border-orange-400/50 text-white"
-                    }
-                  `}>
-                    {isOffline ? "Offline" : "Online"}
-                  </span>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-
-        {/* Bottom counter */}
-        <p className="text-center mt-8 text-xs text-slate-400 font-desc">
-          Menampilkan{" "}
-          <strong className="text-slate-600">{items.length} foto</strong>{" "}
-          {activeTab === "offline" ? "kelas tatap muka" : "kelas online"}
-        </p>
       </div>
     </section>
   );

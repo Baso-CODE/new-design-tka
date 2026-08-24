@@ -4,9 +4,9 @@ import HeroCTAClient from "./heroCTAClient";
 
 export default function Hero() {
   return (
-    <section className="relative bg-[#04397D] flex items-center justify-center overflow-hidden pt-28 md:pt-28">
-      {/* Layer Background (Gedung Sketch) */}
-      <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen">
+    <section className="relative bg-[#04397D] flex flex-col items-center justify-start overflow-hidden pt-28 pb-16 md:py-32">
+      {/* Layer Background (Gedung Sketch / Overlay) */}
+      <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none">
         <Image
           src="/images/tka/bg-overlay.webp"
           alt="Latar belakang gedung"
@@ -17,45 +17,68 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative z-10 px-4 lg:px-8 text-white w-full max-w-350 mx-auto">
-        <div className="flex flex-col lg:flex-row items-center lg:items-stretch justify-between gap-8 lg:gap-4">
-          {/* Bagian Kiri: Typografi & CTA */}
-          <div className="lg:w-[45%] flex flex-col justify-center gap-6 pl-0 lg:pl-10 pb-8 lg:pb-0">
-            <h1 className="text-[28px] md:text-[26px] lg:text-[32px] font-bold leading-snug font-title">
-              Lebih Siap Jadi Juara Tes <br className="hidden md:block" />
-              Kemampuan Akademik, <span className="text-[#faae17]">
-                Tembus
-              </span>{" "}
-              <br className="hidden md:block" />
-              <span className="text-[#faae17]">
-                SMP-SMA Unggulan
-              </span> bersama <br className="hidden md:block" />
-              Edumatrix Indonesia&quot;
-            </h1>
+      <div className="relative z-10 px-4 lg:px-8 text-white w-full max-w-6xl mx-auto flex flex-col items-center">
+        {/* 1. Logo Edumatrix di Bagian Atas */}
+        <div className="mb-6 md:mb-8 flex items-center justify-center">
+          <Image
+            src="/images/logo.webp" // Sesuaikan path logo Anda jika berbeda
+            alt="Edumatrix Indonesia Logo"
+            width={160}
+            height={45}
+            className="object-contain h-10 md:h-12 w-auto"
+            priority
+          />
+        </div>
 
-            <p className="font-desc text-[15px] md:text-[17px] leading-relaxed">
-              Mulai Persiapan lebih awal untuk hasil yang terbaik!
-            </p>
+        {/* 2. Judul Utama (Responsive Layout untuk Mobile & Desktop) */}
+        <div className="text-center max-w-4xl mx-auto mb-8 px-2">
+          <h1 className="text-[24px] sm:text-[28px] md:text-[38px] lg:text-[42px] font-bold leading-tight md:leading-snug font-title">
+            Lebih Siap Jadi Juara <br />
+            Tes Kemampuan Akademik <br />
+            <span className="text-[#faae17]">
+              Tembus SMP–SMA Unggulan & PTN Impian
+            </span>{" "}
+            bersama
+          </h1>
 
-            {/* Tombol CTA */}
-            <div className="w-full mt-2">
-              <HeroCTAClient contacts={dummyContactCsData} />
-            </div>
+          {/* Badge / Kotak Nama Brand di Bawah Judul (Seperti di Mobile Mockup) */}
+          <div className="mt-4 inline-block bg-[#072452] border border-blue-500/40 px-6 py-2.5 rounded-full shadow-lg">
+            <span className="text-white text-xl md:text-3xl font-extrabold tracking-wide">
+              Edumatrix Indonesia
+            </span>
+          </div>
+        </div>
+
+        {/* 3. Layout Utama: Ilustrasi Karakter & Konten Card Bawah */}
+        <div className="w-full flex flex-col items-center gap-6">
+          {/* Gambar Karakter / Siswa Hero */}
+          <div className="relative w-full max-w-2xl aspect-16/10 md:aspect-2/1 flex justify-center">
+            <Image
+              loading="eager"
+              src="/images/tka/hero-tka.webp"
+              alt="Siswa berprestasi bimbingan belajar TKA Edumatrix"
+              fill
+              sizes="(max-width: 768px) 100vw, 600px"
+              className="object-contain object-center"
+              priority
+              fetchPriority="high"
+            />
           </div>
 
-          {/* Bagian Kanan: Gambar Karakter/Siswa */}
-          <div className="lg:w-[55%] flex justify-center lg:justify-end items-end w-full">
-            <div className="relative w-full aspect-4/3 lg:aspect-5/4">
-              <Image
-                loading="eager"
-                src="/images/tka/hero-tka.webp"
-                alt="Siswa berprestasi bimbingan belajar TKA Edumatrix"
-                fill
-                sizes="(max-width: 1024px) 100vw, 55vw"
-                className="object-cover lg:object-contain object-bottom lg:object-bottom-right"
-                priority
-                fetchPriority="high"
-              />
+          {/* 4. Card Putih di Bagian Bawah (Deskripsi & CTA Konsultasi) */}
+          <div className="w-full max-w-3xl bg-white text-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl flex flex-col gap-6 -mt-10 z-10">
+            <p className="text-[#314b8a] text-sm font-medium md:text-base leading-relaxed text-center font-desc">
+              Bimbel pendampingan belajar dan persiapan ujian tingkat SD, SMP,
+              dan SMA terbaik dan terlengkap untuk mencetak siswa berprestasi.
+              Mempersiapkan generasi juara dengan program Pendalaman Materi,
+              Penguasaan TKA (Saintek & Soshum), Latihan Soal HOTS, Try Out
+              Berkala, dan Evaluasi Belajar untuk meraih nilai maksimal di
+              sekolah hingga tembus Kampus Impian!
+            </p>
+
+            {/* Tombol CTA / Konsultasi */}
+            <div className="w-full flex justify-center">
+              <HeroCTAClient contacts={dummyContactCsData} />
             </div>
           </div>
         </div>

@@ -12,24 +12,18 @@ const AsalSekolahSiswaEdumatrix = () => {
   );
 
   return (
-    <section className="relative overflow-hidden bg-linear-to-r from-[#04397d] to-[#023ea9] py-20 px-4 font-title">
-      {/* Decorative background blobs */}
-      <div className="pointer-events-none absolute inset-0">
-        <div className="absolute -top-32 -left-32 w-96 h-96 bg-[#023ea9]/40 rounded-full blur-3xl" />
-        <div className="absolute -bottom-32 -right-32 w-96 h-96 bg-[#0255c9]/30 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-white/[0.02] rounded-full blur-2xl" />
-      </div>
-
-      <div className="relative z-10 mx-auto max-w-310">
+    <section
+      className="relative overflow-hidden py-16 sm:py-20 px-4 font-title"
+      style={{
+        background: "linear-gradient(to bottom, #0571cd 0%, #033790 100%)",
+      }}>
+      <div className="relative z-10 mx-auto max-w-5xl">
         {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl  font-bold text-white leading-tight">
-            Asal Sekolah Siswa{" "}
-            <span className="text-transparent bg-clip-text bg-linear-to-r from-orange-400 to-orange-500">
-              Edumatrix
-            </span>
+        <div className="text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-tight">
+            Asal Sekolah Siswa <span className="text-[#fac61f]">Edumatrix</span>
           </h2>
-          <p className="mt-4 text-blue-200 text-sm sm:text-base max-w-xl mx-auto">
+          <p className="mt-3 sm:mt-4 text-blue-100 font-desc text-sm sm:text-base max-w-xl mx-auto opacity-90">
             Bergabung bersama siswa dari ratusan sekolah terbaik di seluruh
             Indonesia.
           </p>
@@ -42,15 +36,15 @@ const AsalSekolahSiswaEdumatrix = () => {
             <span className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
             <span className="text-sm">
               Menampilkan{" "}
-              <strong className="text-cyan-300">{filtered.length}</strong>
-              <span className="text-blue-300">/{schools.length}</span> sekolah
+              <strong className="text-cyan-600">{filtered.length}</strong>
+              <span className="text-gray-500">/{schools.length}</span> sekolah
             </span>
           </div>
 
           {/* Search */}
           <div className="relative w-full sm:w-72">
             <svg
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-blue-300 pointer-events-none"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 pointer-events-none"
               xmlns="http://www.w3.org/2000/svg"
               fill="none"
               viewBox="0 0 24 24"
@@ -67,12 +61,12 @@ const AsalSekolahSiswaEdumatrix = () => {
               placeholder="Cari sekolah..."
               value={query}
               onChange={(e) => setQuery(e.target.value)}
-              className="w-full bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-blue-300 rounded-full pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-cyan-400/50 focus:border-cyan-400/50 transition-all"
+              className="w-full bg-white text-gray-800 placeholder-gray-400 border border-gray-200 rounded-full pl-10 pr-4 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500/50 shadow-sm transition-all"
             />
             {query && (
               <button
                 onClick={() => setQuery("")}
-                className="absolute right-3 top-1/2 -translate-y-1/2 text-blue-300 hover:text-white transition-colors">
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600 transition-colors">
                 <svg
                   className="w-4 h-4"
                   fill="none"
@@ -91,17 +85,16 @@ const AsalSekolahSiswaEdumatrix = () => {
         </div>
 
         {/* School list card */}
-        <div className="relative rounded-2xl overflow-hidden border border-white/10 shadow-2xl shadow-black/30 bg-white/[0.06] backdrop-blur-md">
-          {/* Inner scrollable area */}
-          <div className="overflow-y-auto max-h-[480px] p-6 custom-scrollbar">
+        <div className="relative rounded-3xl overflow-hidden bg-white shadow-xl border border-gray-100">
+          <div className="overflow-y-auto max-h-120 p-4 sm:p-6 custom-scrollbar">
             {filtered.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-6 ">
                 {filtered.map((school, index) => (
                   <div
                     key={index}
-                    className="group flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-white/10 transition-all duration-200 cursor-default">
-                    <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 shrink-0 group-hover:scale-150 transition-transform duration-200" />
-                    <span className="text-sm text-blue-100 group-hover:text-white transition-colors duration-200 leading-snug">
+                    className="group flex items-center gap-2.5 py-2 px-3 rounded-lg hover:bg-blue-50 transition-all duration-200 cursor-default">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 shrink-0 group-hover:scale-150 transition-transform duration-200" />
+                    <span className="text-sm text-gray-700 group-hover:text-blue-900 font-medium transition-colors duration-200 leading-snug">
                       {school}
                     </span>
                   </div>
@@ -110,7 +103,7 @@ const AsalSekolahSiswaEdumatrix = () => {
             ) : (
               <div className="flex flex-col items-center justify-center py-16 text-center">
                 <svg
-                  className="w-10 h-10 text-blue-400 mb-3"
+                  className="w-10 h-10 text-gray-300 mb-3"
                   fill="none"
                   viewBox="0 0 24 24"
                   stroke="currentColor">
@@ -121,25 +114,25 @@ const AsalSekolahSiswaEdumatrix = () => {
                     d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"
                   />
                 </svg>
-                <p className="text-blue-200 text-sm">
+                <p className="text-gray-600 text-sm">
                   Tidak ada sekolah dengan nama{" "}
-                  <strong className="text-white">&ldquo;{query}&rdquo;</strong>
+                  <strong className="text-gray-900">
+                    &ldquo;{query}&rdquo;
+                  </strong>
                 </p>
                 <button
                   onClick={() => setQuery("")}
-                  className="mt-3 text-xs text-cyan-400 hover:text-cyan-300 underline underline-offset-2 transition-colors">
+                  className="mt-3 text-xs text-blue-600 hover:text-blue-800 underline underline-offset-2 transition-colors">
                   Reset pencarian
                 </button>
               </div>
             )}
           </div>
-
-          {/* Bottom fade overlay */}
-          <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-12 bg-gradient-to-t from-[#04397d]/60 to-transparent" />
         </div>
       </div>
     </section>
   );
 };
 
+AsalSekolahSiswaEdumatrix.displayName = "AsalSekolahSiswaEdumatrix";
 export default AsalSekolahSiswaEdumatrix;

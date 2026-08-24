@@ -1,128 +1,59 @@
-"use client";
-
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-
-const JumlahSiswa = () => {
-  const masterTeacherPercent: string[] = ["80%", "82%", "83%", "85%", "86%"];
-  const masterTeacherNumbers: string[] = [
-    "212",
-    "2,687",
-    "3,532",
-    "4,732",
-    "5,575",
-  ];
-  const siswaEdumatrix: string[] = ["565", "2,326", "4,624", "6,563", "7,547"];
-
-  const [currentIndex, setCurrentIndex] = useState<number>(0);
-
-  useEffect(() => {
-    if (currentIndex < siswaEdumatrix.length - 1) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prev) => prev + 1);
-      }, 2000);
-      return () => clearInterval(interval);
-    }
-  }, [currentIndex, siswaEdumatrix.length]);
-
+export default function JumlahSiswa() {
   return (
-    <section className="items-center justify-center flex bg-[#f8faff]">
-      <div className="max-w-310">
-        <div className=" lg:h-138.75 h-auto w-full py-12 px-2 lg:px-2">
-          <div className="flex flex-col lg:flex-row md:gap-7.5 -mt-10 relative">
-            {/* Left Side - Image */}
-            <div className="lg:w-1/2 flex justify-center items-center -mt-4 lg:-mt-10 relative">
-              <Image
-                width={1000}
-                height={1000}
-                priority
-                fetchPriority="high"
-                loading="eager"
-                src="/images/presentase-siswa-master-teacher-edumatrix.webp"
-                alt="presentase siswa edumatrix"
-                className="z-10"
-              />
+    <section className="w-full py-12 md:py-20 px-4 bg-white flex justify-center">
+      <div className="w-full max-w-5xl mx-auto flex flex-col items-center text-center">
+        {/* Angka Utama & Subteks */}
+        <div className="mb-8 md:mb-12">
+          <h2 className="text-[48px] sm:text-[64px] md:text-[80px] font-extrabold text-[#E53855] tracking-tight leading-none mb-2 font-title">
+            1000++
+          </h2>
+          <p className="text-slate-700 text-sm sm:text-base md:text-xl font-medium tracking-wide">
+            Alumni Edumatrix Indonesia{" "}
+            <span className="font-bold text-[#04397D]">Berhasil Juara TKA</span>
+          </p>
+        </div>
 
-              {/* TOP */}
-              <div className="absolute top-6 md:top-10 left-0 w-full flex justify-center z-10">
-                <div className="flex flex-col items-center text-white">
-                  <motion.p
-                    key={`siswa-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="font-normal text-3xl md:text-[50px] font-pencil">
-                    {siswaEdumatrix[currentIndex]}
-                  </motion.p>
-                  <h2 className="-mt-1 font-bold md:text-[20px] font-desc">
-                    Siswa Edumatrix
-                  </h2>
-                </div>
-              </div>
-
-              {/* CENTER */}
-              <div className="absolute top-28 md:top-40 left-0 w-full flex justify-center z-10">
-                <div className="flex flex-col items-center text-white">
-                  <motion.p
-                    key={`number-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="font-normal text-3xl md:text-[50px] font-pencil">
-                    {masterTeacherNumbers[currentIndex]}
-                  </motion.p>
-                  <h2 className="-mt-1 font-bold md:text-[20px] font-desc">
-                    Master Teacher
-                  </h2>
-                </div>
-              </div>
-
-              {/* BOTTOM */}
-              <div className="absolute top-50 md:top-68 left-0 w-full flex justify-center z-10">
-                <div className="flex flex-col items-center text-white">
-                  <motion.p
-                    key={`percent-${currentIndex}`}
-                    initial={{ y: -50, opacity: 0 }}
-                    animate={{ y: 0, opacity: 1 }}
-                    transition={{ duration: 0.5 }}
-                    className="font-normal text-3xl md:text-[50px] font-pencil">
-                    {masterTeacherPercent[currentIndex]}
-                  </motion.p>
-                  <h2 className="-mt-1 font-bold md:text-[20px] font-desc">
-                    Presentase Kelulusan
-                  </h2>
-                </div>
-              </div>
+        {/* Kotak Kuning Statistik */}
+        <div className="w-full bg-[#FFC107] rounded-2xl md:rounded-3xl py-6 px-4 md:py-10 md:px-12 shadow-md">
+          <div className="flex justify-between items-center w-full">
+            {/* Item 1: Tingkat Kelulusan */}
+            <div className="flex-1 flex flex-col items-center px-1">
+              <span className="text-[22px] sm:text-[36px] md:text-[48px] font-extrabold text-[#04397D] leading-tight">
+                91%
+              </span>
+              <span className="text-[11px] sm:text-xs md:text-base font-bold text-[#04397D] mt-1 uppercase tracking-wider">
+                Tingkat Kelulusan
+              </span>
             </div>
 
-            {/* Right Side - Text */}
-            <div className="lg:w-1/2 flex items-center justify-center">
-              <div className="flex flex-col">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4 font-title text-[#133B79] leading-7 md:leading-10">
-                  Edumatrix Siap Membantumu Menguasai TKA & Meraih Hasil
-                  Maksimal
-                </h2>
-                <p className="mb-4 text-[#374151] font-desc text-[14px] md:text-[16px] leading-5 font-medium opacity-90">
-                  Di Edumatrix Indonesia, kami berkomitmen untuk membimbing kamu
-                  mempersiapkan Tes Kemampuan Akademik (TKA) dengan matang.
-                  Melalui program bimbingan yang terstruktur, kami menyediakan
-                  materi dan strategi belajar terbaik untuk menghadapi TKA di
-                  semua jenjang pendidikan.
-                </p>
-                <p className="mb-8 text-[#374151] font-desc text-[14px] md:text-[16px] leading-5 font-medium opacity-90">
-                  Dari latihan soal mendalam hingga evaluasi berkala bersama
-                  tutor profesional, setiap langkah belajar dirancang untuk
-                  memastikan kamu siap hadapi TKA dengan penuh percaya diri.
-                  Wujudkan impian akademikmu bersama Edumatrix Indonesia!
-                </p>
-              </div>
+            {/* Garis Pemisah 1 */}
+            <div className="h-10 sm:h-14 md:h-16 w-[2px] md:w-[3px] bg-white rounded-full shrink-0" />
+
+            {/* Item 2: Provinsi */}
+            <div className="flex-1 flex flex-col items-center px-1">
+              <span className="text-[22px] sm:text-[36px] md:text-[48px] font-extrabold text-[#04397D] leading-tight">
+                38
+              </span>
+              <span className="text-[11px] sm:text-xs md:text-base font-bold text-[#04397D] mt-1 uppercase tracking-wider">
+                Provinsi
+              </span>
+            </div>
+
+            {/* Garis Pemisah 2 */}
+            <div className="h-10 sm:h-14 md:h-16 w-[2px] md:w-[3px] bg-white rounded-full shrink-0" />
+
+            {/* Item 3: Tingkat Kepuasan */}
+            <div className="flex-1 flex flex-col items-center px-1">
+              <span className="text-[22px] sm:text-[36px] md:text-[48px] font-extrabold text-[#04397D] leading-tight">
+                98%
+              </span>
+              <span className="text-[11px] sm:text-xs md:text-base font-bold text-[#04397D] mt-1 uppercase tracking-wider">
+                Tingkat Kepuasan
+              </span>
             </div>
           </div>
         </div>
       </div>
     </section>
   );
-};
-
-export default JumlahSiswa;
+}

@@ -1,8 +1,8 @@
 "use client";
 
-import Marquee from "react-fast-marquee";
-import Image from "next/image";
 import { MediaImage } from "@/app/lib/media/getMediaImages";
+import Image from "next/image";
+import Marquee from "react-fast-marquee";
 
 interface Props {
   images: MediaImage[];
@@ -10,9 +10,8 @@ interface Props {
 
 export default function MediaMassaClient({ images }: Props) {
   return (
-    <div className="bg-[#04397D] relative">
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-r from-[#04397D] via-transparent to-[#04397D]" />
+    <div className="bg-[#033a94] relative">
+      <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-r from-[#033a94] via-transparent to-[#033a94]" />
 
       {/* Title */}
       <div className="text-center py-4">
@@ -32,7 +31,7 @@ export default function MediaMassaClient({ images }: Props) {
                 width={140}
                 height={70}
                 loading="lazy"
-                className="h-[70px] w-auto rounded-md object-contain"
+                className="h-17.5 w-auto rounded-md object-contain"
               />
             </div>
           ))}
@@ -50,7 +49,7 @@ export default function MediaMassaClient({ images }: Props) {
                 width={140}
                 loading="lazy"
                 height={70}
-                className="h-[70px] w-auto rounded-md object-contain"
+                className="h-17.5 w-auto rounded-md object-contain"
               />
             </div>
           ))}

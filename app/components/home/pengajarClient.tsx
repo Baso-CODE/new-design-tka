@@ -33,7 +33,8 @@ export default function PengajarClient({
     <div className="flex justify-center bg-[#f8faff] py-10 sm:py-16">
       <div className="max-w-360 w-full px-4 sm:px-6 lg:px-8">
         <h2 className="text-center text-[#133B79] text-2xl font-extrabold font-title lg:text-4xl mb-12">
-          Our Professional Master Teacher
+          Our Professional{" "}
+          <span className="text-[#fac61f]">Master Teacher</span>
         </h2>
 
         <Swiper

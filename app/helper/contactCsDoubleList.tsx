@@ -8,7 +8,6 @@ interface Props {
 }
 
 export default function ContactCsDoubleList({ contacts }: Props) {
-  // Berikan storageKey unik agar tidak bentrok dengan Hero / Floating CTA
   const { activeCs, rotateCs } = useCsRotation(
     contacts,
     "double",
@@ -30,14 +29,14 @@ export default function ContactCsDoubleList({ contacts }: Props) {
   };
 
   return (
-    <div className="flex flex-col gap-4 max-w-md mx-auto lg:mx-0">
+    <div className="flex flex-col gap-3 sm:gap-4 w-full">
       {activeCs.map((contact) => (
         <a
           key={contact.id}
           href={contact.link_cta}
           onClick={(e) => handleClick(e, contact.link_cta)}
-          className="block">
-          <div className="bg-[#F68507] text-white py-3 font-desc font-bold md:text-[25px] text-[20px] px-4 rounded-md text-center hover:bg-orange-600 transition-colors duration-200 cursor-pointer">
+          className="block w-full group">
+          <div className="bg-[#ffcc00] text-[#04397d] py-3 md:py-3.5 font-desc font-extrabold text-[16px] sm:text-[18px] md:text-[20px] px-4 rounded-lg text-center hover:bg-[#e6b800] transition-all duration-200 cursor-pointer shadow-md group-hover:shadow-lg transform group-hover:-translate-y-0.5">
             {contact.nomor_hp} ({contact.nama_cs})
           </div>
         </a>

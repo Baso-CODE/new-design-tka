@@ -20,7 +20,7 @@ const Nav = () => {
 
       // Ubah background saat scroll
       if (currentScrollY > 50) {
-        setNavBg("bg-[#002b63] shadow-md");
+        setNavBg("bg-[#056fcb] shadow-md");
       } else {
         setNavBg("");
       }
@@ -77,7 +77,7 @@ const Nav = () => {
               return (
                 <Link key={link.id} href={link.to}>
                   <p
-                    className={`nav_link font-desc font-normal text-[15px] cursor-pointer duration-300 ${
+                    className={`nav_link font-desc font-bold text-[15px] cursor-pointer duration-300 ${
                       isActive
                         ? "text-[#FAAE17] font-bold"
                         : "hover:text-[#FAAE17]"

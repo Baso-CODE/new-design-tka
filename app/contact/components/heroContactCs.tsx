@@ -1,6 +1,6 @@
 const HeroContactCS = () => {
   return (
-    <section className="bg-[#04397D] text-white flex items-center justify-center">
+    <section className="text-white flex items-center justify-center">
       <div className="text-center mt-[12vh] p-2">
         <h1 className="text-4xl sm:text-5xl font-bold font-title leading-tight mb-6">
           Hubungi Kami

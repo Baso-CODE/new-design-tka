@@ -7,7 +7,7 @@ export default async function Promo() {
   const isEmpty = promos.length === 0;
 
   return (
-    <div className="bg-[#04397D] text-white flex flex-col items-center justify-center py-8">
+    <div className="bg-linear-to-b from-[#056dc9] via-[#044ea8] to-[#033790] text-white flex flex-col items-center justify-center py-12">
       <div className="flex flex-col gap-8 max-w-310 w-full px-2 rounded-lg">
         <div className="flex flex-col lg:flex-row lg:flex-wrap gap-4 justify-center items-center">
           {isEmpty ? (
@@ -17,7 +17,7 @@ export default async function Promo() {
               width={1031}
               loading="lazy"
               height={600}
-              className="w-auto max-w-full xl:max-w-[1031px] h-auto rounded-lg"
+              className="w-auto max-w-full xl:max-w-257.75 h-auto rounded-lg shadow-xl"
             />
           ) : (
             promos.map((item) => (
@@ -29,7 +29,7 @@ export default async function Promo() {
                   alt={item.title}
                   width={1031}
                   height={600}
-                  className="w-auto max-w-full xl:max-w-[1031px] h-auto rounded-lg"
+                  className="w-auto max-w-full xl:max-w-257.75 h-auto rounded-lg"
                   loading="lazy"
                 />
               </div>

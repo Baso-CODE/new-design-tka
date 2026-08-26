@@ -2,8 +2,8 @@ import Image from "next/image";
 
 const HeroAbout = () => {
   return (
-    <section className="relative bg-[#04397D] flex items-center justify-center">
-      <div className="py-24 px-2 mt-16 text-white max-w-310 min-h-screen  lg:min-h-[60vh]">
+    <section className="relative bg-linear-to-b from-[#056dc9] via-[#044ea8] to-[#033790] flex items-center justify-center overflow-hidden">
+      <div className="py-24 px-2 mt-16 text-white max-w-310 min-h-screen lg:min-h-[60vh] z-10">
         <div className="flex flex-col lg:flex-row gap-0">
           <div className="lg:w-[35%] mt-12.5 flex flex-col justify-center">
             <h1 className="text-[64px] font-bold leading-10 font-title mb-6 text-[#faae17]">
@@ -32,16 +32,19 @@ const HeroAbout = () => {
             <Image
               src="/images/hero-aboutus.webp"
               alt="Lembaga bimbingan belajar unggulan untuk persiapan masuk PTN, Kedokteran, dan Kedinasan dengan pendekatan terbaik"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover drop-shadow-2xl"
               width={1000}
               height={1000}
               loading="lazy"
             />
-            <div className="absolute -bottom-px left-0 right-0 h-25 bg-linear-to-t from-[#04397D] to-transparent"></div>
+            {/* Gradasi peleburan bawah gambar disesuaikan agar menyatu dengan warna dasar gradien */}
+            <div className="absolute -bottom-px left-0 right-0 h-25 bg-linear-to-t from-[#033790] to-transparent pointer-events-none"></div>
           </div>
         </div>
       </div>
-      <div className="absolute -bottom-px xl:-bottom-7.5 left-0 w-full">
+
+      {/* Gelombang SVG di bagian paling bawah */}
+      <div className="absolute -bottom-px xl:-bottom-7.5 left-0 w-full pointer-events-none z-20">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
           <path
             fill="#ffffff"

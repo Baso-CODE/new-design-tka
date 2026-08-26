@@ -27,8 +27,8 @@ const icons = [
 const badgeColors = [
   "bg-[#E53855]", // Merah
   "bg-[#FFC107] text-slate-900", // Kuning
-  "bg-[#04397D]", // Biru
-  "bg-[#04397D]", // Biru
+  "bg-[#056fcb]", // Biru
+  "bg-[#056fcb]", // Biru
   "bg-[#10B981]", // Hijau
   "bg-[#A855F7]", // Ungu
 ];

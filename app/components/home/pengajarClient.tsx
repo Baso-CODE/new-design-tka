@@ -30,7 +30,7 @@ export default function PengajarClient({
   }
 
   return (
-    <section className="relative flex justify-center py-16 lg:py-24 font-title overflow-hidden bg-[#0570cc]">
+    <section className="relative flex justify-center py-16 lg:py-24 font-title overflow-hidden bg-[#0570cc] lg:min-h-[89vh]">
       <div className="max-w-360 w-full px-4 sm:px-6 lg:px-8 relative z-10">
         <h2 className="text-center text-white text-2xl font-extrabold lg:text-4xl mb-4 drop-shadow-lg">
           Our Professional{" "}

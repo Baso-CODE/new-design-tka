@@ -18,14 +18,12 @@ const Nav = () => {
     const handleScroll = () => {
       const currentScrollY = window.pageYOffset;
 
-      // Ubah background saat scroll
       if (currentScrollY > 50) {
         setNavBg("bg-[#056fcb] shadow-md");
       } else {
         setNavBg("");
       }
 
-      // Sembunyikan navbar saat scroll ke bawah
       if (currentScrollY > lastScrollY) {
         setVisible(false);
       } else {
@@ -34,7 +32,6 @@ const Nav = () => {
 
       lastScrollY = currentScrollY;
 
-      // Tampilkan lagi setelah berhenti scroll
       if (timeout) clearTimeout(timeout);
       timeout = setTimeout(() => setVisible(true), 800);
     };
@@ -67,7 +64,7 @@ const Nav = () => {
             />
           </Link>
 
-          {/* === NAV LINKS === */}
+          {/* === NAV LINKS + BUTTON DAFTAR === */}
           <div className="hidden lg:flex items-center space-x-10">
             {navLinks.map((link) => {
               const isActive =
@@ -87,6 +84,13 @@ const Nav = () => {
                 </Link>
               );
             })}
+
+            {/* === BUTTON DAFTAR === */}
+            <Link href="/daftar">
+              <button className="bg-[#FAAE17] hover:bg-[#e09c10] text-white font-desc font-bold text-[15px] px-6 py-2 rounded-full cursor-pointer transition-colors duration-300">
+                Daftar
+              </button>
+            </Link>
           </div>
         </div>
       </div>

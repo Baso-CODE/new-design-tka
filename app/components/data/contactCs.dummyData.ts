@@ -12,7 +12,7 @@ export const dummyContactCsData: ContactCs[] = [
       `Halo Kak Sari ${baseUrl}/, Saya ingin tanya program belajar yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
     )}`,
     isDeleted: false,
-    weight: 2,
+    weight: 1,
     display_order: 2,
   },
   {
@@ -23,7 +23,7 @@ export const dummyContactCsData: ContactCs[] = [
       `Halo Kak Asya ${baseUrl}/, Saya ingin tanya program belajar yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
     )}`,
     isDeleted: false,
-    weight: 3,
+    weight: 1,
     display_order: 3,
   },
   {
@@ -34,7 +34,7 @@ export const dummyContactCsData: ContactCs[] = [
       `Halo Kak Putri ${baseUrl}/, Saya ingin tanya program belajar yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
     )}`,
     isDeleted: false,
-    weight: 4,
+    weight: 1,
     display_order: 4,
   },
   {
@@ -45,7 +45,7 @@ export const dummyContactCsData: ContactCs[] = [
       `Halo Kak Nevita ${baseUrl}/, Saya ingin tanya program belajar yang ada di Edumatrix Indonesia. Apa saja jenis program belajar dan pilihan paket.`,
     )}`,
     isDeleted: false,
-    weight: 4,
+    weight: 1,
     display_order: 4,
   },
 ];

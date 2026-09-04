@@ -1,6 +1,5 @@
 import { Metadata } from "next";
 import Accordion from "./components/faq/Accordion";
-import FomoTicker from "./components/fomoTicker";
 import AsalSekolahSiswaEdumatrix from "./components/home/asalSekolahSiswaEdumatrix";
 import Contact from "./components/home/contact";
 import Gallery from "./components/home/gallery";
@@ -98,7 +97,7 @@ export default function Home() {
       {/* <Promo /> */}
       <Contact />
       <MediaMassa />
-      <FomoTicker />
+      {/* <FomoTicker /> */}
     </div>
   );
 }

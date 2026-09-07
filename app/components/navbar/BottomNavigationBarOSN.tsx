@@ -269,7 +269,7 @@ export default function BottomNavigationBarTKA({ navLinksData }: Props) {
   return (
     <>
       {/* Spacer supaya konten tidak tertutup bottom bar */}
-      <div className="h-24 lg:hidden" />
+      {/* <div className="h-24 lg:hidden" /> */}
 
       <nav
         className="

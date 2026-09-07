@@ -46,8 +46,9 @@ export async function generateMetadata({
 
   const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
-  const title = `Bimbel & Les Privat TKA di ${kelurahanName} SD SMP SMA Terbaik`;
-  const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kelurahanName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
+  const title = `Les privat bimbel TKA SD SMP SMA ke rumah di ${kelurahanName} Terbaik`;
+  const description = `${title}. Bimbingan belajar Tes Kemampuan Akademik (TKA) panggil guru ke rumah. Persiapan ujian sekolah dan masuk SMP SMA favorit bersama tutor profesional.`;
+
   const keywords = [
     `les privat tka ${kelurahanName}`,
     `bimbel tka ${kelurahanName}`,

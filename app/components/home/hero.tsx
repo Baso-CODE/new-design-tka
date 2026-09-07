@@ -54,13 +54,14 @@ export default function Hero() {
         </div>
 
         {/* Badge ketersediaan layanan */}
-        <div className="flex flex-wrap items-center justify-center gap-2 mb-6">
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-white">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+        {/* Badge ketersediaan layanan (High-Contrast & Accessible) */}
+        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
+          <span className="inline-flex items-center gap-2 rounded-full bg-white text-[#04397d] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
             🌐 Online — Seluruh Indonesia
           </span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-[#faae17]/15 border border-[#faae17]/30 px-3.5 py-1.5 text-[11.5px] font-semibold text-[#faae17] text-center">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#faae17] shrink-0" />
+          <span className="inline-flex items-center gap-2 rounded-full bg-[#faae17] text-[#072452] px-4 py-2 text-xs md:text-sm font-bold shadow-md text-center">
+            {/* <span className="w-2 h-2 rounded-full bg-[#072452] shrink-0" /> */}
             📍 Offline — Jabodetabek, Yogyakarta & Request Area Lain (Estimasi 3
             Hari)
           </span>
@@ -120,13 +121,14 @@ export default function Hero() {
             </h1>
 
             {/* Badge ketersediaan layanan */}
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-sm px-3 py-1.5 text-xs font-semibold text-white">
-                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse shrink-0" />
+            {/* Badge ketersediaan layanan (High-Contrast & Accessible) */}
+            <div className="flex flex-wrap items-center gap-2.5">
+              <span className="inline-flex items-center gap-2 rounded-full bg-white text-[#04397d] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
+                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                 🌐 Online — Seluruh Indonesia
               </span>
-              <span className="inline-flex items-center gap-1.5 rounded-full bg-[#faae17]/15 border border-[#faae17]/30 px-3.5 py-1.5 text-xs font-semibold text-[#faae17]">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#faae17] shrink-0" />
+              <span className="inline-flex items-center gap-2 rounded-full bg-[#faae17] text-[#072452] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
+                <span className="w-2 h-2 rounded-full bg-[#072452] shrink-0" />
                 📍 Offline — Jabodetabek, Yogyakarta & Request Area Lain
                 (Estimasi 3 Hari)
               </span>

@@ -37,27 +37,229 @@ export default async function ListKota() {
         </div>
 
         {kotaList.length === 0 ? (
-          <div className="text-center text-white text-xl p-8">
-            Tidak ada kota yang tersedia saat ini.
+          <div
+            className="
+      relative
+      overflow-hidden
+      rounded-[28px]
+      border
+      border-white/25
+      bg-white/10
+      p-8
+      text-center
+      text-xl
+      text-white
+      shadow-[0_18px_45px_rgba(0,0,0,0.18),inset_0_1px_0_rgba(255,255,255,0.28)]
+      backdrop-blur-[24px]
+      backdrop-saturate-[180%]
+    ">
+            <span
+              aria-hidden="true"
+              className="
+        pointer-events-none
+        absolute
+        inset-x-[15%]
+        top-0
+        h-px
+        bg-linear-to-r
+        from-transparent
+        via-white/70
+        to-transparent
+      "
+            />
+
+            <span className="relative z-10">
+              Tidak ada kota yang tersedia saat ini.
+            </span>
           </div>
         ) : (
           <div className="w-full max-w-3xl mx-auto flex flex-col items-center">
-            {/* Pill Header "Pilih Kotamu" */}
-            <div className="inline-block bg-white text-[#033790] font-bold text-sm sm:text-base px-6 py-2 rounded-full shadow-lg mb-8 ">
-              Pilih Kotamu
+            {/* LIQUID GLASS HEADER */}
+            <div
+              className="
+        relative
+        mb-8
+        inline-flex
+        items-center
+        justify-center
+        overflow-hidden
+
+        rounded-full
+
+        border
+        border-white/45
+
+        bg-white/75
+
+        px-7
+        py-2.5
+
+        text-sm
+        font-bold
+        text-[#033790]
+
+        shadow-[0_8px_24px_rgba(0,40,100,0.18),inset_0_1px_0_rgba(255,255,255,1),inset_0_-1px_0_rgba(0,60,140,0.06)]
+
+        backdrop-blur-[18px]
+        backdrop-saturate-[180%]
+
+        sm:text-base
+      ">
+              <span
+                aria-hidden="true"
+                className="
+          pointer-events-none
+          absolute
+          left-[14%]
+          right-[14%]
+          top-0
+          h-[48%]
+          rounded-b-[70%]
+          bg-linear-to-b
+          from-white/90
+          to-transparent
+        "
+              />
+
+              <span
+                aria-hidden="true"
+                className="
+          pointer-events-none
+          absolute
+          -bottom-4
+          right-[15%]
+          h-8
+          w-20
+          rounded-full
+          bg-[#4DA3FF]/15
+          blur-xl
+        "
+              />
+
+              <span className="relative z-10">Pilih Kotamu</span>
             </div>
 
-            {/* Grid 3 Kolom Tombol Kapsul */}
+            {/* GRID KOTA */}
             <ul className="grid grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 w-full md:mb-12">
               {kotaList.map((kota) => (
                 <li key={kota.slug} className="w-full">
                   <Link
                     href={`/bimbel-tka-di-kota/${kota.slug}`}
-                    className="flex h-11 sm:h-12 w-full items-center justify-center 
-                    rounded-full bg-[#2082e6] hover:bg-[#1b70c4] px-3 text-white text-xs sm:text-sm
-                    font-medium shadow-md hover:shadow-lg transform hover:scale-[1.02] 
-                    whitespace-nowrap text-ellipsis overflow-hidden transition-all duration-200 text-center">
-                    {kota.nama_kota}
+                    className="
+              group
+              relative
+
+              flex
+              h-11
+              w-full
+              items-center
+              justify-center
+
+              overflow-hidden
+              rounded-full
+
+              border
+              border-white/30
+
+              bg-[#2082e6]/82
+
+              px-3
+
+              text-center
+              text-xs
+              font-semibold
+              text-white
+
+              shadow-[0_8px_20px_rgba(0,64,145,0.22),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(0,50,120,0.10)]
+
+              backdrop-blur-[16px]
+              backdrop-saturate-[180%]
+
+              transition-all
+              duration-300
+              ease-out
+
+              hover:-translate-y-0.5
+              hover:scale-[1.02]
+              hover:border-white/45
+              hover:bg-[#2082e6]/92
+
+              hover:shadow-[0_12px_26px_rgba(0,70,170,0.30),inset_0_1px_0_rgba(255,255,255,0.45)]
+
+              active:translate-y-0
+              active:scale-[0.98]
+
+              sm:h-12
+              sm:text-sm
+            ">
+                    {/* TOP GLASS REFLECTION */}
+                    <span
+                      aria-hidden="true"
+                      className="
+                pointer-events-none
+                absolute
+                left-[12%]
+                right-[12%]
+                top-0
+
+                h-[42%]
+
+                rounded-b-[70%]
+
+                bg-linear-to-b
+                from-white/25
+                to-transparent
+
+                transition-opacity
+                duration-300
+
+                group-hover:from-white/35
+              "
+                    />
+
+                    {/* BLUE REFRACTION */}
+                    <span
+                      aria-hidden="true"
+                      className="
+                pointer-events-none
+                absolute
+
+                -bottom-4
+                right-[8%]
+
+                h-8
+                w-14
+
+                rounded-full
+
+                bg-[#7cc4ff]/20
+                blur-lg
+
+                transition-all
+                duration-300
+
+                group-hover:bg-[#7cc4ff]/30
+              "
+                    />
+
+                    {/* INNER GLASS EDGE */}
+                    <span
+                      aria-hidden="true"
+                      className="
+                pointer-events-none
+                absolute
+                inset-[1px]
+
+                rounded-full
+
+                border
+                border-white/[0.08]
+              "
+                    />
+
+                    <span className="relative z-10 truncate">
+                      {kota.nama_kota}
+                    </span>
                   </Link>
                 </li>
               ))}

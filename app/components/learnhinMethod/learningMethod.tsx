@@ -7,11 +7,11 @@ const LearningMethod = async () => {
       <div className="max-w-310 px-2">
         <div className="w-full">
           <div className="text-center">
-            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-8 font-title text-[#133B79]">
+            <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-2 md:mb-8 font-title text-[#133B79]">
               Learning Method
             </h1>
 
-            <div className="flex justify-center" data-aos="fade-up">
+            <div className="flex justify-center">
               <p className="text-sm md:text-base font-bold text-gray-800 mb-8 mx-auto max-w-3xl text-center">
                 Metode Belajar yang digunakan yaitu personal one on one (1 siswa
                 1 mentor) dan juga tersedia Small Class. Program belajar

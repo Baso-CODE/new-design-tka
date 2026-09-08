@@ -4,10 +4,22 @@ import HeroCTAClient from "./heroCTAClient";
 
 export default function Hero() {
   return (
-    // Background dan Padding responsif (biru gelap di mobile, biru terang di desktop)
-    <section className="relative bg-[#056fcb] lg:bg-[#056fcb] flex flex-col items-center justify-start overflow-hidden pt-8 pb-16 md:pt-28 md:pb-24">
-      {/* --- LAYER BACKGROUND OVERLAY (Dipakai Bersama) --- */}
-      <div className="absolute inset-0 z-0 opacity-80 mix-blend-screen pointer-events-none">
+    <section
+      className="
+        relative
+        flex
+        flex-col
+        items-center
+        justify-start
+        overflow-hidden
+        bg-[#056fcb]
+        pt-8
+        pb-16
+        md:pt-28
+        md:pb-24
+      ">
+      {/* BACKGROUND OVERLAY */}
+      <div className="pointer-events-none absolute inset-0 z-0 opacity-80 mix-blend-screen">
         <Image
           src="/images/tka/bg-overlay.webp"
           alt="Latar belakang gedung"
@@ -18,25 +30,115 @@ export default function Hero() {
         />
       </div>
 
-      {/* ========================================================================= */}
-      {/* 1. TAMPILAN MOBILE & TABLET (Tampil sampai ukuran md, hilang di lg/desktop) */}
-      {/* ========================================================================= */}
-      <div className="relative z-10 px-2 md:px-4 text-white w-full max-w-6xl mx-auto flex flex-col items-center lg:hidden">
-        {/* Logo Edumatrix di Bagian Atas */}
-        <div className="mb-6 md:mb-8 flex items-center justify-center">
+      {/* BACKGROUND LIQUID REFRACTIONS */}
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          -left-48
+          top-[8%]
+          z-0
+          h-[500px]
+          w-[500px]
+          rounded-full
+          bg-[#4DA3FF]/18
+          blur-3xl
+        "
+      />
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          -right-48
+          bottom-[8%]
+          z-0
+          h-[520px]
+          w-[520px]
+          rounded-full
+          bg-[#FAAE17]/10
+          blur-3xl
+        "
+      />
+
+      <div
+        aria-hidden="true"
+        className="
+          pointer-events-none
+          absolute
+          left-1/2
+          top-0
+          z-0
+          h-48
+          w-[70%]
+          -translate-x-1/2
+          rounded-full
+          bg-white/6
+          blur-3xl
+        "
+      />
+
+      {/* =========================================================
+          MOBILE & TABLET
+      ========================================================= */}
+      <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-2 text-white md:px-4 lg:hidden">
+        {/* LOGO GLASS */}
+        <div
+          className="
+            relative
+            mb-6
+            flex
+            items-center
+            justify-center
+            overflow-hidden
+
+            rounded-full
+
+            border
+            border-white/28
+
+            bg-white/12
+
+            px-5
+            py-2
+
+            shadow-[0_10px_26px_rgba(0,25,70,0.18),inset_0_1px_0_rgba(255,255,255,0.42)]
+
+            backdrop-blur-[18px]
+            backdrop-saturate-[180%]
+
+            md:mb-8
+          ">
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              inset-x-[15%]
+              top-0
+              h-px
+              bg-linear-to-r
+              from-transparent
+              via-white/80
+              to-transparent
+            "
+          />
+
           <Image
             src="/images/logo.webp"
             alt="Edumatrix Indonesia Logo"
             width={160}
             height={45}
-            className="object-contain h-10 md:h-12 w-auto"
+            className="relative z-10 h-10 w-auto object-contain md:h-12"
             priority
           />
         </div>
 
-        {/* Judul Utama */}
-        <div className="text-center max-w-4xl mx-auto mb-6 px-2">
-          <h1 className="text-[24px] sm:text-[28px] md:text-[38px] font-bold leading-tight md:leading-snug font-title">
+        {/* TITLE */}
+        <div className="mx-auto mb-6 max-w-4xl px-2 text-center">
+          <h1 className="font-title text-[24px] font-bold leading-tight sm:text-[28px] md:text-[38px] md:leading-snug">
             Lebih Siap Jadi Juara <br />
             Tes Kemampuan Akademik <br />
             <span className="text-[#faae17]">
@@ -44,33 +146,129 @@ export default function Hero() {
             </span>{" "}
             bersama
           </h1>
-
-          {/* Badge / Kotak Nama Brand di Bawah Judul */}
-          {/* <div className="mt-4 inline-block bg-[#072452] border border-blue-500/40 px-6 py-2.5 rounded-full shadow-lg">
-            <span className="text-white text-xl md:text-3xl font-extrabold tracking-wide">
-              Edumatrix Indonesia
-            </span>
-          </div> */}
         </div>
 
-        {/* Badge ketersediaan layanan */}
-        {/* Badge ketersediaan layanan (High-Contrast & Accessible) */}
-        <div className="flex flex-wrap items-center justify-center gap-2.5 mb-6">
-          <span className="inline-flex items-center gap-2 rounded-full bg-white text-[#04397d] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-            🌐 Online — Seluruh Indonesia
-          </span>
-          <span className="inline-flex items-center gap-2 rounded-full bg-[#faae17] text-[#072452] px-4 py-2 text-xs md:text-sm font-bold shadow-md text-center">
-            {/* <span className="w-2 h-2 rounded-full bg-[#072452] shrink-0" /> */}
-            📍 Offline — Jabodetabek, Yogyakarta & Request Area Lain (Estimasi 3
-            Hari)
-          </span>
+        {/* SERVICE AVAILABILITY */}
+        <div className="mb-6 grid w-full max-w-3xl grid-cols-1 gap-2.5 sm:grid-cols-2">
+          {/* ONLINE */}
+          <div
+            className="
+              relative
+              flex
+              min-h-[64px]
+              items-center
+              gap-3
+              overflow-hidden
+
+              rounded-[18px]
+
+              border
+              border-white/30
+
+              bg-white/14
+
+              px-4
+              py-3
+
+              shadow-[0_8px_22px_rgba(0,25,70,0.16),inset_0_1px_0_rgba(255,255,255,0.38)]
+
+              backdrop-blur-[18px]
+              backdrop-saturate-[180%]
+            ">
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                inset-x-[12%]
+                top-0
+                h-px
+                bg-linear-to-r
+                from-transparent
+                via-white/70
+                to-transparent
+              "
+            />
+
+            <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-200/25 bg-cyan-300/10">
+              <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.9)] animate-pulse" />
+            </div>
+
+            <div className="relative z-10 min-w-0 text-left">
+              <div className="text-xs font-extrabold text-white sm:text-sm">
+                🌐 Online
+              </div>
+
+              <div className="mt-0.5 text-[11px] font-medium leading-snug text-white/72 sm:text-xs">
+                Tersedia untuk seluruh Indonesia
+              </div>
+            </div>
+          </div>
+
+          {/* OFFLINE */}
+          <div
+            className="
+              relative
+              flex
+              min-h-[64px]
+              items-center
+              gap-3
+              overflow-hidden
+
+              rounded-[18px]
+
+              border
+              border-[#faae17]/35
+
+              bg-[#faae17]/12
+
+              px-4
+              py-3
+
+              shadow-[0_8px_22px_rgba(90,55,0,0.14),inset_0_1px_0_rgba(255,255,255,0.30)]
+
+              backdrop-blur-[18px]
+              backdrop-saturate-[180%]
+            ">
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                inset-x-[12%]
+                top-0
+                h-px
+                bg-linear-to-r
+                from-transparent
+                via-[#ffe798]/70
+                to-transparent
+              "
+            />
+
+            <div className="relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#faae17]/30 bg-[#faae17]/15">
+              <span className="h-2.5 w-2.5 rounded-full bg-[#faae17] shadow-[0_0_9px_rgba(250,174,23,0.65)]" />
+            </div>
+
+            <div className="relative z-10 min-w-0 text-left">
+              <div className="text-xs font-extrabold text-[#ffd66b] sm:text-sm">
+                📍 Offline
+              </div>
+
+              <div className="mt-0.5 text-[11px] font-medium leading-snug text-white/85 sm:text-xs">
+                Jabodetabek & Yogyakarta
+              </div>
+
+              <div className="mt-0.5 text-[11px] leading-snug font-medium text-[#ffd66b]/90 sm:text-[12px]">
+                Request area lain • estimasi 3 hari
+              </div>
+            </div>
+          </div>
         </div>
 
-        {/* Layout Utama: Ilustrasi Karakter & Konten Card Bawah */}
-        <div className="w-full flex flex-col items-center gap-6">
-          {/* Gambar Karakter / Siswa Hero */}
-          <div className="relative w-full max-w-2xl aspect-16/10 md:aspect-2/1 flex justify-center">
+        {/* HERO CONTENT */}
+        <div className="flex w-full flex-col items-center gap-6">
+          {/* HERO IMAGE */}
+          <div className="relative flex aspect-16/10 w-full max-w-2xl justify-center md:aspect-2/1">
             <Image
               loading="eager"
               src="/images/tka/hero-tka.webp"
@@ -83,9 +281,100 @@ export default function Hero() {
             />
           </div>
 
-          {/* Card Putih di Bagian Bawah (Deskripsi & CTA Konsultasi) */}
-          <div className="w-full max-w-3xl bg-white text-slate-800 rounded-3xl p-6 md:p-8 shadow-2xl flex flex-col gap-6 -mt-10 z-10">
-            <p className="text-[#314b8a] text-sm font-medium md:text-base leading-relaxed text-center font-desc">
+          {/* MOBILE LIQUID GLASS CARD */}
+          <div
+            className="
+              relative
+              z-10
+              -mt-10
+
+              flex
+              w-full
+              max-w-3xl
+              flex-col
+              gap-6
+
+              overflow-hidden
+
+              rounded-[30px]
+
+              border
+              border-white/50
+
+              bg-white/82
+
+              p-6
+
+              text-slate-800
+
+              shadow-[0_24px_60px_rgba(0,25,80,0.24),0_8px_20px_rgba(0,0,0,0.10),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(5,111,203,0.05)]
+
+              backdrop-blur-[26px]
+              backdrop-saturate-[185%]
+
+              md:p-8
+            ">
+            {/* TOP SPECULAR */}
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                inset-x-[10%]
+                top-0
+                h-px
+                bg-linear-to-r
+                from-transparent
+                via-white
+                to-transparent
+              "
+            />
+
+            {/* LEFT REFLECTION */}
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                -left-16
+                -top-20
+                h-40
+                w-52
+                rounded-full
+                bg-white/55
+                blur-3xl
+              "
+            />
+
+            {/* BLUE REFRACTION */}
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                -bottom-20
+                -right-14
+                h-44
+                w-56
+                rounded-full
+                bg-[#4DA3FF]/12
+                blur-3xl
+              "
+            />
+
+            <span
+              aria-hidden="true"
+              className="
+                pointer-events-none
+                absolute
+                inset-[1px]
+                rounded-[29px]
+                border
+                border-white/25
+              "
+            />
+
+            <p className="relative z-10 text-center font-desc text-sm font-medium leading-relaxed text-[#314b8a] md:text-base">
               Bimbel pendampingan belajar dan persiapan ujian tingkat SD, SMP,
               dan SMA terbaik dan terlengkap untuk mencetak siswa berprestasi.
               Mempersiapkan generasi juara dengan program Pendalaman Materi,
@@ -94,23 +383,21 @@ export default function Hero() {
               sekolah hingga tembus Kampus Impian!
             </p>
 
-            {/* Tombol CTA / Konsultasi (Di dalam card untuk Mobile) */}
-            <div className="w-full flex justify-center">
+            <div className="relative z-10 flex w-full justify-center">
               <HeroCTAClient contacts={dummyContactCsData} />
             </div>
           </div>
         </div>
       </div>
 
-      {/* ========================================================================= */}
-      {/* 2. TAMPILAN DESKTOP (Hilang di ukuran kecil, tampil di lg/desktop ke atas) */}
-      {/* ========================================================================= */}
-      <div className="relative z-10 px-4 lg:px-0 text-white w-full max-w-310 mx-auto hidden lg:flex flex-col">
-        {/* Layout Utama: Kiri (Teks + CTA) & Kanan (Gambar Hero) */}
-        <div className="w-full flex flex-row items-center justify-between mb-10">
-          {/* Kolom Kiri: Teks & Tombol */}
-          <div className="w-full lg:w-[50%] flex flex-col items-start text-left gap-6">
-            <h1 className="text-3xl font-bold leading-snug font-title">
+      {/* =========================================================
+          DESKTOP
+      ========================================================= */}
+      <div className="relative z-10 mx-auto hidden w-full max-w-310 flex-col px-4 text-white lg:flex lg:px-0">
+        <div className="mb-10 flex w-full flex-row items-center justify-between">
+          {/* LEFT */}
+          <div className="flex w-full flex-col items-start gap-6 text-left lg:w-[50%]">
+            <h1 className="font-title text-3xl font-bold leading-snug">
               Lebih Siap Jadi Juara <br />
               Tes Kemampuan Akademik <br />
               <span className="text-[#faae17]">
@@ -120,28 +407,131 @@ export default function Hero() {
               Edumatrix Indonesia
             </h1>
 
-            {/* Badge ketersediaan layanan */}
-            {/* Badge ketersediaan layanan (High-Contrast & Accessible) */}
-            <div className="flex flex-wrap items-center gap-2.5">
-              <span className="inline-flex items-center gap-2 rounded-full bg-white text-[#04397d] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
-                <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
-                🌐 Online — Seluruh Indonesia
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full bg-[#faae17] text-[#072452] px-4 py-2 text-xs md:text-sm font-bold shadow-md">
-                <span className="w-2 h-2 rounded-full bg-[#072452] shrink-0" />
-                📍 Offline — Jabodetabek, Yogyakarta & Request Area Lain
-                (Estimasi 3 Hari)
-              </span>
+            {/* SERVICE AVAILABILITY */}
+            <div className="grid w-full max-w-xl grid-cols-1 gap-2.5 xl:grid-cols-2">
+              {/* ONLINE */}
+              <div
+                className="
+                  relative
+                  flex
+                  min-h-[64px]
+                  items-center
+                  gap-3
+                  overflow-hidden
+
+                  rounded-[18px]
+
+                  border
+                  border-white/30
+
+                  bg-white/12
+
+                  px-4
+                  py-3
+
+                  shadow-[0_8px_22px_rgba(0,25,70,0.16),inset_0_1px_0_rgba(255,255,255,0.38)]
+
+                  backdrop-blur-[18px]
+                  backdrop-saturate-[180%]
+                ">
+                <span
+                  aria-hidden="true"
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-x-[12%]
+                    top-0
+                    h-px
+                    bg-linear-to-r
+                    from-transparent
+                    via-white/70
+                    to-transparent
+                  "
+                />
+
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-cyan-200/25 bg-cyan-300/10">
+                  <span className="h-2.5 w-2.5 rounded-full bg-cyan-300 shadow-[0_0_10px_rgba(103,232,249,0.9)] animate-pulse" />
+                </div>
+
+                <div className="min-w-0">
+                  <div className="text-sm font-extrabold text-white">
+                    🌐 Online
+                  </div>
+
+                  <div className="mt-0.5 text-xs font-medium text-white/72">
+                    Seluruh Indonesia
+                  </div>
+                </div>
+              </div>
+
+              {/* OFFLINE */}
+              <div
+                className="
+                  relative
+                  flex
+                  min-h-[64px]
+                  items-center
+                  gap-3
+                  overflow-hidden
+
+                  rounded-[18px]
+
+                  border
+                  border-[#faae17]/35
+
+                  bg-[#faae17]/12
+
+                  px-4
+                  py-3
+
+                  shadow-[0_8px_22px_rgba(90,55,0,0.14),inset_0_1px_0_rgba(255,255,255,0.30)]
+
+                  backdrop-blur-[18px]
+                  backdrop-saturate-[180%]
+                ">
+                <span
+                  aria-hidden="true"
+                  className="
+                    pointer-events-none
+                    absolute
+                    inset-x-[12%]
+                    top-0
+                    h-px
+                    bg-linear-to-r
+                    from-transparent
+                    via-[#ffe798]/70
+                    to-transparent
+                  "
+                />
+
+                <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-[#faae17]/30 bg-[#faae17]/15">
+                  <span className="h-2.5 w-2.5 rounded-full bg-[#faae17] shadow-[0_0_9px_rgba(250,174,23,0.65)]" />
+                </div>
+
+                <div className="min-w-0">
+                  <div className="text-sm font-extrabold text-[#ffd66b]">
+                    📍 Offline
+                  </div>
+
+                  <div className="mt-0.5 text-xs font-medium leading-snug text-white/85">
+                    Jabodetabek & Yogyakarta
+                  </div>
+
+                  <div className="mt-0.5 text-[12px] leading-snug text-[#ffd66b]/95">
+                    Request area lain • estimasi 3 hari
+                  </div>
+                </div>
+              </div>
             </div>
 
-            {/* Tombol CTA / Konsultasi dipindah ke bawah teks (kiri pada desktop) */}
-            <div className="w-full max-w-md flex justify-start pt-2">
+            {/* CTA */}
+            <div className="flex w-full max-w-md justify-start pt-2">
               <HeroCTAClient contacts={dummyContactCsData} />
             </div>
           </div>
 
-          {/* Kolom Kanan: Gambar Karakter / Siswa Hero */}
-          <div className="w-full lg:w-[50%] relative aspect-square max-w-2xl mx-auto flex justify-center items-center lg:-mb-28">
+          {/* RIGHT IMAGE */}
+          <div className="relative mx-auto flex aspect-square w-full max-w-2xl items-center justify-center lg:-mb-28 lg:w-[50%]">
             <Image
               loading="eager"
               src="/images/tka/hero-tka.webp"
@@ -155,9 +545,93 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Card Putih di Bagian Paling Bawah (Deskripsi) */}
-        <div className="w-full bg-white text-slate-800 rounded-3xl p-8 shadow-2xl relative z-10 mx-auto max-w-full lg:-mt-10">
-          <p className="text-[#314b8a] text-base font-bold leading-relaxed text-center font-desc">
+        {/* DESKTOP LIQUID GLASS DESCRIPTION */}
+        <div
+          className="
+            relative
+            z-10
+            mx-auto
+            -mt-10
+
+            w-full
+            max-w-full
+
+            overflow-hidden
+
+            rounded-[30px]
+
+            border
+            border-white/50
+
+            bg-white/82
+
+            p-8
+
+            text-slate-800
+
+            shadow-[0_24px_60px_rgba(0,25,80,0.24),0_8px_20px_rgba(0,0,0,0.10),inset_0_1px_0_rgba(255,255,255,0.95),inset_0_-1px_0_rgba(5,111,203,0.05)]
+
+            backdrop-blur-[26px]
+            backdrop-saturate-[185%]
+          ">
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              inset-x-[8%]
+              top-0
+              h-px
+              bg-linear-to-r
+              from-transparent
+              via-white
+              to-transparent
+            "
+          />
+
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              -left-16
+              -top-20
+              h-40
+              w-52
+              rounded-full
+              bg-white/55
+              blur-3xl
+            "
+          />
+
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              -bottom-20
+              right-[4%]
+              h-40
+              w-64
+              rounded-full
+              bg-[#4DA3FF]/10
+              blur-3xl
+            "
+          />
+
+          <span
+            aria-hidden="true"
+            className="
+              pointer-events-none
+              absolute
+              inset-[1px]
+              rounded-[29px]
+              border
+              border-white/25
+            "
+          />
+
+          <p className="relative z-10 text-center font-desc text-base font-bold leading-relaxed text-[#314b8a]">
             Bimbel pendampingan belajar dan persiapan ujian tingkat SD, SMP, dan
             SMA terbaik dan terlengkap untuk mencetak siswa berprestasi.
             Mempersiapkan generasi juara dengan program Pendalaman Materi,

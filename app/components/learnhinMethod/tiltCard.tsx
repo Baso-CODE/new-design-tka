@@ -11,7 +11,7 @@ interface TiltCardProps {
 
 export const TiltCard = ({ img, title, description }: TiltCardProps) => {
   return (
-    <Tilt className="bg-[#F6FAFF] shadow-md rounded-lg p-6 text-center">
+    <Tilt className=" p-5">
       <Image
         src={img}
         width={120}

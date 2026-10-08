@@ -41,8 +41,9 @@ export async function generateMetadata({
   // Pastikan imageUrl menggunakan baseUrl agar selalu konsisten dengan domain
   const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
-  const title = `Les privat bimbel TKA SD SMP SMA online offline di ${kabupatenName} Terbaik`;
-  const description = `${title}. Solusi bimbingan belajar Tes Kemampuan Akademik (TKA) intensif untuk persiapan menembus sekolah unggulan. Mentor Berpengalaman • Modul Lengkap • Laporan Berkala!`;
+  const title = `Bimbel & Les Privat TKA di ${kabupatenName} SD SMP SMA Terbaik`;
+  const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kabupatenName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
+
   return {
     metadataBase: new URL(baseUrl),
     title,

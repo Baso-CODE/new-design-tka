@@ -44,8 +44,8 @@ export async function generateMetadata({
   const canonicalUrl = `${baseUrl}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}/${kecamatanSlug}/`;
   const imageUrl = `${baseUrl}/images/tka/hero-tka.webp`;
 
-  const title = `Bimbel les privat TKA SD SMP SMA terdekat di ${kecamatanName} Terbaik`;
-  const description = `${title}. Program pendampingan Tes Kemampuan Akademik (TKA) intensif dengan sistem privat ke rumah maupun online. Mentor Terpilih • Latihan Soal HOTS • Laporan Evaluasi Berkala!`;
+  const title = `Bimbel & Les Privat TKA di ${kecamatanName} SD SMP SMA Terbaik`;
+  const description = `Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) di ${kecamatanName} untuk tingkat SD, SMP & SMA. Persiapan intensif untuk menembus sekolah unggulan. Mentor Berpengalaman & Program Eksklusif.`;
 
   const keywords = [
     `les privat tka ${kecamatanName}`,

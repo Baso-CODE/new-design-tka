@@ -20,51 +20,55 @@ import SliderDesktop from "./components/slider/sliderDescktop";
 import SliderMobile from "./components/slider/sliderMobile";
 import ImpactStatisticsOSN from "./components/statisticOSNEdumatrix/statisticOSNEDM";
 
-const baseUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+const baseUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com"
+).replace(/\/+$/, "");
+
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
-const ogImage = `${baseUrl}/images/tka/hero-tka.webp`;
-const canonicalUrl = `${baseUrl}/`;
-const pageTitle = `📚 Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`;
+const pageTitle = `Bimbel TKA SD SMP SMA & Les Privat Online Offline | ${siteName}`;
 const pageDescription =
-  "Kursus Les Privat TKA Terbaik, Dibimbing GURU BERPENGALAMAN, Persiapan TKA SD, SMP & SMA, Laporan Progres Belajar ✍️ Daftar? Segera kunjungi situs kami...";
-const pageKeywords = `bimbel TKA, les privat TKA, Tes Kemampuan Akademik, bimbingan belajar TKA SD, TKA SMP, TKA SMA, persiapan TKA, masuk sekolah unggulan, guru privat TKA, materi TKA, ${siteName}`;
+  "Persiapkan Tes Kemampuan Akademik (TKA) SD, SMP, dan SMA bersama Edumatrix. Tersedia bimbel dan les privat online maupun tatap muka. Konsultasikan program belajar.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseUrl),
-  title: pageTitle,
-
-  description: pageDescription,
-
-  keywords: pageKeywords,
-
-  alternates: {
-    canonical: canonicalUrl,
+  title: {
+    absolute: pageTitle,
   },
-
+  description: pageDescription,
+  keywords: [
+    "bimbel TKA",
+    "les privat TKA",
+    "bimbel TKA SD",
+    "bimbel TKA SMP",
+    "bimbel TKA SMA",
+    "les TKA online",
+    "bimbel TKA online",
+    "persiapan Tes Kemampuan Akademik",
+  ],
+  alternates: {
+    canonical: baseUrl,
+  },
   openGraph: {
+    type: "website",
+    locale: "id_ID",
+    url: baseUrl,
+    siteName,
     title: pageTitle,
     description: pageDescription,
-    url: canonicalUrl,
-    siteName: siteName,
     images: [
       {
-        url: ogImage,
+        url: `${baseUrl}/images/tka/hero-tka.webp`,
         width: 1200,
         height: 630,
-        alt: pageTitle,
+        alt: `Bimbel dan Les Privat TKA ${siteName}`,
       },
     ],
-    locale: "id_ID",
-    type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: pageTitle,
     description: pageDescription,
-    images: [ogImage],
+    images: [`${baseUrl}/images/tka/hero-tka.webp`],
   },
 };
 

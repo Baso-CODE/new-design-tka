@@ -1,9 +1,10 @@
-import fs from "fs";
-import path from "path";
+import fs from "node:fs";
+import path from "node:path";
 
 const WILAYAH_BASE = "https://wilayah.id/api";
-const SITE_URL =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com";
+const SITE_URL = (
+  process.env.NEXT_PUBLIC_SITE_URL || "https://bimbeljuaratka.com"
+).replace(/\/+$/, "");
 
 const PROVINCE_TO_CAPITAL = {
   11: "banda-aceh",
@@ -46,150 +47,332 @@ const PROVINCE_TO_CAPITAL = {
   96: "sorong",
 };
 
-// Fungsi helper untuk jeda waktu (delay) dalam milidetik
+const ROOT = process.cwd();
+const OUTPUT_DIR = path.join(ROOT, "public", "sitemap");
+const INDEX_PATH = path.join(ROOT, "public", "sitemap.xml");
+
+const REQUEST_DELAY = Number(process.env.SITEMAP_DELAY_MS || 700);
+const PROVINCE_DELAY = 3000;
+const MAX_RETRIES = 5;
+const MAX_URLS = 45000;
+const MAX_BYTES = 45 * 1024 * 1024;
+
 const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
-// Fungsi fetch dengan mekanisme Retry (mencoba ulang jika gagal)
-async function fetchJSON(url, retries = 3, delay = 1000) {
-  for (let i = 0; i < retries; i++) {
+let lastRequestAt = 0;
+
+async function fetchJSON(url) {
+  let lastError;
+
+  for (let attempt = 1; attempt <= MAX_RETRIES; attempt++) {
+    const elapsed = Date.now() - lastRequestAt;
+    if (elapsed < REQUEST_DELAY) {
+      await sleep(REQUEST_DELAY - elapsed);
+    }
+
+    lastRequestAt = Date.now();
+
     try {
-      const res = await fetch(url);
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-      const json = await res.json();
-      return json.data || [];
-    } catch (error) {
-      if (i === retries - 1) {
-        console.warn(
-          `Gagal memuat URL setelah ${retries} kali percobaan: ${url}`,
-        );
-        return [];
+      const response = await fetch(url, {
+        signal: AbortSignal.timeout(30000),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
       }
-      // Tunggu lebih lama sebelum mencoba ulang
-      await sleep(delay * (i + 1));
+
+      const json = await response.json();
+
+      if (!Array.isArray(json.data)) {
+        throw new Error("Format respons API tidak valid");
+      }
+
+      return json.data;
+    } catch (error) {
+      lastError = error;
+
+      console.warn(`  ⚠️ Request gagal (${attempt}/${MAX_RETRIES}): ${url}`);
+
+      if (attempt < MAX_RETRIES) {
+        const retryDelay = Math.min(30000, 2000 * 2 ** (attempt - 1));
+        await sleep(retryDelay);
+      }
     }
   }
-  return [];
+
+  throw new Error(`${url}: ${lastError?.message}`);
 }
 
 function toSlug(name) {
-  return name
+  return String(name)
+    .normalize("NFKD")
+    .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase()
-    .replace(/^(kabupaten|kota|kecamatan|desa|kelurahan)\s+/, "")
-    .trim()
-    .replace(/\s+/g, "-");
+    .replace(
+      /^(?:kota\s+administrasi|kabupaten\s+administrasi|administrasi|kabupaten|kota|kecamatan|kelurahan|desa)\s+/,
+      "",
+    )
+    .replace(/&/g, " dan ")
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
 }
 
-function xmlUrl(loc, priority) {
+function xmlEscape(value) {
+  return String(value)
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&apos;");
+}
+
+function urlEntry(url) {
   return `  <url>
-    <loc>${loc}</loc>
-    <changefreq>weekly</changefreq>
-    <priority>${priority}</priority>
-  </url>\n`;
+    <loc>${xmlEscape(url)}</loc>
+  </url>`;
 }
 
-// Batch fetch dengan batasan lebih aman (misal: 3 request bersamaan) dan jeda
-async function batchFetch(items, fn, batchSize = 3) {
-  const results = [];
-  for (let i = 0; i < items.length; i += batchSize) {
-    const batch = items.slice(i, i + batchSize);
-    const batchResults = await Promise.all(batch.map(fn));
-    results.push(...batchResults);
-    await sleep(200); // Jeda kecil antar batch
+function createUrlset(urls) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls.map(urlEntry).join("\n")}
+</urlset>`;
+}
+
+function createIndex(files) {
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${files
+  .map(
+    (file) => `  <sitemap>
+    <loc>${xmlEscape(`${SITE_URL}/sitemap/${file}`)}</loc>
+  </sitemap>`,
+  )
+  .join("\n")}
+</sitemapindex>`;
+}
+
+function splitUrls(urls) {
+  const chunks = [];
+  let chunk = [];
+  let bytes = 200;
+
+  for (const url of urls) {
+    const entryBytes = Buffer.byteLength(urlEntry(url)) + 1;
+
+    if (chunk.length >= MAX_URLS || bytes + entryBytes > MAX_BYTES) {
+      chunks.push(chunk);
+      chunk = [];
+      bytes = 200;
+    }
+
+    chunk.push(url);
+    bytes += entryBytes;
   }
-  return results;
+
+  if (chunk.length) chunks.push(chunk);
+  return chunks;
 }
 
-async function generate() {
-  console.log("Sedang mengambil data provinsi...");
+function writeAtomic(filepath, content) {
+  const temp = `${filepath}.tmp`;
+  fs.writeFileSync(temp, content, "utf8");
+  fs.renameSync(temp, filepath);
+}
+
+function getProvinceFiles(slug) {
+  const pattern = new RegExp(
+    `^${slug.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}(?:-\\d+)?\\.xml$`,
+  );
+
+  return fs.readdirSync(OUTPUT_DIR).filter((file) => pattern.test(file));
+}
+
+function updateIndex() {
+  const files = fs
+    .readdirSync(OUTPUT_DIR)
+    .filter((file) => file.endsWith(".xml"))
+    .sort();
+
+  writeAtomic(INDEX_PATH, createIndex(files));
+  console.log(`  📋 Sitemap index diperbarui: ${files.length} file`);
+}
+
+async function generateProvince(prov, slug) {
+  const urls = [];
+  const seen = new Set();
+  const base = `${SITE_URL}/bimbel-tka-di-kota/${slug}`;
+
+  const add = (url) => {
+    if (seen.has(url)) return;
+    seen.add(url);
+    urls.push(url);
+  };
+
+  add(base);
+
+  const regencies = await fetchJSON(
+    `${WILAYAH_BASE}/regencies/${prov.code}.json`,
+  );
+
+  if (!regencies.length) {
+    throw new Error(`Tidak ada data kabupaten: ${prov.name}`);
+  }
+
+  for (let i = 0; i < regencies.length; i++) {
+    const kab = regencies[i];
+    const kabSlug = toSlug(kab.name);
+
+    if (!kabSlug) {
+      throw new Error(`Slug kabupaten kosong: ${kab.name}`);
+    }
+
+    const kabUrl = `${base}/${kabSlug}`;
+
+    const districts = await fetchJSON(
+      `${WILAYAH_BASE}/districts/${kab.code}.json`,
+    );
+
+    if (!districts.length) {
+      throw new Error(`Data kecamatan kosong: ${kab.name}`);
+    }
+
+    add(kabUrl);
+
+    for (const kec of districts) {
+      const kecSlug = toSlug(kec.name);
+
+      if (!kecSlug) {
+        throw new Error(`Slug kecamatan kosong: ${kec.name}`);
+      }
+
+      const kecUrl = `${kabUrl}/${kecSlug}`;
+
+      const villages = await fetchJSON(
+        `${WILAYAH_BASE}/villages/${kec.code}.json`,
+      );
+
+      add(kecUrl);
+
+      for (const kel of villages) {
+        const kelSlug = toSlug(kel.name);
+
+        if (!kelSlug) {
+          throw new Error(`Slug kelurahan kosong: ${kel.name}`);
+        }
+
+        add(`${kecUrl}/${kelSlug}`);
+      }
+    }
+
+    console.log(
+      `  [${i + 1}/${regencies.length}] ${kab.name} | ` +
+        `${districts.length} kecamatan | ${urls.length} URL`,
+    );
+  }
+
+  return urls;
+}
+
+function saveProvince(slug, urls) {
+  const chunks = splitUrls(urls);
+  const oldFiles = getProvinceFiles(slug);
+  const newFiles = [];
+
+  for (let i = 0; i < chunks.length; i++) {
+    const filename = i === 0 ? `${slug}.xml` : `${slug}-${i + 1}.xml`;
+
+    writeAtomic(path.join(OUTPUT_DIR, filename), createUrlset(chunks[i]));
+
+    newFiles.push(filename);
+  }
+
+  updateIndex();
+
+  for (const filename of oldFiles) {
+    if (!newFiles.includes(filename)) {
+      fs.rmSync(path.join(OUTPUT_DIR, filename));
+    }
+  }
+
+  updateIndex();
+
+  return newFiles;
+}
+
+async function main() {
+  fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+
+  console.log("🚀 GENERATOR SITEMAP TKA");
+  console.log(`🌐 Website: ${SITE_URL}`);
+  console.log(`📡 API: ${WILAYAH_BASE}`);
+  console.log(`⏱️ Delay request: ${REQUEST_DELAY} ms`);
+  console.log("📍 Mengambil daftar provinsi...\n");
+
   const provinces = await fetchJSON(`${WILAYAH_BASE}/provinces.json`);
 
-  const outputDir = path.join(import.meta.dir, "public", "sitemap");
-  if (!fs.existsSync(outputDir)) {
-    fs.mkdirSync(outputDir, { recursive: true });
+  if (!provinces.length) {
+    throw new Error("Daftar provinsi kosong");
   }
 
-  for (const prov of provinces) {
+  const failures = [];
+  let totalUrls = 0;
+  let success = 0;
+
+  for (let i = 0; i < provinces.length; i++) {
+    const prov = provinces[i];
     const code = prov.code.slice(0, 2);
-    const kotaSlug = PROVINCE_TO_CAPITAL[code] ?? "makassar";
+    const slug = PROVINCE_TO_CAPITAL[code];
 
-    console.log(`\nMemproses Provinsi: ${prov.name} (File: ${kotaSlug}.xml)`);
-    let urls = "";
+    console.log("=".repeat(55));
+    console.log(`📍 [${i + 1}/${provinces.length}] ${prov.name}`);
 
-    // Level 1: kotaSlug
-    urls += xmlUrl(`${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}`, "1.0");
-
-    // Level 2: Regencies
-    const regencies = await fetchJSON(
-      `${WILAYAH_BASE}/regencies/${prov.code}.json`,
-    );
-
-    for (const kab of regencies) {
-      const kabupatenSlug = toSlug(kab.name);
-      urls += xmlUrl(
-        `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kabupatenSlug}`,
-        "0.8",
-      );
+    if (!slug) {
+      console.warn(`  ⚠️ Mapping tidak ada: ${code}`);
+      failures.push(prov.name);
+      continue;
     }
 
-    // Level 3 & 4: Districts & Villages
-    const districtData = await batchFetch(
-      regencies,
-      async (kab) => {
-        const districts = await fetchJSON(
-          `${WILAYAH_BASE}/districts/${kab.code}.json`,
-        );
-        return { districts };
-      },
-      3, // Dikecilkan menjadi 3 agar stabil
-    );
+    try {
+      const urls = await generateProvince(prov, slug);
+      const files = saveProvince(slug, urls);
 
-    for (const { districts } of districtData) {
-      for (const kec of districts) {
-        const kecamatanSlug = toSlug(kec.name);
-        urls += xmlUrl(
-          `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kecamatanSlug}`,
-          "0.7",
-        );
-      }
+      totalUrls += urls.length;
+      success++;
 
-      const villageData = await batchFetch(
-        districts,
-        async (kec) => {
-          const villages = await fetchJSON(
-            `${WILAYAH_BASE}/villages/${kec.code}.json`,
-          );
-          return { villages };
-        },
-        3,
-      );
-
-      for (const { villages } of villageData) {
-        for (const village of villages) {
-          const kelurahanSlug = toSlug(village.name);
-          urls += xmlUrl(
-            `${SITE_URL}/bimbel-tka-di-kota/${kotaSlug}/${kelurahanSlug}`,
-            "0.6",
-          );
-        }
-      }
+      console.log(`✅ ${prov.name} selesai: ${urls.length} URL`);
+      console.log(`📁 File: ${files.join(", ")}`);
+    } catch (error) {
+      failures.push(prov.name);
+      console.error(`❌ Gagal ${prov.name}: ${error.message}`);
+      console.log("  Sitemap lama dipertahankan.");
     }
 
-    const xml = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${urls}</urlset>`;
-
-    fs.writeFileSync(path.join(outputDir, `${kotaSlug}.xml`), xml);
-    console.log(
-      `> Selesai & Berhasil menyimpan public/sitemap/${kotaSlug}.xml`,
-    );
-
-    // Berikan jeda 1 detik antar provinsi agar server API wilayah.id tidak memblokir/timeout
-    await sleep(1000);
+    if (i < provinces.length - 1) {
+      console.log(`⏳ Jeda ${PROVINCE_DELAY / 1000} detik...\n`);
+      await sleep(PROVINCE_DELAY);
+    }
   }
 
-  console.log(
-    "\nSemua sitemap berhasil di-generate dengan lengkap ke folder public/sitemap/!",
-  );
+  updateIndex();
+
+  console.log("\n" + "=".repeat(55));
+  console.log("🏁 PROSES GENERATE SELESAI");
+  console.log(`✅ Provinsi berhasil: ${success}`);
+  console.log(`❌ Provinsi gagal: ${failures.length}`);
+  console.log(`🔗 URL berhasil diproses: ${totalUrls}`);
+  console.log(`📂 Output: ${OUTPUT_DIR}`);
+
+  if (failures.length) {
+    console.log(`⚠️ Gagal: ${failures.join(", ")}`);
+    process.exitCode = 1;
+  }
 }
 
-generate();
+main().catch((error) => {
+  console.error("❌ Error:", error.message);
+  process.exitCode = 1;
+});

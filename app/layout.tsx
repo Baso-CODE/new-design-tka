@@ -30,40 +30,25 @@ const siteName = process.env.NEXT_PUBLIC_SITE_NAME || "Edumatrix Indonesia";
 
 export const metadata: Metadata = {
   metadataBase: new URL(baseUrl),
-  title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
+  title: {
+    default: `Bimbel & Les Privat TKA SD SMP SMA | ${siteName}`,
+    template: `%s | ${siteName}`,
+  },
   description:
-    "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
+    "Bimbel dan les privat Tes Kemampuan Akademik (TKA) untuk SD, SMP, dan SMA. Pilihan belajar online dan tatap muka dengan pendampingan tutor.",
   verification: {
     google: "-qNN7ezuQ_P3U58abDzZCeBdTV5HFVoGKQAJkdAgq9A",
   },
-  openGraph: {
-    type: "website",
-    locale: "id_ID",
-    url: baseUrl,
-    siteName: siteName,
-    title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
-    description:
-      "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
-    images: [
-      {
-        url: `${baseUrl}/images/tka/hero-tka.webp`,
-        width: 1200,
-        height: 630,
-        alt: `Les Privat TKA ${siteName}`,
-      },
-    ],
-  },
-
-  twitter: {
-    card: "summary_large_image",
-    title: `Bimbel & Les Privat TKA SD SMP SMA Terbaik | ${siteName}`,
-    description:
-      "Les Privat dan Bimbel Tes Kemampuan Akademik (TKA) untuk SD, SMP & SMA. Dibimbing mentor berpengalaman untuk menembus sekolah unggulan. Konsultasi gratis sekarang!",
-    images: [`${baseUrl}/images/tka/hero-tka.webp`],
-  },
-
-  alternates: {
-    canonical: baseUrl,
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
+    },
   },
 };
 

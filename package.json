@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+      "generate:sitemap": "node generate-sitemaps.js"
   },
   "engines": {
     "node": ">=20.9.0"
